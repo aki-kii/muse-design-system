@@ -510,6 +510,48 @@ button.m-node:hover:not(.is-current) { background: var(--fill); }
 .m-slide-types .m-slide { border: 1px solid var(--border); border-radius: var(--radius-small); }
 .m-slide-types figcaption { font-size: 12px; font-weight: 600; color: var(--dim); }
 
+/* ---------- スケルトン ---------- */
+.m-skel { display: block; background: var(--fill); animation: m-skel-pulse 1.6s ease-in-out infinite alternate; }
+.m-skel--line { height: 12px; border-radius: var(--radius-pill); width: 100%; }
+.m-skel--line.is-short { width: 60%; }
+.m-skel--circle { width: 24px; height: 24px; border-radius: var(--radius-pill); flex: none; }
+.m-skel--box { width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius-row); background: var(--border); }
+.m-skel-rows { display: grid; gap: 16px; }
+.m-skel-row { display: flex; align-items: center; gap: 12px; min-height: 40px; }
+.m-skel-lines { display: grid; gap: var(--space-row); flex: 1; min-width: 0; }
+.m-skel-media { display: grid; gap: 12px; max-width: 280px; }
+.m-skel-media .m-skel--line { background: var(--border); }
+@keyframes m-skel-pulse { from { opacity: 1; } to { opacity: .55; } }
+
+/* ---------- 空の状態 ---------- */
+.m-empty { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 32px 8px; }
+.m-empty.is-small-pad { padding: 24px 8px; }
+.m-empty-icon { color: var(--faint); margin-bottom: 12px; display: inline-flex; }
+.m-empty-icon.is-danger { color: var(--danger); }
+.m-empty-icon .m-icon { width: 32px; height: 32px; stroke-width: 2; }
+.m-empty-title { margin: 0; font-size: var(--text-base); font-weight: 700; color: var(--text); }
+.m-empty-text { margin: 4px 0 0; font-size: var(--text-sm); color: var(--dim); max-width: 32em; }
+.m-empty .m-btn { margin-top: 16px; }
+.m-empty-small { margin: 0; padding: 24px 8px; text-align: center; font-size: var(--text-sm); color: var(--dim); }
+
+/* ---------- 検索フィールド ---------- */
+.m-search { display: flex; align-items: center; gap: 8px; height: var(--size-tap-target); padding: 0 4px 0 14px; border-radius: var(--radius-pill); background: var(--surface); border: 1.5px solid var(--border); max-width: 420px; }
+.m-search--filled { background: var(--bg); border-color: transparent; }
+.m-search:focus-within { border-color: var(--accent); outline: 2px solid var(--accent); outline-offset: 2px; }
+.m-search-icon { color: var(--dim); display: inline-flex; }
+.m-search-icon .m-icon { width: 18px; height: 18px; stroke-width: 2; }
+.m-search-input { flex: 1; min-width: 0; font: inherit; font-size: var(--text-base); color: var(--text); background: none; border: 0; padding: 0; height: 100%; }
+.m-search-input:focus { outline: 0; }
+.m-search-input::placeholder { color: var(--faint); }
+.m-search-input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+.m-search-clear { width: 36px; height: 36px; display: inline-grid; place-items: center; border: 0; border-radius: 10px; background: none; color: var(--dim); cursor: pointer; flex: none; }
+.m-search-clear[hidden] { display: none; }
+.m-search-clear:hover { background: var(--fill); }
+.m-search-clear .m-icon { width: 18px; height: 18px; }
+.m-search-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-row); max-width: 420px; }
+.m-search-list li { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-pill); padding: 6px 14px; font-size: var(--text-sm); }
+.m-search-list li[hidden], .m-search-list[hidden] { display: none; }
+
 @media (max-width: 520px) {
   .demo-stage { padding: 14px; }
   .m-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -520,6 +562,7 @@ button.m-node:hover:not(.is-current) { background: var(--fill); }
   .m-typing i { animation: none !important; opacity: .8 !important; }
   .m-confetti { display: none; }
   .m-round.is-spinning .m-icon { animation: none !important; }
+  .m-skel { animation: none !important; }
 }
 
 /* 選択肢ボタン: radiogroup で使うときの選択中 */

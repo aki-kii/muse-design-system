@@ -1,0 +1,24 @@
+<div class="demo-stage" data-demo="skeleton">
+  <div class="demo-grid2">
+    <div class="demo-item">
+      <p class="demo-cap">リスト行の読み込み中</p>
+      <div class="m-card" aria-busy="true" data-skel-area>
+        <span class="vh">読み込み中</span>
+        <div class="m-skel-rows" aria-hidden="true">
+          <div class="m-skel-row"><span class="m-skel m-skel--circle"></span><span class="m-skel-lines"><span class="m-skel m-skel--line"></span><span class="m-skel m-skel--line is-short"></span></span></div>
+          <div class="m-skel-row"><span class="m-skel m-skel--circle"></span><span class="m-skel-lines"><span class="m-skel m-skel--line"></span><span class="m-skel m-skel--line is-short"></span></span></div>
+          <div class="m-skel-row"><span class="m-skel m-skel--circle"></span><span class="m-skel-lines"><span class="m-skel m-skel--line"></span><span class="m-skel m-skel--line is-short"></span></span></div>
+        </div>
+      </div>
+      <p><button type="button" class="demo-reset" data-skel-load>読み込みを終える</button></p>
+    </div>
+    <div class="demo-item">
+      <p class="demo-cap">メディアカードの読み込み中（面＋文）</p>
+      <div class="m-skel-media" aria-hidden="true">
+        <span class="m-skel m-skel--box"></span>
+        <span class="m-skel-lines"><span class="m-skel m-skel--line"></span><span class="m-skel m-skel--line is-short"></span></span>
+      </div>
+    </div>
+  </div>
+  <p class="demo-note">動きを減らす設定（<code>prefers-reduced-motion: reduce</code>）のときは明滅を止めます。</p>
+</div>

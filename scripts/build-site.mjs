@@ -294,6 +294,13 @@ const ICONS = {
   database: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/>',
   code: '<path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/>',
   box: '<path d="M21 8 12 3 3 8v8l9 5 9-5Z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>',
+  moon: '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>',
+  monitor: '<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/>',
+  menu: '<path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/>',
+  search: '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+  inbox: '<path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11Z"/>',
+  alert: '<circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/>',
 };
 const icon = (name) => `<svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true">${ICONS[name] ?? ''}</svg>`;
 const slideTypes = () => site('slides.html');
@@ -450,8 +457,8 @@ function layout(p, body, { toc = '' } = {}) {
     <span class="brand-ver">v${pkg.version}</span>
     <nav class="global-nav" aria-label="サイト全体"><ul>${global}</ul></nav>
     <div class="header-tools">
-      <button class="theme-btn" type="button" data-theme-toggle aria-label="表示モードを切り替える"><span data-theme-label>自動</span></button>
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="side" data-menu-toggle>目次</button>
+      <button class="tool-btn theme-btn" type="button" data-theme-toggle aria-label="表示モード: 自動（押すとライトにする）" title="表示モード: 自動（押すとライトにする）"><span data-theme-icon="auto">${icon('monitor')}</span><span data-theme-icon="light" hidden>${icon('sun')}</span><span data-theme-icon="dark" hidden>${icon('moon')}</span></button>
+      <button class="tool-btn menu-btn" type="button" aria-expanded="false" aria-controls="side" aria-label="目次を開く" title="目次を開く" data-menu-toggle><span data-menu-icon="open">${icon('menu')}</span><span data-menu-icon="close" hidden>${icon('x')}</span></button>
     </div>
   </div>
 </header>

@@ -1,0 +1,29 @@
+<div class="demo-stage" data-demo="search-field">
+  <div class="demo-item">
+    <p class="demo-cap">標準（打つたびに下の一覧を絞り込む）</p>
+    <search class="m-search">
+      <span class="m-search-icon">{{i:search}}</span>
+      <input class="m-search-input" type="search" placeholder="果物を検索" aria-label="果物を検索" autocomplete="off">
+      <button type="button" class="m-search-clear m-hit" aria-label="検索の文字を消す" hidden>{{i:x}}</button>
+    </search>
+    <p class="vh" role="status" data-search-count></p>
+    <ul class="m-search-list" data-search-list>
+      <li>いちご</li><li>みかん</li><li>りんご</li><li>ぶどう</li><li>もも</li><li>なし</li><li>かき</li><li>メロン</li><li>バナナ</li><li>キウイ</li><li>レモン</li><li>さくらんぼ</li>
+    </ul>
+    <div class="m-empty is-small-pad" data-search-empty hidden>
+      <span class="m-empty-icon">{{i:search}}</span>
+      <p class="m-empty-title">見つかりませんでした</p>
+      <p class="m-empty-text">別のことばで探してください。</p>
+    </div>
+  </div>
+  <div class="demo-item">
+    <p class="demo-cap">面（シート・カードの中）</p>
+    <div class="m-card">
+      <search class="m-search m-search--filled">
+        <span class="m-search-icon">{{i:search}}</span>
+        <input class="m-search-input" type="search" placeholder="絵文字を検索" aria-label="絵文字を検索" autocomplete="off">
+        <button type="button" class="m-search-clear m-hit" aria-label="検索の文字を消す" hidden>{{i:x}}</button>
+      </search>
+    </div>
+  </div>
+</div>

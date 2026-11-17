@@ -1,0 +1,43 @@
+<div class="demo-stage" data-demo="empty-state">
+  <div class="demo-grid2">
+    <div class="demo-item">
+      <p class="demo-cap">まだない</p>
+      <div class="m-card">
+        <div class="m-empty">
+          <span class="m-empty-icon">{{i:inbox}}</span>
+          <p class="m-empty-title">メモはまだありません</p>
+          <p class="m-empty-text">気づいたことを書くと、ここに並びます。</p>
+          <button type="button" class="m-btn m-btn--primary" data-show-toast="メモの入力を開きます">メモを書く</button>
+        </div>
+      </div>
+    </div>
+    <div class="demo-item">
+      <p class="demo-cap">見つからない</p>
+      <div class="m-card">
+        <div class="m-empty">
+          <span class="m-empty-icon">{{i:search}}</span>
+          <p class="m-empty-title">見つかりませんでした</p>
+          <p class="m-empty-text">別のことばで探すか、条件を外してください。</p>
+          <button type="button" class="m-btn m-btn--ghost" data-show-toast="条件を外しました">条件を外す</button>
+        </div>
+      </div>
+    </div>
+    <div class="demo-item">
+      <p class="demo-cap">読み込めなかった</p>
+      <div class="m-card">
+        <div class="m-empty">
+          <span class="m-empty-icon is-danger">{{i:alert}}</span>
+          <p class="m-empty-title">読み込めませんでした</p>
+          <p class="m-empty-text">通信が切れている可能性があります。</p>
+          <button type="button" class="m-btn m-btn--secondary" data-show-toast="もう一度読み込みます">もう一度読み込む</button>
+        </div>
+      </div>
+    </div>
+    <div class="demo-item">
+      <p class="demo-cap">小（シートやカードの中の狭い一覧）</p>
+      <div class="m-card">
+        <p class="m-empty-small">このページのコメントはまだありません</p>
+      </div>
+    </div>
+  </div>
+</div>
