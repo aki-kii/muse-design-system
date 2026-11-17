@@ -21,8 +21,7 @@
 
 そのほかの文書は次のとおりです。
 
-- 決めたことの記録: [docs/decisions/](docs/decisions/README.md)（部品とパターンの分け方は [0002](docs/decisions/0002-component-admission.md)）
-- 判断待ちの点: [docs/open-questions.md](docs/open-questions.md)（v0.7.0 で28件すべて解消済み。決定の記録は色の [0003](docs/decisions/0003-color-and-contrast.md) からアイコンの [0006](docs/decisions/0006-icon-set.md) まで）
+- 決めたことの記録: [docs/decisions/](docs/decisions/README.md)（部品とパターンの分け方は [0002](docs/decisions/0002-component-admission.md)、色・寸法・状態・アイコンは [0003](docs/decisions/0003-color-and-contrast.md)〜[0006](docs/decisions/0006-icon-set.md)）
 - 版の付け方: [docs/versioning.md](docs/versioning.md)
 
 ```
@@ -45,7 +44,6 @@
     ├── patterns.md           組み合わせの型
     ├── patterns/             アプリ固有の複合体（learning-note/、slide-editor/）
     ├── decisions/            決定記録（ADR）
-    ├── open-questions.md
     └── versioning.md
 ```
 

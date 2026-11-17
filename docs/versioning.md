@@ -20,7 +20,7 @@ Muse DS は [Semantic Versioning](https://semver.org/lang/ja/)（`MAJOR.MINOR.PA
 
 1.0.0 にする目安は次のとおりです。
 
-- [判断待ちの点](open-questions.md) がすべて決まっている
+- 決めきれていない判断が残っていない（決めたことは[決定記録](decisions/README.md)に書いてある）
 - 2つ以上のアプリやスペースに適用して、トークンの名前を変える必要がなくなっている
 
 ## 変更の手順

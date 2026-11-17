@@ -247,7 +247,6 @@ for (const a of APPS) {
 page({ out: 'decisions/index.html', src: 'docs/decisions/README.md', section: 'records' });
 for (const f of readdirSync(join(root, 'docs/decisions')).filter((f) => /^\d{4}-.*\.md$/.test(f)).sort())
   page({ out: `decisions/${f.replace(/\.md$/, '.html')}`, src: `docs/decisions/${f}`, section: 'records', hidden: true });
-page({ out: 'open-questions.html', src: 'docs/open-questions.md', section: 'records' });
 page({ out: 'versioning.html', src: 'docs/versioning.md', section: 'records' });
 page({ out: 'changelog.html', src: 'CHANGELOG.md', section: 'records', title: '変更履歴' });
 
@@ -526,7 +525,6 @@ function buildPage(p) {
   <h2 id="h-more">そのほか</h2>
   <ul class="link-list">
     <li><a href="decisions/index.html">決めたことの記録</a></li>
-    <li><a href="open-questions.html">判断待ちの点</a></li>
     <li><a href="versioning.html">版の付け方</a></li>
     <li><a href="changelog.html">変更履歴</a></li>
   </ul>
