@@ -4,7 +4,7 @@
 
 このリポジトリはドキュメントとトークンだけを持ちます。部品の実装ライブラリは含みません。
 
-- 現在の版: **v0.8.0**（[CHANGELOG](CHANGELOG.md)）
+- 現在の版: **v0.8.2**（[CHANGELOG](CHANGELOG.md)）
 - サンプルサイト（ドキュメントと部品のデモ）: https://aki-kii.github.io/muse-design-system/
 - トークンの値は Muse DS を適用済みのアプリ（jin-toreji-lu の `client/src/theme.css`）の実値と一致させています。
 

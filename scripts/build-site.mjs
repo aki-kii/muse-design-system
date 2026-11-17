@@ -220,9 +220,6 @@ for (const a of APPS) {
   for (const c of a.items) c.dir = `patterns/${a.id}`;
 }
 const composites = APPS.flatMap((a) => a.items);
-// コンポーネントから移した部品（元の URL に転送のページを残す）
-const moved = [...read('docs/components/README.md').matchAll(/^\|\s*\[([^\]]+)\]\(\.\.\/patterns\/([\w-]+)\/([\w-]+)\.md\)/gm)]
-  .map(([, name, app, slug]) => ({ name, app, slug }));
 
 const pages = [];
 const page = (o) => (pages.push(o), o);
@@ -236,8 +233,6 @@ page({ out: 'components/index.html', src: 'docs/components/README.md', section: 
 for (const c of components)
   page({ out: `components/${c.slug}.html`, src: `docs/components/${c.slug}.md`, section: 'components', comp: c, list: components });
 page({ out: 'components/_template.html', src: 'docs/components/_template.md', section: 'components', hidden: true });
-for (const m of moved)
-  page({ out: `components/${m.slug}.html`, src: `docs/components/${m.slug}.md`, section: 'components', hidden: true, kind: 'moved', to: `patterns/${m.app}/${m.slug}.html` });
 page({ out: 'patterns.html', src: 'docs/patterns.md', section: 'patterns', nav: 'パターン一覧' });
 for (const a of APPS) {
   a.page = page({ out: `patterns/${a.id}/index.html`, src: `docs/patterns/${a.id}/README.md`, section: 'patterns', nav: '一覧', kind: 'catalog', app: a });
@@ -437,7 +432,7 @@ function layout(p, body, { toc = '' } = {}) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${p.kind === 'home' ? 'Muse Design System' : `${esc(p.title)} | Muse Design System`}</title>${p.kind === 'moved' ? `\n<meta http-equiv="refresh" content="0; url=${rel(p.to)}">\n<link rel="canonical" href="${rel(p.to)}">` : ''}
+<title>${p.kind === 'home' ? 'Muse Design System' : `${esc(p.title)} | Muse Design System`}</title>
 <meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -541,10 +536,6 @@ function buildPage(p) {
 
   let { html } = renderDoc(p);
 
-  if (p.kind === 'moved') {
-    html += `<p><a class="m-btn m-btn--primary" href="${posix.relative(posix.dirname(p.out), p.to)}">移行先を開く</a></p>`;
-  }
-
   if (p.kind === 'catalog') {
     // 部品の表をカードの並びにする（文面は表のまま）
     const groupsHtml = p.app ? [p.app.items] : compGroups.map((g) => g.items);
@@ -628,5 +619,5 @@ for (const p of pages) {
     if (!th.includes(`id="${decodeURIComponent(hash)}"`)) { console.error(`アンカー切れ: ${p.out} → ${href || ''}#${hash}`); broken++; }
   }
 }
-console.log(`書き出した: ${out}（${pages.length} ページ、部品 ${components.length} 件、複合体 ${composites.length} 件、転送 ${moved.length} 件）`);
+console.log(`書き出した: ${out}（${pages.length} ページ、部品 ${components.length} 件、複合体 ${composites.length} 件）`);
 if (broken) { console.error(`リンク切れ ${broken} 件`); process.exit(1); }

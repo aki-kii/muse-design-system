@@ -48,38 +48,6 @@
 | [作業中インジケータ](typing-indicator.md) | 3つの点が跳ねる。色付きとニュートラル |
 | [スケルトン](skeleton.md) | 読み込み中に、中身の形だけを先に灰色の面で見せる |
 
-## 移した部品
-
-v0.4.0・v0.5.0 でアプリから足した部品のうち、そのアプリでしか使わない複合体は、v0.6.0 で[パターン](../patterns.md#アプリ固有の複合体)に移しました。元の場所には移行先への案内を残しています。
-
-| 部品 | 移行先 | 汎用の核（このページの部品） |
-| --- | --- | --- |
-| [コースパス](../patterns/learning-note/course-path.md) | 学習ノート | [進捗パス](progress-path.md) |
-| [今ここストリップ](../patterns/learning-note/now-strip.md) | 学習ノート | [進捗パス](progress-path.md)の現在地＋[セクションカード](section-card.md)の面 |
-| [プレイヤートップバー](../patterns/learning-note/player-top-bar.md) | 学習ノート | [アイコンボタン](icon-button.md)＋[リスト行](list-rows.md)のメーター |
-| [単語カード](../patterns/learning-note/word-card.md) | 学習ノート | [フラッシュカード](flashcard.md) |
-| [クイズ選択肢](../patterns/learning-note/quiz-option.md) | 学習ノート | [選択肢ボタン](choice-button.md) |
-| [結果バナー](../patterns/learning-note/result-banner.md) | 学習ノート | なし（保留） |
-| [模範解答ボックス](../patterns/learning-note/model-answer-box.md) | 学習ノート | なし |
-| [質問ボックス](../patterns/learning-note/ask-box.md) | 学習ノート | [入力欄](input-and-switch.md)＋[ボタン](button.md) |
-| [読み上げボタン](../patterns/learning-note/speak-button.md) | 学習ノート | [アイコンボタン](icon-button.md) |
-| [章完了パネル](../patterns/learning-note/chapter-complete-panel.md) | 学習ノート | なし（保留） |
-| [本棚カバーカード](../patterns/learning-note/shelf-cover-card.md) | 学習ノート | [メディアカード](media-card.md) |
-| [コース切替パネル](../patterns/learning-note/course-switcher.md) | 学習ノート | [シートモーダル](sheet-modal.md)＋[アイコンボタン](icon-button.md) |
-| [デッキカード](../patterns/slide-editor/deck-card.md) | スライドエディタ | [メディアカード](media-card.md) |
-| [デッキヘッダー](../patterns/slide-editor/deck-header.md) | スライドエディタ | [アイコンボタン](icon-button.md) |
-| [スライドステージ](../patterns/slide-editor/slide-stage.md) | スライドエディタ | なし |
-| [ページカウンタ行](../patterns/slide-editor/page-counter-row.md) | スライドエディタ | なし |
-| [スレッドカード](../patterns/slide-editor/thread-card.md) | スライドエディタ | [状態付きリスト項目](status-list-item.md) |
-| [確認待ちバッジ](../patterns/slide-editor/awaiting-badge.md) | スライドエディタ | [状態付きリスト項目](status-list-item.md)の先頭の印 |
-| [タイピングストリップ](../patterns/slide-editor/typing-strip.md) | スライドエディタ | [作業中インジケータ](typing-indicator.md) |
-| [依頼行](../patterns/slide-editor/request-row.md) | スライドエディタ | [状態付きリスト項目](status-list-item.md) |
-| [ページプレビューカード](../patterns/slide-editor/page-preview-card.md) | スライドエディタ | なし |
-| [位置ラジオ](../patterns/slide-editor/position-radio.md) | スライドエディタ | [選択肢ボタン](choice-button.md) |
-| [送信完了メッセージ](../patterns/slide-editor/submit-message.md) | スライドエディタ | [トースト](toast.md) |
-
-吹き出しに足していた「下書き」の状態とスライドエディタの値の違いは、[スレッドの会話](../patterns/slide-editor/thread-conversation.md)に移しました。
-
 ## 収載の基準
 
 [GOV.UK Design System の収載基準](https://design-system.service.gov.uk/community/contribution-criteria/)と、[Carbon の Core と拡張の分け方](https://carbondesignsystem.com/contributing/overview/)にならい、次のように決めています。詳しくは[決定記録 0002](../decisions/0002-component-admission.md)。

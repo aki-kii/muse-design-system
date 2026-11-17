@@ -1,6 +1,0 @@
-# 依頼行（移動しました）
-
-この文書は v0.6.0 で、スライドエディタの複合体として[パターン](../patterns/slide-editor/request-row.md)に移しました。スライドエディタでだけ使う部品の組み合わせのため、コンポーネントから外しています（[決定記録 0002](../decisions/0002-component-admission.md)）。
-
-- 移行先: [依頼行](../patterns/slide-editor/request-row.md)
-- 汎用の核: [状態付きリスト項目](status-list-item.md)
