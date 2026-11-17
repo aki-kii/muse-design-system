@@ -4,7 +4,7 @@
 
 このリポジトリはドキュメントとトークンだけを持ちます。部品の実装ライブラリは含みません。
 
-- 現在の版: **v0.10.0**（[CHANGELOG](CHANGELOG.md)）
+- 現在の版: **v0.11.0**（[CHANGELOG](CHANGELOG.md)）
 - サンプルサイト（ドキュメントと部品のデモ）: https://aki-kii.github.io/muse-design-system/
 - トークンの値は Muse DS を適用済みのアプリ（jin-toreji-lu の `client/src/theme.css`）の実値と一致させています。
 
@@ -21,7 +21,7 @@
 
 そのほかの文書は次のとおりです。
 
-- 決めたことの記録: [docs/decisions/](docs/decisions/README.md)（部品とパターンの分け方は [0002](docs/decisions/0002-component-admission.md)、色・寸法・状態・アイコンは [0003](docs/decisions/0003-color-and-contrast.md)〜[0006](docs/decisions/0006-icon-set.md)）
+- 決めたことの記録: [docs/decisions/](docs/decisions/README.md)（部品とパターンの分け方は [0002](docs/decisions/0002-component-admission.md)、パターンに入れる基準は [0007](docs/decisions/0007-pattern-admission.md)、色・寸法・状態・アイコンは [0003](docs/decisions/0003-color-and-contrast.md)〜[0006](docs/decisions/0006-icon-set.md)）
 - 版の付け方: [docs/versioning.md](docs/versioning.md)
 
 ```

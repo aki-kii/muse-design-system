@@ -44,3 +44,25 @@
   </div>
   <p class="demo-note">幕・×・Esc で閉じます。「ページを追加」は文を書くまで全幅ボタンが押せません。入力のシートなので幕は <code>--scrim-strong</code>。全幅ボタンはフォームの一部として角丸 12px で、削除の確定は赤い面です。</p>
 </div>
+<div class="demo-stage" data-demo="course-switcher" style="margin-top:16px">
+  <p class="demo-cap">使用例: コース切替パネル（学習ノート）</p>
+  <div class="m-switcher-wrap">
+    <div class="m-switcher-home">
+      <div><button type="button" class="m-switch-btn" aria-expanded="false" aria-label="コース一覧を開く" data-open><span class="m-course-icon" style="background:var(--demo-course-1)" aria-hidden="true">EN</span><span aria-hidden="true">▼</span><span class="vh">英語・コースを切り替える</span></button></div>
+      <p class="demo-note">いまのコース: <strong data-current-name>英語</strong></p>
+    </div>
+    <div data-layer hidden>
+      <div class="m-scrim"></div>
+      <div class="m-switcher" role="dialog" aria-label="コース一覧">
+        <div class="m-switcher-head"><p class="m-kicker">コース</p><button type="button" class="m-x" aria-label="コース一覧を閉じる" data-close>✕</button></div>
+        <ul class="m-courses">
+          <li><button type="button" class="m-course" aria-current="true" aria-label="コース 英語に切り替える" data-name="英語"><span class="m-course-icon" style="background:var(--demo-course-1)" aria-hidden="true">EN</span>英語</button></li>
+          <li><button type="button" class="m-course" aria-label="コース AWSに切り替える" data-name="AWS"><span class="m-course-icon" style="background:var(--demo-course-3)" aria-hidden="true">AWS</span>AWS</button></li>
+          <li><button type="button" class="m-course" aria-label="コース 統計に切り替える" data-name="統計"><span class="m-course-icon" style="background:var(--demo-course-2)" aria-hidden="true">ST</span>統計</button></li>
+        </ul>
+        <p class="m-switcher-note">コースは学習ノートで増やせます。</p>
+      </div>
+    </div>
+  </div>
+  <p class="demo-note">左上のアイコンを押すとパネルが開きます。幕・✕・Esc で閉じ、コースを選ぶと切り替わります。幕は <code>--scrim</code>。コースの色は中身側の色の例です。</p>
+</div>

@@ -31,3 +31,21 @@
     </div>
   </div>
 </div>
+<div class="demo-stage" data-demo="player-top-bar" style="margin-top:16px">
+  <p class="demo-cap">使用例: プレイヤーの上端の進捗（学習ノート）</p>
+  <div class="m-player-bar m-card">
+    <div class="m-player-row">
+      <button type="button" class="m-x" aria-label="ホームに戻る" data-toast="ホームに戻ります">✕</button>
+      <div class="m-track" role="progressbar" aria-label="今の章の進み具合" aria-valuemin="0" aria-valuemax="7" aria-valuenow="3"><span style="width:43%"></span></div>
+      <span class="m-combo">×1</span>
+      <span class="m-xp"><span style="color:var(--gold)" aria-hidden="true">★</span> XP 120</span>
+    </div>
+    <p class="m-player-pos">英文法の基礎 · 疑問文と否定文 · 3/7</p>
+  </div>
+  <div class="m-btn-row">
+    <button type="button" class="m-btn m-btn--secondary" data-right>正解して進む</button>
+    <button type="button" class="m-btn m-btn--secondary" data-wrong>間違えて進む</button>
+    <button type="button" class="demo-reset" data-reset>はじめに戻す</button>
+  </div>
+  <p class="demo-note">コンボが2以上になると「×n」がブルーになります。XP の数字は <code>--text</code> で、前の ★ だけを <code>--gold</code> の飾りにしています。</p>
+</div>
