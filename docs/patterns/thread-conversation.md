@@ -1,6 +1,6 @@
 # スレッドの会話（Thread Conversation）
 
-**アプリ固有の複合体。** スライドエディタでだけ使います。v0.6.0 で、[吹き出し](../../components/message-bubble.md)に足していたスライドエディタ固有の拡張（下書きの状態とアプリ側の値）をここに移しました（[昇格のルール](../../decisions/0002-component-admission.md)）。
+**出自:** スライドエディタ。[吹き出し](../components/message-bubble.md)に、このアプリだけの拡張（下書きの状態とアプリ側の値）を足した形です（[昇格のルール](../decisions/0002-component-admission.md)）。
 
 ## 概要
 
@@ -8,9 +8,9 @@
 
 ## 組み合わせ
 
-- 上端: [デッキヘッダー](deck-header.md)のスレッドの上端（[アイコンボタン](../../components/icon-button.md)＋題＋[完了トグル](../../components/done-toggle.md)）
-- 会話: [吹き出し](../../components/message-bubble.md)のメタ行付き＋[長押しメニュー](../../components/long-press-menu.md)
-- 下端: [タイピングストリップ](typing-strip.md)＋[入力バー](../../components/memo-input-bar.md)（下に固定）
+- 上端: [デッキヘッダー](deck-header.md)のスレッドの上端（[アイコンボタン](../components/icon-button.md)＋題＋[完了トグル](../components/done-toggle.md)）
+- 会話: [吹き出し](../components/message-bubble.md)のメタ行付き＋[長押しメニュー](../components/long-press-menu.md)
+- 下端: [タイピングストリップ](typing-strip.md)＋[入力バー](../components/memo-input-bar.md)（下に固定）
 
 ## 使うとき
 
@@ -27,7 +27,7 @@
 
 ## 状態
 
-吹き出しの状態は[吹き出し](../../components/message-bubble.md)と同じです。スライドエディタでは次の状態を足します。
+吹き出しの状態は[吹き出し](../components/message-bubble.md)と同じです。スライドエディタでは次の状態を足します。
 
 | 状態 | 見た目 | 条件 |
 | --- | --- | --- |
@@ -37,7 +37,7 @@
 
 ## 仕様
 
-吹き出しの値は[吹き出し](../../components/message-bubble.md)のとおりです。v0.7.0 で、DS の吹き出しをスライドエディタの現行の値に合わせました（[決定記録 0003](../../decisions/0003-color-and-contrast.md)）。
+吹き出しの値は[吹き出し](../components/message-bubble.md)のとおりです。v0.7.0 で、DS の吹き出しをスライドエディタの現行の値に合わせました（[決定記録 0003](../decisions/0003-color-and-contrast.md)）。
 
 | 項目 | 値 | トークン |
 | --- | --- | --- |
@@ -50,10 +50,10 @@
 ## アクセシビリティ
 
 - 会話の列は `role="log"` にする。下書きであることはメタ行の文で伝える。
-- 長押しメニューのキーボード操作は[長押しメニュー](../../components/long-press-menu.md)に従う。
+- 長押しメニューのキーボード操作は[長押しメニュー](../components/long-press-menu.md)に従う。
 
 ## 関連
 
 - [スレッドカード](thread-card.md)
 - [タイピングストリップ](typing-strip.md)
-- [吹き出し](../../components/message-bubble.md)
+- [吹き出し](../components/message-bubble.md)

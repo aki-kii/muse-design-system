@@ -1,6 +1,6 @@
 # 確認待ちバッジ（Awaiting Badge）
 
-**アプリ固有の複合体。** スライドエディタでだけ使います。v0.6.0 でコンポーネントからパターンに移しました（[昇格のルール](../../decisions/0002-component-admission.md)）。別のアプリで同じものが要るときは、まず下の「組み合わせ」の汎用部品で組みます。
+**出自:** スライドエディタ。別のアプリで要るときは、まず下の「組み合わせ」の汎用部品で組みます（[昇格のルール](../decisions/0002-component-admission.md)）。
 
 ## 概要
 
@@ -8,7 +8,7 @@
 
 ## 組み合わせ
 
-- [状態付きリスト項目](../../components/status-list-item.md)の「先頭の印」の1つ。`--accent` の円に白い吹き出しのアイコン
+- [状態付きリスト項目](../components/status-list-item.md)の「先頭の印」の1つ。`--accent` の円に白い吹き出しのアイコン
 
 ## 使うとき
 
@@ -17,10 +17,10 @@
 
 ## 使わないとき
 
-- 件数を見せる → [スピードダイヤルFAB](../../components/speed-dial-fab.md)の件数バッジ
-- エージェントが作業中 → [修正中インジケータ](../../components/typing-indicator.md)
-- 解決済み → [解決済みバッジ](../../components/done-toggle.md)
-- 押せるボタンとして使わない（見た目が[メモ入力バー](../../components/memo-input-bar.md)の送信ボタンに近いため、押せる場所に置かない）
+- 件数を見せる → [スピードダイヤルFAB](../components/speed-dial-fab.md)の件数バッジ
+- エージェントが作業中 → [修正中インジケータ](../components/typing-indicator.md)
+- 解決済み → [解決済みバッジ](../components/done-toggle.md)
+- 押せるボタンとして使わない（見た目が[メモ入力バー](../components/memo-input-bar.md)の送信ボタンに近いため、押せる場所に置かない）
 
 ## バリアント
 
@@ -47,4 +47,4 @@
 ## 関連
 
 - [スレッドカード](thread-card.md)
-- [完了トグル・解決済みバッジ](../../components/done-toggle.md)
+- [完了トグル・解決済みバッジ](../components/done-toggle.md)

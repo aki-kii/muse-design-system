@@ -1,6 +1,6 @@
 # 位置ラジオ（Position Radio）
 
-**アプリ固有の複合体。** スライドエディタでだけ使います。v0.6.0 でコンポーネントからパターンに移しました（[昇格のルール](../../decisions/0002-component-admission.md)）。別のアプリで同じものが要るときは、まず下の「組み合わせ」の汎用部品で組みます。
+**出自:** スライドエディタ。別のアプリで要るときは、まず下の「組み合わせ」の汎用部品で組みます（[昇格のルール](../decisions/0002-component-admission.md)）。
 
 ## 概要
 
@@ -8,17 +8,17 @@
 
 ## 組み合わせ
 
-- [選択肢ボタン](../../components/choice-button.md)の横並び（2択）
+- [選択肢ボタン](../components/choice-button.md)の横並び（2択）
 
 ## 使うとき
 
-- [シートモーダル](../../components/sheet-modal.md)の「ページを追加」で、[ページプレビューカード](page-preview-card.md)の下に置く
+- [シートモーダル](../components/sheet-modal.md)の「ページを追加」で、[ページプレビューカード](page-preview-card.md)の下に置く
 - 2択（多くても3択）で、どちらも文で書けるもの
 
 ## 使わないとき
 
-- オン・オフ → [スイッチ](../../components/input-and-switch.md)
-- 選ぶとすぐ画面が切り替わる → タブ（[ナビゲーション](../../components/navigation.md)）
+- オン・オフ → [スイッチ](../components/input-and-switch.md)
+- 選ぶとすぐ画面が切り替わる → タブ（[ナビゲーション](../components/navigation.md)）
 - 選択肢が4つ以上 → 一覧から選ぶ形にする
 
 ## バリアント
@@ -51,4 +51,4 @@
 ## 関連
 
 - [ページプレビューカード](page-preview-card.md)
-- [シートモーダル](../../components/sheet-modal.md)
+- [シートモーダル](../components/sheet-modal.md)

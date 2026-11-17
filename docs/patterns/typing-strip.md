@@ -1,15 +1,15 @@
 # タイピングストリップ（Typing Strip）
 
-**アプリ固有の複合体。** スライドエディタでだけ使います。v0.6.0 でコンポーネントからパターンに移しました（[昇格のルール](../../decisions/0002-component-admission.md)）。別のアプリで同じものが要るときは、まず下の「組み合わせ」の汎用部品で組みます。
+**出自:** スライドエディタ。別のアプリで要るときは、まず下の「組み合わせ」の汎用部品で組みます（[昇格のルール](../decisions/0002-component-admission.md)）。
 
 ## 概要
 
-スレッドを開いているとき、[メモ入力バー](../../components/memo-input-bar.md)のすぐ上に出す細い帯です。中にニュートラルの[修正中インジケータ](../../components/typing-indicator.md)だけを置き、エージェントがこのスレッドを修正していることを会話の流れの中で伝えます。
+スレッドを開いているとき、[メモ入力バー](../components/memo-input-bar.md)のすぐ上に出す細い帯です。中にニュートラルの[修正中インジケータ](../components/typing-indicator.md)だけを置き、エージェントがこのスレッドを修正していることを会話の流れの中で伝えます。
 
 ## 組み合わせ
 
-- [作業中インジケータ](../../components/typing-indicator.md)のニュートラル
-- 置き場所は[入力バー](../../components/memo-input-bar.md)のすぐ上
+- [作業中インジケータ](../components/typing-indicator.md)のニュートラル
+- 置き場所は[入力バー](../components/memo-input-bar.md)のすぐ上
 
 ## 使うとき
 
@@ -19,7 +19,7 @@
 ## 使わないとき
 
 - 一覧の中で修正中を示す → [スレッドカード](thread-card.md)の色付きの修正中インジケータ
-- 操作の結果を伝える → 同じ位置に出す短い文（「コピーしました」。下の「バリアント」）か[トースト](../../components/toast.md)
+- 操作の結果を伝える → 同じ位置に出す短い文（「コピーしました」。下の「バリアント」）か[トースト](../components/toast.md)
 - 修正中でないときに空の帯を残さない
 
 ## バリアント
@@ -52,6 +52,6 @@
 
 ## 関連
 
-- [修正中インジケータ](../../components/typing-indicator.md)
-- [メモ入力バー](../../components/memo-input-bar.md)
-- [長押しメニュー](../../components/long-press-menu.md)
+- [修正中インジケータ](../components/typing-indicator.md)
+- [メモ入力バー](../components/memo-input-bar.md)
+- [長押しメニュー](../components/long-press-menu.md)

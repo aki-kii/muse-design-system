@@ -6,14 +6,14 @@
 
 ## 使うとき
 
-- 会話の返信や、新しいやり取りの最初の文（画面の下に固定する）。例: スライドエディタのスレッド（[スレッドの会話](../patterns/slide-editor/thread-conversation.md)）
+- 会話の返信や、新しいやり取りの最初の文（画面の下に固定する）。例: スライドエディタのスレッド（[スレッドの会話](../patterns/thread-conversation.md)）
 - [シートモーダル](sheet-modal.md)の中の短い自由記述（3行の高さで置く）。例: スライドエディタの「どんなページを追加したいか」「削除する理由」
 - 声でも文字でも書けるようにしたい、短い自由記述
 
 ## 使わないとき
 
 - ラベルとヒントが要る項目 → [入力欄](input-and-switch.md)
-- ページの中に埋め込む質問の欄 → [入力欄](input-and-switch.md)の複数行と[ボタン](button.md)で組む（例: 学習ノートの[質問ボックス](../patterns/learning-note/ask-box.md)）
+- ページの中に埋め込む質問の欄 → [入力欄](input-and-switch.md)の複数行と[ボタン](button.md)で組む（例: 学習ノートの[質問ボックス](../patterns/ask-box.md)）
 - 1行で決まった値を入れるもの（日付・数値など）
 
 ## バリアント
@@ -61,6 +61,6 @@
 
 - [アイコンボタン](icon-button.md)（送信・マイクの丸ボタン）
 - [作業中インジケータ](typing-indicator.md)
-- 適用例（スライドエディタ）: [タイピングストリップ](../patterns/slide-editor/typing-strip.md)、[スレッドの会話](../patterns/slide-editor/thread-conversation.md)
+- 適用例（スライドエディタ）: [タイピングストリップ](../patterns/typing-strip.md)、[スレッドの会話](../patterns/thread-conversation.md)
 - [吹き出し](message-bubble.md)
 - [入力欄とスイッチ](input-and-switch.md)

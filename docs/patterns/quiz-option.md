@@ -1,6 +1,6 @@
 # クイズ選択肢（Quiz Option）
 
-**アプリ固有の複合体。** 学習ノートでだけ使います。v0.6.0 でコンポーネントからパターンに移しました（[昇格のルール](../../decisions/0002-component-admission.md)）。別のアプリで同じものが要るときは、まず下の「組み合わせ」の汎用部品で組みます。
+**出自:** 学習ノート。別のアプリで要るときは、まず下の「組み合わせ」の汎用部品で組みます（[昇格のルール](../decisions/0002-component-admission.md)）。
 
 ## 概要
 
@@ -8,8 +8,8 @@
 
 ## 組み合わせ
 
-- [選択肢ボタン](../../components/choice-button.md)の縦並び（選択中の状態）に、答え合わせの後の判定の状態（正解・不正解）を足したもの
-- 「答え合わせ」は[ボタン](../../components/button.md)のプライマリ
+- [選択肢ボタン](../components/choice-button.md)の縦並び（選択中の状態）に、答え合わせの後の判定の状態（正解・不正解）を足したもの
+- 「答え合わせ」は[ボタン](../components/button.md)のプライマリ
 
 ## 使うとき
 
@@ -18,9 +18,9 @@
 
 ## 使わないとき
 
-- 設定の選択や絞り込み → [チップ](../../components/chip-and-tag.md)や[スイッチ](../../components/input-and-switch.md)
-- 自分の言葉で書かせる問題 → [入力欄](../../components/input-and-switch.md)の複数行
-- 画面の移動 → [ボタン](../../components/button.md)
+- 設定の選択や絞り込み → [チップ](../components/chip-and-tag.md)や[スイッチ](../components/input-and-switch.md)
+- 自分の言葉で書かせる問題 → [入力欄](../components/input-and-switch.md)の複数行
+- 画面の移動 → [ボタン](../components/button.md)
 
 ## バリアント
 

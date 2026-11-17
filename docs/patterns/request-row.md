@@ -1,26 +1,26 @@
 # 依頼行（Request Row）
 
-**アプリ固有の複合体。** スライドエディタでだけ使います。v0.6.0 でコンポーネントからパターンに移しました（[昇格のルール](../../decisions/0002-component-admission.md)）。別のアプリで同じものが要るときは、まず下の「組み合わせ」の汎用部品で組みます。
+**出自:** スライドエディタ。別のアプリで要るときは、まず下の「組み合わせ」の汎用部品で組みます（[昇格のルール](../decisions/0002-component-admission.md)）。
 
 ## 概要
 
-ページの追加・削除の依頼を、そのページの下に1行で見せる部品です。「ページ追加（前）: 本文」「ページ削除」のように依頼の中身を書き、右に状態（下書き・提出済み・修正中）と[完了トグル](../../components/done-toggle.md)を置きます。
+ページの追加・削除の依頼を、そのページの下に1行で見せる部品です。「ページ追加（前）: 本文」「ページ削除」のように依頼の中身を書き、右に状態（下書き・提出済み・修正中）と[完了トグル](../components/done-toggle.md)を置きます。
 
 ## 組み合わせ
 
-- [状態付きリスト項目](../../components/status-list-item.md)の1行型（中身＋状態の文字）
-- 右端に[完了トグル](../../components/done-toggle.md)、修正中は[作業中インジケータ](../../components/typing-indicator.md)
+- [状態付きリスト項目](../components/status-list-item.md)の1行型（中身＋状態の文字）
+- 右端に[完了トグル](../components/done-toggle.md)、修正中は[作業中インジケータ](../components/typing-indicator.md)
 
 ## 使うとき
 
 - スライドエディタで、[ページカウンタ行](page-counter-row.md)とスレッドの一覧の間
-- 行き場のないメモの[シートモーダル](../../components/sheet-modal.md)の中（「もとはnページ」を添える）
+- 行き場のないメモの[シートモーダル](../components/sheet-modal.md)の中（「もとはnページ」を添える）
 - 会話を伴わない、1回で終わる依頼
 
 ## 使わないとき
 
 - やり取りが続くメモ → [スレッドカード](thread-card.md)
-- 本人が自分でやるタスク → [リスト行](../../components/list-rows.md)のタスク行
+- 本人が自分でやるタスク → [リスト行](../components/list-rows.md)のタスク行
 
 ## バリアント
 
@@ -35,7 +35,7 @@
 | --- | --- | --- |
 | 下書き | 文の後に「下書き」（12px、`--dim`） | 完了トグル（オフ）＋取り消しの × |
 | 提出済み | 文の後に「提出済み」 | 完了トグル（オフ） |
-| 修正中 | 文の後に[修正中インジケータ](../../components/typing-indicator.md)（色付き） | なし |
+| 修正中 | 文の後に[修正中インジケータ](../components/typing-indicator.md)（色付き） | なし |
 | 完了 | 文に打ち消し線、色は `--faint`。行全体の不透明度は変えない | 完了トグル（オン） |
 | フォーカス | フォーカスの輪 | 完了トグル・× |
 
@@ -59,6 +59,6 @@
 
 ## 関連
 
-- [完了トグル・解決済みバッジ](../../components/done-toggle.md)
-- [スピードダイヤルFAB](../../components/speed-dial-fab.md)（ページを追加・削除の入口）
-- [シートモーダル](../../components/sheet-modal.md)
+- [完了トグル・解決済みバッジ](../components/done-toggle.md)
+- [スピードダイヤルFAB](../components/speed-dial-fab.md)（ページを追加・削除の入口）
+- [シートモーダル](../components/sheet-modal.md)

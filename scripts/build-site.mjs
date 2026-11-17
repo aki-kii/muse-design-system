@@ -202,7 +202,7 @@ function parseCatalog(src, section) {
     if (!inSection) continue;
     const h = line.match(/^###\s+(.*)/);
     if (h) { group = { title: h[1].trim(), items: [] }; groups.push(group); continue; }
-    const r = line.match(/^\|\s*\[([^\]]+)\]\(([\w-]+)\.md\)\s*\|\s*(.*?)\s*\|/);
+    const r = line.match(/^\|\s*\[([^\]]+)\]\((?:[\w-]+\/)?([\w-]+)\.md\)\s*\|\s*(.*?)\s*\|/);
     if (r) group.items.push({ name: r[1], slug: r[2], summary: r[3] });
   }
   return groups.filter((g) => g.items.length);
@@ -210,16 +210,10 @@ function parseCatalog(src, section) {
 const compGroups = parseCatalog(read('docs/components/README.md'), '一覧');
 const components = compGroups.flatMap((g) => g.items);
 for (const c of components) c.dir = 'components';
-// アプリ固有の複合体（docs/patterns/<アプリ>/README.md の表）
-const APPS = [
-  { id: 'learning-note', title: '学習ノートの複合体' },
-  { id: 'slide-editor', title: 'スライドエディタの複合体' },
-];
-for (const a of APPS) {
-  a.items = parseCatalog(read(`docs/patterns/${a.id}/README.md`)).flatMap((g) => g.items);
-  for (const c of a.items) c.dir = `patterns/${a.id}`;
-}
-const composites = APPS.flatMap((a) => a.items);
+// アプリ固有の複合体（docs/patterns.md の「アプリ固有の複合体」の表。文書は docs/patterns/ 直下）
+const COMPOSITES_H = 'アプリ固有の複合体';
+const composites = parseCatalog(read('docs/patterns.md'), COMPOSITES_H).flatMap((g) => g.items);
+for (const c of composites) c.dir = 'patterns';
 
 const pages = [];
 const page = (o) => (pages.push(o), o);
@@ -234,11 +228,8 @@ for (const c of components)
   page({ out: `components/${c.slug}.html`, src: `docs/components/${c.slug}.md`, section: 'components', comp: c, list: components });
 page({ out: 'components/_template.html', src: 'docs/components/_template.md', section: 'components', hidden: true });
 page({ out: 'patterns.html', src: 'docs/patterns.md', section: 'patterns', nav: 'パターン一覧' });
-for (const a of APPS) {
-  a.page = page({ out: `patterns/${a.id}/index.html`, src: `docs/patterns/${a.id}/README.md`, section: 'patterns', nav: '一覧', kind: 'catalog', app: a });
-  for (const c of a.items)
-    page({ out: `patterns/${a.id}/${c.slug}.html`, src: `docs/patterns/${a.id}/${c.slug}.md`, section: 'patterns', comp: c, list: a.items, app: a });
-}
+for (const c of composites)
+  page({ out: `patterns/${c.slug}.html`, src: `docs/patterns/${c.slug}.md`, section: 'patterns', comp: c, list: composites });
 page({ out: 'decisions/index.html', src: 'docs/decisions/README.md', section: 'records' });
 for (const f of readdirSync(join(root, 'docs/decisions')).filter((f) => /^\d{4}-.*\.md$/.test(f)).sort())
   page({ out: `decisions/${f.replace(/\.md$/, '.html')}`, src: `docs/decisions/${f}`, section: 'records', hidden: true });
@@ -410,9 +401,8 @@ function layout(p, body, { toc = '' } = {}) {
           .map((g) => `${g.title ? `<li class="side-sub">${esc(g.title)}</li>` : ''}${qs.filter((q) => q.comp && g.items.includes(q.comp)).map(navItem).join('')}`)
           .join('');
       } else if (s.id === 'patterns') {
-        inner = qs.filter((q) => !q.app).map(navItem).join('') + APPS
-          .map((a) => `<li class="side-sub">${esc(a.title)}</li>${qs.filter((q) => q.app === a).map(navItem).join('')}`)
-          .join('');
+        inner = qs.filter((q) => !q.comp).map(navItem).join('') +
+          `<li class="side-sub">${esc(COMPOSITES_H)}</li>${qs.filter((q) => q.comp).map(navItem).join('')}`;
       } else inner = qs.map(navItem).join('');
       return `<div class="side-group${s.id === p.section ? ' is-current' : ''}"><p class="side-title">${esc(s.title)}</p><ul>${inner}</ul></div>`;
     })
@@ -423,7 +413,6 @@ function layout(p, body, { toc = '' } = {}) {
   const crumbs = [`<li><a href="${rel('index.html')}">トップ</a></li>`];
   if (p.out !== 'index.html') {
     if (sec && sec.top !== p.out && sec.top !== 'index.html') crumbs.push(`<li><a href="${rel(sec.top)}">${esc(sec.title)}</a></li>`);
-    if (p.app && p.app.page !== p) crumbs.push(`<li><a href="${rel(p.app.page.out)}">${esc(p.app.title)}</a></li>`);
     crumbs.push(`<li aria-current="page">${esc(p.nav && p.kind !== 'home' ? p.nav : p.title)}</li>`);
   }
   const editSrc = p.src ? `<a href="${REPO}/blob/main/${p.src}" rel="noopener">GitHub で元の文書を見る（${esc(p.src)}）</a>` : '';
@@ -538,14 +527,11 @@ function buildPage(p) {
 
   if (p.kind === 'catalog') {
     // 部品の表をカードの並びにする（文面は表のまま）
-    const groupsHtml = p.app ? [p.app.items] : compGroups.map((g) => g.items);
+    const groupsHtml = compGroups.map((g) => g.items);
     let gi = 0;
     html = html.replace(/<div class="table-wrap"><table>[\s\S]*?<\/table><\/div>/g, (table) => {
       const items = groupsHtml[gi++];
-      if (!items) return table;
-      return `<ul class="catalog">${items
-        .map((c) => `<li><a class="catalog-card" href="${c.slug}.html"><span class="catalog-thumb" data-thumb="${c.slug}" aria-hidden="true">${thumb(c.slug)}</span><span class="catalog-name">${esc(c.name)}</span><span class="catalog-sum">${inline(c.summary, () => ({ href: '#' }))}</span></a></li>`)
-        .join('')}</ul>`;
+      return items ? catalogCards(items, '') : table;
     });
   }
 
@@ -569,11 +555,23 @@ function buildPage(p) {
     html = insertAtSectionEnd(html, '大きさ', spacingSample('tap'));
   }
   if (p.out === 'patterns.html') {
+    // 複合体の表だけをカードの並びにする（型の節の表はそのまま）
+    const at = html.indexOf(`id="${slugify(COMPOSITES_H)}"`);
+    const table = html.slice(at).match(/<div class="table-wrap"><table>[\s\S]*?<\/table><\/div>/);
+    if (at < 0 || !table) throw new Error('複合体の表が見つからない');
+    const ti = at + table.index;
+    html = html.slice(0, ti) + catalogCards(composites, 'patterns/') + html.slice(ti + table[0].length);
     html = insertAtSectionEnd(html, 'b-承認をはさむ型', demo('pattern-b'));
     html = insertAtSectionEnd(html, 'e-スライドの型', demo('pattern-e'));
   }
 
   return layout(p, `<article class="doc">${html}</article>`);
+}
+
+function catalogCards(items, base) {
+  return `<ul class="catalog">${items
+    .map((c) => `<li><a class="catalog-card" href="${base}${c.slug}.html"><span class="catalog-thumb" data-thumb="${c.slug}" aria-hidden="true">${thumb(c.slug)}</span><span class="catalog-name">${esc(c.name)}</span><span class="catalog-sum">${inline(c.summary, () => ({ href: '#' }))}</span></a></li>`)
+    .join('')}</ul>`;
 }
 
 // 一覧のカードに載せる小さな見本（部品のデモの縮小ではなく、部品の形だけ）

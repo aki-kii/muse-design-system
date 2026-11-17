@@ -1,6 +1,6 @@
 # 章完了パネル（Chapter Complete Panel）
 
-**アプリ固有の複合体。** 学習ノートでだけ使います。v0.6.0 でコンポーネントからパターンに移しました（[昇格のルール](../../decisions/0002-component-admission.md)）。別のアプリで同じものが要るときは、まず下の「組み合わせ」の汎用部品で組みます。
+**出自:** 学習ノート。別のアプリで要るときは、まず下の「組み合わせ」の汎用部品で組みます（[昇格のルール](../decisions/0002-component-admission.md)）。
 
 ## 概要
 
@@ -9,7 +9,7 @@
 ## 組み合わせ
 
 - ★ と大きな見出し
-- [ボタン](../../components/button.md)のプライマリとセカンダリ（次へ／戻る）
+- [ボタン](../components/button.md)のプライマリとセカンダリ（次へ／戻る）
 - ノートの終わりのバリアントの数（ページ数・XP など）
 
 ## 使うとき
@@ -51,12 +51,12 @@
 
 | 項目 | 値 | トークン |
 | --- | --- | --- |
-| 面 | [セクションカード](../../components/section-card.md)と同じ | `--surface` `--border` `--shadow-card` `--radius-card` |
+| 面 | [セクションカード](../components/section-card.md)と同じ | `--surface` `--border` `--shadow-card` `--radius-card` |
 | 内側の余白 | 24px、中央揃え | |
 | ★ | 64px / 800、金色。文字ではなく飾りの記号として扱う（64px はこのパターンだけの値） | `--gold` |
 | 見出し | 24px / 800 | `--text-2xl` |
 | 補足 | Small 段 | `--dim` |
-| ボタン | 間隔 10px、見出しとの間隔 20px | [ボタン](../../components/button.md) |
+| ボタン | 間隔 10px、見出しとの間隔 20px | [ボタン](../components/button.md) |
 
 ## アクセシビリティ
 

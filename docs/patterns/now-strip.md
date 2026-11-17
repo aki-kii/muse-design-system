@@ -1,6 +1,6 @@
 # 今ここストリップ（Now Strip）
 
-**アプリ固有の複合体。** 学習ノートでだけ使います。v0.6.0 でコンポーネントからパターンに移しました（[昇格のルール](../../decisions/0002-component-admission.md)）。別のアプリで同じものが要るときは、まず下の「組み合わせ」の汎用部品で組みます。
+**出自:** 学習ノート。別のアプリで要るときは、まず下の「組み合わせ」の汎用部品で組みます（[昇格のルール](../decisions/0002-component-admission.md)）。
 
 ## 概要
 
@@ -8,8 +8,8 @@
 
 ## 組み合わせ
 
-- [セクションカード](../../components/section-card.md)の面（`--surface`・枠・カードの影）を1行にして `position: sticky` で固定したもの
-- 中身は[進捗パス](../../components/progress-path.md)の現在地と、完了の数
+- [セクションカード](../components/section-card.md)の面（`--surface`・枠・カードの影）を1行にして `position: sticky` で固定したもの
+- 中身は[進捗パス](../components/progress-path.md)の現在地と、完了の数
 
 ## 使うとき
 
@@ -18,7 +18,7 @@
 ## 使わないとき
 
 - パスが1画面に収まる短いコース（パスの現在ノードで足りる）
-- 操作を載せない（始める操作は画面下の[ボタン](../../components/button.md)にする）
+- 操作を載せない（始める操作は画面下の[ボタン](../components/button.md)にする）
 - 学習プレイヤーの中 → [プレイヤートップバー](player-top-bar.md)
 
 ## バリアント

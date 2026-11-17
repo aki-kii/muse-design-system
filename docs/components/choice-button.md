@@ -57,4 +57,4 @@
 
 - [フラッシュカード](flashcard.md)（選んで答えるバリアント）
 - [ボタン](button.md)
-- 適用例: [クイズ選択肢](../patterns/learning-note/quiz-option.md)（学習ノート）、[位置ラジオ](../patterns/slide-editor/position-radio.md)（スライドエディタ）
+- 適用例: [クイズ選択肢](../patterns/quiz-option.md)（学習ノート）、[位置ラジオ](../patterns/position-radio.md)（スライドエディタ）

@@ -63,4 +63,4 @@
 
 - [リスト行](list-rows.md)
 - [状態付きリスト項目](status-list-item.md)
-- 適用例: [デッキカード](../patterns/slide-editor/deck-card.md)（スライドエディタ）、[本棚カバーカード](../patterns/learning-note/shelf-cover-card.md)（学習ノート）
+- 適用例: [デッキカード](../patterns/deck-card.md)（スライドエディタ）、[本棚カバーカード](../patterns/shelf-cover-card.md)（学習ノート）

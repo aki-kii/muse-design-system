@@ -13,7 +13,7 @@
 
 - はい・いいえだけの確認 → [確認ダイアログ](confirm-dialog.md)
 - 外部に触る操作の確認 → [承認カード](approval-card.md)
-- 画面の上から出る切り替え → 同じ板を上から出す（例: 学習ノートの[コース切替パネル](../patterns/learning-note/course-switcher.md)）
+- 画面の上から出る切り替え → 同じ板を上から出す（例: 学習ノートの[コース切替パネル](../patterns/course-switcher.md)）
 - 何画面も続く手続き（シートの中で画面を移らない）
 
 ## バリアント
@@ -27,9 +27,9 @@
 
 | シート | 中身 |
 | --- | --- |
-| ページを追加 | [ページプレビューカード](../patterns/slide-editor/page-preview-card.md) → [位置ラジオ](../patterns/slide-editor/position-radio.md) → [メモ入力バー](memo-input-bar.md)（3行）→ ブルーの全幅ボタン「追加リクエストとして下書きに積む」 |
+| ページを追加 | [ページプレビューカード](../patterns/page-preview-card.md) → [位置ラジオ](../patterns/position-radio.md) → [メモ入力バー](memo-input-bar.md)（3行）→ ブルーの全幅ボタン「追加リクエストとして下書きに積む」 |
 | ページを削除 | 「nページ」→ メモ入力バー（削除する理由）→ 赤い全幅ボタン「削除予定にする」。削除予定があるときは「このページは削除予定です（提出済み）」と理由、下書きなら「削除予定を取り消す」 |
-| 行き場のないメモ | 行き場のないスレッド（題・「もとはnページ ・ n件」）と[依頼行](../patterns/slide-editor/request-row.md)（シートの中）の一覧。ないときは「ありません」 |
+| 行き場のないメモ | 行き場のないスレッド（題・「もとはnページ ・ n件」）と[依頼行](../patterns/request-row.md)（シートの中）の一覧。ないときは「ありません」 |
 
 ## 状態
 
@@ -68,4 +68,4 @@
 
 - [スピードダイヤルFAB](speed-dial-fab.md)（開く入口）
 - [確認ダイアログ](confirm-dialog.md)
-- 適用例（スライドエディタ）: [ページカウンタ行](../patterns/slide-editor/page-counter-row.md)（行き場のないメモの入口）、[ページプレビューカード](../patterns/slide-editor/page-preview-card.md)
+- 適用例（スライドエディタ）: [ページカウンタ行](../patterns/page-counter-row.md)（行き場のないメモの入口）、[ページプレビューカード](../patterns/page-preview-card.md)

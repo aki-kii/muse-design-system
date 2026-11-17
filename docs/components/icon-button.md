@@ -61,4 +61,4 @@
 
 - [ボタン](button.md)
 - [入力バー](memo-input-bar.md)
-- 適用例: [デッキヘッダー](../patterns/slide-editor/deck-header.md)（スライドエディタ）、[読み上げボタン](../patterns/learning-note/speak-button.md)・[プレイヤートップバー](../patterns/learning-note/player-top-bar.md)（学習ノート）
+- 適用例: [デッキヘッダー](../patterns/deck-header.md)（スライドエディタ）、[読み上げボタン](../patterns/speak-button.md)・[プレイヤートップバー](../patterns/player-top-bar.md)（学習ノート）

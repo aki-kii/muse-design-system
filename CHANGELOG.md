@@ -4,6 +4,14 @@
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-11-17
+
+### Changed
+
+- **壊れる変更:** パターンの複合体 24件をアプリ別のフォルダ（`docs/patterns/learning-note/`・`docs/patterns/slide-editor/`）から `docs/patterns/` 直下に移し、1つの一覧にした。索引は [パターン](docs/patterns.md#アプリ固有の複合体) の表1つにまとめ、アプリ別の一覧（各フォルダの README）は外した。サイトの URL も `patterns/<アプリ>/<名前>.html` から `patterns/<名前>.html` に変わる。転送のページは作らない。
+- 各複合体の冒頭の1行を「出自: どのアプリで使っているか」にした。
+- コンポーネント・ファウンデーション・README・[ADR 0002](docs/decisions/0002-component-admission.md) から複合体へのリンクと置き場所の説明を新しい場所に合わせた。
+
 ## [0.8.2] - 2026-11-17
 
 ### Removed

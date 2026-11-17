@@ -59,4 +59,4 @@
 
 - [完了トグル・完了バッジ](done-toggle.md)
 - [作業中インジケータ](typing-indicator.md)
-- 適用例（スライドエディタ）: [スレッドカード](../patterns/slide-editor/thread-card.md)、[依頼行](../patterns/slide-editor/request-row.md)、[確認待ちバッジ](../patterns/slide-editor/awaiting-badge.md)
+- 適用例（スライドエディタ）: [スレッドカード](../patterns/thread-card.md)、[依頼行](../patterns/request-row.md)、[確認待ちバッジ](../patterns/awaiting-badge.md)

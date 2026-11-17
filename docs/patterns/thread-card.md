@@ -1,6 +1,6 @@
 # スレッドカード（Thread Card）
 
-**アプリ固有の複合体。** スライドエディタでだけ使います。v0.6.0 でコンポーネントからパターンに移しました（[昇格のルール](../../decisions/0002-component-admission.md)）。別のアプリで同じものが要るときは、まず下の「組み合わせ」の汎用部品で組みます。
+**出自:** スライドエディタ。別のアプリで要るときは、まず下の「組み合わせ」の汎用部品で組みます（[昇格のルール](../decisions/0002-component-admission.md)）。
 
 ## 概要
 
@@ -8,9 +8,9 @@
 
 ## 組み合わせ
 
-- [状態付きリスト項目](../../components/status-list-item.md)のカード型（題・件数・最後の発言・時刻＋状態）
-- 先頭の印: [確認待ちバッジ](awaiting-badge.md)、[完了バッジ](../../components/done-toggle.md)
-- 修正中の印: [作業中インジケータ](../../components/typing-indicator.md)（色付き）
+- [状態付きリスト項目](../components/status-list-item.md)のカード型（題・件数・最後の発言・時刻＋状態）
+- 先頭の印: [確認待ちバッジ](awaiting-badge.md)、[完了バッジ](../components/done-toggle.md)
+- 修正中の印: [作業中インジケータ](../components/typing-indicator.md)（色付き）
 
 ## 使うとき
 
@@ -20,15 +20,15 @@
 ## 使わないとき
 
 - ページの追加・削除の依頼 → [依頼行](request-row.md)
-- 会話そのもの → [吹き出し](../../components/message-bubble.md)（カードを開いた先）
-- 状態のない読み物の一覧 → [セクションカード](../../components/section-card.md)、[リスト行](../../components/list-rows.md)
+- 会話そのもの → [吹き出し](../components/message-bubble.md)（カードを開いた先）
+- 状態のない読み物の一覧 → [セクションカード](../components/section-card.md)、[リスト行](../components/list-rows.md)
 
 ## バリアント
 
 | バリアント | 見た目 | 条件 |
 | --- | --- | --- |
 | 標準 | 題＋「n件」／最後の発言（エージェントの発言は名前を前に付ける）／更新時刻 | 下の状態のどれでもない |
-| 細い（解決済み） | [解決済みバッジ](../../components/done-toggle.md)＋打ち消し線の `--faint` の題だけの1行 | 解決済みにした |
+| 細い（解決済み） | [解決済みバッジ](../components/done-toggle.md)＋打ち消し線の `--faint` の題だけの1行 | 解決済みにした |
 
 ## 状態
 
@@ -36,7 +36,7 @@
 | --- | --- | --- |
 | 通常 | 標準のバリアント | 本人の発言で終わっている |
 | 確認待ち | 左に[確認待ちバッジ](awaiting-badge.md) | 最後の発言がエージェント |
-| 修正中 | 枠が `--accent` になり、外側に 1px の `--accent` の輪。時刻の横に[修正中インジケータ](../../components/typing-indicator.md)（色付き） | エージェントが修正している |
+| 修正中 | 枠が `--accent` になり、外側に 1px の `--accent` の輪。時刻の横に[修正中インジケータ](../components/typing-indicator.md)（色付き） | エージェントが修正している |
 | 下書きあり | 時刻の横に「下書きn件」（`--accent-strong`、600） | まだ修正依頼に出していないメモがある |
 | 解決済み | 細いバリアント | |
 | 押下 | スレッドを開く | |
@@ -55,7 +55,7 @@
 
 | 項目 | 値 | トークン |
 | --- | --- | --- |
-| 並べ方 | 縦1列、カード同士 16px、外側 16px（下は [FAB](../../components/speed-dial-fab.md) の分 96px 空ける） | |
+| 並べ方 | 縦1列、カード同士 16px、外側 16px（下は [FAB](../components/speed-dial-fab.md) の分 96px 空ける） | |
 | カードの面 | 白、1px の枠、カードの影 | `--surface` `--border` `--shadow-card` |
 | 角丸 | 12px | `--radius-row` |
 | 内側の余白 | 16px | |
@@ -70,11 +70,11 @@
 - 並びは `<ul>` と `<li>`、カード全体を1つの `<button>` にする。
 - 状態は色やバッジだけでなく `aria-label` に文で含める（「〇〇（確認待ち）」「〇〇（エージェントが修正中）」「解決済み: 〇〇」）。
 - 解決済みは打ち消し線とバッジの両方で示す。
-- 細いバリアントは行全体を薄くしない。元のアプリの不透明度 0.7 では `--dim` の題が 4.0:1 になり 4.5:1 に届かないため、題の色を `--faint`（4.5:1 以上）にして薄さを出す（[決定記録 0005](../../decisions/0005-states-and-exceptions.md)）。
+- 細いバリアントは行全体を薄くしない。元のアプリの不透明度 0.7 では `--dim` の題が 4.0:1 になり 4.5:1 に届かないため、題の色を `--faint`（4.5:1 以上）にして薄さを出す（[決定記録 0005](../decisions/0005-states-and-exceptions.md)）。
 
 ## 関連
 
 - [確認待ちバッジ](awaiting-badge.md)
-- [完了トグル・解決済みバッジ](../../components/done-toggle.md)
-- [修正中インジケータ](../../components/typing-indicator.md)
+- [完了トグル・解決済みバッジ](../components/done-toggle.md)
+- [修正中インジケータ](../components/typing-indicator.md)
 - [依頼行](request-row.md)

@@ -61,4 +61,4 @@
 
 - [選択肢ボタン](choice-button.md)
 - [ボタン](button.md)
-- 適用例（学習ノート）: [単語カード](../patterns/learning-note/word-card.md)
+- 適用例（学習ノート）: [単語カード](../patterns/word-card.md)

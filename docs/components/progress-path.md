@@ -49,7 +49,7 @@
 | 縦線 | 幅 3px、角丸 2px、円の中心を通る | `--border` |
 | 状態の文 | 12px / 700 | |
 
-パスが長く、現在地が画面の外に出るときは、パスの上に現在地を1行で固定してよいです（例: 学習ノートの[今ここストリップ](../patterns/learning-note/now-strip.md)）。
+パスが長く、現在地が画面の外に出るときは、パスの上に現在地を1行で固定してよいです（例: 学習ノートの[今ここストリップ](../patterns/now-strip.md)）。
 
 ## アクセシビリティ
 
@@ -62,4 +62,4 @@
 
 - [リスト行](list-rows.md)
 - [ボタン](button.md)
-- 適用例（学習ノート）: [コースパス](../patterns/learning-note/course-path.md)、[今ここストリップ](../patterns/learning-note/now-strip.md)
+- 適用例（学習ノート）: [コースパス](../patterns/course-path.md)、[今ここストリップ](../patterns/now-strip.md)

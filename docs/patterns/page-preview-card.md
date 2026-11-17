@@ -1,6 +1,6 @@
 # ページプレビューカード（Page Preview Card）
 
-**アプリ固有の複合体。** スライドエディタでだけ使います。v0.6.0 でコンポーネントからパターンに移しました（[昇格のルール](../../decisions/0002-component-admission.md)）。別のアプリで同じものが要るときは、まず下の「組み合わせ」の汎用部品で組みます。
+**出自:** スライドエディタ。別のアプリで要るときは、まず下の「組み合わせ」の汎用部品で組みます（[昇格のルール](../decisions/0002-component-admission.md)）。
 
 ## 概要
 
@@ -12,7 +12,7 @@
 
 ## 使うとき
 
-- [シートモーダル](../../components/sheet-modal.md)の「ページを追加」で、[位置ラジオ](position-radio.md)の上に置く
+- [シートモーダル](../components/sheet-modal.md)の「ページを追加」で、[位置ラジオ](position-radio.md)の上に置く
 - 前後関係を見ながら差し込む位置を選ばせるとき
 
 ## 使わないとき
@@ -49,4 +49,4 @@
 ## 関連
 
 - [位置ラジオ](position-radio.md)
-- [シートモーダル](../../components/sheet-modal.md)
+- [シートモーダル](../components/sheet-modal.md)
