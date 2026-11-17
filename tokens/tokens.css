@@ -1,0 +1,96 @@
+/* Muse DS v0.3.0 — tokens/tokens.json から生成。直接編集しない。
+   作り直し: node scripts/build-tokens.mjs */
+
+:root {
+  color-scheme: light dark;
+  --bg: #EDEEF0; /* ページ全体の背景 */
+  --surface: #FFFFFF; /* カードの面 */
+  --fill: #F0F0F2; /* 控えめな面。チップ・第2ボタン・数値タイル */
+  --text: #0B0D10; /* 見出しと本文（v0.3 の ink） */
+  --dim: #454D56; /* 説明文・メタ情報（v0.3 の ink-2） */
+  --faint: #8A8D91; /* 時刻・注記（v0.3 の ink-3）。本文には使わない */
+  --border: #D2D6DC; /* 罫線・区切り（v0.3 の line） */
+  --accent: #0073E6; /* 主操作・選択中・進捗・リンクだけに使うブルー */
+  --accent-ink: #FFFFFF; /* accent の面に載せる文字 */
+  --accent-strong: #0064D1; /* ブルーの文字。ゴーストボタン・選択中の文字（v0.3 の blue-ink） */
+  --accent-soft: #E7F3FE; /* 選択中の背景・フォーカスの輪 */
+  --danger: #D92D20; /* 削除・拒否・エラーだけ */
+  --ok: #12805C; /* 完了・成功 */
+  --bubble-user: #D9EBFF; /* 本人の吹き出しの面 */
+  --bubble-user-ink: #0C2D4D; /* 本人の吹き出しの文字 */
+  --cal-common: #F08A24; /* 中身側の色: 家族カレンダー「共通」。予定行のバーと凡例だけ */
+  --cal-self: #0E7C86; /* 中身側の色: 家族カレンダー「自分」。予定行のバーと凡例だけ */
+  --cal-partner: #E5487B; /* 中身側の色: 家族カレンダー「パートナー」。予定行のバーと凡例だけ */
+  --shadow-card: 0 1px 2px rgba(17,19,24,.05), 0 8px 24px -14px rgba(17,19,24,.18); /* カードの控えめな影 */
+  --shadow-float: 0 2px 6px rgba(17,19,24,.08), 0 14px 34px -12px rgba(17,19,24,.22); /* 浮く部品（タブバー・トースト）の影 */
+  --radius-small: 6px; /* 小物・小角 */
+  --radius-row: 12px; /* 行・入力欄 */
+  --radius-card: 20px; /* カード・吹き出し */
+  --radius-pill: 999px; /* ボタン・チップ・タブバー・トースト */
+  --space-inner: 4px; /* 要素内の最小間隔 */
+  --space-row: 8px; /* チップ同士・行の上下 */
+  --space-card-gap: 14px; /* カード同士の間隔 */
+  --space-card-padding: 18px; /* カードの内側（標準） */
+  --space-section: 44px; /* セクションの間隔 */
+  --size-tap-target: 44px; /* タップ範囲の最小 */
+  --font-sans: Figtree, "Noto Sans JP", "Hiragino Sans", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+  --text-xs: 12px;
+  --text-xs--line-height: 16px;
+  --text-sm: 14px;
+  --text-sm--line-height: 20px;
+  --text-base: 16px;
+  --text-base--line-height: 24px;
+  --text-lg: 18px;
+  --text-lg--line-height: 28px;
+  --text-xl: 20px;
+  --text-xl--line-height: 28px;
+  --text-2xl: 24px;
+  --text-2xl--line-height: 32px;
+  --text-3xl: 30px;
+  --text-3xl--line-height: 36px;
+  --text-4xl: 36px;
+  --text-4xl--line-height: 40px;
+  --text-5xl: 48px;
+  --text-5xl--line-height: 52px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #000000;
+    --surface: #17181A;
+    --fill: #232527;
+    --text: #FFFFFF;
+    --dim: #C2C7CE;
+    --faint: #6E7278;
+    --border: #3E4248;
+    --accent: #5CA8FF;
+    --accent-ink: #0B0D10;
+    --accent-strong: #8FC2FF;
+    --accent-soft: #12293F;
+    --danger: #FF6B5E;
+    --bubble-user: #0E3A5F;
+    --bubble-user-ink: #EAF4FF;
+    --shadow-card: 0 1px 2px rgba(0,0,0,.35), 0 8px 24px -14px rgba(0,0,0,.5);
+    --shadow-float: 0 2px 6px rgba(0,0,0,.4), 0 14px 34px -12px rgba(0,0,0,.6);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #000000;
+  --surface: #17181A;
+  --fill: #232527;
+  --text: #FFFFFF;
+  --dim: #C2C7CE;
+  --faint: #6E7278;
+  --border: #3E4248;
+  --accent: #5CA8FF;
+  --accent-ink: #0B0D10;
+  --accent-strong: #8FC2FF;
+  --accent-soft: #12293F;
+  --danger: #FF6B5E;
+  --bubble-user: #0E3A5F;
+  --bubble-user-ink: #EAF4FF;
+  --shadow-card: 0 1px 2px rgba(0,0,0,.35), 0 8px 24px -14px rgba(0,0,0,.5);
+  --shadow-float: 0 2px 6px rgba(0,0,0,.4), 0 14px 34px -12px rgba(0,0,0,.6);
+}
