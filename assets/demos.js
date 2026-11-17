@@ -131,7 +131,7 @@
     var reset = approval($(root, '.m-approval'), function (kind) { toast(kind === 'deny' ? '送信を取りやめました' : 'メールを送りました'); });
     $(root, '[data-reset]').addEventListener('click', reset);
   };
-  init['pattern-b'] = function (root) {
+  init['approval-flow'] = function (root) {
     var results = $(root, '[data-results]');
     var reset = approval($(root, '.m-approval'), function (kind) {
       results.hidden = false;
@@ -431,74 +431,6 @@
         hide();
       });
     });
-  };
-
-  // ---------------------------------------------------------- デッキヘッダー
-  init['deck-header'] = function (root) {
-    var r = $(root, '[data-refresh]');
-    r.addEventListener('click', function () {
-      r.disabled = true;
-      r.classList.add('is-spinning');
-      r.setAttribute('aria-busy', 'true');
-      setTimeout(function () { r.disabled = false; r.classList.remove('is-spinning'); r.removeAttribute('aria-busy'); r.focus(); toast('再読み込みしました'); }, 1600);
-    });
-    var t = $(root, '[data-thread-head]');
-    var done = $(t, '.m-done');
-    done.addEventListener('click', function () {
-      setTimeout(function () { t.classList.toggle('is-resolved', done.getAttribute('aria-pressed') === 'true'); });
-    });
-  };
-
-  // ---------------------------------------------------------- スライドステージ
-  init['slide-stage'] = function (root) {
-    var stage = $(root, '.m-stage');
-    var slides = $$(root, 'template[data-slide]');
-    var counter = $(root, '[data-counter]');
-    var i = 0;
-    function draw() {
-      stage.innerHTML = slides[i].innerHTML;
-      counter.textContent = (i + 1) + ' / ' + slides.length;
-      stage.setAttribute('aria-label', 'スライド ' + (i + 1) + ' / ' + slides.length + '（右半分タップで次へ、左半分で前へ）');
-    }
-    function go(d) { var n = Math.max(0, Math.min(slides.length - 1, i + d)); if (n !== i) { i = n; draw(); } }
-    stage.addEventListener('click', function (e) {
-      var r = stage.getBoundingClientRect();
-      go(e.clientX - r.left > r.width / 2 ? 1 : -1);
-    });
-    stage.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
-      if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
-    });
-    draw();
-  };
-
-  // ---------------------------------------------------------- 完了トグル（行の打ち消しと連動）
-  init['request-row'] = function (root) {
-    $$(root, '.m-request').forEach(function (row) {
-      var done = $(row, '.m-done');
-      var cancel = $(row, '.m-cancel');
-      if (cancel) cancel.addEventListener('click', function () { row.remove(); toast('依頼を取り消しました'); });
-      if (!done) return;
-      done.addEventListener('click', function () {
-        setTimeout(function () { row.classList.toggle('is-done', done.getAttribute('aria-pressed') === 'true'); });
-      });
-    });
-  };
-
-  // ---------------------------------------------------------- タイピングストリップ
-  init['typing-strip'] = function (root) {
-    var strip = $(root, '[data-strip]');
-    var timer;
-    $(root, '[data-working]').addEventListener('click', function () {
-      clearTimeout(timer);
-      strip.innerHTML = '<span class="m-typing is-neutral" role="status"><i></i><i></i><i></i><span class="vh">エージェントが修正中</span></span>';
-    });
-    $(root, '[data-copy]').addEventListener('click', function () {
-      clearTimeout(timer);
-      strip.innerHTML = '<span role="status">コピーしました</span>';
-      timer = setTimeout(function () { strip.innerHTML = ''; }, 2000);
-    });
-    $(root, '[data-hide]').addEventListener('click', function () { clearTimeout(timer); strip.innerHTML = ''; });
   };
 
   // ---------------------------------------------------------- スピードダイヤル FAB ＋ 送信完了メッセージ
