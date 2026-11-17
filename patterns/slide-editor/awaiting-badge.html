@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>確認待ちバッジ（Awaiting Badge） | Muse Design System</title>
+<meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Noto+Sans+JP:wght@400..900&display=swap">
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/demos.css">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('muse-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
+    <span class="brand-ver">v0.6.0</span>
+    <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../../index.html">はじめに</a></li><li><a href="../../foundations/index.html">ファウンデーション</a></li><li><a href="../../components/index.html">コンポーネント</a></li><li><a href="../../patterns.html" aria-current="true">パターン</a></li><li><a href="../../decisions/index.html">記録</a></li></ul></nav>
+    <div class="header-tools">
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="表示モードを切り替える"><span data-theme-label>自動</span></button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="side" data-menu-toggle>目次</button>
+    </div>
+  </div>
+</header>
+<div class="site-body">
+  <nav class="side" id="side" aria-label="目次"><div class="side-group"><p class="side-title">はじめに</p><ul><li><a href="../../index.html">概要</a></li><li><a href="../../getting-started.html">使い方</a></li><li><a href="../../principles.html">原則</a></li></ul></div><div class="side-group"><p class="side-title">ファウンデーション</p><ul><li><a href="../../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../../foundations/color.html">色</a></li><li><a href="../../foundations/typography.html">タイポグラフィ</a></li><li><a href="../../foundations/spacing-radius-elevation.html">余白・角丸・影</a></li><li><a href="../../foundations/accessibility.html">アクセシビリティ</a></li></ul></div><div class="side-group"><p class="side-title">コンポーネント</p><ul><li><a href="../../components/index.html">コンポーネント一覧</a></li><li class="side-sub">操作と入力</li><li><a href="../../components/button.html">ボタン（Button）</a></li><li><a href="../../components/icon-button.html">アイコンボタン（Icon Button）</a></li><li><a href="../../components/chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="../../components/choice-button.html">選択肢ボタン（Choice Button）</a></li><li><a href="../../components/input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="../../components/memo-input-bar.html">入力バー（Input Bar）</a></li><li><a href="../../components/done-toggle.html">完了トグル・完了バッジ（Done Toggle / Done Badge）</a></li><li><a href="../../components/navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li class="side-sub">内容を並べる</li><li><a href="../../components/section-card.html">セクションカード（Section Card）</a></li><li><a href="../../components/list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="../../components/status-list-item.html">状態付きリスト項目（Status List Item）</a></li><li><a href="../../components/media-card.html">メディアカード（Media Card）</a></li><li><a href="../../components/progress-path.html">進捗パス（Progress Path）</a></li><li><a href="../../components/flashcard.html">フラッシュカード（Flashcard）</a></li><li><a href="../../components/message-bubble.html">吹き出し（Message Bubble）</a></li><li class="side-sub">重ねて出す・知らせる</li><li><a href="../../components/approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="../../components/sheet-modal.html">シートモーダル（Sheet Modal）</a></li><li><a href="../../components/confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="../../components/long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="../../components/speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="../../components/toast.html">トースト（Toast）</a></li><li><a href="../../components/typing-indicator.html">作業中インジケータ（Typing Indicator）</a></li></ul></div><div class="side-group is-current"><p class="side-title">パターン</p><ul><li><a href="../../patterns.html">パターン一覧</a></li><li class="side-sub">学習ノートの複合体</li><li><a href="../learning-note/index.html">一覧</a></li><li><a href="../learning-note/course-path.html">コースパス（Course Path / Path Node）</a></li><li><a href="../learning-note/now-strip.html">今ここストリップ（Now Strip）</a></li><li><a href="../learning-note/player-top-bar.html">プレイヤートップバー（Player Top Bar）</a></li><li><a href="../learning-note/word-card.html">単語カード（Word Card）</a></li><li><a href="../learning-note/quiz-option.html">クイズ選択肢（Quiz Option）</a></li><li><a href="../learning-note/result-banner.html">結果バナー（Result Banner）</a></li><li><a href="../learning-note/model-answer-box.html">模範解答ボックス（Model Answer Box）</a></li><li><a href="../learning-note/ask-box.html">質問ボックス（Ask Box）</a></li><li><a href="../learning-note/speak-button.html">読み上げボタン（Speak Button）</a></li><li><a href="../learning-note/chapter-complete-panel.html">章完了パネル（Chapter Complete Panel）</a></li><li><a href="../learning-note/shelf-cover-card.html">本棚カバーカード（Shelf Cover Card）</a></li><li><a href="../learning-note/course-switcher.html">コース切替パネル（Course Switcher）</a></li><li class="side-sub">スライドエディタの複合体</li><li><a href="index.html">一覧</a></li><li><a href="deck-card.html">デッキカード（Deck Card）</a></li><li><a href="deck-header.html">デッキヘッダー（Deck Header）</a></li><li><a href="slide-stage.html">スライドステージ（Slide Stage）</a></li><li><a href="page-counter-row.html">ページカウンタ行（Page Counter Row）</a></li><li><a href="thread-card.html">スレッドカード（Thread Card）</a></li><li><a href="awaiting-badge.html" aria-current="page">確認待ちバッジ（Awaiting Badge）</a></li><li><a href="typing-strip.html">タイピングストリップ（Typing Strip）</a></li><li><a href="request-row.html">依頼行（Request Row）</a></li><li><a href="page-preview-card.html">ページプレビューカード（Page Preview Card）</a></li><li><a href="position-radio.html">位置ラジオ（Position Radio）</a></li><li><a href="submit-message.html">送信完了メッセージ（Submit Message）</a></li><li><a href="thread-conversation.html">スレッドの会話（Thread Conversation）</a></li></ul></div><div class="side-group"><p class="side-title">記録</p><ul><li><a href="../../decisions/index.html">決定記録</a></li><li><a href="../../open-questions.html">判断待ちの点</a></li><li><a href="../../versioning.html">版の付け方</a></li><li><a href="../../changelog.html">変更履歴</a></li></ul></div></nav>
+  <main id="main" class="main">
+    <ol class="crumbs" aria-label="現在地"><li><a href="../../index.html">トップ</a></li><li><a href="../../patterns.html">パターン</a></li><li><a href="index.html">スライドエディタの複合体</a></li><li aria-current="page">確認待ちバッジ（Awaiting Badge）</li></ol>
+    <article class="doc"><h1 id="確認待ちバッジawaiting-badge">確認待ちバッジ（Awaiting Badge）</h1>
+<p class="comp-lead">ブルーの円＋吹き出し。本人が見る番の印</p>
+<section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="demo-stage" data-demo="awaiting-badge">
+  <div class="demo-row">
+    <span class="m-badge-awaiting" aria-hidden="true"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.5 8.6 8.6 0 0 1-3.8-.9L3 21l1.9-5.7A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z"/></svg></span>
+    <span class="demo-note">スレッドカードの左に置いた例は<a href="thread-card.html">スレッドカード</a>にあります。</span>
+  </div>
+</div>
+</section>
+<p><strong>アプリ固有の複合体。</strong> スライドエディタでだけ使います。v0.6.0 でコンポーネントからパターンに移しました（<a href="../../decisions/0002-component-admission.html">昇格のルール</a>）。別のアプリで同じものが要るときは、まず下の「組み合わせ」の汎用部品で組みます。</p>
+<h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
+<p>エージェントが返事をして、本人の確認を待っているスレッドに付ける丸い印です。<code>--accent</code> の円の中に白い吹き出しのアイコンを置きます。押せない印で、カード全体を押して開きます。</p>
+<h2 id="組み合わせ">組み合わせ<a class="anchor" href="#組み合わせ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li><a href="../../components/status-list-item.html">状態付きリスト項目</a>の「先頭の印」の1つ。<code>--accent</code> の円に白い吹き出しのアイコン</li></ul>
+<h2 id="使うとき">使うとき<a class="anchor" href="#使うとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li><a href="thread-card.html">スレッドカード</a>の左端。最後の発言がエージェントのときだけ</li><li>「次は本人が見る番」を一覧で目立たせたいとき</li></ul>
+<h2 id="使わないとき">使わないとき<a class="anchor" href="#使わないとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>件数を見せる → <a href="../../components/speed-dial-fab.html">スピードダイヤルFAB</a>の件数バッジ</li><li>エージェントが作業中 → <a href="../../components/typing-indicator.html">修正中インジケータ</a></li><li>解決済み → <a href="../../components/done-toggle.html">解決済みバッジ</a></li><li>押せるボタンとして使わない（見た目が<a href="../../components/memo-input-bar.html">メモ入力バー</a>の送信ボタンに近いため、押せる場所に置かない）</li></ul>
+<h2 id="バリアント">バリアント<a class="anchor" href="#バリアント" aria-label="この見出しへのリンク">#</a></h2>
+<p>なし（1種類だけ）。</p>
+<h2 id="状態">状態<a class="anchor" href="#状態" aria-label="この見出しへのリンク">#</a></h2>
+<p>押せない部品なので、状態を持ちません。出るか出ないかだけです。</p>
+<h2 id="仕様">仕様<a class="anchor" href="#仕様" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">項目</th><th scope="col">値</th><th scope="col">トークン</th></tr></thead><tbody><tr><td>大きさ</td><td>32×32px の円</td><td><code>--radius-pill</code></td></tr><tr><td>面</td><td>ブルー</td><td><code>--accent</code></td></tr><tr><td>アイコン</td><td>吹き出し、16px、線 2.2px</td><td><code>--accent-ink</code></td></tr><tr><td>本文との間</td><td>12px</td><td></td></tr></tbody></table></div>
+<h2 id="アクセシビリティ">アクセシビリティ<a class="anchor" href="#アクセシビリティ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>バッジは <code>aria-hidden=&quot;true&quot;</code> にし、確認待ちであることはカードの <code>aria-label</code>（「〇〇（確認待ち）」）で伝える。</li><li>色だけで伝えないよう、アイコンの形（吹き出し）で解決済み（チェック）と見分けられるようにする。</li></ul>
+<h2 id="関連">関連<a class="anchor" href="#関連" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li><a href="thread-card.html">スレッドカード</a></li><li><a href="../../components/done-toggle.html">完了トグル・解決済みバッジ</a></li></ul><nav class="pager" aria-label="前後の部品"><a class="pager-prev" href="thread-card.html"><span>前の部品</span>スレッドカード</a><a class="pager-next" href="typing-strip.html"><span>次の部品</span>タイピングストリップ</a></nav></article>
+    
+    <footer class="page-foot">
+      <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/patterns/slide-editor/awaiting-badge.md" rel="noopener">GitHub で元の文書を見る（docs/patterns/slide-editor/awaiting-badge.md）</a></p>
+      <p>Muse DS v0.6.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+    </footer>
+  </main>
+</div>
+<div class="m-toast-region" role="status" aria-live="polite"></div>
+<script src="../../assets/site.js" defer></script>
+<script src="../../assets/demos.js" defer></script>
+</body>
+</html>

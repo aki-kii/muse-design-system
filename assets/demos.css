@@ -545,3 +545,6 @@ button.m-node:hover:not(.is-current) { background: var(--fill); }
   .m-confetti { display: none; }
   .m-round.is-spinning .m-icon { animation: none !important; }
 }
+
+/* 選択肢ボタン: radiogroup で使うときの選択中 */
+.m-option[aria-checked="true"] { border-color: var(--accent); background: var(--accent-soft); }

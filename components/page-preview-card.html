@@ -3,7 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ページプレビューカード（Page Preview Card） | Muse Design System</title>
+<title>ページプレビューカード（移動しました） | Muse Design System</title>
+<meta http-equiv="refresh" content="0; url=../patterns/slide-editor/page-preview-card.html">
+<link rel="canonical" href="../patterns/slide-editor/page-preview-card.html">
 <meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +21,7 @@
 <header class="site-header">
   <div class="site-header-inner">
     <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
-    <span class="brand-ver">v0.5.0</span>
+    <span class="brand-ver">v0.6.0</span>
     <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="index.html" aria-current="true">コンポーネント</a></li><li><a href="../patterns.html">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
     <div class="header-tools">
       <button class="theme-btn" type="button" data-theme-toggle aria-label="表示モードを切り替える"><span data-theme-label>自動</span></button>
@@ -28,49 +30,16 @@
   </div>
 </header>
 <div class="site-body">
-  <nav class="side" id="side" aria-label="目次"><div class="side-group"><p class="side-title">はじめに</p><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></div><div class="side-group"><p class="side-title">ファウンデーション</p><ul><li><a href="../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../foundations/color.html">色</a></li><li><a href="../foundations/typography.html">タイポグラフィ</a></li><li><a href="../foundations/spacing-radius-elevation.html">余白・角丸・影</a></li><li><a href="../foundations/accessibility.html">アクセシビリティ</a></li></ul></div><div class="side-group is-current"><p class="side-title">コンポーネント</p><ul><li><a href="index.html">コンポーネント一覧</a></li><li><a href="button.html">ボタン（Button）</a></li><li><a href="chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="section-card.html">セクションカード（Section Card）</a></li><li><a href="list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li><a href="approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="message-bubble.html">吹き出し（Message Bubble）</a></li><li><a href="toast.html">トースト（Toast）</a></li><li class="side-sub">学習ノートの部品</li><li><a href="course-path.html">コースパス（Course Path / Path Node）</a></li><li><a href="now-strip.html">今ここストリップ（Now Strip）</a></li><li><a href="player-top-bar.html">プレイヤートップバー（Player Top Bar）</a></li><li><a href="word-card.html">単語カード（Word Card）</a></li><li><a href="quiz-option.html">クイズ選択肢（Quiz Option）</a></li><li><a href="result-banner.html">結果バナー（Result Banner）</a></li><li><a href="model-answer-box.html">模範解答ボックス（Model Answer Box）</a></li><li><a href="ask-box.html">質問ボックス（Ask Box）</a></li><li><a href="speak-button.html">読み上げボタン（Speak Button）</a></li><li><a href="chapter-complete-panel.html">章完了パネル（Chapter Complete Panel）</a></li><li><a href="shelf-cover-card.html">本棚カバーカード（Shelf Cover Card）</a></li><li><a href="course-switcher.html">コース切替パネル（Course Switcher）</a></li><li class="side-sub">スライドエディタの部品</li><li><a href="deck-card.html">デッキカード（Deck Card）</a></li><li><a href="deck-header.html">デッキヘッダー（Deck Header）</a></li><li><a href="slide-stage.html">スライドステージ（Slide Stage）</a></li><li><a href="page-counter-row.html">ページカウンタ行（Page Counter Row）</a></li><li><a href="thread-card.html">スレッドカード（Thread Card）</a></li><li><a href="awaiting-badge.html">確認待ちバッジ（Awaiting Badge）</a></li><li><a href="done-toggle.html">完了トグル・解決済みバッジ（Done Toggle / Resolved Badge）</a></li><li><a href="typing-indicator.html">修正中インジケータ（Typing Indicator）</a></li><li><a href="typing-strip.html">タイピングストリップ（Typing Strip）</a></li><li><a href="request-row.html">依頼行（Request Row）</a></li><li><a href="speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="memo-input-bar.html">メモ入力バー（Memo Input Bar）</a></li><li><a href="long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="sheet-modal.html">シートモーダル（Sheet Modal）</a></li><li><a href="page-preview-card.html" aria-current="page">ページプレビューカード（Page Preview Card）</a></li><li><a href="position-radio.html">位置ラジオ（Position Radio）</a></li><li><a href="confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="submit-message.html">送信完了メッセージ（Submit Message）</a></li></ul></div><div class="side-group"><p class="side-title">パターン</p><ul><li><a href="../patterns.html">パターン</a></li><li><a href="../examples/daily-brief.html">適用例: Daily Brief</a></li></ul></div><div class="side-group"><p class="side-title">記録</p><ul><li><a href="../decisions/index.html">決定記録</a></li><li><a href="../open-questions.html">判断待ちの点</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></div></nav>
+  <nav class="side" id="side" aria-label="目次"><div class="side-group"><p class="side-title">はじめに</p><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></div><div class="side-group"><p class="side-title">ファウンデーション</p><ul><li><a href="../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../foundations/color.html">色</a></li><li><a href="../foundations/typography.html">タイポグラフィ</a></li><li><a href="../foundations/spacing-radius-elevation.html">余白・角丸・影</a></li><li><a href="../foundations/accessibility.html">アクセシビリティ</a></li></ul></div><div class="side-group is-current"><p class="side-title">コンポーネント</p><ul><li><a href="index.html">コンポーネント一覧</a></li><li class="side-sub">操作と入力</li><li><a href="button.html">ボタン（Button）</a></li><li><a href="icon-button.html">アイコンボタン（Icon Button）</a></li><li><a href="chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="choice-button.html">選択肢ボタン（Choice Button）</a></li><li><a href="input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="memo-input-bar.html">入力バー（Input Bar）</a></li><li><a href="done-toggle.html">完了トグル・完了バッジ（Done Toggle / Done Badge）</a></li><li><a href="navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li class="side-sub">内容を並べる</li><li><a href="section-card.html">セクションカード（Section Card）</a></li><li><a href="list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="status-list-item.html">状態付きリスト項目（Status List Item）</a></li><li><a href="media-card.html">メディアカード（Media Card）</a></li><li><a href="progress-path.html">進捗パス（Progress Path）</a></li><li><a href="flashcard.html">フラッシュカード（Flashcard）</a></li><li><a href="message-bubble.html">吹き出し（Message Bubble）</a></li><li class="side-sub">重ねて出す・知らせる</li><li><a href="approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="sheet-modal.html">シートモーダル（Sheet Modal）</a></li><li><a href="confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="toast.html">トースト（Toast）</a></li><li><a href="typing-indicator.html">作業中インジケータ（Typing Indicator）</a></li></ul></div><div class="side-group"><p class="side-title">パターン</p><ul><li><a href="../patterns.html">パターン一覧</a></li><li class="side-sub">学習ノートの複合体</li><li><a href="../patterns/learning-note/index.html">一覧</a></li><li><a href="../patterns/learning-note/course-path.html">コースパス（Course Path / Path Node）</a></li><li><a href="../patterns/learning-note/now-strip.html">今ここストリップ（Now Strip）</a></li><li><a href="../patterns/learning-note/player-top-bar.html">プレイヤートップバー（Player Top Bar）</a></li><li><a href="../patterns/learning-note/word-card.html">単語カード（Word Card）</a></li><li><a href="../patterns/learning-note/quiz-option.html">クイズ選択肢（Quiz Option）</a></li><li><a href="../patterns/learning-note/result-banner.html">結果バナー（Result Banner）</a></li><li><a href="../patterns/learning-note/model-answer-box.html">模範解答ボックス（Model Answer Box）</a></li><li><a href="../patterns/learning-note/ask-box.html">質問ボックス（Ask Box）</a></li><li><a href="../patterns/learning-note/speak-button.html">読み上げボタン（Speak Button）</a></li><li><a href="../patterns/learning-note/chapter-complete-panel.html">章完了パネル（Chapter Complete Panel）</a></li><li><a href="../patterns/learning-note/shelf-cover-card.html">本棚カバーカード（Shelf Cover Card）</a></li><li><a href="../patterns/learning-note/course-switcher.html">コース切替パネル（Course Switcher）</a></li><li class="side-sub">スライドエディタの複合体</li><li><a href="../patterns/slide-editor/index.html">一覧</a></li><li><a href="../patterns/slide-editor/deck-card.html">デッキカード（Deck Card）</a></li><li><a href="../patterns/slide-editor/deck-header.html">デッキヘッダー（Deck Header）</a></li><li><a href="../patterns/slide-editor/slide-stage.html">スライドステージ（Slide Stage）</a></li><li><a href="../patterns/slide-editor/page-counter-row.html">ページカウンタ行（Page Counter Row）</a></li><li><a href="../patterns/slide-editor/thread-card.html">スレッドカード（Thread Card）</a></li><li><a href="../patterns/slide-editor/awaiting-badge.html">確認待ちバッジ（Awaiting Badge）</a></li><li><a href="../patterns/slide-editor/typing-strip.html">タイピングストリップ（Typing Strip）</a></li><li><a href="../patterns/slide-editor/request-row.html">依頼行（Request Row）</a></li><li><a href="../patterns/slide-editor/page-preview-card.html">ページプレビューカード（Page Preview Card）</a></li><li><a href="../patterns/slide-editor/position-radio.html">位置ラジオ（Position Radio）</a></li><li><a href="../patterns/slide-editor/submit-message.html">送信完了メッセージ（Submit Message）</a></li><li><a href="../patterns/slide-editor/thread-conversation.html">スレッドの会話（Thread Conversation）</a></li></ul></div><div class="side-group"><p class="side-title">記録</p><ul><li><a href="../decisions/index.html">決定記録</a></li><li><a href="../open-questions.html">判断待ちの点</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></div></nav>
   <main id="main" class="main">
-    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="index.html">コンポーネント</a></li><li aria-current="page">ページプレビューカード（Page Preview Card）</li></ol>
-    <article class="doc"><h1 id="ページプレビューカードpage-preview-card">ページプレビューカード（Page Preview Card）</h1>
-<p class="comp-lead">前後のページの小さな枠で差し込む位置を見せる</p>
-<section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="demo-stage" data-demo="page-preview-card">
-  <div class="demo-item" style="max-width:420px">
-    <p class="demo-cap">ページあり</p>
-    <div class="m-previews">
-      <div><span class="m-preview-label">前のページ</span><div class="m-preview-frame">4 ページ</div></div>
-      <div><span class="m-preview-label">次のページ</span><div class="m-preview-frame">5 ページ</div></div>
-    </div>
-  </div>
-  <div class="demo-item" style="max-width:420px">
-    <p class="demo-cap">なし（最後のページ）</p>
-    <div class="m-previews">
-      <div><span class="m-preview-label">前のページ</span><div class="m-preview-frame">18 ページ</div></div>
-      <div><span class="m-preview-label">次のページ</span><div class="m-preview-frame is-none">なし</div></div>
-    </div>
-  </div>
-  <p class="demo-note">黒い枠と白の文字はトークンが未定義のため（判断待ちの点 21）、モックの値で表示しています。</p>
-</div>
-</section>
-<h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
-<p>ページを追加するとき、「前のページ」と「次のページ」の2つの小さな枠を横に並べて、どこに入るかを見せる部品です。枠はスライドと同じ比で、中にページ番号だけを出します。</p>
-<h2 id="使うとき">使うとき<a class="anchor" href="#使うとき" aria-label="この見出しへのリンク">#</a></h2>
-<ul><li><a href="sheet-modal.html">シートモーダル</a>の「ページを追加」で、<a href="position-radio.html">位置ラジオ</a>の上に置く</li><li>前後関係を見ながら差し込む位置を選ばせるとき</li></ul>
-<h2 id="使わないとき">使わないとき<a class="anchor" href="#使わないとき" aria-label="この見出しへのリンク">#</a></h2>
-<ul><li>スライドの中身を見せる → <a href="slide-stage.html">スライドステージ</a>、<a href="deck-card.html">デッキカード</a>のサムネイル</li><li>押して選ぶ → 位置ラジオ（プレビューは押せない）</li></ul>
-<h2 id="バリアント">バリアント<a class="anchor" href="#バリアント" aria-label="この見出しへのリンク">#</a></h2>
-<div class="table-wrap"><table><thead><tr><th scope="col">バリアント</th><th scope="col">見た目</th><th scope="col">条件</th></tr></thead><tbody><tr><td>ページあり</td><td>「n ページ」</td><td></td></tr><tr><td>なし</td><td>「なし」（薄い文字）</td><td>最後のページで、次のページがない</td></tr></tbody></table></div>
-<h2 id="状態">状態<a class="anchor" href="#状態" aria-label="この見出しへのリンク">#</a></h2>
-<p>押せない部品なので、状態を持ちません。</p>
-<h2 id="仕様">仕様<a class="anchor" href="#仕様" aria-label="この見出しへのリンク">#</a></h2>
-<div class="table-wrap"><table><thead><tr><th scope="col">項目</th><th scope="col">値</th><th scope="col">トークン</th></tr></thead><tbody><tr><td>並べ方</td><td>2つを横に同じ幅で、間 12px</td><td></td></tr><tr><td>見出し</td><td>「前のページ」「次のページ」、12px、枠との間 4px</td><td><code>--dim</code> <code>--text-xs</code></td></tr><tr><td>枠</td><td>比 980:552、黒の面、1px の枠、内側 8px、中央に文字</td><td>黒の面は未定義（<a href="../open-questions.html#スライドエディタ由来の部品">判断待ちの点</a> 21）、枠は <code>--border</code></td></tr><tr><td>角丸</td><td>6px</td><td><code>--radius-small</code></td></tr><tr><td>枠の中の文字</td><td>11px、白の 70%（「なし」は 40%）</td><td>未定義（同 21）</td></tr></tbody></table></div>
-<h2 id="アクセシビリティ">アクセシビリティ<a class="anchor" href="#アクセシビリティ" aria-label="この見出しへのリンク">#</a></h2>
-<ul><li>2つの枠は飾りに近いので、見出しと文字をそのまま読み上げさせる（「前のページ 4 ページ」「次のページ なし」）。画像にしない。</li><li>「なし」は薄い色だけでなく文字で示す。</li></ul>
-<h2 id="関連">関連<a class="anchor" href="#関連" aria-label="この見出しへのリンク">#</a></h2>
-<ul><li><a href="position-radio.html">位置ラジオ</a></li><li><a href="sheet-modal.html">シートモーダル</a></li></ul><nav class="pager" aria-label="前後の部品"><a class="pager-prev" href="sheet-modal.html"><span>前の部品</span>シートモーダル</a><a class="pager-next" href="position-radio.html"><span>次の部品</span>位置ラジオ</a></nav></article>
+    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="index.html">コンポーネント</a></li><li aria-current="page">ページプレビューカード（移動しました）</li></ol>
+    <article class="doc"><h1 id="ページプレビューカード移動しました">ページプレビューカード（移動しました）</h1>
+<p>この文書は v0.6.0 で、スライドエディタの複合体として<a href="../patterns/slide-editor/page-preview-card.html">パターン</a>に移しました。スライドエディタでだけ使う部品の組み合わせのため、コンポーネントから外しています（<a href="../decisions/0002-component-admission.html">決定記録 0002</a>）。</p>
+<ul><li>移行先: <a href="../patterns/slide-editor/page-preview-card.html">ページプレビューカード</a></li><li>汎用の核: なし</li></ul><p><a class="m-btn m-btn--primary" href="../patterns/slide-editor/page-preview-card.html">移行先を開く</a></p></article>
     
     <footer class="page-foot">
       <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/components/page-preview-card.md" rel="noopener">GitHub で元の文書を見る（docs/components/page-preview-card.md）</a></p>
-      <p>Muse DS v0.5.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+      <p>Muse DS v0.6.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
     </footer>
   </main>
 </div>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>状態付きリスト項目（Status List Item） | Muse Design System</title>
+<meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Noto+Sans+JP:wght@400..900&display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/demos.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('muse-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
+    <span class="brand-ver">v0.6.0</span>
+    <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="index.html" aria-current="true">コンポーネント</a></li><li><a href="../patterns.html">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
+    <div class="header-tools">
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="表示モードを切り替える"><span data-theme-label>自動</span></button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="side" data-menu-toggle>目次</button>
+    </div>
+  </div>
+</header>
+<div class="site-body">
+  <nav class="side" id="side" aria-label="目次"><div class="side-group"><p class="side-title">はじめに</p><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></div><div class="side-group"><p class="side-title">ファウンデーション</p><ul><li><a href="../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../foundations/color.html">色</a></li><li><a href="../foundations/typography.html">タイポグラフィ</a></li><li><a href="../foundations/spacing-radius-elevation.html">余白・角丸・影</a></li><li><a href="../foundations/accessibility.html">アクセシビリティ</a></li></ul></div><div class="side-group is-current"><p class="side-title">コンポーネント</p><ul><li><a href="index.html">コンポーネント一覧</a></li><li class="side-sub">操作と入力</li><li><a href="button.html">ボタン（Button）</a></li><li><a href="icon-button.html">アイコンボタン（Icon Button）</a></li><li><a href="chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="choice-button.html">選択肢ボタン（Choice Button）</a></li><li><a href="input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="memo-input-bar.html">入力バー（Input Bar）</a></li><li><a href="done-toggle.html">完了トグル・完了バッジ（Done Toggle / Done Badge）</a></li><li><a href="navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li class="side-sub">内容を並べる</li><li><a href="section-card.html">セクションカード（Section Card）</a></li><li><a href="list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="status-list-item.html" aria-current="page">状態付きリスト項目（Status List Item）</a></li><li><a href="media-card.html">メディアカード（Media Card）</a></li><li><a href="progress-path.html">進捗パス（Progress Path）</a></li><li><a href="flashcard.html">フラッシュカード（Flashcard）</a></li><li><a href="message-bubble.html">吹き出し（Message Bubble）</a></li><li class="side-sub">重ねて出す・知らせる</li><li><a href="approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="sheet-modal.html">シートモーダル（Sheet Modal）</a></li><li><a href="confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="toast.html">トースト（Toast）</a></li><li><a href="typing-indicator.html">作業中インジケータ（Typing Indicator）</a></li></ul></div><div class="side-group"><p class="side-title">パターン</p><ul><li><a href="../patterns.html">パターン一覧</a></li><li class="side-sub">学習ノートの複合体</li><li><a href="../patterns/learning-note/index.html">一覧</a></li><li><a href="../patterns/learning-note/course-path.html">コースパス（Course Path / Path Node）</a></li><li><a href="../patterns/learning-note/now-strip.html">今ここストリップ（Now Strip）</a></li><li><a href="../patterns/learning-note/player-top-bar.html">プレイヤートップバー（Player Top Bar）</a></li><li><a href="../patterns/learning-note/word-card.html">単語カード（Word Card）</a></li><li><a href="../patterns/learning-note/quiz-option.html">クイズ選択肢（Quiz Option）</a></li><li><a href="../patterns/learning-note/result-banner.html">結果バナー（Result Banner）</a></li><li><a href="../patterns/learning-note/model-answer-box.html">模範解答ボックス（Model Answer Box）</a></li><li><a href="../patterns/learning-note/ask-box.html">質問ボックス（Ask Box）</a></li><li><a href="../patterns/learning-note/speak-button.html">読み上げボタン（Speak Button）</a></li><li><a href="../patterns/learning-note/chapter-complete-panel.html">章完了パネル（Chapter Complete Panel）</a></li><li><a href="../patterns/learning-note/shelf-cover-card.html">本棚カバーカード（Shelf Cover Card）</a></li><li><a href="../patterns/learning-note/course-switcher.html">コース切替パネル（Course Switcher）</a></li><li class="side-sub">スライドエディタの複合体</li><li><a href="../patterns/slide-editor/index.html">一覧</a></li><li><a href="../patterns/slide-editor/deck-card.html">デッキカード（Deck Card）</a></li><li><a href="../patterns/slide-editor/deck-header.html">デッキヘッダー（Deck Header）</a></li><li><a href="../patterns/slide-editor/slide-stage.html">スライドステージ（Slide Stage）</a></li><li><a href="../patterns/slide-editor/page-counter-row.html">ページカウンタ行（Page Counter Row）</a></li><li><a href="../patterns/slide-editor/thread-card.html">スレッドカード（Thread Card）</a></li><li><a href="../patterns/slide-editor/awaiting-badge.html">確認待ちバッジ（Awaiting Badge）</a></li><li><a href="../patterns/slide-editor/typing-strip.html">タイピングストリップ（Typing Strip）</a></li><li><a href="../patterns/slide-editor/request-row.html">依頼行（Request Row）</a></li><li><a href="../patterns/slide-editor/page-preview-card.html">ページプレビューカード（Page Preview Card）</a></li><li><a href="../patterns/slide-editor/position-radio.html">位置ラジオ（Position Radio）</a></li><li><a href="../patterns/slide-editor/submit-message.html">送信完了メッセージ（Submit Message）</a></li><li><a href="../patterns/slide-editor/thread-conversation.html">スレッドの会話（Thread Conversation）</a></li></ul></div><div class="side-group"><p class="side-title">記録</p><ul><li><a href="../decisions/index.html">決定記録</a></li><li><a href="../open-questions.html">判断待ちの点</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></div></nav>
+  <main id="main" class="main">
+    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="index.html">コンポーネント</a></li><li aria-current="page">状態付きリスト項目（Status List Item）</li></ol>
+    <article class="doc"><h1 id="状態付きリスト項目status-list-item">状態付きリスト項目（Status List Item）</h1>
+<p class="comp-lead">1件ずつ「誰の番か・作業中か」の状態を持つ一覧の項目</p>
+<section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="demo-stage" data-demo="status-list-item">
+  <div class="demo-grid2">
+    <div class="demo-item">
+      <p class="demo-cap">カード型・細いカード型</p>
+      <ul class="m-threads" style="padding:0" aria-label="やり取りの一覧（見本）">
+        <li><button type="button" class="m-thread is-working" aria-label="表の見出しをそろえる（エージェントが作業中）">
+          <span class="m-thread-body"><span class="m-thread-title-row"><span class="m-thread-title">表の見出しをそろえる</span><span class="m-thread-count">3件</span></span><span class="m-thread-last">エージェント: 見出しを太字にそろえます</span><span class="m-thread-foot">10:21<span class="m-typing" role="status"><i></i><i></i><i></i><span class="vh">エージェントが作業中</span></span></span></span>
+        </button></li>
+        <li><button type="button" class="m-thread" aria-label="書き出しを短くしたい（確認待ち）">
+          <span class="m-badge-awaiting" aria-hidden="true"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.5 8.6 8.6 0 0 1-3.8-.9L3 21l1.9-5.7A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z"/></svg></span>
+          <span class="m-thread-body"><span class="m-thread-title-row"><span class="m-thread-title">書き出しを短くしたい</span><span class="m-thread-count">2件</span></span><span class="m-thread-last">エージェント: 2文にまとめました</span><span class="m-thread-foot">10:05</span></span>
+        </button></li>
+        <li><button type="button" class="m-thread" aria-label="図に説明を足す（下書き1件）">
+          <span class="m-thread-body"><span class="m-thread-title-row"><span class="m-thread-title">図に説明を足す</span><span class="m-thread-count">1件</span></span><span class="m-thread-last">矢印の意味を書きたい</span><span class="m-thread-foot">9:48<span class="m-thread-draft">下書き1件</span></span></span>
+        </button></li>
+        <li><button type="button" class="m-thread is-thin" aria-label="完了: 誤字を直す">
+          <span class="m-done is-badge" aria-hidden="true"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span class="m-thread-title">誤字を直す</span>
+        </button></li>
+      </ul>
+    </div>
+    <div class="demo-item">
+      <p class="demo-cap">1行型（右端に完了トグル）</p>
+      <ul class="m-requests" style="padding:0">
+        <li class="m-request"><span class="m-request-text"><span class="m-request-main">表を1つ足す</span><span class="m-request-state">下書き</span></span><button type="button" class="m-done" aria-pressed="false" aria-label="完了にする" data-toggle-pressed data-labels="完了にする|未完了に戻す"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></button></li>
+        <li class="m-request"><span class="m-request-text"><span class="m-request-main">最後の段落を消す</span><span class="m-typing" role="status" style="margin-left:8px"><i></i><i></i><i></i><span class="vh">エージェントが作業中</span></span></span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="demo-note">上から 作業中・本人の番・下書きあり・完了。中身は架空です。</p>
+</div>
+</section>
+<h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
+<p>一覧の1件ごとに「いま誰の番か・どこまで進んだか」の状態を持たせ、状態に応じて見た目を変える項目です。先頭の印・題・補足・状態の印を1行（またはカード）に並べ、押すとその項目を開きます。<a href="list-rows.html">リスト行</a>のタスク行が「本人が付ける完了」だけを持つのに対し、相手（エージェントなど）とのやり取りで変わる状態を持ちます。</p>
+<h2 id="使うとき">使うとき<a class="anchor" href="#使うとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>依頼・やり取り・ジョブのように、1件ずつ状態が変わっていくものの一覧</li><li>「次は本人が見る番」「相手が作業中」を一覧のまま見分けたいとき</li></ul>
+<h2 id="使わないとき">使わないとき<a class="anchor" href="#使わないとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>状態のない一覧 → <a href="list-rows.html">リスト行</a>、<a href="section-card.html">セクションカード</a></li><li>本人だけが完了を付ける「やること」 → <a href="list-rows.html">リスト行</a>のタスク行</li><li>見た目で選ぶ一覧 → <a href="media-card.html">メディアカード</a></li><li>やり取りの中身そのもの → <a href="message-bubble.html">吹き出し</a>（開いた先）</li></ul>
+<h2 id="バリアント">バリアント<a class="anchor" href="#バリアント" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">バリアント</th><th scope="col">構成</th><th scope="col">用途</th></tr></thead><tbody><tr><td>カード型</td><td>先頭の印＋（題・件数）＋最後の発言＋（時刻・状態の印）。<code>--surface</code> の面にカードの影</td><td>中身の要約まで見せたい一覧</td></tr><tr><td>1行型</td><td>題＋状態の文字＋右端の<a href="done-toggle.html">完了トグル</a></td><td>1回で終わる依頼など、短い一覧</td></tr><tr><td>細いカード型</td><td>先頭の印＋題だけ</td><td>完了したもの。一覧の下にまとめる</td></tr></tbody></table></div>
+<h2 id="状態">状態<a class="anchor" href="#状態" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">状態</th><th scope="col">見た目</th><th scope="col">印</th></tr></thead><tbody><tr><td>本人の番</td><td>先頭に <code>--accent</code> の円の印</td><td>アプリごとの印（例: 吹き出しのアイコン）</td></tr><tr><td>相手が作業中</td><td>枠を <code>--accent</code> にし、時刻の横に色付きの<a href="typing-indicator.html">作業中インジケータ</a></td><td>作業中インジケータ</td></tr><tr><td>下書きあり</td><td>時刻の横に「下書きn件」（<code>--accent-strong</code>）</td><td>文字</td></tr><tr><td>完了</td><td>細いカード型にし、題を <code>--dim</code>＋打ち消し線。先頭に<a href="done-toggle.html">完了バッジ</a></td><td>完了バッジ</td></tr><tr><td>押下</td><td>0.99 倍に縮む</td><td></td></tr><tr><td>フォーカス</td><td>フォーカスの輪</td><td></td></tr></tbody></table></div>
+<p>先頭の印は、押せない印です。同じ位置に押せるボタンを置きません。完了の薄さ（行全体の不透明度）は<a href="../open-questions.html#スライドエディタ由来の部品">判断待ちの点</a> 24 で決めます。</p>
+<h2 id="仕様">仕様<a class="anchor" href="#仕様" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">項目</th><th scope="col">値</th><th scope="col">トークン</th></tr></thead><tbody><tr><td>カード型の面</td><td>白、1px の枠、カードの影、内側の余白 16px</td><td><code>--surface</code> <code>--border</code> <code>--shadow-card</code></td></tr><tr><td>角丸</td><td>12px</td><td><code>--radius-row</code></td></tr><tr><td>項目同士の間隔</td><td>8px</td><td><code>--space-row</code></td></tr><tr><td>先頭の印</td><td>32px の円</td><td><code>--radius-pill</code></td></tr><tr><td>題</td><td>13px / 500、1行で切る（…）</td><td><code>--text</code></td></tr><tr><td>補足・時刻</td><td>12px</td><td><code>--dim</code></td></tr><tr><td>1行型の高さ</td><td>44px 以上</td><td><code>--size-tap-target</code></td></tr></tbody></table></div>
+<h2 id="アクセシビリティ">アクセシビリティ<a class="anchor" href="#アクセシビリティ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>一覧は <code>&lt;ul&gt;</code>、カード型は1件を <code>&lt;button&gt;</code>（開く先がページなら <code>&lt;a&gt;</code>）にする。</li><li>状態は印の色だけで伝えず、<code>aria-label</code> に含める（例:「題（確認待ち）」「題（エージェントが修正中）」）。印は <code>aria-hidden=&quot;true&quot;</code>。</li><li>1行型で完了トグルを置くときは、項目を開く操作とトグルを別の要素にする（入れ子のボタンにしない）。</li></ul>
+<h2 id="関連">関連<a class="anchor" href="#関連" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li><a href="done-toggle.html">完了トグル・完了バッジ</a></li><li><a href="typing-indicator.html">作業中インジケータ</a></li><li>適用例（スライドエディタ）: <a href="../patterns/slide-editor/thread-card.html">スレッドカード</a>、<a href="../patterns/slide-editor/request-row.html">依頼行</a>、<a href="../patterns/slide-editor/awaiting-badge.html">確認待ちバッジ</a></li></ul><nav class="pager" aria-label="前後の部品"><a class="pager-prev" href="list-rows.html"><span>前の部品</span>リスト行</a><a class="pager-next" href="media-card.html"><span>次の部品</span>メディアカード</a></nav></article>
+    
+    <footer class="page-foot">
+      <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/components/status-list-item.md" rel="noopener">GitHub で元の文書を見る（docs/components/status-list-item.md）</a></p>
+      <p>Muse DS v0.6.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+    </footer>
+  </main>
+</div>
+<div class="m-toast-region" role="status" aria-live="polite"></div>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/demos.js" defer></script>
+</body>
+</html>
