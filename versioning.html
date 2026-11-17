@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>版の付け方 | Muse Design System</title>
+<meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Noto+Sans+JP:wght@400..900&display=swap">
+<link rel="stylesheet" href="tokens/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/demos.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('muse-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
+    <span class="brand-ver">v0.5.0</span>
+    <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="index.html">はじめに</a></li><li><a href="foundations/index.html">ファウンデーション</a></li><li><a href="components/index.html">コンポーネント</a></li><li><a href="patterns.html">パターン</a></li><li><a href="decisions/index.html" aria-current="true">記録</a></li></ul></nav>
+    <div class="header-tools">
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="表示モードを切り替える"><span data-theme-label>自動</span></button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="side" data-menu-toggle>目次</button>
+    </div>
+  </div>
+</header>
+<div class="site-body">
+  <nav class="side" id="side" aria-label="目次"><div class="side-group"><p class="side-title">はじめに</p><ul><li><a href="index.html">概要</a></li><li><a href="getting-started.html">使い方</a></li><li><a href="principles.html">原則</a></li></ul></div><div class="side-group"><p class="side-title">ファウンデーション</p><ul><li><a href="foundations/index.html">ファウンデーションの考え方</a></li><li><a href="foundations/color.html">色</a></li><li><a href="foundations/typography.html">タイポグラフィ</a></li><li><a href="foundations/spacing-radius-elevation.html">余白・角丸・影</a></li><li><a href="foundations/accessibility.html">アクセシビリティ</a></li></ul></div><div class="side-group"><p class="side-title">コンポーネント</p><ul><li><a href="components/index.html">コンポーネント一覧</a></li><li><a href="components/button.html">ボタン（Button）</a></li><li><a href="components/chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="components/section-card.html">セクションカード（Section Card）</a></li><li><a href="components/list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="components/input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="components/navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li><a href="components/approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="components/message-bubble.html">吹き出し（Message Bubble）</a></li><li><a href="components/toast.html">トースト（Toast）</a></li><li class="side-sub">学習ノートの部品</li><li><a href="components/course-path.html">コースパス（Course Path / Path Node）</a></li><li><a href="components/now-strip.html">今ここストリップ（Now Strip）</a></li><li><a href="components/player-top-bar.html">プレイヤートップバー（Player Top Bar）</a></li><li><a href="components/word-card.html">単語カード（Word Card）</a></li><li><a href="components/quiz-option.html">クイズ選択肢（Quiz Option）</a></li><li><a href="components/result-banner.html">結果バナー（Result Banner）</a></li><li><a href="components/model-answer-box.html">模範解答ボックス（Model Answer Box）</a></li><li><a href="components/ask-box.html">質問ボックス（Ask Box）</a></li><li><a href="components/speak-button.html">読み上げボタン（Speak Button）</a></li><li><a href="components/chapter-complete-panel.html">章完了パネル（Chapter Complete Panel）</a></li><li><a href="components/shelf-cover-card.html">本棚カバーカード（Shelf Cover Card）</a></li><li><a href="components/course-switcher.html">コース切替パネル（Course Switcher）</a></li><li class="side-sub">スライドエディタの部品</li><li><a href="components/deck-card.html">デッキカード（Deck Card）</a></li><li><a href="components/deck-header.html">デッキヘッダー（Deck Header）</a></li><li><a href="components/slide-stage.html">スライドステージ（Slide Stage）</a></li><li><a href="components/page-counter-row.html">ページカウンタ行（Page Counter Row）</a></li><li><a href="components/thread-card.html">スレッドカード（Thread Card）</a></li><li><a href="components/awaiting-badge.html">確認待ちバッジ（Awaiting Badge）</a></li><li><a href="components/done-toggle.html">完了トグル・解決済みバッジ（Done Toggle / Resolved Badge）</a></li><li><a href="components/typing-indicator.html">修正中インジケータ（Typing Indicator）</a></li><li><a href="components/typing-strip.html">タイピングストリップ（Typing Strip）</a></li><li><a href="components/request-row.html">依頼行（Request Row）</a></li><li><a href="components/speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="components/memo-input-bar.html">メモ入力バー（Memo Input Bar）</a></li><li><a href="components/long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="components/sheet-modal.html">シートモーダル（Sheet Modal）</a></li><li><a href="components/page-preview-card.html">ページプレビューカード（Page Preview Card）</a></li><li><a href="components/position-radio.html">位置ラジオ（Position Radio）</a></li><li><a href="components/confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="components/submit-message.html">送信完了メッセージ（Submit Message）</a></li></ul></div><div class="side-group"><p class="side-title">パターン</p><ul><li><a href="patterns.html">パターン</a></li><li><a href="examples/daily-brief.html">適用例: Daily Brief</a></li></ul></div><div class="side-group is-current"><p class="side-title">記録</p><ul><li><a href="decisions/index.html">決定記録</a></li><li><a href="open-questions.html">判断待ちの点</a></li><li><a href="versioning.html" aria-current="page">版の付け方</a></li><li><a href="changelog.html">変更履歴</a></li></ul></div></nav>
+  <main id="main" class="main">
+    <ol class="crumbs" aria-label="現在地"><li><a href="index.html">トップ</a></li><li><a href="decisions/index.html">記録</a></li><li aria-current="page">版の付け方</li></ol>
+    <article class="doc"><h1 id="版の付け方">版の付け方</h1>
+<p>Muse DS は <a href="https://semver.org/lang/ja/" rel="noopener">Semantic Versioning</a>（<code>MAJOR.MINOR.PATCH</code>）で版を付けます。版番号は <code>package.json</code> の <code>version</code> に書き、リリースのたびに <code>v0.3.0</code> の形の git タグを付けます。</p>
+<h2 id="どの番号を上げるか">どの番号を上げるか<a class="anchor" href="#どの番号を上げるか" aria-label="この見出しへのリンク">#</a></h2>
+<p>このリポジトリはドキュメントとトークンを持つので、「使っている側が直す必要があるか」で決めます。</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">上げる番号</th><th scope="col">当てはまる変更</th><th scope="col">例</th></tr></thead><tbody><tr><td>MAJOR</td><td>使っている側が直さないと壊れる、または見た目が意図せず変わる</td><td>トークンの削除・改名、部品の廃止、「使うとき／使わないとき」の判断の反対向きの変更</td></tr><tr><td>MINOR</td><td>足すだけで、今の使い方はそのまま動く</td><td>トークンの追加、部品やパターンの追加、バリアントの追加</td></tr><tr><td>PATCH</td><td>判断を変えない修正</td><td>誤字、説明の補い、リンクの修正、コントラストを満たすための小さな値の調整</td></tr></tbody></table></div>
+<p>トークンの<strong>値</strong>を変えるときは、見た目が変わる範囲で判断します。全体の印象が変わる変更（アクセント色の変更など）は MINOR 以上にします。</p>
+<h2 id="100-になるまで">1.0.0 になるまで<a class="anchor" href="#100-になるまで" aria-label="この見出しへのリンク">#</a></h2>
+<p>0.x の間は、MINOR を上げる変更に壊れる変更も含めてよいことにします（semver の 0.x の扱いに従う）。その場合は CHANGELOG の該当版に「壊れる変更」として明記します。</p>
+<p>1.0.0 にする目安:</p>
+<ul><li><a href="open-questions.html">判断待ちの点</a> がすべて決まっている</li><li>2つ以上のアプリやスペースに適用して、トークンの名前を変える必要がなくなっている</li></ul>
+<h2 id="変更の手順">変更の手順<a class="anchor" href="#変更の手順" aria-label="この見出しへのリンク">#</a></h2>
+<ol><li>変更を入れる。トークンなら <code>tokens/tokens.json</code> を直し、<code>npm run tokens</code> で <code>tokens.css</code> を作り直す。</li><li><code>CHANGELOG.md</code> の <code>[Unreleased]</code> に、Added／Changed／Deprecated／Removed／Fixed のどれかで1行書く。</li><li>判断を伴う変更は <code>docs/decisions/</code> に決定記録を足す。</li><li>リリースするとき、<code>[Unreleased]</code> を版番号と日付に置き換え、<code>package.json</code> の <code>version</code> を上げ、タグを付ける。</li></ol>
+<pre class="code"><code data-lang="sh">git tag v0.3.0
+git push origin v0.3.0</code></pre>
+<h2 id="廃止の手順">廃止の手順<a class="anchor" href="#廃止の手順" aria-label="この見出しへのリンク">#</a></h2>
+<p>トークンや部品をなくすときは、すぐに消さず、まず CHANGELOG の Deprecated に書いて1つ以上の MINOR 版のあいだ残します。消すのは次の MAJOR 版（0.x の間は次の MINOR 版）です。</p></article>
+    
+    <footer class="page-foot">
+      <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/versioning.md" rel="noopener">GitHub で元の文書を見る（docs/versioning.md）</a></p>
+      <p>Muse DS v0.5.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+    </footer>
+  </main>
+</div>
+<div class="m-toast-region" role="status" aria-live="polite"></div>
+<script src="assets/site.js" defer></script>
+<script src="assets/demos.js" defer></script>
+</body>
+</html>

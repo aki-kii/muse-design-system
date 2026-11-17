@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>入力欄とスイッチ（Input / Switch） | Muse Design System</title>
+<meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Noto+Sans+JP:wght@400..900&display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/demos.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('muse-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
+    <span class="brand-ver">v0.5.0</span>
+    <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="index.html" aria-current="true">コンポーネント</a></li><li><a href="../patterns.html">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
+    <div class="header-tools">
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="表示モードを切り替える"><span data-theme-label>自動</span></button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="side" data-menu-toggle>目次</button>
+    </div>
+  </div>
+</header>
+<div class="site-body">
+  <nav class="side" id="side" aria-label="目次"><div class="side-group"><p class="side-title">はじめに</p><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></div><div class="side-group"><p class="side-title">ファウンデーション</p><ul><li><a href="../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../foundations/color.html">色</a></li><li><a href="../foundations/typography.html">タイポグラフィ</a></li><li><a href="../foundations/spacing-radius-elevation.html">余白・角丸・影</a></li><li><a href="../foundations/accessibility.html">アクセシビリティ</a></li></ul></div><div class="side-group is-current"><p class="side-title">コンポーネント</p><ul><li><a href="index.html">コンポーネント一覧</a></li><li><a href="button.html">ボタン（Button）</a></li><li><a href="chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="section-card.html">セクションカード（Section Card）</a></li><li><a href="list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="input-and-switch.html" aria-current="page">入力欄とスイッチ（Input / Switch）</a></li><li><a href="navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li><a href="approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="message-bubble.html">吹き出し（Message Bubble）</a></li><li><a href="toast.html">トースト（Toast）</a></li><li class="side-sub">学習ノートの部品</li><li><a href="course-path.html">コースパス（Course Path / Path Node）</a></li><li><a href="now-strip.html">今ここストリップ（Now Strip）</a></li><li><a href="player-top-bar.html">プレイヤートップバー（Player Top Bar）</a></li><li><a href="word-card.html">単語カード（Word Card）</a></li><li><a href="quiz-option.html">クイズ選択肢（Quiz Option）</a></li><li><a href="result-banner.html">結果バナー（Result Banner）</a></li><li><a href="model-answer-box.html">模範解答ボックス（Model Answer Box）</a></li><li><a href="ask-box.html">質問ボックス（Ask Box）</a></li><li><a href="speak-button.html">読み上げボタン（Speak Button）</a></li><li><a href="chapter-complete-panel.html">章完了パネル（Chapter Complete Panel）</a></li><li><a href="shelf-cover-card.html">本棚カバーカード（Shelf Cover Card）</a></li><li><a href="course-switcher.html">コース切替パネル（Course Switcher）</a></li><li class="side-sub">スライドエディタの部品</li><li><a href="deck-card.html">デッキカード（Deck Card）</a></li><li><a href="deck-header.html">デッキヘッダー（Deck Header）</a></li><li><a href="slide-stage.html">スライドステージ（Slide Stage）</a></li><li><a href="page-counter-row.html">ページカウンタ行（Page Counter Row）</a></li><li><a href="thread-card.html">スレッドカード（Thread Card）</a></li><li><a href="awaiting-badge.html">確認待ちバッジ（Awaiting Badge）</a></li><li><a href="done-toggle.html">完了トグル・解決済みバッジ（Done Toggle / Resolved Badge）</a></li><li><a href="typing-indicator.html">修正中インジケータ（Typing Indicator）</a></li><li><a href="typing-strip.html">タイピングストリップ（Typing Strip）</a></li><li><a href="request-row.html">依頼行（Request Row）</a></li><li><a href="speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="memo-input-bar.html">メモ入力バー（Memo Input Bar）</a></li><li><a href="long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="sheet-modal.html">シートモーダル（Sheet Modal）</a></li><li><a href="page-preview-card.html">ページプレビューカード（Page Preview Card）</a></li><li><a href="position-radio.html">位置ラジオ（Position Radio）</a></li><li><a href="confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="submit-message.html">送信完了メッセージ（Submit Message）</a></li></ul></div><div class="side-group"><p class="side-title">パターン</p><ul><li><a href="../patterns.html">パターン</a></li><li><a href="../examples/daily-brief.html">適用例: Daily Brief</a></li></ul></div><div class="side-group"><p class="side-title">記録</p><ul><li><a href="../decisions/index.html">決定記録</a></li><li><a href="../open-questions.html">判断待ちの点</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></div></nav>
+  <main id="main" class="main">
+    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="index.html">コンポーネント</a></li><li aria-current="page">入力欄とスイッチ（Input / Switch）</li></ol>
+    <article class="doc"><h1 id="入力欄とスイッチinput--switch">入力欄とスイッチ（Input / Switch）</h1>
+<p class="comp-lead">ラベル＋欄＋ヒント。スイッチは即時に効く設定だけ</p>
+<section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="demo-stage" data-demo="input-and-switch">
+  <div class="demo-item">
+    <p class="demo-cap">入力欄（空のまま欄を離れるとエラーの状態）</p>
+    <div class="m-field" data-validate="指示を入れてください。例: 技術系のニュースを3本">
+      <label class="m-label" for="ip-1">フィードの指示</label>
+      <input class="m-input" id="ip-1" type="text" placeholder="例: 技術系のニュースを3本" aria-describedby="ip-1-h">
+      <p class="m-hint" id="ip-1-h">何を集めてほしいかを短く書きます</p>
+    </div>
+  </div>
+  <div class="demo-item">
+    <p class="demo-cap">エラー</p>
+    <div class="m-field is-error">
+      <label class="m-label" for="ip-2">メールアドレス</label>
+      <input class="m-input" id="ip-2" type="email" value="mame@" aria-invalid="true" aria-describedby="ip-2-h">
+      <p class="m-hint" id="ip-2-h">@ の後ろまで入れてください</p>
+    </div>
+  </div>
+  <div class="demo-item">
+    <p class="demo-cap">スイッチの行（行全体が押せる）</p>
+    <div class="m-switch-row" data-name="朝のブリーフ">
+      <span class="m-switch-text"><span class="m-switch-title" id="sw-1">朝のブリーフ</span><span class="m-switch-sub">毎朝 7:00 に Daily Brief を更新する</span></span>
+      <button type="button" class="m-switch" role="switch" aria-checked="true" aria-labelledby="sw-1"></button>
+    </div>
+    <div class="m-switch-row" data-name="通知">
+      <span class="m-switch-text"><span class="m-switch-title" id="sw-2">通知</span><span class="m-switch-sub">承認が要るときに知らせる</span></span>
+      <button type="button" class="m-switch" role="switch" aria-checked="false" aria-labelledby="sw-2"></button>
+    </div>
+  </div>
+</div>
+</section>
+<h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
+<p>入力欄は「ラベル＋欄＋ヒント」の3点セットです。スイッチはオン／オフが即座に効く設定だけに使います。</p>
+<h2 id="使うとき">使うとき<a class="anchor" href="#使うとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>入力欄: ラベルは常時表示する。プレースホルダは例だけに使う</li><li>スイッチ: 切り替えた瞬間に反映される設定（通知のオン／オフなど）</li></ul>
+<h2 id="使わないとき">使わないとき<a class="anchor" href="#使わないとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>「保存」が必要な設定にスイッチを使わない → <a href="button.html">ボタン</a>で確定する形にする</li><li>選択肢が3つ以上あるものにスイッチを使わない</li></ul>
+<h2 id="バリアント">バリアント<a class="anchor" href="#バリアント" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">バリアント</th><th scope="col">構成</th><th scope="col">例</th></tr></thead><tbody><tr><td>入力欄</td><td>ラベル＋欄＋ヒント</td><td>フィードの指示</td></tr><tr><td>スイッチの行</td><td>題＋補足＋スイッチ</td><td>朝のブリーフ ｜ 毎朝 7:00 に Daily Brief を更新する</td></tr></tbody></table></div>
+<h2 id="状態">状態<a class="anchor" href="#状態" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">状態</th><th scope="col">見た目</th><th scope="col">対象</th></tr></thead><tbody><tr><td>通常</td><td>1.5px の枠、<code>--border</code></td><td>入力欄</td></tr><tr><td>フォーカス</td><td>枠が <code>--accent</code> になり、外に <code>--accent-soft</code> の輪</td><td>入力欄・スイッチ</td></tr><tr><td>エラー</td><td>ヒントの位置に <code>--danger</code> の文</td><td>入力欄</td></tr><tr><td>オン</td><td><code>--accent</code> の面</td><td>スイッチ</td></tr><tr><td>オフ</td><td><code>--border</code> の面</td><td>スイッチ</td></tr></tbody></table></div>
+<h2 id="仕様">仕様<a class="anchor" href="#仕様" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">項目</th><th scope="col">値</th><th scope="col">トークン</th></tr></thead><tbody><tr><td>ラベル</td><td>13px / 600</td><td></td></tr><tr><td>入力欄の高さ</td><td>48px</td><td></td></tr><tr><td>入力欄の角丸</td><td>12px</td><td><code>--radius-row</code></td></tr><tr><td>入力欄の文字</td><td>16px（iOS の拡大表示を防ぐ）</td><td><code>--text-base</code></td></tr><tr><td>ヒント</td><td>12px</td><td><code>--dim</code></td></tr><tr><td>スイッチの大きさ</td><td>52×32px</td><td></td></tr><tr><td>スイッチの角丸</td><td>999px</td><td><code>--radius-pill</code></td></tr></tbody></table></div>
+<p>ヒントは「何を書けばいいか」の例を出す場所で、エラーの文もここに出します。</p>
+<h2 id="アクセシビリティ">アクセシビリティ<a class="anchor" href="#アクセシビリティ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>ラベルは <code>&lt;label for&gt;</code> で欄に結び付ける。プレースホルダをラベルの代わりにしない。</li><li>ヒントとエラーの文は <code>aria-describedby</code> で欄に結び付け、エラーのときは <code>aria-invalid=&quot;true&quot;</code> を付ける。</li><li>エラーは赤い色だけでなく文で伝える。</li><li>スイッチは <code>&lt;button role=&quot;switch&quot; aria-checked&gt;</code> にし、題をラベルとして結び付ける。スイッチの高さは 32px なので、行全体を押せるようにして 44px を確保する。</li></ul>
+<h2 id="関連">関連<a class="anchor" href="#関連" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li><a href="button.html">ボタン</a></li></ul><nav class="pager" aria-label="前後の部品"><a class="pager-prev" href="list-rows.html"><span>前の部品</span>リスト行</a><a class="pager-next" href="navigation.html"><span>次の部品</span>ナビゲーション</a></nav></article>
+    
+    <footer class="page-foot">
+      <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/components/input-and-switch.md" rel="noopener">GitHub で元の文書を見る（docs/components/input-and-switch.md）</a></p>
+      <p>Muse DS v0.5.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+    </footer>
+  </main>
+</div>
+<div class="m-toast-region" role="status" aria-live="polite"></div>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/demos.js" defer></script>
+</body>
+</html>

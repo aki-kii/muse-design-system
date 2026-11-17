@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>スライドステージ（Slide Stage） | Muse Design System</title>
+<meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Noto+Sans+JP:wght@400..900&display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/demos.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('muse-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
+    <span class="brand-ver">v0.5.0</span>
+    <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="index.html" aria-current="true">コンポーネント</a></li><li><a href="../patterns.html">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
+    <div class="header-tools">
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="表示モードを切り替える"><span data-theme-label>自動</span></button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="side" data-menu-toggle>目次</button>
+    </div>
+  </div>
+</header>
+<div class="site-body">
+  <nav class="side" id="side" aria-label="目次"><div class="side-group"><p class="side-title">はじめに</p><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></div><div class="side-group"><p class="side-title">ファウンデーション</p><ul><li><a href="../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../foundations/color.html">色</a></li><li><a href="../foundations/typography.html">タイポグラフィ</a></li><li><a href="../foundations/spacing-radius-elevation.html">余白・角丸・影</a></li><li><a href="../foundations/accessibility.html">アクセシビリティ</a></li></ul></div><div class="side-group is-current"><p class="side-title">コンポーネント</p><ul><li><a href="index.html">コンポーネント一覧</a></li><li><a href="button.html">ボタン（Button）</a></li><li><a href="chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="section-card.html">セクションカード（Section Card）</a></li><li><a href="list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li><a href="approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="message-bubble.html">吹き出し（Message Bubble）</a></li><li><a href="toast.html">トースト（Toast）</a></li><li class="side-sub">学習ノートの部品</li><li><a href="course-path.html">コースパス（Course Path / Path Node）</a></li><li><a href="now-strip.html">今ここストリップ（Now Strip）</a></li><li><a href="player-top-bar.html">プレイヤートップバー（Player Top Bar）</a></li><li><a href="word-card.html">単語カード（Word Card）</a></li><li><a href="quiz-option.html">クイズ選択肢（Quiz Option）</a></li><li><a href="result-banner.html">結果バナー（Result Banner）</a></li><li><a href="model-answer-box.html">模範解答ボックス（Model Answer Box）</a></li><li><a href="ask-box.html">質問ボックス（Ask Box）</a></li><li><a href="speak-button.html">読み上げボタン（Speak Button）</a></li><li><a href="chapter-complete-panel.html">章完了パネル（Chapter Complete Panel）</a></li><li><a href="shelf-cover-card.html">本棚カバーカード（Shelf Cover Card）</a></li><li><a href="course-switcher.html">コース切替パネル（Course Switcher）</a></li><li class="side-sub">スライドエディタの部品</li><li><a href="deck-card.html">デッキカード（Deck Card）</a></li><li><a href="deck-header.html">デッキヘッダー（Deck Header）</a></li><li><a href="slide-stage.html" aria-current="page">スライドステージ（Slide Stage）</a></li><li><a href="page-counter-row.html">ページカウンタ行（Page Counter Row）</a></li><li><a href="thread-card.html">スレッドカード（Thread Card）</a></li><li><a href="awaiting-badge.html">確認待ちバッジ（Awaiting Badge）</a></li><li><a href="done-toggle.html">完了トグル・解決済みバッジ（Done Toggle / Resolved Badge）</a></li><li><a href="typing-indicator.html">修正中インジケータ（Typing Indicator）</a></li><li><a href="typing-strip.html">タイピングストリップ（Typing Strip）</a></li><li><a href="request-row.html">依頼行（Request Row）</a></li><li><a href="speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="memo-input-bar.html">メモ入力バー（Memo Input Bar）</a></li><li><a href="long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="sheet-modal.html">シートモーダル（Sheet Modal）</a></li><li><a href="page-preview-card.html">ページプレビューカード（Page Preview Card）</a></li><li><a href="position-radio.html">位置ラジオ（Position Radio）</a></li><li><a href="confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="submit-message.html">送信完了メッセージ（Submit Message）</a></li></ul></div><div class="side-group"><p class="side-title">パターン</p><ul><li><a href="../patterns.html">パターン</a></li><li><a href="../examples/daily-brief.html">適用例: Daily Brief</a></li></ul></div><div class="side-group"><p class="side-title">記録</p><ul><li><a href="../decisions/index.html">決定記録</a></li><li><a href="../open-questions.html">判断待ちの点</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></div></nav>
+  <main id="main" class="main">
+    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="index.html">コンポーネント</a></li><li aria-current="page">スライドステージ（Slide Stage）</li></ol>
+    <article class="doc"><h1 id="スライドステージslide-stage">スライドステージ（Slide Stage）</h1>
+<p class="comp-lead">グレーの地に白いスライドを1枚。左右を押して前後へ</p>
+<section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="demo-stage" data-demo="slide-stage">
+  <div style="max-width:560px;width:100%">
+    <div class="m-stage" tabindex="0" role="button"></div>
+    <div class="m-counter" style="padding-left:0;padding-right:0"><span class="m-counter-page" data-counter aria-live="polite">1 / 9</span></div>
+  </div>
+  <template data-slide><div class="m-slide" role="img" aria-label="表紙のスライド: AWS で始める家族の自動化"><div class="m-slide-in"><span class="s-kicker">JAWS-UG 茨城支部 #1</span><span class="s-title">AWS で始める<br>家族の自動化</span><span class="s-sub">予定と買い物を1つの朝にまとめる</span><span class="s-by">あきキー</span></div></div></template>
+  <template data-slide><div class="m-slide" role="img" aria-label="見出しのスライド: 第2章 しくみ"><div class="m-slide-in"><div class="s-center"><span class="s-title">第2章 しくみ</span></div></div></div></template>
+  <template data-slide><div class="m-slide" role="img" aria-label="箇条書きのスライド: 困っていたこと"><div class="m-slide-in"><span class="s-h">困っていたこと</span><span class="s-lead">朝の5分で、今日の予定を<b>2人とも</b>知りたい。</span><ul class="s-list"><li>カレンダーが3つに分かれている</li><li>買い物のメモが<b>チャットに流れる</b></li><li>天気と予定を別々に見ている</li></ul></div></div></template>
+  <template data-slide><div class="m-slide is-diagram" role="img" aria-label="図のスライド: 朝のブリーフができるまで"><span class="s-note">構成図</span><div class="m-slide-in"><span class="s-h">朝のブリーフができるまで</span><span class="s-lead">6:50 に動いて、7:00 に届く。</span><div class="s-diagram"><span>カレンダー</span><i>→</i><span>Lambda</span><i>→</i><span>ブリーフ</span></div></div></div></template>
+  <template data-slide><div class="m-slide" role="img" aria-label="箱並びのスライド: 3つの置き場所"><div class="m-slide-in"><span class="s-h">3つの置き場所</span><span class="s-lead">中身の性質で置き場所を分ける。</span><div class="s-boxes"><div class="s-box"><strong>予定</strong>時刻があるもの</div><div class="s-box"><strong>タスク</strong>完了できるもの</div><div class="s-box"><strong>メモ</strong>あとで読むもの</div></div></div></div></template>
+  <template data-slide><div class="m-slide" role="img" aria-label="引用のスライド: 決めたこと"><div class="m-slide-in"><span class="s-h">決めたこと</span><div class="s-quote">読み物はページにし、会話はチャットにする。</div><span class="s-lead">Muse DS の原則 1 より</span></div></div></template>
+  <template data-slide><div class="m-slide" role="img" aria-label="コードのスライド: 毎朝動かす"><div class="m-slide-in"><span class="s-h">毎朝動かす</span><div class="s-code">aws events put-rule \
+  --name morning-brief \
+  --schedule-expression "cron(50 21 * * ? *)"</div><ul class="s-list"><li>UTC で書くので 9 時間ずらす</li></ul></div></div></template>
+  <template data-slide><div class="m-slide" role="img" aria-label="大数字のスライド: 朝の確認 5分から1分"><div class="m-slide-in"><span class="s-h">朝の確認にかかる時間</span><span class="s-num">5分 → <b>1分</b></span><span class="s-lead">2人とも、平日の朝の平均（前の月との比較）</span></div></div></template>
+  <template data-slide><div class="m-slide" role="img" aria-label="終了のスライド: ありがとうございました"><div class="m-slide-in"><div class="s-center"><span class="s-title">ありがとうございました</span><span class="s-sub">資料は connpass のページに置きます</span></div></div></div></template>
+  <p class="demo-note">スライドの右半分を押すと次へ、左半分で前へ。フォーカスを当てて ← → でも移ります。ステージの地とスライドの面は、モックと同じくダークでも固定しています（判断待ちの点 18）。</p>
+</div>
+</section>
+<h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
+<p>スライドを1枚ずつ表示する領域です。画面全体の背景（DS のグレー）の上に、スライドだけを白い面として置きます。スライドを押すと前後のページへ移ります。</p>
+<h2 id="使うとき">使うとき<a class="anchor" href="#使うとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>スライドエディタで、<a href="deck-header.html">デッキヘッダー</a>のすぐ下に置く</li><li>16:9 に近い比のコンテンツを、まわりの UI と分けて見せるとき</li></ul>
+<h2 id="使わないとき">使わないとき<a class="anchor" href="#使わないとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>一覧の中の縮小表示 → <a href="deck-card.html">デッキカード</a>のサムネイル、<a href="page-preview-card.html">ページプレビューカード</a></li><li>読み物の本文 → <a href="section-card.html">セクションカード</a>。ステージは「そのまま見せる」場所で、DS の文字の段は使わない</li></ul>
+<h2 id="バリアント">バリアント<a class="anchor" href="#バリアント" aria-label="この見出しへのリンク">#</a></h2>
+<p>なし（1種類だけ）。中に入るスライドの形は<a href="../patterns.html#e-スライドの型">スライドの型</a>で決めます。</p>
+<h2 id="状態">状態<a class="anchor" href="#状態" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">状態</th><th scope="col">見た目</th><th scope="col">条件</th></tr></thead><tbody><tr><td>通常</td><td>グレーの地の中央に白いスライド</td><td></td></tr><tr><td>ページ切り替え</td><td>新しいスライドが不透明度 0.25 から 0.28 秒で現れる</td><td>前後に移ったとき</td></tr><tr><td>最初・最後のページ</td><td>見た目は同じ。端より先には移らない</td><td></td></tr><tr><td>フォーカス</td><td>フォーカスの輪</td><td>キーボードで選ばれたとき</td></tr></tbody></table></div>
+<h2 id="仕様">仕様<a class="anchor" href="#仕様" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">項目</th><th scope="col">値</th><th scope="col">トークン</th></tr></thead><tbody><tr><td>ステージの地</td><td>画面全体の背景と同じグレー（<code>#EDEEF0</code>）</td><td><code>--bg</code>（ダークでの扱いは<a href="../open-questions.html#スライドエディタ由来の部品">判断待ちの点</a> 18）</td></tr><tr><td>ステージの大きさ</td><td>幅いっぱい、比 980:552、高さは画面の 58% まで</td><td></td></tr><tr><td>スライドの面</td><td>白、中央に置き、ステージに収まる最大の大きさ。比 980:552</td><td><code>--surface</code>（ダークでも白のままにするかは同 18）</td></tr><tr><td>スライドの中の寸法</td><td>スライドの幅に対する割合（<code>cqw</code>）で決める。表示の大きさが変わっても組みが崩れない</td><td></td></tr><tr><td>移り方</td><td>スライドの右半分を押すと次へ、左半分で前へ。キーボードの ← → でも移る</td><td></td></tr></tbody></table></div>
+<p>スライドの中の文字や色は、デッキ自身の見た目のまま表示します。DS のトークンで塗り替えません。</p>
+<h2 id="アクセシビリティ">アクセシビリティ<a class="anchor" href="#アクセシビリティ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>スライドは <code>role=&quot;button&quot;</code> にし、<code>aria-label</code> を「スライド n / 全体（右半分タップで次へ、左半分で前へ）」にする。</li><li>← → キーで移れるようにする。入力欄にフォーカスがあるときと、<a href="sheet-modal.html">シートモーダル</a>を開いているときは移らない。</li><li>ページが変わったことは<a href="page-counter-row.html">ページカウンタ行</a>の「n / 全体」で文として伝える。</li><li>現れる動きは <code>prefers-reduced-motion: reduce</code> のとき止める。</li></ul>
+<h2 id="関連">関連<a class="anchor" href="#関連" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li><a href="../patterns.html#e-スライドの型">スライドの型</a></li><li><a href="page-counter-row.html">ページカウンタ行</a></li><li><a href="deck-header.html">デッキヘッダー</a></li></ul><nav class="pager" aria-label="前後の部品"><a class="pager-prev" href="deck-header.html"><span>前の部品</span>デッキヘッダー</a><a class="pager-next" href="page-counter-row.html"><span>次の部品</span>ページカウンタ行</a></nav></article>
+    
+    <footer class="page-foot">
+      <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/components/slide-stage.md" rel="noopener">GitHub で元の文書を見る（docs/components/slide-stage.md）</a></p>
+      <p>Muse DS v0.5.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+    </footer>
+  </main>
+</div>
+<div class="m-toast-region" role="status" aria-live="polite"></div>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/demos.js" defer></script>
+</body>
+</html>

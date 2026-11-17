@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>章完了パネル（Chapter Complete Panel） | Muse Design System</title>
+<meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Noto+Sans+JP:wght@400..900&display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/demos.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('muse-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
+    <span class="brand-ver">v0.5.0</span>
+    <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="index.html" aria-current="true">コンポーネント</a></li><li><a href="../patterns.html">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
+    <div class="header-tools">
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="表示モードを切り替える"><span data-theme-label>自動</span></button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="side" data-menu-toggle>目次</button>
+    </div>
+  </div>
+</header>
+<div class="site-body">
+  <nav class="side" id="side" aria-label="目次"><div class="side-group"><p class="side-title">はじめに</p><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></div><div class="side-group"><p class="side-title">ファウンデーション</p><ul><li><a href="../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../foundations/color.html">色</a></li><li><a href="../foundations/typography.html">タイポグラフィ</a></li><li><a href="../foundations/spacing-radius-elevation.html">余白・角丸・影</a></li><li><a href="../foundations/accessibility.html">アクセシビリティ</a></li></ul></div><div class="side-group is-current"><p class="side-title">コンポーネント</p><ul><li><a href="index.html">コンポーネント一覧</a></li><li><a href="button.html">ボタン（Button）</a></li><li><a href="chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="section-card.html">セクションカード（Section Card）</a></li><li><a href="list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li><a href="approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="message-bubble.html">吹き出し（Message Bubble）</a></li><li><a href="toast.html">トースト（Toast）</a></li><li class="side-sub">学習ノートの部品</li><li><a href="course-path.html">コースパス（Course Path / Path Node）</a></li><li><a href="now-strip.html">今ここストリップ（Now Strip）</a></li><li><a href="player-top-bar.html">プレイヤートップバー（Player Top Bar）</a></li><li><a href="word-card.html">単語カード（Word Card）</a></li><li><a href="quiz-option.html">クイズ選択肢（Quiz Option）</a></li><li><a href="result-banner.html">結果バナー（Result Banner）</a></li><li><a href="model-answer-box.html">模範解答ボックス（Model Answer Box）</a></li><li><a href="ask-box.html">質問ボックス（Ask Box）</a></li><li><a href="speak-button.html">読み上げボタン（Speak Button）</a></li><li><a href="chapter-complete-panel.html" aria-current="page">章完了パネル（Chapter Complete Panel）</a></li><li><a href="shelf-cover-card.html">本棚カバーカード（Shelf Cover Card）</a></li><li><a href="course-switcher.html">コース切替パネル（Course Switcher）</a></li><li class="side-sub">スライドエディタの部品</li><li><a href="deck-card.html">デッキカード（Deck Card）</a></li><li><a href="deck-header.html">デッキヘッダー（Deck Header）</a></li><li><a href="slide-stage.html">スライドステージ（Slide Stage）</a></li><li><a href="page-counter-row.html">ページカウンタ行（Page Counter Row）</a></li><li><a href="thread-card.html">スレッドカード（Thread Card）</a></li><li><a href="awaiting-badge.html">確認待ちバッジ（Awaiting Badge）</a></li><li><a href="done-toggle.html">完了トグル・解決済みバッジ（Done Toggle / Resolved Badge）</a></li><li><a href="typing-indicator.html">修正中インジケータ（Typing Indicator）</a></li><li><a href="typing-strip.html">タイピングストリップ（Typing Strip）</a></li><li><a href="request-row.html">依頼行（Request Row）</a></li><li><a href="speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="memo-input-bar.html">メモ入力バー（Memo Input Bar）</a></li><li><a href="long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="sheet-modal.html">シートモーダル（Sheet Modal）</a></li><li><a href="page-preview-card.html">ページプレビューカード（Page Preview Card）</a></li><li><a href="position-radio.html">位置ラジオ（Position Radio）</a></li><li><a href="confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="submit-message.html">送信完了メッセージ（Submit Message）</a></li></ul></div><div class="side-group"><p class="side-title">パターン</p><ul><li><a href="../patterns.html">パターン</a></li><li><a href="../examples/daily-brief.html">適用例: Daily Brief</a></li></ul></div><div class="side-group"><p class="side-title">記録</p><ul><li><a href="../decisions/index.html">決定記録</a></li><li><a href="../open-questions.html">判断待ちの点</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></div></nav>
+  <main id="main" class="main">
+    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="index.html">コンポーネント</a></li><li aria-current="page">章完了パネル（Chapter Complete Panel）</li></ol>
+    <article class="doc"><h1 id="章完了パネルchapter-complete-panel">章完了パネル（Chapter Complete Panel）</h1>
+<p class="comp-lead">★と「章名 クリア！」、次の章へ／パスに戻る</p>
+<section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="demo-stage" data-demo="chapter-complete-panel">
+  <div class="demo-grid2">
+    <div class="demo-item">
+      <p class="demo-cap">章のクリア</p>
+      <section class="m-complete" role="status" data-celebrate>
+        <div class="m-complete-star" aria-hidden="true">★</div>
+        <h3>疑問文と否定文 クリア！</h3>
+        <div class="m-complete-btns">
+          <button type="button" class="m-btn m-btn--primary" aria-label="次の章へ進む" data-toast="次の章へ進みます">次の章へ</button>
+          <button type="button" class="m-btn m-btn--secondary" aria-label="パスに戻る" data-toast="パスに戻ります">パスに戻る</button>
+        </div>
+      </section>
+      <p><button type="button" class="demo-reset" data-replay>紙吹雪をもう一度</button></p>
+    </div>
+    <div class="demo-item">
+      <p class="demo-cap">ノートの終わり</p>
+      <section class="m-complete">
+        <div class="m-complete-star" aria-hidden="true">★</div>
+        <h3>このノートはおしまい！</h3>
+        <p class="m-complete-sub">24ページ ・ 獲得 XP 240 ・ ベストコンボ 6 ・ 正答 9 / 11</p>
+        <div class="m-complete-btns"><button type="button" class="m-btn m-btn--primary">閉じる</button></div>
+      </section>
+    </div>
+    <div class="demo-item">
+      <p class="demo-cap">セッションの終わり（ボタンは2列）</p>
+      <section class="m-complete">
+        <div class="m-complete-star" aria-hidden="true">★</div>
+        <h3>今日の分はおしまい</h3>
+        <div class="m-complete-btns is-2col">
+          <button type="button" class="m-btn m-btn--secondary">単語を続ける</button>
+          <button type="button" class="m-btn m-btn--primary">ホームへ</button>
+        </div>
+      </section>
+    </div>
+  </div>
+  <p class="demo-note">★ の金色と紙吹雪の色はトークンが未定義のため（判断待ちの点 11・14）、モックの値で表示しています。</p>
+</div>
+</section>
+<h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
+<p>学習プレイヤーで章の最後のページを終えたときに出す完了画面です。★と「章名 クリア！」を大きく出し、次の章へ進むか、パスに戻るかを選ばせます。同じ形を、ノートの終わり・今日の復習の終わり・セッションの終わりにも使います。</p>
+<h2 id="使うとき">使うとき<a class="anchor" href="#使うとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>章を指定して開いた学習プレイヤーで、その章の最後のページから「次へ」を押したとき</li><li>ノート全体・今日の復習・時間で区切るセッションが終わったとき（バリアント参照）</li></ul>
+<h2 id="使わないとき">使わないとき<a class="anchor" href="#使わないとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>1問ごとの正誤 → <a href="result-banner.html">結果バナー</a></li><li>章の途中の区切り（「ここまでが1セクション」）→ 問題カードと同じカードに見出しだけを出す</li><li>章をまたいでめくり続けている途中（このときは画面上部に短い祝福の帯を 2.4 秒だけ出し、パネルは出さない）</li></ul>
+<h2 id="バリアント">バリアント<a class="anchor" href="#バリアント" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">バリアント</th><th scope="col">見出し</th><th scope="col">ボタン</th></tr></thead><tbody><tr><td>章のクリア</td><td>「章名 クリア！」</td><td>次の章へ（プライマリ）＋パスに戻る（セカンダリ）。次の章がなければ「パスに戻る」だけをプライマリで</td></tr><tr><td>ノートの終わり</td><td>「このノートはおしまい！」＋ページ数・獲得 XP・ベストコンボ・正答数</td><td>閉じる</td></tr><tr><td>復習の終わり</td><td>「今日の復習はおしまい」</td><td>閉じる（セッションの中では「講義へ」）</td></tr><tr><td>セッションの終わり</td><td>「今日の分はおしまい」</td><td>単語を続ける（セカンダリ）＋ホームへ（プライマリ）</td></tr></tbody></table></div>
+<h2 id="状態">状態<a class="anchor" href="#状態" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">状態</th><th scope="col">見た目</th></tr></thead><tbody><tr><td>出たとき</td><td>紙吹雪が 1.1 秒で落ちる</td></tr><tr><td>表示中</td><td>ボタンを押すまで残る</td></tr></tbody></table></div>
+<h2 id="仕様">仕様<a class="anchor" href="#仕様" aria-label="この見出しへのリンク">#</a></h2>
+<p>構成:</p>
+<ol><li>紙吹雪（飾り）</li><li>★</li><li>見出し</li><li>補足（バリアントによる）</li><li>ボタン（縦に並べる。セッションの終わりだけ2列）</li></ol>
+<div class="table-wrap"><table><thead><tr><th scope="col">項目</th><th scope="col">値</th><th scope="col">トークン</th></tr></thead><tbody><tr><td>面</td><td><a href="section-card.html">セクションカード</a>と同じ</td><td><code>--surface</code> <code>--border</code> <code>--shadow-card</code> <code>--radius-card</code></td></tr><tr><td>内側の余白</td><td>24px、中央揃え</td><td></td></tr><tr><td>★</td><td>64px / 800、金色</td><td>色は未定義（<a href="../open-questions.html#学習ノート由来の部品">判断待ちの点</a> 11）、サイズは段にない（同 16）</td></tr><tr><td>見出し</td><td>24px / 800</td><td><code>--text-2xl</code></td></tr><tr><td>補足</td><td>Small 段</td><td><code>--dim</code></td></tr><tr><td>ボタン</td><td>間隔 10px、見出しとの間隔 20px</td><td><a href="button.html">ボタン</a></td></tr></tbody></table></div>
+<h2 id="アクセシビリティ">アクセシビリティ<a class="anchor" href="#アクセシビリティ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>見出しを <code>&lt;h2&gt;</code> にする。パネルが出たら、見出しへフォーカスを移すか、パネルを <code>role=&quot;status&quot;</code> にして読み上げで伝える。</li><li>★ と紙吹雪は <code>aria-hidden=&quot;true&quot;</code> にする。</li><li>ボタンは「次の章へ進む」「パスに戻る」のように行き先を <code>aria-label</code> に書く。</li><li>紙吹雪は <code>prefers-reduced-motion: reduce</code> のとき止める。</li></ul>
+<h2 id="関連">関連<a class="anchor" href="#関連" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li><a href="player-top-bar.html">プレイヤートップバー</a></li><li><a href="course-path.html">コースパス</a></li><li><a href="result-banner.html">結果バナー</a></li></ul><nav class="pager" aria-label="前後の部品"><a class="pager-prev" href="speak-button.html"><span>前の部品</span>読み上げボタン</a><a class="pager-next" href="shelf-cover-card.html"><span>次の部品</span>本棚カバーカード</a></nav></article>
+    
+    <footer class="page-foot">
+      <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/components/chapter-complete-panel.md" rel="noopener">GitHub で元の文書を見る（docs/components/chapter-complete-panel.md）</a></p>
+      <p>Muse DS v0.5.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+    </footer>
+  </main>
+</div>
+<div class="m-toast-region" role="status" aria-live="polite"></div>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/demos.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>使い方 | Muse Design System</title>
+<meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Noto+Sans+JP:wght@400..900&display=swap">
+<link rel="stylesheet" href="tokens/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/demos.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('muse-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
+    <span class="brand-ver">v0.5.0</span>
+    <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="index.html" aria-current="true">はじめに</a></li><li><a href="foundations/index.html">ファウンデーション</a></li><li><a href="components/index.html">コンポーネント</a></li><li><a href="patterns.html">パターン</a></li><li><a href="decisions/index.html">記録</a></li></ul></nav>
+    <div class="header-tools">
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="表示モードを切り替える"><span data-theme-label>自動</span></button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="side" data-menu-toggle>目次</button>
+    </div>
+  </div>
+</header>
+<div class="site-body">
+  <nav class="side" id="side" aria-label="目次"><div class="side-group is-current"><p class="side-title">はじめに</p><ul><li><a href="index.html">概要</a></li><li><a href="getting-started.html" aria-current="page">使い方</a></li><li><a href="principles.html">原則</a></li></ul></div><div class="side-group"><p class="side-title">ファウンデーション</p><ul><li><a href="foundations/index.html">ファウンデーションの考え方</a></li><li><a href="foundations/color.html">色</a></li><li><a href="foundations/typography.html">タイポグラフィ</a></li><li><a href="foundations/spacing-radius-elevation.html">余白・角丸・影</a></li><li><a href="foundations/accessibility.html">アクセシビリティ</a></li></ul></div><div class="side-group"><p class="side-title">コンポーネント</p><ul><li><a href="components/index.html">コンポーネント一覧</a></li><li><a href="components/button.html">ボタン（Button）</a></li><li><a href="components/chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="components/section-card.html">セクションカード（Section Card）</a></li><li><a href="components/list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="components/input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="components/navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li><a href="components/approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="components/message-bubble.html">吹き出し（Message Bubble）</a></li><li><a href="components/toast.html">トースト（Toast）</a></li><li class="side-sub">学習ノートの部品</li><li><a href="components/course-path.html">コースパス（Course Path / Path Node）</a></li><li><a href="components/now-strip.html">今ここストリップ（Now Strip）</a></li><li><a href="components/player-top-bar.html">プレイヤートップバー（Player Top Bar）</a></li><li><a href="components/word-card.html">単語カード（Word Card）</a></li><li><a href="components/quiz-option.html">クイズ選択肢（Quiz Option）</a></li><li><a href="components/result-banner.html">結果バナー（Result Banner）</a></li><li><a href="components/model-answer-box.html">模範解答ボックス（Model Answer Box）</a></li><li><a href="components/ask-box.html">質問ボックス（Ask Box）</a></li><li><a href="components/speak-button.html">読み上げボタン（Speak Button）</a></li><li><a href="components/chapter-complete-panel.html">章完了パネル（Chapter Complete Panel）</a></li><li><a href="components/shelf-cover-card.html">本棚カバーカード（Shelf Cover Card）</a></li><li><a href="components/course-switcher.html">コース切替パネル（Course Switcher）</a></li><li class="side-sub">スライドエディタの部品</li><li><a href="components/deck-card.html">デッキカード（Deck Card）</a></li><li><a href="components/deck-header.html">デッキヘッダー（Deck Header）</a></li><li><a href="components/slide-stage.html">スライドステージ（Slide Stage）</a></li><li><a href="components/page-counter-row.html">ページカウンタ行（Page Counter Row）</a></li><li><a href="components/thread-card.html">スレッドカード（Thread Card）</a></li><li><a href="components/awaiting-badge.html">確認待ちバッジ（Awaiting Badge）</a></li><li><a href="components/done-toggle.html">完了トグル・解決済みバッジ（Done Toggle / Resolved Badge）</a></li><li><a href="components/typing-indicator.html">修正中インジケータ（Typing Indicator）</a></li><li><a href="components/typing-strip.html">タイピングストリップ（Typing Strip）</a></li><li><a href="components/request-row.html">依頼行（Request Row）</a></li><li><a href="components/speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="components/memo-input-bar.html">メモ入力バー（Memo Input Bar）</a></li><li><a href="components/long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="components/sheet-modal.html">シートモーダル（Sheet Modal）</a></li><li><a href="components/page-preview-card.html">ページプレビューカード（Page Preview Card）</a></li><li><a href="components/position-radio.html">位置ラジオ（Position Radio）</a></li><li><a href="components/confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="components/submit-message.html">送信完了メッセージ（Submit Message）</a></li></ul></div><div class="side-group"><p class="side-title">パターン</p><ul><li><a href="patterns.html">パターン</a></li><li><a href="examples/daily-brief.html">適用例: Daily Brief</a></li></ul></div><div class="side-group"><p class="side-title">記録</p><ul><li><a href="decisions/index.html">決定記録</a></li><li><a href="open-questions.html">判断待ちの点</a></li><li><a href="versioning.html">版の付け方</a></li><li><a href="changelog.html">変更履歴</a></li></ul></div></nav>
+  <main id="main" class="main">
+    <ol class="crumbs" aria-label="現在地"><li><a href="index.html">トップ</a></li><li aria-current="page">使い方</li></ol>
+    <article class="doc"><h1 id="使い方">使い方</h1>
+<h2 id="構成">構成<a class="anchor" href="#構成" aria-label="この見出しへのリンク">#</a></h2>
+<p>ドキュメントは4層です。上の層ほど判断の基準になり、下の層ほど具体的になります。</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">層</th><th scope="col">中身</th><th scope="col">場所</th></tr></thead><tbody><tr><td>1. 原則</td><td>判断に迷ったときに戻る4つの決め事</td><td><a href="principles.html">docs/principles.md</a></td></tr><tr><td>2. ファウンデーション</td><td>色・文字・余白・角丸・影のトークンと、アクセシビリティの基準</td><td><a href="foundations/index.html">docs/foundations/</a></td></tr><tr><td>3. コンポーネント</td><td>再利用する部品。部品ごとに1ファイル</td><td><a href="components/index.html">docs/components/</a></td></tr><tr><td>4. パターン</td><td>部品の組み合わせの型</td><td><a href="patterns.html">docs/patterns.md</a></td></tr></tbody></table></div>
+<p>そのほか:</p>
+<ul><li>適用例: <a href="examples/daily-brief.html">docs/examples/daily-brief.md</a></li><li>決めたことの記録: <a href="decisions/index.html">docs/decisions/</a></li><li>判断待ちの点: <a href="open-questions.html">docs/open-questions.md</a></li><li>版の付け方: <a href="versioning.html">docs/versioning.md</a></li></ul>
+<pre class="code"><code>.
+├── README.md
+├── CHANGELOG.md
+├── package.json              版番号（semver）と npm scripts
+├── tokens/
+│   ├── tokens.json           正。Design Tokens 形式（primitive → semantic）
+│   └── tokens.css            tokens.json から生成した CSS 変数
+├── scripts/
+│   └── build-tokens.mjs      tokens.css の生成と一致確認（依存なし）
+└── docs/
+    ├── principles.md
+    ├── foundations/          トークンの考え方・色・書体・余白と角丸・アクセシビリティ
+    ├── components/           部品ごとの文書（テンプレート統一）
+    ├── patterns.md
+    ├── examples/
+    ├── decisions/            決定記録（ADR）
+    ├── open-questions.md
+    └── versioning.md</code></pre>
+<h2 id="使い方-1">使い方<a class="anchor" href="#使い方-1" aria-label="この見出しへのリンク">#</a></h2>
+<h3 id="1-トークンを取り込む">1. トークンを取り込む<a class="anchor" href="#1-トークンを取り込む" aria-label="この見出しへのリンク">#</a></h3>
+<p>CSS 変数として使うときは <code>tokens/tokens.css</code> を読み込みます。ライトとダークの両方が入っていて、OS の設定に従います。<code>&lt;html data-theme=&quot;light&quot;&gt;</code> または <code>data-theme=&quot;dark&quot;</code> で固定もできます。</p>
+<pre class="code"><code data-lang="css">@import url(&quot;./muse-design-system/tokens/tokens.css&quot;);
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  padding: var(--space-card-padding);
+  box-shadow: var(--shadow-card);
+}</code></pre>
+<p>ほかのリポジトリから取り込むときは、git の依存として入れられます（private のため、取り込む側にこのリポジトリの読み取り権限が要ります）。</p>
+<pre class="code"><code data-lang="sh">npm install git+https://github.com/aki-kii/muse-design-system.git#v0.5.0</code></pre>
+<pre class="code"><code data-lang="css">@import &quot;muse-design-system/tokens.css&quot;;</code></pre>
+<p>書体は Google Fonts から別に読み込みます。</p>
+<pre class="code"><code data-lang="css">@import url(&quot;https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&amp;family=Noto+Sans+JP:wght@400..900&amp;display=swap&quot;);</code></pre>
+<p>Tailwind CSS v4 のアプリで使うときの対応は <a href="foundations/index.html#tailwind-css-との対応">foundations/README.md</a> にあります。</p>
+<h3 id="2-画面を作るときの手順">2. 画面を作るときの手順<a class="anchor" href="#2-画面を作るときの手順" aria-label="この見出しへのリンク">#</a></h3>
+<ol><li><strong>トークンから選ぶ。</strong> 色・余白・文字サイズはファウンデーションの値からだけ選ぶ。新しい値が要るときは、先に <code>tokens/tokens.json</code> に登録する。</li><li><strong>部品で組む。</strong> 画面はコンポーネントの組み合わせで作る。似た部品があるときは、各部品の「使うとき／使わないとき」で選び分ける。</li><li><strong>型に当てはめる。</strong> ページ全体の形はパターンから選ぶ。読み物には「読み物ページの型」、確認が要る操作には「承認をはさむ型」を当てる。</li></ol>
+<h3 id="3-トークンを変えるとき">3. トークンを変えるとき<a class="anchor" href="#3-トークンを変えるとき" aria-label="この見出しへのリンク">#</a></h3>
+<p><code>tokens/tokens.json</code> を直してから、<code>tokens.css</code> を作り直します。<code>tokens.css</code> は直接編集しません。</p>
+<pre class="code"><code data-lang="sh">npm run tokens         # tokens.css を作り直す
+npm run tokens:check   # tokens.css が tokens.json と一致しているか確かめる</code></pre>
+<p>変更は <a href="changelog.html">CHANGELOG.md</a> に書き、<a href="versioning.html">版の付け方</a> に従って版を上げます。</p>
+<h2 id="今後の課題">今後の課題<a class="anchor" href="#今後の課題" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li><strong>CI。</strong> <code>npm run tokens:check</code> と Markdown のリンク確認を GitHub Actions で回す。ワークフローのファイルはこのリポジトリにまだ入れていない。</li><li><strong>コントラストの自動確認。</strong> semantic の色の組み合わせ（文字と面）について、4.5:1 以上かどうかを <code>tokens.json</code> から計算して確かめるスクリプト。</li><li><strong>Style Dictionary への移行。</strong> 出力先（Swift、Tailwind の <code>@theme</code> など）が増えたら、自作スクリプトから Style Dictionary に切り替える。<code>tokens.json</code> は同じ形式のまま使える。</li></ul></article>
+    
+    <footer class="page-foot">
+      <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/README.md" rel="noopener">GitHub で元の文書を見る（README.md）</a></p>
+      <p>Muse DS v0.5.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+    </footer>
+  </main>
+</div>
+<div class="m-toast-region" role="status" aria-live="polite"></div>
+<script src="assets/site.js" defer></script>
+<script src="assets/demos.js" defer></script>
+</body>
+</html>

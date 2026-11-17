@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>シートモーダル（Sheet Modal） | Muse Design System</title>
+<meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Noto+Sans+JP:wght@400..900&display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/demos.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('muse-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
+    <span class="brand-ver">v0.5.0</span>
+    <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="index.html" aria-current="true">コンポーネント</a></li><li><a href="../patterns.html">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
+    <div class="header-tools">
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="表示モードを切り替える"><span data-theme-label>自動</span></button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="side" data-menu-toggle>目次</button>
+    </div>
+  </div>
+</header>
+<div class="site-body">
+  <nav class="side" id="side" aria-label="目次"><div class="side-group"><p class="side-title">はじめに</p><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></div><div class="side-group"><p class="side-title">ファウンデーション</p><ul><li><a href="../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../foundations/color.html">色</a></li><li><a href="../foundations/typography.html">タイポグラフィ</a></li><li><a href="../foundations/spacing-radius-elevation.html">余白・角丸・影</a></li><li><a href="../foundations/accessibility.html">アクセシビリティ</a></li></ul></div><div class="side-group is-current"><p class="side-title">コンポーネント</p><ul><li><a href="index.html">コンポーネント一覧</a></li><li><a href="button.html">ボタン（Button）</a></li><li><a href="chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="section-card.html">セクションカード（Section Card）</a></li><li><a href="list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li><a href="approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="message-bubble.html">吹き出し（Message Bubble）</a></li><li><a href="toast.html">トースト（Toast）</a></li><li class="side-sub">学習ノートの部品</li><li><a href="course-path.html">コースパス（Course Path / Path Node）</a></li><li><a href="now-strip.html">今ここストリップ（Now Strip）</a></li><li><a href="player-top-bar.html">プレイヤートップバー（Player Top Bar）</a></li><li><a href="word-card.html">単語カード（Word Card）</a></li><li><a href="quiz-option.html">クイズ選択肢（Quiz Option）</a></li><li><a href="result-banner.html">結果バナー（Result Banner）</a></li><li><a href="model-answer-box.html">模範解答ボックス（Model Answer Box）</a></li><li><a href="ask-box.html">質問ボックス（Ask Box）</a></li><li><a href="speak-button.html">読み上げボタン（Speak Button）</a></li><li><a href="chapter-complete-panel.html">章完了パネル（Chapter Complete Panel）</a></li><li><a href="shelf-cover-card.html">本棚カバーカード（Shelf Cover Card）</a></li><li><a href="course-switcher.html">コース切替パネル（Course Switcher）</a></li><li class="side-sub">スライドエディタの部品</li><li><a href="deck-card.html">デッキカード（Deck Card）</a></li><li><a href="deck-header.html">デッキヘッダー（Deck Header）</a></li><li><a href="slide-stage.html">スライドステージ（Slide Stage）</a></li><li><a href="page-counter-row.html">ページカウンタ行（Page Counter Row）</a></li><li><a href="thread-card.html">スレッドカード（Thread Card）</a></li><li><a href="awaiting-badge.html">確認待ちバッジ（Awaiting Badge）</a></li><li><a href="done-toggle.html">完了トグル・解決済みバッジ（Done Toggle / Resolved Badge）</a></li><li><a href="typing-indicator.html">修正中インジケータ（Typing Indicator）</a></li><li><a href="typing-strip.html">タイピングストリップ（Typing Strip）</a></li><li><a href="request-row.html">依頼行（Request Row）</a></li><li><a href="speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="memo-input-bar.html">メモ入力バー（Memo Input Bar）</a></li><li><a href="long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="sheet-modal.html" aria-current="page">シートモーダル（Sheet Modal）</a></li><li><a href="page-preview-card.html">ページプレビューカード（Page Preview Card）</a></li><li><a href="position-radio.html">位置ラジオ（Position Radio）</a></li><li><a href="confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="submit-message.html">送信完了メッセージ（Submit Message）</a></li></ul></div><div class="side-group"><p class="side-title">パターン</p><ul><li><a href="../patterns.html">パターン</a></li><li><a href="../examples/daily-brief.html">適用例: Daily Brief</a></li></ul></div><div class="side-group"><p class="side-title">記録</p><ul><li><a href="../decisions/index.html">決定記録</a></li><li><a href="../open-questions.html">判断待ちの点</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></div></nav>
+  <main id="main" class="main">
+    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="index.html">コンポーネント</a></li><li aria-current="page">シートモーダル（Sheet Modal）</li></ol>
+    <article class="doc"><h1 id="シートモーダルsheet-modal">シートモーダル（Sheet Modal）</h1>
+<p class="comp-lead">下からせり上がる板に1つの作業だけを入れる</p>
+<section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="demo-stage" data-demo="sheet-modal">
+  <div class="m-modal-area">
+    <div style="padding:16px;display:grid;gap:10px;justify-items:start">
+      <p class="demo-note">押すと、この枠の下からシートがせり上がります。</p>
+      <button type="button" class="m-btn m-btn--secondary" data-open-sheet="add">ページを追加</button>
+      <button type="button" class="m-btn m-btn--secondary" data-open-sheet="del">ページを削除</button>
+      <button type="button" class="m-btn m-btn--secondary" data-open-sheet="orphan">行き場のないメモ</button>
+    </div>
+    <div data-layer hidden>
+      <div class="m-backdrop"></div>
+      <div class="m-sheet" role="dialog" aria-modal="true" aria-labelledby="sh-add" data-sheet="add" hidden>
+        <div class="m-sheet-head"><p class="m-sheet-title" id="sh-add">ページを追加</p><button type="button" class="m-round" aria-label="閉じる" data-close><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button></div>
+        <div class="m-previews">
+          <div><span class="m-preview-label">前のページ</span><div class="m-preview-frame">4 ページ</div></div>
+          <div><span class="m-preview-label">次のページ</span><div class="m-preview-frame">5 ページ</div></div>
+        </div>
+        <div class="m-position" role="radiogroup" aria-label="追加する位置">
+          <button type="button" role="radio" aria-checked="false" tabindex="-1">前に追加</button>
+          <button type="button" role="radio" aria-checked="true" tabindex="0">後に追加</button>
+        </div>
+        <div class="m-memo" data-memo style="margin-top:16px">
+          <p class="m-memo-error" role="alert" hidden>マイクが許可されていません</p>
+          <div class="m-memo-box"><textarea class="m-memo-input" rows="3" placeholder="どんなページを足すか" aria-label="メモを入力"></textarea><span class="m-memo-btns"><button type="button" class="m-send" aria-label="送信" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></button><button type="button" class="m-mic" aria-pressed="false" aria-label="音声入力"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/></svg></button></span></div>
+        </div>
+        <button type="button" class="m-block-btn is-blue" data-submit-sheet="追加リクエストを下書きに積みました" data-needs-text>追加リクエストとして下書きに積む</button>
+      </div>
+      <div class="m-sheet" role="dialog" aria-modal="true" aria-labelledby="sh-del" data-sheet="del" hidden>
+        <div class="m-sheet-head"><p class="m-sheet-title" id="sh-del">ページを削除</p><button type="button" class="m-round" aria-label="閉じる" data-close><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button></div>
+        <p class="m-sheet-sub">4ページ</p>
+        <div class="m-memo" data-memo>
+          <p class="m-memo-error" role="alert" hidden>マイクが許可されていません</p>
+          <div class="m-memo-box"><textarea class="m-memo-input" rows="3" placeholder="削除する理由" aria-label="メモを入力（削除する理由）"></textarea><span class="m-memo-btns"><button type="button" class="m-send" aria-label="送信" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></button><button type="button" class="m-mic" aria-pressed="false" aria-label="音声入力"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/></svg></button></span></div>
+        </div>
+        <button type="button" class="m-block-btn is-red" data-submit-sheet="削除予定にしました">削除予定にする</button>
+      </div>
+      <div class="m-sheet" role="dialog" aria-modal="true" aria-labelledby="sh-orphan" data-sheet="orphan" hidden>
+        <div class="m-sheet-head"><p class="m-sheet-title" id="sh-orphan">行き場のないメモ</p><button type="button" class="m-round" aria-label="閉じる" data-close><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button></div>
+        <ul class="m-sheet-list">
+          <li class="m-orphan"><span class="m-orphan-title">この図の矢印を太く</span><span class="m-orphan-sub">もとは12ページ ・ 2件</span></li>
+          <li class="m-request is-in-sheet"><span class="m-request-text"><span class="m-request-main">ページを追加（もとは12ページの後）</span><span class="m-request-state">提出済み</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="demo-note">幕・×・Esc で閉じます。「ページを追加」は文を書くまで全幅ボタンが押せません。幕の色・全幅ボタンの形と赤い面は判断待ちの点 19・20・26 のとおりモックの値です。</p>
+</div>
+</section>
+<h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
+<p>画面の下からせり上がる板です。上に見出しと閉じる × を置き、中に1つの作業（ページを追加・ページを削除・行き場のないメモ）だけを入れます。広い画面（640px 以上）では中央に浮くパネルになります。</p>
+<h2 id="使うとき">使うとき<a class="anchor" href="#使うとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>今の画面の文脈（どのページか）を保ったまま、短い入力や選択をさせるとき</li><li>一覧を一時的に開いて、選んだら閉じるとき（行き場のないメモ）</li></ul>
+<h2 id="使わないとき">使わないとき<a class="anchor" href="#使わないとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>はい・いいえだけの確認 → <a href="confirm-dialog.html">確認ダイアログ</a></li><li>外部に触る操作の確認 → <a href="approval-card.html">承認カード</a></li><li>画面の上から出る切り替え → <a href="course-switcher.html">コース切替パネル</a></li><li>何画面も続く手続き（シートの中で画面を移らない）</li></ul>
+<h2 id="バリアント">バリアント<a class="anchor" href="#バリアント" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">バリアント</th><th scope="col">中身</th></tr></thead><tbody><tr><td>ページを追加</td><td><a href="page-preview-card.html">ページプレビューカード</a> → <a href="position-radio.html">位置ラジオ</a> → <a href="memo-input-bar.html">メモ入力バー</a>（3行）→ ブルーの全幅ボタン「追加リクエストとして下書きに積む」</td></tr><tr><td>ページを削除</td><td>「nページ」→ メモ入力バー（削除する理由）→ 赤い全幅ボタン「削除予定にする」。削除予定があるときは「このページは削除予定です（提出済み）」と理由、下書きなら「削除予定を取り消す」</td></tr><tr><td>行き場のないメモ</td><td>行き場のないスレッド（題・「もとはnページ ・ n件」）と<a href="request-row.html">依頼行</a>（シートの中）の一覧。ないときは「ありません」</td></tr></tbody></table></div>
+<h2 id="状態">状態<a class="anchor" href="#状態" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">状態</th><th scope="col">見た目</th><th scope="col">条件</th></tr></thead><tbody><tr><td>閉じている</td><td>なし</td><td></td></tr><tr><td>開いている</td><td>幕の上に、下端に付いた板</td><td></td></tr><tr><td>送信できない</td><td>全幅ボタンが不透明度 0.4 で押せない</td><td>入力が空（ページを追加）</td></tr><tr><td>フォーカス</td><td>フォーカスの輪</td><td></td></tr></tbody></table></div>
+<p>幕を押すか × を押すと閉じます。全幅ボタンを押すと依頼を下書きに積んで閉じます。</p>
+<h2 id="仕様">仕様<a class="anchor" href="#仕様" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">項目</th><th scope="col">値</th><th scope="col">トークン</th></tr></thead><tbody><tr><td>幕</td><td>黒の 55%</td><td>未定義（<a href="../open-questions.html#スライドエディタ由来の部品">判断待ちの点</a> 20）</td></tr><tr><td>板</td><td>白、最大幅 512px、高さは画面の 88% まで（はみ出すとスクロール）、浮く影</td><td><code>--surface</code> <code>--shadow-float</code></td></tr><tr><td>板の角丸</td><td>上の2つの角だけ 20px。640px 以上では4つの角</td><td><code>--radius-card</code></td></tr><tr><td>内側の余白</td><td>16px 16px 24px</td><td></td></tr><tr><td>見出しの行</td><td>16px / 600 の見出し＋右端に 32px の丸い ×（<a href="deck-header.html">デッキヘッダー</a>の丸ボタン）、下に 16px</td><td><code>--text</code></td></tr><tr><td>全幅ボタン</td><td>高さ 48px 以上、14px / 600、上に 16px</td><td>角丸 <code>--radius-row</code></td></tr><tr><td>全幅ボタンの色</td><td>追加はブルー、削除は赤、取り消しは <code>--fill</code> に 1px の枠</td><td><code>--accent</code> <code>--danger</code> <code>--fill</code> <code>--border</code></td></tr><tr><td>一覧の行</td><td><code>--fill</code> の面、1px の枠、内側 12px 16px、行同士 8px。題 14px / 500、補足 12px</td><td><code>--fill</code> <code>--border</code> <code>--radius-row</code> <code>--dim</code></td></tr></tbody></table></div>
+<p>全幅ボタンは角丸 12px で、<a href="button.html">ボタン</a>のピルと形が違います。シートの下に並ぶ「確定」はフォームの一部として扱う、とするかは<a href="../open-questions.html#スライドエディタ由来の部品">判断待ちの点</a> 26 に含めます。</p>
+<h2 id="アクセシビリティ">アクセシビリティ<a class="anchor" href="#アクセシビリティ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>幕は <code>role=&quot;dialog&quot;</code> と <code>aria-modal=&quot;true&quot;</code> にし、見出しをダイアログの名前に結び付ける（<code>aria-labelledby</code>）。</li><li>開いたらシートの中の最初の入力（なければ ×）にフォーカスを移し、シートの外へフォーカスが出ないようにする。Esc で閉じ、開いたボタンにフォーカスを戻す。</li><li>× は <code>aria-label=&quot;閉じる&quot;</code> にする。</li><li>赤い全幅ボタンは色だけでなく文（「削除予定にする」）で何が起きるかを書く。</li></ul>
+<h2 id="関連">関連<a class="anchor" href="#関連" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li><a href="speed-dial-fab.html">スピードダイヤルFAB</a>（開く入口）</li><li><a href="page-counter-row.html">ページカウンタ行</a>（行き場のないメモの入口）</li><li><a href="confirm-dialog.html">確認ダイアログ</a></li></ul><nav class="pager" aria-label="前後の部品"><a class="pager-prev" href="long-press-menu.html"><span>前の部品</span>長押しメニュー</a><a class="pager-next" href="page-preview-card.html"><span>次の部品</span>ページプレビューカード</a></nav></article>
+    
+    <footer class="page-foot">
+      <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/components/sheet-modal.md" rel="noopener">GitHub で元の文書を見る（docs/components/sheet-modal.md）</a></p>
+      <p>Muse DS v0.5.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+    </footer>
+  </main>
+</div>
+<div class="m-toast-region" role="status" aria-live="polite"></div>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/demos.js" defer></script>
+</body>
+</html>

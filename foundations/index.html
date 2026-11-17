@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ファウンデーション | Muse Design System</title>
+<meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Noto+Sans+JP:wght@400..900&display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/demos.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('muse-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
+    <span class="brand-ver">v0.5.0</span>
+    <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="index.html" aria-current="true">ファウンデーション</a></li><li><a href="../components/index.html">コンポーネント</a></li><li><a href="../patterns.html">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
+    <div class="header-tools">
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="表示モードを切り替える"><span data-theme-label>自動</span></button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="side" data-menu-toggle>目次</button>
+    </div>
+  </div>
+</header>
+<div class="site-body">
+  <nav class="side" id="side" aria-label="目次"><div class="side-group"><p class="side-title">はじめに</p><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></div><div class="side-group is-current"><p class="side-title">ファウンデーション</p><ul><li><a href="index.html" aria-current="page">ファウンデーションの考え方</a></li><li><a href="color.html">色</a></li><li><a href="typography.html">タイポグラフィ</a></li><li><a href="spacing-radius-elevation.html">余白・角丸・影</a></li><li><a href="accessibility.html">アクセシビリティ</a></li></ul></div><div class="side-group"><p class="side-title">コンポーネント</p><ul><li><a href="../components/index.html">コンポーネント一覧</a></li><li><a href="../components/button.html">ボタン（Button）</a></li><li><a href="../components/chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="../components/section-card.html">セクションカード（Section Card）</a></li><li><a href="../components/list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="../components/input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="../components/navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li><a href="../components/approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="../components/message-bubble.html">吹き出し（Message Bubble）</a></li><li><a href="../components/toast.html">トースト（Toast）</a></li><li class="side-sub">学習ノートの部品</li><li><a href="../components/course-path.html">コースパス（Course Path / Path Node）</a></li><li><a href="../components/now-strip.html">今ここストリップ（Now Strip）</a></li><li><a href="../components/player-top-bar.html">プレイヤートップバー（Player Top Bar）</a></li><li><a href="../components/word-card.html">単語カード（Word Card）</a></li><li><a href="../components/quiz-option.html">クイズ選択肢（Quiz Option）</a></li><li><a href="../components/result-banner.html">結果バナー（Result Banner）</a></li><li><a href="../components/model-answer-box.html">模範解答ボックス（Model Answer Box）</a></li><li><a href="../components/ask-box.html">質問ボックス（Ask Box）</a></li><li><a href="../components/speak-button.html">読み上げボタン（Speak Button）</a></li><li><a href="../components/chapter-complete-panel.html">章完了パネル（Chapter Complete Panel）</a></li><li><a href="../components/shelf-cover-card.html">本棚カバーカード（Shelf Cover Card）</a></li><li><a href="../components/course-switcher.html">コース切替パネル（Course Switcher）</a></li><li class="side-sub">スライドエディタの部品</li><li><a href="../components/deck-card.html">デッキカード（Deck Card）</a></li><li><a href="../components/deck-header.html">デッキヘッダー（Deck Header）</a></li><li><a href="../components/slide-stage.html">スライドステージ（Slide Stage）</a></li><li><a href="../components/page-counter-row.html">ページカウンタ行（Page Counter Row）</a></li><li><a href="../components/thread-card.html">スレッドカード（Thread Card）</a></li><li><a href="../components/awaiting-badge.html">確認待ちバッジ（Awaiting Badge）</a></li><li><a href="../components/done-toggle.html">完了トグル・解決済みバッジ（Done Toggle / Resolved Badge）</a></li><li><a href="../components/typing-indicator.html">修正中インジケータ（Typing Indicator）</a></li><li><a href="../components/typing-strip.html">タイピングストリップ（Typing Strip）</a></li><li><a href="../components/request-row.html">依頼行（Request Row）</a></li><li><a href="../components/speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="../components/memo-input-bar.html">メモ入力バー（Memo Input Bar）</a></li><li><a href="../components/long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="../components/sheet-modal.html">シートモーダル（Sheet Modal）</a></li><li><a href="../components/page-preview-card.html">ページプレビューカード（Page Preview Card）</a></li><li><a href="../components/position-radio.html">位置ラジオ（Position Radio）</a></li><li><a href="../components/confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="../components/submit-message.html">送信完了メッセージ（Submit Message）</a></li></ul></div><div class="side-group"><p class="side-title">パターン</p><ul><li><a href="../patterns.html">パターン</a></li><li><a href="../examples/daily-brief.html">適用例: Daily Brief</a></li></ul></div><div class="side-group"><p class="side-title">記録</p><ul><li><a href="../decisions/index.html">決定記録</a></li><li><a href="../open-questions.html">判断待ちの点</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></div></nav>
+  <main id="main" class="main">
+    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li aria-current="page">ファウンデーションの考え方</li></ol>
+    <article class="doc"><h1 id="ファウンデーション">ファウンデーション</h1>
+<p>色・文字・余白・角丸・影のトークンと、アクセシビリティの基準です。すべての部品はここの値だけを使います。</p>
+<ul><li><a href="color.html">色</a></li><li><a href="typography.html">タイポグラフィ</a></li><li><a href="spacing-radius-elevation.html">余白・角丸・影</a></li><li><a href="accessibility.html">アクセシビリティ</a></li></ul>
+<h2 id="トークンの階層">トークンの階層<a class="anchor" href="#トークンの階層" aria-label="この見出しへのリンク">#</a></h2>
+<p>トークンは2層で持ちます。</p>
+<pre class="code"><code>primitive（値）            semantic（役割）              部品
+color.blue.600  #0073E6 ─▶ color.accent      ─▶ プライマリボタンの面
+color.neutral.0 #FFFFFF ─▶ color.surface     ─▶ セクションカードの面
+radius.20       20px    ─▶ radius.card       ─▶ セクションカードの角丸</code></pre>
+<div class="table-wrap"><table><thead><tr><th scope="col">層</th><th scope="col">役割</th><th scope="col">名前の付け方</th><th scope="col">部品から使うか</th></tr></thead><tbody><tr><td>primitive</td><td>使える値の一覧。値そのもの</td><td>色相と明るさ（<code>blue.600</code>）、または値（<code>space.14</code>）</td><td>使わない</td></tr><tr><td>semantic</td><td>値に役割を与える。ライトとダークで値が変わる</td><td>役割（<code>accent</code>、<code>surface</code>、<code>card-gap</code>）</td><td>使う</td></tr></tbody></table></div>
+<p>決め事:</p>
+<ul><li><strong>部品は semantic だけを参照する。</strong> <code>#0073E6</code> や <code>blue.600</code> を部品の CSS に直接書かない。ダークモードの切り替えは semantic で起きるので、primitive を直接使うとダークで壊れる。</li><li><strong>新しい値は primitive に足してから、semantic で役割を付ける。</strong> 役割の決まっていない値は semantic に出さない。</li><li><strong>ダークモードは名前を変えずに値だけを切り替える。</strong> <code>tokens.json</code> では <code>$extensions.com.muse.modes.dark</code> に primitive の参照を書く。</li><li><strong>CSS に出すのは semantic だけ。</strong> <code>tokens.css</code> には primitive の変数がない。使えない値を最初から選べないようにするため。</li></ul>
+<p>部品ごとのトークン（<code>button.primary.bg</code> のような第3層）は、v0.3 では持ちません。部品の実装ライブラリを作るときに検討します。</p>
+<h2 id="ファイル形式">ファイル形式<a class="anchor" href="#ファイル形式" aria-label="この見出しへのリンク">#</a></h2>
+<p><code>tokens/tokens.json</code> は <a href="https://www.designtokens.org/" rel="noopener">Design Tokens Community Group</a> の形式です。</p>
+<ul><li>各トークンは <code>$value</code> を持ち、<code>$type</code>（<code>color</code>、<code>dimension</code>、<code>fontFamily</code>、<code>fontWeight</code>、<code>shadow</code>）はグループに付けて下に継承させる。</li><li>別のトークンを参照するときは <code>{primitive.color.blue.600}</code> と書く。</li><li>説明は <code>$description</code> に書く。<code>tokens.css</code> にはコメントとして出る。</li></ul>
+<p>同じ形式は Style Dictionary や Figma の Tokens Studio でも読めます。</p>
+<h2 id="css-変数の一覧">CSS 変数の一覧<a class="anchor" href="#css-変数の一覧" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">グループ</th><th scope="col">変数</th></tr></thead><tbody><tr><td>色</td><td><code>--bg</code> <code>--surface</code> <code>--fill</code> <code>--text</code> <code>--dim</code> <code>--faint</code> <code>--border</code> <code>--accent</code> <code>--accent-ink</code> <code>--accent-strong</code> <code>--accent-soft</code> <code>--danger</code> <code>--ok</code> <code>--bubble-user</code> <code>--bubble-user-ink</code> <code>--cal-common</code> <code>--cal-self</code> <code>--cal-partner</code></td></tr><tr><td>影</td><td><code>--shadow-card</code> <code>--shadow-float</code></td></tr><tr><td>角丸</td><td><code>--radius-small</code> <code>--radius-row</code> <code>--radius-card</code> <code>--radius-pill</code></td></tr><tr><td>余白</td><td><code>--space-inner</code> <code>--space-row</code> <code>--space-card-gap</code> <code>--space-card-padding</code> <code>--space-section</code></td></tr><tr><td>大きさ</td><td><code>--size-tap-target</code></td></tr><tr><td>書体</td><td><code>--font-sans</code> <code>--font-mono</code></td></tr><tr><td>文字サイズ</td><td><code>--text-xs</code> 〜 <code>--text-5xl</code> と、それぞれの <code>--line-height</code></td></tr></tbody></table></div>
+<h2 id="tailwind-css-との対応">Tailwind CSS との対応<a class="anchor" href="#tailwind-css-との対応" aria-label="この見出しへのリンク">#</a></h2>
+<p>適用済みのアプリ（jin-toreji-lu）は Tailwind CSS v4 で、<code>@theme</code> に次の値を入れています。</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Tailwind</th><th scope="col">値</th><th scope="col">Muse DS</th></tr></thead><tbody><tr><td><code>rounded-sm</code> / <code>rounded-md</code></td><td>6px</td><td><code>--radius-small</code></td></tr><tr><td><code>rounded-lg</code> / <code>rounded-xl</code></td><td>12px</td><td><code>--radius-row</code></td></tr><tr><td><code>rounded-2xl</code></td><td>20px</td><td><code>--radius-card</code></td></tr><tr><td><code>rounded-full</code></td><td>9999px</td><td><code>--radius-pill</code>（999px）</td></tr><tr><td><code>text-xs</code> 〜 <code>text-5xl</code></td><td>12px 〜 48px</td><td><code>--text-xs</code> 〜 <code>--text-5xl</code>（同じ値）</td></tr><tr><td><code>font-sans</code></td><td>Figtree, Noto Sans JP</td><td><code>--font-sans</code></td></tr></tbody></table></div>
+<p>Muse DS の角丸の変数名（<code>small</code>／<code>row</code>／<code>card</code>／<code>pill</code>）は、Tailwind の <code>--radius-sm</code> などと重ならないように付けています。同じアプリで両方を読み込んでも上書きし合いません。</p></article>
+    
+    <footer class="page-foot">
+      <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/foundations/README.md" rel="noopener">GitHub で元の文書を見る（docs/foundations/README.md）</a></p>
+      <p>Muse DS v0.5.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+    </footer>
+  </main>
+</div>
+<div class="m-toast-region" role="status" aria-live="polite"></div>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/demos.js" defer></script>
+</body>
+</html>

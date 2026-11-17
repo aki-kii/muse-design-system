@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>今ここストリップ（Now Strip） | Muse Design System</title>
+<meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Noto+Sans+JP:wght@400..900&display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/demos.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('muse-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
+    <span class="brand-ver">v0.5.0</span>
+    <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="index.html" aria-current="true">コンポーネント</a></li><li><a href="../patterns.html">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
+    <div class="header-tools">
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="表示モードを切り替える"><span data-theme-label>自動</span></button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="side" data-menu-toggle>目次</button>
+    </div>
+  </div>
+</header>
+<div class="site-body">
+  <nav class="side" id="side" aria-label="目次"><div class="side-group"><p class="side-title">はじめに</p><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></div><div class="side-group"><p class="side-title">ファウンデーション</p><ul><li><a href="../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../foundations/color.html">色</a></li><li><a href="../foundations/typography.html">タイポグラフィ</a></li><li><a href="../foundations/spacing-radius-elevation.html">余白・角丸・影</a></li><li><a href="../foundations/accessibility.html">アクセシビリティ</a></li></ul></div><div class="side-group is-current"><p class="side-title">コンポーネント</p><ul><li><a href="index.html">コンポーネント一覧</a></li><li><a href="button.html">ボタン（Button）</a></li><li><a href="chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="section-card.html">セクションカード（Section Card）</a></li><li><a href="list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li><a href="approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="message-bubble.html">吹き出し（Message Bubble）</a></li><li><a href="toast.html">トースト（Toast）</a></li><li class="side-sub">学習ノートの部品</li><li><a href="course-path.html">コースパス（Course Path / Path Node）</a></li><li><a href="now-strip.html" aria-current="page">今ここストリップ（Now Strip）</a></li><li><a href="player-top-bar.html">プレイヤートップバー（Player Top Bar）</a></li><li><a href="word-card.html">単語カード（Word Card）</a></li><li><a href="quiz-option.html">クイズ選択肢（Quiz Option）</a></li><li><a href="result-banner.html">結果バナー（Result Banner）</a></li><li><a href="model-answer-box.html">模範解答ボックス（Model Answer Box）</a></li><li><a href="ask-box.html">質問ボックス（Ask Box）</a></li><li><a href="speak-button.html">読み上げボタン（Speak Button）</a></li><li><a href="chapter-complete-panel.html">章完了パネル（Chapter Complete Panel）</a></li><li><a href="shelf-cover-card.html">本棚カバーカード（Shelf Cover Card）</a></li><li><a href="course-switcher.html">コース切替パネル（Course Switcher）</a></li><li class="side-sub">スライドエディタの部品</li><li><a href="deck-card.html">デッキカード（Deck Card）</a></li><li><a href="deck-header.html">デッキヘッダー（Deck Header）</a></li><li><a href="slide-stage.html">スライドステージ（Slide Stage）</a></li><li><a href="page-counter-row.html">ページカウンタ行（Page Counter Row）</a></li><li><a href="thread-card.html">スレッドカード（Thread Card）</a></li><li><a href="awaiting-badge.html">確認待ちバッジ（Awaiting Badge）</a></li><li><a href="done-toggle.html">完了トグル・解決済みバッジ（Done Toggle / Resolved Badge）</a></li><li><a href="typing-indicator.html">修正中インジケータ（Typing Indicator）</a></li><li><a href="typing-strip.html">タイピングストリップ（Typing Strip）</a></li><li><a href="request-row.html">依頼行（Request Row）</a></li><li><a href="speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="memo-input-bar.html">メモ入力バー（Memo Input Bar）</a></li><li><a href="long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="sheet-modal.html">シートモーダル（Sheet Modal）</a></li><li><a href="page-preview-card.html">ページプレビューカード（Page Preview Card）</a></li><li><a href="position-radio.html">位置ラジオ（Position Radio）</a></li><li><a href="confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="submit-message.html">送信完了メッセージ（Submit Message）</a></li></ul></div><div class="side-group"><p class="side-title">パターン</p><ul><li><a href="../patterns.html">パターン</a></li><li><a href="../examples/daily-brief.html">適用例: Daily Brief</a></li></ul></div><div class="side-group"><p class="side-title">記録</p><ul><li><a href="../decisions/index.html">決定記録</a></li><li><a href="../open-questions.html">判断待ちの点</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></div></nav>
+  <main id="main" class="main">
+    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="index.html">コンポーネント</a></li><li aria-current="page">今ここストリップ（Now Strip）</li></ol>
+    <article class="doc"><h1 id="今ここストリップnow-strip">今ここストリップ（Now Strip）</h1>
+<p class="comp-lead">今の Part・章とクリア済みの数を上に固定して見せる</p>
+<section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="demo-stage" data-demo="now-strip">
+  <div class="demo-grid2">
+    <div class="demo-item">
+      <p class="demo-cap">固定（枠の中をスクロールすると上端に貼り付く）</p>
+      <div class="m-scroll" tabindex="0" aria-label="コースパスの見本（スクロールできます）">
+        <div style="height:12px"></div>
+        <div class="m-now">
+          <p class="m-now-label">今ここ</p>
+          <p class="m-now-title">Part 1 英文法の基礎 · 疑問文と否定文</p>
+          <p class="m-now-count">クリア済み 1章 · 全6章</p>
+        </div>
+        <div class="m-path">
+          <ol class="m-nodes">
+            <li><div class="m-node is-done"><span class="m-node-dot" aria-hidden="true">★</span><span class="m-node-text"><span class="m-node-title">be動詞と一般動詞</span><span class="m-node-state">完了</span></span></div></li>
+            <li><div class="m-node is-current"><span class="m-node-dot" aria-hidden="true">▶</span><span class="m-node-text"><span class="m-node-title">疑問文と否定文</span><span class="m-node-state">次はここ</span></span></div></li>
+            <li><div class="m-node is-locked"><span class="m-node-dot" aria-hidden="true">・</span><span class="m-node-text"><span class="m-node-title">現在形と現在進行形</span></span></div></li>
+            <li><div class="m-node is-locked"><span class="m-node-dot" aria-hidden="true">・</span><span class="m-node-text"><span class="m-node-title">過去形</span></span></div></li>
+            <li><div class="m-node is-locked"><span class="m-node-dot" aria-hidden="true">・</span><span class="m-node-text"><span class="m-node-title">未来の表し方</span></span></div></li>
+            <li><div class="m-node is-locked"><span class="m-node-dot" aria-hidden="true">・</span><span class="m-node-text"><span class="m-node-title">現在完了</span></span></div></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="demo-item">
+      <p class="demo-cap">全部クリア</p>
+      <div class="m-now">
+        <p class="m-now-title">全部クリア済みだよ</p>
+        <p class="m-now-count">クリア済み 6章 · 全6章</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
+<p><a href="course-path.html">コースパス</a>の上に固定して、いまの Part・章と、クリア済みの章の数を見せる帯です。パスを下にスクロールしても現在地が分かるようにします。</p>
+<h2 id="使うとき">使うとき<a class="anchor" href="#使うとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>長いコースパスを持つホーム画面で、パスの直前に1つだけ置く</li></ul>
+<h2 id="使わないとき">使わないとき<a class="anchor" href="#使わないとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>パスが1画面に収まる短いコース（パスの現在ノードで足りる）</li><li>操作を載せない（始める操作は画面下の<a href="button.html">ボタン</a>にする）</li><li>学習プレイヤーの中 → <a href="player-top-bar.html">プレイヤートップバー</a></li></ul>
+<h2 id="バリアント">バリアント<a class="anchor" href="#バリアント" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">バリアント</th><th scope="col">構成</th><th scope="col">用途</th></tr></thead><tbody><tr><td>現在地あり</td><td>ラベル「今ここ」＋「Part の題 · 章の題」＋「クリア済み n章 · 全m章」</td><td>未完了の章がある</td></tr><tr><td>全部クリア</td><td>「全部クリア済みだよ」＋「クリア済み n章 · 全n章」</td><td>すべての章が完了</td></tr></tbody></table></div>
+<h2 id="状態">状態<a class="anchor" href="#状態" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">状態</th><th scope="col">見た目</th><th scope="col">条件</th></tr></thead><tbody><tr><td>通常</td><td>パスの上の位置に置かれる</td><td>スクロール前</td></tr><tr><td>固定</td><td>画面上端から 8px の位置に貼り付く</td><td>スクロールして上端に届いたとき</td></tr></tbody></table></div>
+<p>押せないので、押下・フォーカスの状態は持ちません。</p>
+<h2 id="仕様">仕様<a class="anchor" href="#仕様" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">項目</th><th scope="col">値</th><th scope="col">トークン</th></tr></thead><tbody><tr><td>面</td><td>白、1px の枠、カードの影</td><td><code>--surface</code> <code>--border</code> <code>--shadow-card</code></td></tr><tr><td>角丸</td><td>20px</td><td><code>--radius-card</code></td></tr><tr><td>内側の余白</td><td>上下 12px、左右 16px</td><td></td></tr><tr><td>固定の位置</td><td><code>position: sticky; top: 8px</code></td><td></td></tr><tr><td>ラベル「今ここ」</td><td>11px / 800、字間 0.05em</td><td><code>--accent-strong</code>（11px は段にない。<a href="../open-questions.html#学習ノート由来の部品">判断待ちの点</a> 16）</td></tr><tr><td>題</td><td>14px / 700</td><td><code>--text</code></td></tr><tr><td>数</td><td>13px</td><td><code>--dim</code></td></tr></tbody></table></div>
+<h2 id="アクセシビリティ">アクセシビリティ<a class="anchor" href="#アクセシビリティ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>見出し要素にはせず、<code>&lt;p&gt;</code> の並びにする（ページの見出し構造に入れない）。</li><li>固定される帯の高さぶん、パスのノードに <code>scroll-margin-top</code> を取り、フォーカスやスクロールで移ったノードが帯の下に隠れないようにする。</li></ul>
+<h2 id="関連">関連<a class="anchor" href="#関連" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li><a href="course-path.html">コースパス</a></li></ul><nav class="pager" aria-label="前後の部品"><a class="pager-prev" href="course-path.html"><span>前の部品</span>コースパス</a><a class="pager-next" href="player-top-bar.html"><span>次の部品</span>プレイヤートップバー</a></nav></article>
+    
+    <footer class="page-foot">
+      <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/components/now-strip.md" rel="noopener">GitHub で元の文書を見る（docs/components/now-strip.md）</a></p>
+      <p>Muse DS v0.5.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+    </footer>
+  </main>
+</div>
+<div class="m-toast-region" role="status" aria-live="polite"></div>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/demos.js" defer></script>
+</body>
+</html>
