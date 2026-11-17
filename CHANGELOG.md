@@ -4,6 +4,22 @@
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-11-17
+
+ほかのデザインシステム（Carbon、Polaris、Primer、Material Design）から、Muse のアプリで使い道のある部品を3つもらった版。もらったのは部品の考え方と構成だけで、見た目は Muse DS のトークンで作った。あわせて、サンプルサイトのヘッダーの操作をアイコンボタンにし、docs/ と README の文章を yomiyasu で推敲した。
+
+### Added
+
+- 部品「スケルトン」（読み込み中に中身の形を先に見せる。参考元: Carbon の Skeleton states、Polaris の Skeleton、Primer の SkeletonBox）。学習ノート・筋トレ記録・AWS アップデートが「読み込み中…」の文だけを出している場所の置き換え先。
+- 部品「空の状態」（まだない・見つからない・読み込めなかったの3つと小。参考元: Polaris の Empty state、Primer の Blankslate、Carbon の Empty states）。スライドエディタの「まだありません」、筋トレ記録の「読み込めなかった」などの置き換え先。
+- 部品「検索フィールド」（虫めがね＋欄＋消す ✕、打つたびに絞り込む。参考元: Carbon の Search、Material Design 3 の Search、Primer の TextInput）。AWS アップデートの絵文字の検索が実例。
+- サイトとデモのアイコンに Lucide の sun・moon・monitor・menu・search・inbox・circle-alert の形を足した。
+
+### Changed
+
+- サンプルサイトのヘッダーの「表示モード」と「目次」を、文字のボタンから線のアイコンのボタン（36px の丸）に変えた。表示モードは自動・ライト・ダークでモニター・太陽・月のアイコンに切り替わり、目次は開くと ✕ になる。どちらも `aria-label` と `title`（ツールチップ）で、今の状態と押したあとに起きることを伝える。
+- docs/ と README の日本語の文章を、日本語推敲スキル yomiyasu で推敲した。意味・事実・数値・固有名詞・コード・トークン名・見出しは変えていない。
+
 ## [0.7.0] - 2026-11-17
 
 判断待ちの点（28件）をすべて解消した版。実アプリの現行値を正とし、コントラストは WCAG 2.2 AA を満たす側に倒した（[ADR 0003](docs/decisions/0003-color-and-contrast.md)〜[0006](docs/decisions/0006-icon-set.md)）。

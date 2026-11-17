@@ -24,12 +24,12 @@ radius.20       20px    ─▶ radius.card       ─▶ セクションカード
 | primitive | 使える値の一覧。値そのもの | 色相と明るさ（`blue.600`）、または値（`space.14`） | 使わない |
 | semantic | 値に役割を与える。ライトとダークで値が変わる | 役割（`accent`、`surface`、`card-gap`） | 使う |
 
-決め事:
+決め事は次のとおりです。
 
-- **部品は semantic だけを参照する。** `#0073E6` や `blue.600` を部品の CSS に直接書かない。ダークモードの切り替えは semantic で起きるので、primitive を直接使うとダークで壊れる。
-- **新しい値は primitive に足してから、semantic で役割を付ける。** 役割の決まっていない値は semantic に出さない。
-- **ダークモードは名前を変えずに値だけを切り替える。** `tokens.json` では `$extensions.com.muse.modes.dark` に primitive の参照を書く。
-- **CSS に出すのは semantic だけ。** `tokens.css` には primitive の変数がない。使えない値を最初から選べないようにするため。
+- 部品は semantic だけを参照する。 `#0073E6` や `blue.600` を部品の CSS に直接書かない。ダークモードの切り替えは semantic で起きるので、primitive を直接使うとダークで表示がおかしくなる。
+- 新しい値は primitive に足してから、semantic で役割を付ける。 役割の決まっていない値は semantic に出さない。
+- ダークモードは名前を変えずに値だけを切り替える。 `tokens.json` では `$extensions.com.muse.modes.dark` に primitive の参照を書く。
+- CSS に出すのは semantic だけ。 `tokens.css` には primitive の変数がない。使えない値を最初から選べないようにするため。
 
 部品ごとのトークン（`button.primary.bg` のような第3層）は、v0.3 では持ちません。部品の実装ライブラリを作るときに検討します。
 

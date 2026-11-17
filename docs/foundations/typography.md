@@ -8,7 +8,7 @@ font-family: var(--font-sans); /* Figtree, "Noto Sans JP", "Hiragino Sans", sans
 
 ## 段
 
-段のサイズは、下の文字サイズのスケールの値だけで作ります（[決定記録 0004](../decisions/0004-scale-and-local-values.md)）。
+段のサイズは下の文字サイズのスケールの値だけで作ります（[決定記録 0004](../decisions/0004-scale-and-local-values.md)）。
 
 | 段 | 太さ | サイズ（変数） | 使う場所 |
 | --- | --- | --- | --- |
