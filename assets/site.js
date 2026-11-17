@@ -27,6 +27,15 @@
 
   var menu = document.querySelector('[data-menu-toggle]');
   var side = document.getElementById('side');
+  // 目次の中で、今のページの項目が見える位置までスクロールしておく
+  function showCurrent() {
+    if (!side) return;
+    var cur = side.querySelector('[aria-current="page"]');
+    if (!cur) return;
+    var top = cur.offsetTop - side.clientHeight / 3;
+    side.scrollTop = Math.max(0, top);
+  }
+  showCurrent();
   if (menu && side) {
     menu.addEventListener('click', function () {
       var open = side.classList.toggle('is-open');
@@ -37,6 +46,7 @@
       menu.querySelector('[data-menu-icon="open"]').hidden = open;
       menu.querySelector('[data-menu-icon="close"]').hidden = !open;
       document.body.style.overflow = open ? 'hidden' : '';
+      if (open) showCurrent();
     });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && side.classList.contains('is-open')) { menu.click(); menu.focus(); }

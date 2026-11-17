@@ -40,11 +40,11 @@
   }
 
   // 読み上げ（en-US、速さ 0.95）
-  function speak(text) {
+  function speak(text, lang) {
     if (!('speechSynthesis' in window)) return;
     speechSynthesis.cancel();
     var u = new SpeechSynthesisUtterance(text.replace(/[（(][^）)]*[）)]/g, ''));
-    u.lang = 'en-US';
+    u.lang = lang || 'ja-JP';
     u.rate = 0.95;
     speechSynthesis.speak(u);
   }
@@ -61,11 +61,11 @@
     var tt = e.target.closest('[data-toast]');
     if (tt) toast(tt.getAttribute('data-toast'));
     var sp = e.target.closest('[data-speak]');
-    if (sp) speak(sp.getAttribute('data-speak'));
+    if (sp) speak(sp.getAttribute('data-speak'), sp.getAttribute('data-lang'));
   });
   document.addEventListener('keydown', function (e) {
     var sp = e.target.closest && e.target.closest('[data-speak][role="button"]');
-    if (sp && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); speak(sp.getAttribute('data-speak')); }
+    if (sp && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); speak(sp.getAttribute('data-speak'), sp.getAttribute('data-lang')); }
   });
 
   var init = {};
@@ -337,10 +337,8 @@
       });
       check.hidden = true;
       var ok = picked === answer;
-      out.innerHTML = '<div class="m-result ' + (ok ? 'm-result--ok' : 'm-result--ng') + '" role="status"><p class="m-result-title">' + (ok ? '正解！その調子だよ' : '惜しい！ここがポイントだよ') + '</p><p class="m-result-body">' + root.getAttribute('data-explain') + '</p></div>' +
-        (ok ? '' : '<div class="m-btn-row" style="margin-top:10px"><button type="button" class="m-btn m-btn--secondary" data-toast="解説ページを開きます">解説を見返す</button><button type="button" class="m-btn m-btn--ghost" data-toast="章の解説全体を開きます">章の解説全体</button></div>') +
-        '<p style="margin:10px 0 0"><button type="button" class="demo-reset" data-again>もう一度解く</button></p>';
-      if (ok) confetti($(out, '.m-result'));
+      out.innerHTML = '<p class="m-result-line ' + (ok ? 'is-ok' : 'is-ng') + '" role="status">' + (ok ? '正解です。' : 'ちがいます。') + root.getAttribute('data-explain') + '</p>' +
+        '<p style="margin:10px 0 0"><button type="button" class="demo-reset" data-again>もう一度選ぶ</button></p>';
       $(out, '[data-again]').addEventListener('click', reset);
     });
     reset();
@@ -446,7 +444,7 @@
       badge.textContent = drafts;
       badge.hidden = !drafts;
       submitItem.disabled = !drafts;
-      submitItem.setAttribute('aria-label', '修正依頼（下書き' + drafts + '件）');
+      submitItem.setAttribute('aria-label', 'まとめて送る（下書き' + drafts + '件）');
     }
     function toggle(open) {
       items.hidden = !open;
@@ -470,8 +468,7 @@
         drafts = 0;
         drawBadge();
         clearTimeout(timer);
-        var pages = n > 1 ? 1 : 0;
-        msgHost.innerHTML = '<div class="m-submit" role="status">修正依頼を ' + n + ' 件出しました（メモ' + (n - pages) + '件・ページ依頼' + pages + '件）</div>';
+        msgHost.innerHTML = '<div class="m-submit" role="status">下書き ' + n + ' 件をまとめて送りました</div>';
         timer = setTimeout(function () { msgHost.innerHTML = ''; }, 4000);
       } else {
         drafts++;
@@ -505,7 +502,7 @@
       if (err) err.hidden = true;
     });
     send.addEventListener('click', function () {
-      toast('メモを下書きに積みました');
+      toast('送りました');
       input.value = '';
       fit();
       input.focus();
@@ -594,8 +591,8 @@
     });
   };
 
-  // ---------------------------------------------------------- シートモーダル
-  init['sheet-modal'] = function (root) {
+  // ---------------------------------------------------------- ボトムシート
+  init['bottom-sheet'] = function (root) {
     var area = $(root, '.m-modal-area');
     var layer = $(root, '[data-layer]');
     var opener = null;
@@ -667,7 +664,7 @@
     function close() { layer.hidden = true; opener.focus(); }
     opener.addEventListener('click', function () { layer.hidden = false; $(dialog, '.m-dialog-cancel').focus(); });
     $(root, '.m-dialog-cancel').addEventListener('click', close);
-    $(root, '.m-dialog-ok').addEventListener('click', function () { layer.hidden = true; list.hidden = false; opener.hidden = true; $(root, '[data-reset]').focus(); toast('スレッドを削除しました'); });
+    $(root, '.m-dialog-ok').addEventListener('click', function () { layer.hidden = true; list.hidden = false; opener.hidden = true; $(root, '[data-reset]').focus(); toast('フォルダを削除しました'); });
     layer.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') close();
       if (e.key === 'Tab') {
@@ -681,7 +678,7 @@
 
   // ---------------------------------------------------------- 汎用部品（v0.6.0）
   init['progress-path'] = init['course-path'];
-  init['choice-button'] = radios;
+  init['choice-button'] = function (root) { radios(root); $$(root, '[data-quiz]').forEach(quiz); };
   init['icon-button'] = function (root) {
     var r = $(root, '[data-refresh]');
     r.addEventListener('click', function () {
@@ -723,6 +720,151 @@
     draw();
   };
 
+
+  var ICON_INBOX = '<svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11Z"/></svg>';
+  var ICON_ALERT = '<svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>';
+  // ---------------------------------------------------------- パターン: 読み込み・空・失敗の状態
+  var SKEL_ROWS = '<span class="vh">読み込み中</span><div class="m-skel-rows" aria-hidden="true">' +
+    [0, 1, 2].map(function () {
+      return '<div class="m-skel-row"><span class="m-skel-lines"><span class="m-skel m-skel--line"></span><span class="m-skel m-skel--line is-short"></span></span></div>';
+    }).join('') + '</div>';
+  init['loading-states'] = function (root) {
+    var area = $(root, '[data-area]');
+    var chips = $$(root, '[data-state]');
+    var timer;
+    var views = {
+      loading: SKEL_ROWS,
+      content: '<ul class="m-rows"><li><span class="m-row-main"><span class="m-row-title">電球を買い替える</span><span class="m-row-sub">きのう</span></span></li><li><span class="m-row-main"><span class="m-row-title">図書館の本を返す</span><span class="m-row-sub">3日前</span></span></li><li><span class="m-row-main"><span class="m-row-title">棚の位置を決める</span><span class="m-row-sub">先週</span></span></li></ul>',
+      empty: '<div class="m-empty"><span class="m-empty-icon">' + ICON_INBOX + '</span><p class="m-empty-title">メモはまだありません</p><p class="m-empty-text">気づいたことを書くと、ここに並びます。</p><button type="button" class="m-btn m-btn--primary" data-toast="メモの入力を開きます">メモを書く</button></div>',
+      error: '<div class="m-empty"><span class="m-empty-icon is-danger">' + ICON_ALERT + '</span><p class="m-empty-title">読み込めませんでした</p><p class="m-empty-text">通信が切れている可能性があります。</p><button type="button" class="m-btn m-btn--secondary" data-retry>もう一度読み込む</button></div>'
+    };
+    function show(state) {
+      clearTimeout(timer);
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.getAttribute('data-state') === state)); });
+      area.innerHTML = views[state];
+      area.setAttribute('aria-busy', String(state === 'loading'));
+      var retry = $(area, '[data-retry]');
+      if (retry) retry.addEventListener('click', function () {
+        show('loading');
+        timer = setTimeout(function () { show('content'); }, 1400);
+      });
+    }
+    chips.forEach(function (c) { c.addEventListener('click', function () { show(c.getAttribute('data-state')); }); });
+    show('loading');
+  };
+
+  // ---------------------------------------------------------- パターン: 失敗からのやり直し
+  init['error-recovery'] = function (root) {
+    var input = $(root, 'textarea');
+    var msg = $(root, '[data-msg]');
+    var send = $(root, '[data-send]');
+    var fail = $(root, '[data-fail]');
+    send.addEventListener('click', function () {
+      if (!input.value.trim()) {
+        msg.textContent = '内容を入れてください。';
+        msg.style.color = 'var(--danger)';
+        input.setAttribute('aria-invalid', 'true');
+        input.focus();
+        return;
+      }
+      input.removeAttribute('aria-invalid');
+      msg.textContent = '';
+      msg.removeAttribute('role');
+      send.disabled = true;
+      send.textContent = '送信中…';
+      setTimeout(function () {
+        send.disabled = false;
+        if (fail.checked) {
+          send.textContent = 'もう一度送る';
+          msg.setAttribute('role', 'alert');
+          msg.style.color = 'var(--danger)';
+          msg.textContent = '送れませんでした。通信を確かめて、もう一度送ってください。';
+          fail.checked = false;
+        } else {
+          send.textContent = '送信する';
+          msg.style.color = '';
+          msg.textContent = '';
+          input.value = '';
+          toast('送信しました');
+          fail.checked = true;
+        }
+      }, 1200);
+    });
+  };
+
+  // ---------------------------------------------------------- パターン: 検索と絞り込み
+  init['search-and-filter'] = function (root) {
+    var q = $(root, '[data-q]');
+    var clear = $(root, '[data-clear]');
+    var chips = $$(root, '[data-cat]').filter(function (el) { return el.classList.contains('m-chip'); });
+    var items = $$(root, '[data-list] > li');
+    var empty = $(root, '[data-empty]');
+    var list = $(root, '[data-list]');
+    var count = $(root, '[data-count]');
+    var cat = '';
+    var timer;
+    function norm(t) { return t.toLowerCase().replace(/[ァ-ヶ]/g, function (ch) { return String.fromCharCode(ch.charCodeAt(0) - 0x60); }); }
+    function apply() {
+      var t = norm(q.value.trim());
+      var n = 0;
+      items.forEach(function (li) {
+        var hit = (!cat || li.getAttribute('data-cat') === cat) && (!t || norm(li.textContent).indexOf(t) >= 0);
+        li.hidden = !hit;
+        if (hit) n++;
+      });
+      list.hidden = n === 0;
+      empty.hidden = n !== 0;
+      clear.hidden = !q.value;
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.getAttribute('data-cat') === cat)); });
+      clearTimeout(timer);
+      timer = setTimeout(function () { count.textContent = n + '件'; }, 500);
+    }
+    q.addEventListener('input', apply);
+    clear.addEventListener('click', function () { q.value = ''; apply(); q.focus(); });
+    chips.forEach(function (c) { c.addEventListener('click', function () { cat = c.getAttribute('data-cat'); apply(); }); });
+    $(root, '[data-reset]').addEventListener('click', function () { q.value = ''; cat = ''; apply(); q.focus(); });
+    apply();
+  };
+
+  // ---------------------------------------------------------- パターン: 一覧から詳細へ
+  init['list-to-detail'] = function (root) {
+    var listView = $(root, '[data-list-view]');
+    var detail = $(root, '[data-detail-view]');
+    var title = $(root, '[data-title]');
+    var meta = $(root, '[data-meta]');
+    var body = $(root, '[data-body]');
+    var data = [
+      { t: '11月15日 散歩', m: '32分 ・ 2.4km ・ 晴れ', b: '川沿いを往復しました。途中で少し休みました。' },
+      { t: '11月13日 ストレッチ', m: '15分', b: '肩と背中を中心に。寝る前に行いました。' },
+      { t: '11月10日 散歩', m: '45分 ・ 3.1km ・ くもり', b: '公園を2周しました。' }
+    ];
+    var opener = null;
+    var timer;
+    $$(root, '[data-open]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        opener = b;
+        var d = data[+b.getAttribute('data-open')];
+        listView.hidden = true;
+        detail.hidden = false;
+        title.textContent = d.t;
+        meta.textContent = d.m;
+        body.innerHTML = SKEL_ROWS;
+        body.setAttribute('aria-busy', 'true');
+        title.focus();
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          body.innerHTML = '<p class="m-card-body" style="margin:0">' + d.b + '</p>';
+          body.setAttribute('aria-busy', 'false');
+        }, 900);
+      });
+    });
+    $(root, '[data-back]').addEventListener('click', function () {
+      clearTimeout(timer);
+      detail.hidden = true;
+      listView.hidden = false;
+      if (opener) opener.focus();
+    });
+  };
 
   $$(document, '[data-demo]').forEach(function (root) {
     var f = init[root.getAttribute('data-demo')];

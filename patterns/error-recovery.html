@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>失敗からのやり直し（Error Recovery） | Muse Design System</title>
+<meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Noto+Sans+JP:wght@400..900&display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/demos.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('muse-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
+    <span class="brand-ver">v0.12.0</span>
+    <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="../components/index.html">コンポーネント</a></li><li><a href="../patterns.html" aria-current="true">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
+    <div class="header-tools">
+      <button class="tool-btn theme-btn" type="button" data-theme-toggle aria-label="表示モード: 自動（押すとライトにする）" title="表示モード: 自動（押すとライトにする）"><span data-theme-icon="auto"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><span data-theme-icon="light" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span><span data-theme-icon="dark" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span></button>
+      <button class="tool-btn menu-btn" type="button" aria-expanded="false" aria-controls="side" aria-label="目次を開く" title="目次を開く" data-menu-toggle><span data-menu-icon="open"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></span><span data-menu-icon="close" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span></button>
+    </div>
+  </div>
+</header>
+<div class="site-body">
+  <nav class="side" id="side" aria-label="目次"><p class="side-head">目次</p><details class="side-group"><summary class="side-summary"><span class="side-title">はじめに</span><span class="side-desc">このサイトの見方と使い方</span></summary><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></details><details class="side-group"><summary class="side-summary"><span class="side-title">ファウンデーション</span><span class="side-desc">色・文字・余白・角丸などの値</span></summary><ul><li><a href="../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../foundations/color.html">色</a></li><li><a href="../foundations/typography.html">タイポグラフィ</a></li><li><a href="../foundations/spacing-radius-elevation.html">余白・角丸・重なり</a></li><li><a href="../foundations/icons.html">アイコン</a></li><li><a href="../foundations/accessibility.html">アクセシビリティ</a></li></ul></details><details class="side-group"><summary class="side-summary"><span class="side-title">コンポーネント</span><span class="side-desc">中身に依存しない部品（25件）</span></summary><ul><li><a href="../components/index.html">コンポーネント一覧</a></li><li class="side-sub">操作と入力</li><li><a href="../components/button.html">ボタン（Button）</a></li><li><a href="../components/icon-button.html">アイコンボタン（Icon Button）</a></li><li><a href="../components/chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="../components/choice-button.html">選択肢ボタン（Choice Button）</a></li><li><a href="../components/input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="../components/search-field.html">検索フィールド（Search Field）</a></li><li><a href="../components/memo-input-bar.html">入力バー（Input Bar）</a></li><li><a href="../components/done-toggle.html">完了トグル・完了バッジ（Done Toggle / Done Badge）</a></li><li><a href="../components/navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li class="side-sub">内容を並べる</li><li><a href="../components/section-card.html">セクションカード（Section Card）</a></li><li><a href="../components/list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="../components/status-list-item.html">状態付きリスト項目（Status List Item）</a></li><li><a href="../components/media-card.html">メディアカード（Media Card）</a></li><li><a href="../components/progress-path.html">進捗パス（Progress Path）</a></li><li><a href="../components/flashcard.html">フラッシュカード（Flashcard）</a></li><li><a href="../components/message-bubble.html">吹き出し（Message Bubble）</a></li><li><a href="../components/empty-state.html">空の状態（Empty State）</a></li><li class="side-sub">重ねて出す・知らせる</li><li><a href="../components/approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="../components/bottom-sheet.html">ボトムシート（Bottom Sheet）</a></li><li><a href="../components/confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="../components/long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="../components/speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="../components/toast.html">トースト（Toast）</a></li><li><a href="../components/typing-indicator.html">作業中インジケータ（Typing Indicator）</a></li><li><a href="../components/skeleton.html">スケルトン（Skeleton）</a></li></ul></details><details class="side-group is-current" open><summary class="side-summary"><span class="side-title">パターン</span><span class="side-desc">よくあるタスクと状態の型（5件）</span></summary><ul><li><a href="../patterns.html">パターン一覧</a></li><li><a href="loading-states.html">読み込み・空・失敗の状態（Loading, Empty, Error）</a></li><li><a href="error-recovery.html" aria-current="page">失敗からのやり直し（Error Recovery）</a></li><li><a href="search-and-filter.html">検索と絞り込み（Search and Filter）</a></li><li><a href="list-to-detail.html">一覧から詳細へ（List to Detail）</a></li><li><a href="approval-flow.html">確認をはさむ操作（Confirm Before Acting）</a></li></ul></details><details class="side-group"><summary class="side-summary"><span class="side-title">記録</span><span class="side-desc">決定の記録・版の付け方・変更履歴</span></summary><ul><li><a href="../decisions/index.html">決定記録</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></details></nav>
+  <main id="main" class="main">
+    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="../patterns.html">パターン</a></li><li aria-current="page">失敗からのやり直し（Error Recovery）</li></ol>
+    <article class="doc"><h1 id="失敗からのやり直しerror-recovery">失敗からのやり直し（Error Recovery）</h1>
+<p class="comp-lead">操作が失敗しても入力を残し、理由と「もう一度」をその場に出す</p>
+<section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="demo-stage" data-demo="error-recovery">
+  <div class="m-card" style="max-width:480px">
+    <div class="m-field" style="max-width:none">
+      <label class="m-label" for="er-1">問い合わせの内容</label>
+      <textarea class="m-input" id="er-1" rows="3" style="height:auto;min-height:92px;padding-top:12px" aria-describedby="er-1-msg">配送の日を変えたいです。</textarea>
+      <p class="m-hint" id="er-1-msg" data-msg></p>
+    </div>
+    <div class="m-btn-row" style="margin-top:12px"><button type="button" class="m-btn m-btn--primary" data-send>送信する</button></div>
+  </div>
+  <label class="demo-note" style="display:flex;align-items:center;gap:8px;margin-top:12px"><input type="checkbox" data-fail checked> 次の送信を失敗させる（見本の切り替え）</label>
+  <p class="demo-note">失敗しても入力は消えず、ボタンの近くに理由と次の一手が出て、同じボタンでやり直せます。</p>
+</div>
+</section>
+<p><strong>よくある型である理由:</strong> 送信・保存・作成などの操作は、どの製品でも通信や処理の失敗で止まることがあります。そのときに入力を失わず、何が起きたかと次の一手をその場で示す流れは、エラー処理の基本の型です（<a href="https://design-system.service.gov.uk/patterns/validation/" rel="noopener">GOV.UK の Recover from validation errors</a>、<a href="https://www.nngroup.com/articles/error-message-guidelines/" rel="noopener">NN/g の Error-Message Guidelines</a>、<a href="https://primer.style/ui-patterns/degraded-experiences" rel="noopener">Primer の Degraded experiences</a>）。</p>
+<p><strong>使っているところ:</strong> 学習ノート（採点・作成・質問の送信が失敗したとき、入力を残して「もう一度」を出す）、入力バーの音声入力のエラー。</p>
+<h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
+<p>本人が始めた操作が失敗したときに、入力をそのまま残し、失敗したことと理由を操作のすぐ近くに文で出し、同じ操作をもう一度できるようにする流れです。</p>
+<h2 id="組み合わせ">組み合わせ<a class="anchor" href="#組み合わせ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>操作: <a href="../components/button.html">ボタン</a>（送信中は無効にして文を変える）</li><li>入力: <a href="../components/input-and-switch.html">入力欄</a>・<a href="../components/memo-input-bar.html">入力バー</a>（失敗しても中身を消さない）</li><li>知らせ: 操作の近くに <code>--danger</code> の文（<a href="../components/input-and-switch.html">入力欄</a>のエラーと同じ出し方）</li></ul>
+<h2 id="流れ">流れ<a class="anchor" href="#流れ" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">段階</th><th scope="col">見た目</th><th scope="col">次へ</th></tr></thead><tbody><tr><td>実行中</td><td>ボタンを押せなくし、文を「送信中…」のように変える</td><td>成功か失敗</td></tr><tr><td>成功</td><td>結果を出し、入力を空に戻す。必要なら<a href="../components/toast.html">トースト</a></td><td></td></tr><tr><td>失敗</td><td>入力を残したまま、ボタンを押せる状態に戻す。ボタンの近くに「送れませんでした。もう一度試してください」のように、何が起きたかと次の一手を1文で出す</td><td>もう一度押したら実行中へ</td></tr></tbody></table></div>
+<ul><li>失敗の文は操作のすぐ近くに出す。画面の上の帯やトーストだけで知らせない（消えると読めない）。</li><li>入力の中身が原因の失敗（形式の誤り）は、その欄のヒントの位置に出し、欄にフォーカスを戻す。</li><li>ボタンの文を「もう一度送る」に変えてよい。</li><li>何度も失敗するときも、同じ流れのまま。勝手に繰り返し送らない。</li></ul>
+<h2 id="使うとき">使うとき<a class="anchor" href="#使うとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>本人が押して始めた送信・保存・作成・採点などの操作が失敗したとき</li></ul>
+<h2 id="使わないとき">使わないとき<a class="anchor" href="#使わないとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>画面を開いたときの読み込みの失敗 → <a href="loading-states.html">読み込み・空・失敗の状態</a></li><li>取り消せない操作の前の確認 → <a href="approval-flow.html">確認をはさむ操作</a></li></ul>
+<h2 id="アクセシビリティ">アクセシビリティ<a class="anchor" href="#アクセシビリティ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>失敗の文は <code>role=&quot;alert&quot;</code> で伝える（本人の操作の結果なので割り込んでよい）。</li><li>欄の誤りは <code>aria-invalid=&quot;true&quot;</code> と <code>aria-describedby</code> で欄に結び付ける。</li><li>失敗は赤い色だけでなく文で伝える。</li></ul>
+<h2 id="関連">関連<a class="anchor" href="#関連" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li><a href="../components/button.html">ボタン</a></li><li><a href="../components/input-and-switch.html">入力欄とスイッチ</a></li><li><a href="loading-states.html">読み込み・空・失敗の状態</a></li></ul><nav class="pager" aria-label="前後の部品"><a class="pager-prev" href="loading-states.html"><span>前の部品</span>読み込み・空・失敗の状態</a><a class="pager-next" href="search-and-filter.html"><span>次の部品</span>検索と絞り込み</a></nav></article>
+    
+    <footer class="page-foot">
+      <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/patterns/error-recovery.md" rel="noopener">GitHub で元の文書を見る（docs/patterns/error-recovery.md）</a></p>
+      <p>Muse DS v0.12.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+    </footer>
+  </main>
+</div>
+<div class="m-toast-region" role="status" aria-live="polite"></div>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/demos.js" defer></script>
+</body>
+</html>

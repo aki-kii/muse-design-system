@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>承認をはさむ型（Approval Flow） | Muse Design System</title>
+<title>確認をはさむ操作（Confirm Before Acting） | Muse Design System</title>
 <meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,7 @@
 <header class="site-header">
   <div class="site-header-inner">
     <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
-    <span class="brand-ver">v0.11.0</span>
+    <span class="brand-ver">v0.12.0</span>
     <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="../components/index.html">コンポーネント</a></li><li><a href="../patterns.html" aria-current="true">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
     <div class="header-tools">
       <button class="tool-btn theme-btn" type="button" data-theme-toggle aria-label="表示モード: 自動（押すとライトにする）" title="表示モード: 自動（押すとライトにする）"><span data-theme-icon="auto"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><span data-theme-icon="light" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span><span data-theme-icon="dark" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span></button>
@@ -28,19 +28,19 @@
   </div>
 </header>
 <div class="site-body">
-  <nav class="side" id="side" aria-label="目次"><div class="side-group"><p class="side-title">はじめに</p><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></div><div class="side-group"><p class="side-title">ファウンデーション</p><ul><li><a href="../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../foundations/color.html">色</a></li><li><a href="../foundations/typography.html">タイポグラフィ</a></li><li><a href="../foundations/spacing-radius-elevation.html">余白・角丸・影</a></li><li><a href="../foundations/icons.html">アイコン</a></li><li><a href="../foundations/accessibility.html">アクセシビリティ</a></li></ul></div><div class="side-group"><p class="side-title">コンポーネント</p><ul><li><a href="../components/index.html">コンポーネント一覧</a></li><li class="side-sub">操作と入力</li><li><a href="../components/button.html">ボタン（Button）</a></li><li><a href="../components/icon-button.html">アイコンボタン（Icon Button）</a></li><li><a href="../components/chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="../components/choice-button.html">選択肢ボタン（Choice Button）</a></li><li><a href="../components/input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="../components/search-field.html">検索フィールド（Search Field）</a></li><li><a href="../components/memo-input-bar.html">入力バー（Input Bar）</a></li><li><a href="../components/done-toggle.html">完了トグル・完了バッジ（Done Toggle / Done Badge）</a></li><li><a href="../components/navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li class="side-sub">内容を並べる</li><li><a href="../components/section-card.html">セクションカード（Section Card）</a></li><li><a href="../components/list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="../components/status-list-item.html">状態付きリスト項目（Status List Item）</a></li><li><a href="../components/media-card.html">メディアカード（Media Card）</a></li><li><a href="../components/progress-path.html">進捗パス（Progress Path）</a></li><li><a href="../components/flashcard.html">フラッシュカード（Flashcard）</a></li><li><a href="../components/message-bubble.html">吹き出し（Message Bubble）</a></li><li><a href="../components/empty-state.html">空の状態（Empty State）</a></li><li class="side-sub">重ねて出す・知らせる</li><li><a href="../components/approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="../components/sheet-modal.html">シートモーダル（Sheet Modal）</a></li><li><a href="../components/confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="../components/long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="../components/speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="../components/toast.html">トースト（Toast）</a></li><li><a href="../components/typing-indicator.html">作業中インジケータ（Typing Indicator）</a></li><li><a href="../components/skeleton.html">スケルトン（Skeleton）</a></li></ul></div><div class="side-group is-current"><p class="side-title">パターン</p><ul><li><a href="../patterns.html">パターン一覧</a></li><li><a href="reading-page.html">読み物ページの型（Reading Page）</a></li><li><a href="approval-flow.html" aria-current="page">承認をはさむ型（Approval Flow）</a></li><li><a href="status-layers.html">状態を見せる型（Status Layers）</a></li><li><a href="answer-check.html">答え合わせの型（Answer Check）</a></li><li><a href="word-card.html">単語カード（Word Card）</a></li><li><a href="ask-box.html">質問ボックス（Ask Box）</a></li></ul></div><div class="side-group"><p class="side-title">記録</p><ul><li><a href="../decisions/index.html">決定記録</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></div></nav>
+  <nav class="side" id="side" aria-label="目次"><p class="side-head">目次</p><details class="side-group"><summary class="side-summary"><span class="side-title">はじめに</span><span class="side-desc">このサイトの見方と使い方</span></summary><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></details><details class="side-group"><summary class="side-summary"><span class="side-title">ファウンデーション</span><span class="side-desc">色・文字・余白・角丸などの値</span></summary><ul><li><a href="../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../foundations/color.html">色</a></li><li><a href="../foundations/typography.html">タイポグラフィ</a></li><li><a href="../foundations/spacing-radius-elevation.html">余白・角丸・重なり</a></li><li><a href="../foundations/icons.html">アイコン</a></li><li><a href="../foundations/accessibility.html">アクセシビリティ</a></li></ul></details><details class="side-group"><summary class="side-summary"><span class="side-title">コンポーネント</span><span class="side-desc">中身に依存しない部品（25件）</span></summary><ul><li><a href="../components/index.html">コンポーネント一覧</a></li><li class="side-sub">操作と入力</li><li><a href="../components/button.html">ボタン（Button）</a></li><li><a href="../components/icon-button.html">アイコンボタン（Icon Button）</a></li><li><a href="../components/chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="../components/choice-button.html">選択肢ボタン（Choice Button）</a></li><li><a href="../components/input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="../components/search-field.html">検索フィールド（Search Field）</a></li><li><a href="../components/memo-input-bar.html">入力バー（Input Bar）</a></li><li><a href="../components/done-toggle.html">完了トグル・完了バッジ（Done Toggle / Done Badge）</a></li><li><a href="../components/navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li class="side-sub">内容を並べる</li><li><a href="../components/section-card.html">セクションカード（Section Card）</a></li><li><a href="../components/list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="../components/status-list-item.html">状態付きリスト項目（Status List Item）</a></li><li><a href="../components/media-card.html">メディアカード（Media Card）</a></li><li><a href="../components/progress-path.html">進捗パス（Progress Path）</a></li><li><a href="../components/flashcard.html">フラッシュカード（Flashcard）</a></li><li><a href="../components/message-bubble.html">吹き出し（Message Bubble）</a></li><li><a href="../components/empty-state.html">空の状態（Empty State）</a></li><li class="side-sub">重ねて出す・知らせる</li><li><a href="../components/approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="../components/bottom-sheet.html">ボトムシート（Bottom Sheet）</a></li><li><a href="../components/confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="../components/long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="../components/speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="../components/toast.html">トースト（Toast）</a></li><li><a href="../components/typing-indicator.html">作業中インジケータ（Typing Indicator）</a></li><li><a href="../components/skeleton.html">スケルトン（Skeleton）</a></li></ul></details><details class="side-group is-current" open><summary class="side-summary"><span class="side-title">パターン</span><span class="side-desc">よくあるタスクと状態の型（5件）</span></summary><ul><li><a href="../patterns.html">パターン一覧</a></li><li><a href="loading-states.html">読み込み・空・失敗の状態（Loading, Empty, Error）</a></li><li><a href="error-recovery.html">失敗からのやり直し（Error Recovery）</a></li><li><a href="search-and-filter.html">検索と絞り込み（Search and Filter）</a></li><li><a href="list-to-detail.html">一覧から詳細へ（List to Detail）</a></li><li><a href="approval-flow.html" aria-current="page">確認をはさむ操作（Confirm Before Acting）</a></li></ul></details><details class="side-group"><summary class="side-summary"><span class="side-title">記録</span><span class="side-desc">決定の記録・版の付け方・変更履歴</span></summary><ul><li><a href="../decisions/index.html">決定記録</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></details></nav>
   <main id="main" class="main">
-    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="../patterns.html">パターン</a></li><li aria-current="page">承認をはさむ型（Approval Flow）</li></ol>
-    <article class="doc"><h1 id="承認をはさむ型approval-flow">承認をはさむ型（Approval Flow）</h1>
-<p class="comp-lead">外部に触る操作の直前に承認カードをはさみ、結果をその場に残す</p>
+    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="../patterns.html">パターン</a></li><li aria-current="page">確認をはさむ操作（Confirm Before Acting）</li></ol>
+    <article class="doc"><h1 id="確認をはさむ操作confirm-before-acting">確認をはさむ操作（Confirm Before Acting）</h1>
+<p class="comp-lead">取り消せない操作・外部に触る操作の直前に確認をはさみ、結果をその場に残す</p>
 <section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="sample demo" data-demo="approval-flow">
-  <p class="sample-label">見本: 提案の本文 → 承認カード → 結果の行＋トースト</p>
+  <p class="sample-label">見本: 外部に触る操作（提案 → 承認カード → 結果）</p>
   <div class="m-flow">
     <p class="m-flow-step">1. 提案の本文</p>
     <section class="m-card"><p class="m-card-body">会場の担当の方に、12/6 の利用時間を 18:30 からに変えたいと返信します。下の内容で送ってよければ許可してください。</p></section>
     <p class="m-flow-step">2. 承認カード（範囲を選ぶ）</p>
     <section class="m-approval" aria-labelledby="pb-1" role="region">
-      <p class="m-approval-title" id="pb-1">アシスタント が Gmail でメールを送ろうとしています</p>
+      <p class="m-approval-title" id="pb-1">アシスタント が メールを送ろうとしています</p>
       <p class="m-approval-sub">宛先: 会場担当の方 ・ 件名「12/6 の会場の件」 ・ 本文 4 行</p>
       <div class="m-btn-row">
         <button type="button" class="m-btn m-btn--primary" data-approve="1回だけ">1回だけ許可</button>
@@ -55,19 +55,49 @@
     <p class="demo-note">途中で画面を移らず、その場に結果を残します。<button type="button" class="demo-reset" data-reset>はじめに戻す</button></p>
   </div>
 </div>
+<div class="sample demo" data-demo="confirm-dialog" style="margin-top:16px">
+  <p class="sample-label">見本: アプリの中の取り消せない削除（入口 → 確認ダイアログ → 結果）</p>
+  <div class="m-modal-area" style="min-height:300px">
+    <div style="padding:16px;display:grid;gap:10px;justify-items:start">
+      <div class="m-card" style="width:100%;display:flex;align-items:center;gap:12px;padding:8px 12px">
+        <button type="button" class="m-round" aria-label="一覧に戻る"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
+        <span style="flex:1;font-weight:700">旅行の写真</span>
+        <button type="button" class="m-round" style="color:var(--danger)" aria-label="フォルダを削除" data-open><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg></button>
+      </div>
+      <div data-list hidden><p class="demo-note">フォルダを削除して一覧に戻りました。<button type="button" class="demo-reset" data-reset>はじめに戻す</button></p></div>
+    </div>
+    <div data-layer hidden>
+      <div class="m-backdrop is-heavy"></div>
+      <div class="m-dialog" role="alertdialog" aria-modal="true" aria-labelledby="af-cd-t" aria-describedby="af-cd-d">
+        <p class="m-dialog-title" id="af-cd-t">フォルダを削除しますか？</p>
+        <p class="m-dialog-sub" id="af-cd-d">中の項目もすべて削除されます</p>
+        <div class="m-dialog-btns"><button type="button" class="m-dialog-cancel">やめる</button><button type="button" class="m-dialog-ok">削除する</button></div>
+      </div>
+    </div>
+  </div>
+</div>
 </section>
-<p><strong>出自:</strong> Muse（送信・注文・予約など、アカウントや外部に触る操作のたびに出る）</p>
-<p>外部に触る操作の型です。実行の直前で必ず<a href="../components/approval-card.html">承認カード</a>をはさみ、結果をその場に残します。途中の画面遷移で確認させません。</p>
-<p><strong>組み立て:</strong> 提案の本文 → 承認カード（範囲を選ぶ）→ 結果の行＋<a href="../components/toast.html">トースト</a></p>
+<p><strong>よくある型である理由:</strong> 取り消せない操作や外部に影響する操作の直前に止まって確かめる流れは、削除・送信・購入のある製品ならほぼどこにでもある型です（<a href="https://carbondesignsystem.com/patterns/dialog-pattern/" rel="noopener">Carbon の Dialog pattern</a>、<a href="https://www.nngroup.com/articles/confirmation-dialog/" rel="noopener">NN/g の Confirmation Dialogs</a>）。</p>
+<p><strong>使っているところ:</strong> Muse（メール送信など外部に触る操作の承認）、スライドエディタ（中身ごと消える削除の確認）。</p>
+<h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
+<p>操作の重さに応じて、実行の直前に確認をはさみ、結果をその場に残す流れです。アプリの中だけで済む取り消せない操作は<a href="../components/confirm-dialog.html">確認ダイアログ</a>、アカウントや外部に触る操作は<a href="../components/approval-card.html">承認カード</a>で止めます。確認のために別の画面へ移らせません。</p>
+<h2 id="組み合わせ">組み合わせ<a class="anchor" href="#組み合わせ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>操作の入口: <a href="../components/button.html">ボタン</a>の危険のゴースト、または<a href="../components/icon-button.html">アイコンボタン</a>の危険</li><li>確認: <a href="../components/confirm-dialog.html">確認ダイアログ</a>（アプリの中）／<a href="../components/approval-card.html">承認カード</a>（外部）</li><li>結果: その場の行の変化＋<a href="../components/toast.html">トースト</a></li></ul>
 <h2 id="流れ">流れ<a class="anchor" href="#流れ" aria-label="この見出しへのリンク">#</a></h2>
-<div class="table-wrap"><table><thead><tr><th scope="col">段階</th><th scope="col">見た目</th><th scope="col">次へ進む条件</th></tr></thead><tbody><tr><td>提案</td><td>何をしようとしているかを本文で書く</td><td>外部に触る操作の直前に来た</td></tr><tr><td>確認待ち</td><td>承認カード（1行目「誰が・何を・どこへ」＋補足＋ボタン行）。操作はここで止まる</td><td>「1回だけ許可」「このタスク中は許可」「拒否」のどれかを押した</td></tr><tr><td>結果</td><td>ボタン行の代わりに、許可した範囲と時刻をカードに残す（例:「許可した（1回だけ）11:02」）。実行の結果はトーストで知らせる</td><td></td></tr></tbody></table></div>
-<ul><li>「このタスク中は許可」を選んだら、同じタスクの中の同じ種類の操作ではカードを出さない。タスクが終わったら許可も終わる。</li><li>拒否したら操作をしない。</li><li>読み取りだけの操作にははさまない（確認の回数が増えて、確認が形だけになる）。</li></ul>
+<div class="table-wrap"><table><thead><tr><th scope="col">段階</th><th scope="col">見た目</th><th scope="col">次へ進む条件</th></tr></thead><tbody><tr><td>操作を選ぶ</td><td>削除・送信などの入口</td><td>押した</td></tr><tr><td>確認待ち</td><td>何が起きるか（誰が・何を・どこへ、何が消えるか）を1文で書き、やめる操作を必ず並べる</td><td>確定かやめるを選んだ</td></tr><tr><td>結果</td><td>確定したら実行し、結果をその場に残してトーストで知らせる。やめたら何もせず元の画面に戻す</td><td></td></tr></tbody></table></div>
+<ul><li>確認の重さを操作の重さにそろえる。取り消せる操作、読み取りだけの操作には確認をはさまない（確認が増えると形だけになる）。</li><li>確定のボタンには、何が起きるかを動詞で書く（「削除する」「送信を許可」）。「OK」「はい」にしない。</li><li>承認カードでは許可の範囲（1回だけ／このタスク中）を選ばせる。「このタスク中は許可」を選んだら、同じタスクの同じ種類の操作ではカードを出さない。</li></ul>
+<h2 id="使うとき">使うとき<a class="anchor" href="#使うとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>中身ごと消える削除、送信・予約・購入など、あとから戻せない操作の直前</li></ul>
+<h2 id="使わないとき">使わないとき<a class="anchor" href="#使わないとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>取り消しで戻せる操作 → 確認せずに実行し、トーストで知らせる</li><li>入力や選択が要る → <a href="../components/bottom-sheet.html">ボトムシート</a>で入力させてから確定する</li></ul>
+<h2 id="アクセシビリティ">アクセシビリティ<a class="anchor" href="#アクセシビリティ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>確認が出たら、やめる側にフォーカスを置く（Enter の押し間違いで実行しない）。Esc はやめると同じにする。</li><li>結果は色だけでなく文で残す（「許可した（1回だけ）11:02」「削除しました」）。</li></ul>
 <h2 id="関連">関連<a class="anchor" href="#関連" aria-label="この見出しへのリンク">#</a></h2>
-<ul><li><a href="../components/approval-card.html">承認カード</a></li><li><a href="../components/toast.html">トースト</a></li></ul><nav class="pager" aria-label="前後の部品"><a class="pager-prev" href="reading-page.html"><span>前の部品</span>読み物ページの型</a><a class="pager-next" href="status-layers.html"><span>次の部品</span>状態を見せる型</a></nav></article>
+<ul><li><a href="../components/confirm-dialog.html">確認ダイアログ</a></li><li><a href="../components/approval-card.html">承認カード</a></li><li><a href="../components/toast.html">トースト</a></li></ul><nav class="pager" aria-label="前後の部品"><a class="pager-prev" href="list-to-detail.html"><span>前の部品</span>一覧から詳細へ</a></nav></article>
     
     <footer class="page-foot">
       <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/patterns/approval-flow.md" rel="noopener">GitHub で元の文書を見る（docs/patterns/approval-flow.md）</a></p>
-      <p>Muse DS v0.11.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+      <p>Muse DS v0.12.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
     </footer>
   </main>
 </div>

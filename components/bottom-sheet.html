@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ボトムシート（Bottom Sheet） | Muse Design System</title>
+<meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Noto+Sans+JP:wght@400..900&display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/demos.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('muse-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
+    <span class="brand-ver">v0.12.0</span>
+    <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="index.html" aria-current="true">コンポーネント</a></li><li><a href="../patterns.html">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
+    <div class="header-tools">
+      <button class="tool-btn theme-btn" type="button" data-theme-toggle aria-label="表示モード: 自動（押すとライトにする）" title="表示モード: 自動（押すとライトにする）"><span data-theme-icon="auto"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><span data-theme-icon="light" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span><span data-theme-icon="dark" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span></button>
+      <button class="tool-btn menu-btn" type="button" aria-expanded="false" aria-controls="side" aria-label="目次を開く" title="目次を開く" data-menu-toggle><span data-menu-icon="open"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></span><span data-menu-icon="close" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span></button>
+    </div>
+  </div>
+</header>
+<div class="site-body">
+  <nav class="side" id="side" aria-label="目次"><p class="side-head">目次</p><details class="side-group"><summary class="side-summary"><span class="side-title">はじめに</span><span class="side-desc">このサイトの見方と使い方</span></summary><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></details><details class="side-group"><summary class="side-summary"><span class="side-title">ファウンデーション</span><span class="side-desc">色・文字・余白・角丸などの値</span></summary><ul><li><a href="../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../foundations/color.html">色</a></li><li><a href="../foundations/typography.html">タイポグラフィ</a></li><li><a href="../foundations/spacing-radius-elevation.html">余白・角丸・重なり</a></li><li><a href="../foundations/icons.html">アイコン</a></li><li><a href="../foundations/accessibility.html">アクセシビリティ</a></li></ul></details><details class="side-group is-current" open><summary class="side-summary"><span class="side-title">コンポーネント</span><span class="side-desc">中身に依存しない部品（25件）</span></summary><ul><li><a href="index.html">コンポーネント一覧</a></li><li class="side-sub">操作と入力</li><li><a href="button.html">ボタン（Button）</a></li><li><a href="icon-button.html">アイコンボタン（Icon Button）</a></li><li><a href="chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="choice-button.html">選択肢ボタン（Choice Button）</a></li><li><a href="input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="search-field.html">検索フィールド（Search Field）</a></li><li><a href="memo-input-bar.html">入力バー（Input Bar）</a></li><li><a href="done-toggle.html">完了トグル・完了バッジ（Done Toggle / Done Badge）</a></li><li><a href="navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li class="side-sub">内容を並べる</li><li><a href="section-card.html">セクションカード（Section Card）</a></li><li><a href="list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="status-list-item.html">状態付きリスト項目（Status List Item）</a></li><li><a href="media-card.html">メディアカード（Media Card）</a></li><li><a href="progress-path.html">進捗パス（Progress Path）</a></li><li><a href="flashcard.html">フラッシュカード（Flashcard）</a></li><li><a href="message-bubble.html">吹き出し（Message Bubble）</a></li><li><a href="empty-state.html">空の状態（Empty State）</a></li><li class="side-sub">重ねて出す・知らせる</li><li><a href="approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="bottom-sheet.html" aria-current="page">ボトムシート（Bottom Sheet）</a></li><li><a href="confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="toast.html">トースト（Toast）</a></li><li><a href="typing-indicator.html">作業中インジケータ（Typing Indicator）</a></li><li><a href="skeleton.html">スケルトン（Skeleton）</a></li></ul></details><details class="side-group"><summary class="side-summary"><span class="side-title">パターン</span><span class="side-desc">よくあるタスクと状態の型（5件）</span></summary><ul><li><a href="../patterns.html">パターン一覧</a></li><li><a href="../patterns/loading-states.html">読み込み・空・失敗の状態（Loading, Empty, Error）</a></li><li><a href="../patterns/error-recovery.html">失敗からのやり直し（Error Recovery）</a></li><li><a href="../patterns/search-and-filter.html">検索と絞り込み（Search and Filter）</a></li><li><a href="../patterns/list-to-detail.html">一覧から詳細へ（List to Detail）</a></li><li><a href="../patterns/approval-flow.html">確認をはさむ操作（Confirm Before Acting）</a></li></ul></details><details class="side-group"><summary class="side-summary"><span class="side-title">記録</span><span class="side-desc">決定の記録・版の付け方・変更履歴</span></summary><ul><li><a href="../decisions/index.html">決定記録</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></details></nav>
+  <main id="main" class="main">
+    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="index.html">コンポーネント</a></li><li aria-current="page">ボトムシート（Bottom Sheet）</li></ol>
+    <article class="doc"><h1 id="ボトムシートbottom-sheet">ボトムシート（Bottom Sheet）</h1>
+<p class="comp-lead">下からせり上がる板に1つの作業だけを入れる</p>
+<section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="demo-stage" data-demo="bottom-sheet">
+  <div class="m-modal-area">
+    <div style="padding:16px;display:grid;gap:10px;justify-items:start">
+      <p class="demo-note">押すと、この枠の下からシートがせり上がります（中身は架空です）。</p>
+      <button type="button" class="m-btn m-btn--secondary" data-open-sheet="add">入力: メモを追加</button>
+      <button type="button" class="m-btn m-btn--secondary" data-open-sheet="del">削除: 項目を削除</button>
+      <button type="button" class="m-btn m-btn--secondary" data-open-sheet="list">一覧: 保留中の項目</button>
+    </div>
+    <div data-layer hidden>
+      <div class="m-backdrop"></div>
+      <div class="m-sheet" role="dialog" aria-modal="true" aria-labelledby="sh-add" data-sheet="add" hidden>
+        <div class="m-sheet-head"><p class="m-sheet-title" id="sh-add">メモを追加</p><button type="button" class="m-round" aria-label="閉じる" data-close><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button></div>
+        <div class="m-position" role="radiogroup" aria-label="期限">
+          <button type="button" role="radio" aria-checked="true" tabindex="0">今日</button>
+          <button type="button" role="radio" aria-checked="false" tabindex="-1">明日</button>
+          <button type="button" role="radio" aria-checked="false" tabindex="-1">今週</button>
+        </div>
+        <div class="m-memo" data-memo style="margin-top:16px">
+          <p class="m-memo-error" role="alert" hidden>マイクが許可されていません</p>
+          <div class="m-memo-box"><textarea class="m-memo-input" rows="3" placeholder="メモの内容" aria-label="メモを入力"></textarea><span class="m-memo-btns"><button type="button" class="m-send" aria-label="送信" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></button><button type="button" class="m-mic" aria-pressed="false" aria-label="音声入力"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/></svg></button></span></div>
+        </div>
+        <button type="button" class="m-block-btn is-blue" data-submit-sheet="メモを追加しました" data-needs-text>追加する</button>
+      </div>
+      <div class="m-sheet" role="dialog" aria-modal="true" aria-labelledby="sh-del" data-sheet="del" hidden>
+        <div class="m-sheet-head"><p class="m-sheet-title" id="sh-del">項目を削除</p><button type="button" class="m-round" aria-label="閉じる" data-close><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button></div>
+        <p class="m-sheet-sub">「買い物リスト」</p>
+        <div class="m-memo" data-memo>
+          <p class="m-memo-error" role="alert" hidden>マイクが許可されていません</p>
+          <div class="m-memo-box"><textarea class="m-memo-input" rows="3" placeholder="削除する理由（任意）" aria-label="削除する理由（任意）"></textarea><span class="m-memo-btns"><button type="button" class="m-send" aria-label="送信" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></button><button type="button" class="m-mic" aria-pressed="false" aria-label="音声入力"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/></svg></button></span></div>
+        </div>
+        <button type="button" class="m-block-btn is-red" data-submit-sheet="項目を削除しました">削除する</button>
+      </div>
+      <div class="m-sheet" role="dialog" aria-modal="true" aria-labelledby="sh-list" data-sheet="list" hidden>
+        <div class="m-sheet-head"><p class="m-sheet-title" id="sh-list">保留中の項目</p><button type="button" class="m-round" aria-label="閉じる" data-close><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button></div>
+        <ul class="m-sheet-list">
+          <li class="m-orphan"><span class="m-orphan-title">電球を買い替える</span><span class="m-orphan-sub">3日前 ・ メモ 1件</span></li>
+          <li class="m-request is-in-sheet"><span class="m-request-text"><span class="m-request-main">棚の位置を決める</span><span class="m-request-state">保留</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="demo-note">幕・×・Esc で閉じます。「メモを追加」は文を書くまで全幅ボタンが押せません。入力のシートなので幕は <code>--scrim-strong</code>。全幅ボタンはフォームの一部として角丸 12px で、削除の確定は赤い面です。影は付けず、幕との明るさの差で板を浮かせます。</p>
+</div>
+</section>
+<h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
+<p>画面の下からせり上がる板です。上に見出しと閉じる × を置き、中に1つの作業だけを入れます。今の画面を離れずに、短い入力や選択をさせるときに使います。広い画面（640px 以上）では中央に浮くパネルになります。</p>
+<p>参考元: <a href="https://m3.material.io/components/bottom-sheets/overview" rel="noopener">Material Design 3 の Bottom sheets</a>、<a href="https://developer.apple.com/design/human-interface-guidelines/sheets" rel="noopener">Apple HIG の Sheets</a>。</p>
+<h2 id="使うとき">使うとき<a class="anchor" href="#使うとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>今の画面の文脈（どの項目を見ているか）を保ったまま、短い入力や選択をさせるとき（例: メモを追加する、並び順を選ぶ）</li><li>一覧を一時的に開いて、選んだら閉じるとき（例: 項目を選ぶ、保留中のものを見る）</li></ul>
+<h2 id="使わないとき">使わないとき<a class="anchor" href="#使わないとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>はい・いいえだけの確認 → <a href="confirm-dialog.html">確認ダイアログ</a></li><li>外部に触る操作の確認 → <a href="approval-card.html">承認カード</a></li><li>何画面も続く手続き（シートの中で画面を移らない）</li><li>1件の中身をじっくり見せる → <a href="../patterns/list-to-detail.html">一覧から詳細へ</a></li></ul>
+<h2 id="バリアント">バリアント<a class="anchor" href="#バリアント" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">バリアント</th><th scope="col">中身</th><th scope="col">例</th></tr></thead><tbody><tr><td>入力</td><td>見出し → 入力や選択（<a href="memo-input-bar.html">入力バー</a>の3行、<a href="choice-button.html">選択肢ボタン</a>など）→ 全幅の確定ボタン</td><td>メモを追加</td></tr><tr><td>削除</td><td>見出し → 何を消すか → 理由などの入力（任意）→ 赤い全幅の確定ボタン</td><td>項目を削除</td></tr><tr><td>一覧</td><td>見出し → <a href="status-list-item.html">状態付きリスト項目</a>などの一覧。ないときは<a href="empty-state.html">空の状態</a>の小。確定ボタンは置かない</td><td>保留中の項目</td></tr><tr><td>上から出す</td><td>同じ板を画面の上端から出す。上の角は四角、下の2つの角を 20px</td><td>画面の上にある切り替えボタンから開く選択</td></tr></tbody></table></div>
+<h2 id="状態">状態<a class="anchor" href="#状態" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">状態</th><th scope="col">見た目</th><th scope="col">条件</th></tr></thead><tbody><tr><td>閉じている</td><td>なし</td><td></td></tr><tr><td>開いている</td><td>幕の上に、下端に付いた板</td><td></td></tr><tr><td>送信できない</td><td>全幅ボタンが不透明度 0.4 で押せない</td><td>入力が空</td></tr><tr><td>フォーカス</td><td>フォーカスの輪</td><td></td></tr></tbody></table></div>
+<p>幕を押すか × を押すと閉じます。全幅ボタンを押すと、その作業を確定して閉じます。</p>
+<h2 id="仕様">仕様<a class="anchor" href="#仕様" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">項目</th><th scope="col">値</th><th scope="col">トークン</th></tr></thead><tbody><tr><td>幕</td><td>黒の 40%。キーボードと一緒に出る入力のシートは黒の 70%</td><td><code>--scrim</code> <code>--scrim-strong</code></td></tr><tr><td>板</td><td>白、最大幅 512px、高さは画面の 88% まで（はみ出すとスクロール）。影は付けず、幕との明るさの差で浮かせる</td><td><code>--surface</code></td></tr><tr><td>板の角丸</td><td>上の2つの角だけ 20px。640px 以上では4つの角</td><td><code>--radius-card</code></td></tr><tr><td>内側の余白</td><td>16px 16px 24px</td><td></td></tr><tr><td>見出しの行</td><td>16px / 600 の見出し＋右端に 32px の丸い ×（<a href="icon-button.html">アイコンボタン</a>の丸）、下に 16px</td><td><code>--text</code></td></tr><tr><td>全幅ボタン</td><td>高さ 48px 以上、14px / 600、上に 16px</td><td>角丸 <code>--radius-row</code></td></tr><tr><td>全幅ボタンの色</td><td>確定はブルー、削除は赤、取り消しは <code>--fill</code> に 1px の枠。色の面の文字は面に合わせる</td><td><code>--accent</code> <code>--accent-ink</code> <code>--danger</code> <code>--danger-ink</code> <code>--fill</code> <code>--border</code></td></tr><tr><td>一覧の行</td><td><code>--fill</code> の面、1px の枠、内側 12px 16px、行同士 8px。題 14px / 500、補足 12px</td><td><code>--fill</code> <code>--border</code> <code>--radius-row</code> <code>--dim</code></td></tr></tbody></table></div>
+<p>全幅ボタンは角丸 12px で、<a href="button.html">ボタン</a>のピルと形が違います。シートの下に並ぶ「確定」はフォームの一部として扱い、入力欄と同じ 12px にします。削除の確定は赤い面にしてよいものとします（<a href="../decisions/0005-states-and-exceptions.html">決定記録 0005</a>）。</p>
+<h2 id="アクセシビリティ">アクセシビリティ<a class="anchor" href="#アクセシビリティ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>板は <code>role=&quot;dialog&quot;</code> と <code>aria-modal=&quot;true&quot;</code> にし、見出しをダイアログの名前に結び付ける（<code>aria-labelledby</code>）。</li><li>開いたらシートの中の最初の入力（なければ ×）にフォーカスを移し、シートの外へフォーカスが出ないようにする。Esc で閉じ、開いたボタンにフォーカスを戻す。</li><li>× は <code>aria-label=&quot;閉じる&quot;</code> にする。</li><li>赤い全幅ボタンは色だけでなく文（「削除する」）で何が起きるかを書く。</li></ul>
+<h2 id="関連">関連<a class="anchor" href="#関連" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li><a href="speed-dial-fab.html">スピードダイヤルFAB</a>（開く入口）</li><li><a href="confirm-dialog.html">確認ダイアログ</a></li></ul><nav class="pager" aria-label="前後の部品"><a class="pager-prev" href="approval-card.html"><span>前の部品</span>承認カード</a><a class="pager-next" href="confirm-dialog.html"><span>次の部品</span>確認ダイアログ</a></nav></article>
+    
+    <footer class="page-foot">
+      <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/components/bottom-sheet.md" rel="noopener">GitHub で元の文書を見る（docs/components/bottom-sheet.md）</a></p>
+      <p>Muse DS v0.12.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+    </footer>
+  </main>
+</div>
+<div class="m-toast-region" role="status" aria-live="polite"></div>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/demos.js" defer></script>
+</body>
+</html>

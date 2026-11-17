@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>検索と絞り込み（Search and Filter） | Muse Design System</title>
+<meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Noto+Sans+JP:wght@400..900&display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/demos.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('muse-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
+    <span class="brand-ver">v0.12.0</span>
+    <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="../components/index.html">コンポーネント</a></li><li><a href="../patterns.html" aria-current="true">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
+    <div class="header-tools">
+      <button class="tool-btn theme-btn" type="button" data-theme-toggle aria-label="表示モード: 自動（押すとライトにする）" title="表示モード: 自動（押すとライトにする）"><span data-theme-icon="auto"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><span data-theme-icon="light" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span><span data-theme-icon="dark" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span></button>
+      <button class="tool-btn menu-btn" type="button" aria-expanded="false" aria-controls="side" aria-label="目次を開く" title="目次を開く" data-menu-toggle><span data-menu-icon="open"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></span><span data-menu-icon="close" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span></button>
+    </div>
+  </div>
+</header>
+<div class="site-body">
+  <nav class="side" id="side" aria-label="目次"><p class="side-head">目次</p><details class="side-group"><summary class="side-summary"><span class="side-title">はじめに</span><span class="side-desc">このサイトの見方と使い方</span></summary><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></details><details class="side-group"><summary class="side-summary"><span class="side-title">ファウンデーション</span><span class="side-desc">色・文字・余白・角丸などの値</span></summary><ul><li><a href="../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../foundations/color.html">色</a></li><li><a href="../foundations/typography.html">タイポグラフィ</a></li><li><a href="../foundations/spacing-radius-elevation.html">余白・角丸・重なり</a></li><li><a href="../foundations/icons.html">アイコン</a></li><li><a href="../foundations/accessibility.html">アクセシビリティ</a></li></ul></details><details class="side-group"><summary class="side-summary"><span class="side-title">コンポーネント</span><span class="side-desc">中身に依存しない部品（25件）</span></summary><ul><li><a href="../components/index.html">コンポーネント一覧</a></li><li class="side-sub">操作と入力</li><li><a href="../components/button.html">ボタン（Button）</a></li><li><a href="../components/icon-button.html">アイコンボタン（Icon Button）</a></li><li><a href="../components/chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="../components/choice-button.html">選択肢ボタン（Choice Button）</a></li><li><a href="../components/input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="../components/search-field.html">検索フィールド（Search Field）</a></li><li><a href="../components/memo-input-bar.html">入力バー（Input Bar）</a></li><li><a href="../components/done-toggle.html">完了トグル・完了バッジ（Done Toggle / Done Badge）</a></li><li><a href="../components/navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li class="side-sub">内容を並べる</li><li><a href="../components/section-card.html">セクションカード（Section Card）</a></li><li><a href="../components/list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="../components/status-list-item.html">状態付きリスト項目（Status List Item）</a></li><li><a href="../components/media-card.html">メディアカード（Media Card）</a></li><li><a href="../components/progress-path.html">進捗パス（Progress Path）</a></li><li><a href="../components/flashcard.html">フラッシュカード（Flashcard）</a></li><li><a href="../components/message-bubble.html">吹き出し（Message Bubble）</a></li><li><a href="../components/empty-state.html">空の状態（Empty State）</a></li><li class="side-sub">重ねて出す・知らせる</li><li><a href="../components/approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="../components/bottom-sheet.html">ボトムシート（Bottom Sheet）</a></li><li><a href="../components/confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="../components/long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="../components/speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="../components/toast.html">トースト（Toast）</a></li><li><a href="../components/typing-indicator.html">作業中インジケータ（Typing Indicator）</a></li><li><a href="../components/skeleton.html">スケルトン（Skeleton）</a></li></ul></details><details class="side-group is-current" open><summary class="side-summary"><span class="side-title">パターン</span><span class="side-desc">よくあるタスクと状態の型（5件）</span></summary><ul><li><a href="../patterns.html">パターン一覧</a></li><li><a href="loading-states.html">読み込み・空・失敗の状態（Loading, Empty, Error）</a></li><li><a href="error-recovery.html">失敗からのやり直し（Error Recovery）</a></li><li><a href="search-and-filter.html" aria-current="page">検索と絞り込み（Search and Filter）</a></li><li><a href="list-to-detail.html">一覧から詳細へ（List to Detail）</a></li><li><a href="approval-flow.html">確認をはさむ操作（Confirm Before Acting）</a></li></ul></details><details class="side-group"><summary class="side-summary"><span class="side-title">記録</span><span class="side-desc">決定の記録・版の付け方・変更履歴</span></summary><ul><li><a href="../decisions/index.html">決定記録</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></details></nav>
+  <main id="main" class="main">
+    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="../patterns.html">パターン</a></li><li aria-current="page">検索と絞り込み（Search and Filter）</li></ol>
+    <article class="doc"><h1 id="検索と絞り込みsearch-and-filter">検索と絞り込み（Search and Filter）</h1>
+<p class="comp-lead">一覧の上で、ことばで探す・分類で減らす。0件なら条件を外す</p>
+<section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="demo-stage" data-demo="search-and-filter">
+  <div style="max-width:480px">
+    <search class="m-search">
+      <span class="m-search-icon"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+      <input class="m-search-input" type="search" placeholder="食べものを検索" aria-label="食べものを検索" autocomplete="off" data-q>
+      <button type="button" class="m-search-clear m-hit" aria-label="検索の文字を消す" hidden data-clear><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    </search>
+    <div class="m-chips" role="group" aria-label="分類で絞り込む" style="margin-top:12px">
+      <button type="button" class="m-chip" aria-pressed="true" data-cat="">すべて</button>
+      <button type="button" class="m-chip" aria-pressed="false" data-cat="果物">果物</button>
+      <button type="button" class="m-chip" aria-pressed="false" data-cat="野菜">野菜</button>
+      <button type="button" class="m-chip" aria-pressed="false" data-cat="穀物">穀物</button>
+    </div>
+    <p class="vh" role="status" data-count></p>
+    <div class="m-card" style="margin-top:12px">
+      <ul class="m-rows" data-list>
+        <li data-cat="果物"><span class="m-row-main"><span class="m-row-title">りんご</span><span class="m-row-sub">果物</span></span></li>
+        <li data-cat="果物"><span class="m-row-main"><span class="m-row-title">みかん</span><span class="m-row-sub">果物</span></span></li>
+        <li data-cat="果物"><span class="m-row-main"><span class="m-row-title">ぶどう</span><span class="m-row-sub">果物</span></span></li>
+        <li data-cat="野菜"><span class="m-row-main"><span class="m-row-title">にんじん</span><span class="m-row-sub">野菜</span></span></li>
+        <li data-cat="野菜"><span class="m-row-main"><span class="m-row-title">たまねぎ</span><span class="m-row-sub">野菜</span></span></li>
+        <li data-cat="野菜"><span class="m-row-main"><span class="m-row-title">かぼちゃ</span><span class="m-row-sub">野菜</span></span></li>
+        <li data-cat="穀物"><span class="m-row-main"><span class="m-row-title">こめ</span><span class="m-row-sub">穀物</span></span></li>
+        <li data-cat="穀物"><span class="m-row-main"><span class="m-row-title">こむぎ</span><span class="m-row-sub">穀物</span></span></li>
+      </ul>
+      <div class="m-empty" data-empty hidden>
+        <span class="m-empty-icon"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+        <p class="m-empty-title">見つかりませんでした</p>
+        <p class="m-empty-text">別のことばで探すか、条件を外してください。</p>
+        <button type="button" class="m-btn m-btn--ghost" data-reset>条件を外す</button>
+      </div>
+    </div>
+  </div>
+  <p class="demo-note">打つ・選ぶたびに一覧が変わります。検索と分類は重ねて効き、「条件を外す」で両方戻ります。中身は架空です。</p>
+</div>
+</section>
+<p><strong>よくある型である理由:</strong> 項目が増えた一覧から目当てのものを探すために、ことばで探す検索と、分類で減らす絞り込みを一覧の上に置く型は、一覧を持つ製品の多くにあります（<a href="https://carbondesignsystem.com/patterns/search-pattern/" rel="noopener">Carbon の Search pattern</a>、<a href="https://carbondesignsystem.com/patterns/filtering/" rel="noopener">Carbon の Filtering</a>、<a href="https://polaris-react.shopify.com/patterns/resource-index-layout" rel="noopener">Polaris の Resource index layout</a>）。</p>
+<p><strong>使っているところ:</strong> 筋トレ記録（種目の一覧を部位のチップで絞り込む）、日々のレポートのスペース（絵文字を名前で探す）。</p>
+<h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
+<p>一覧の上に<a href="../components/search-field.html">検索フィールド</a>か絞り込みの<a href="../components/chip-and-tag.html">チップ</a>を置き、打つ・選ぶたびにその場で一覧を減らす型です。結果が0件のときは、条件を外す操作を添えて知らせます。</p>
+<h2 id="組み合わせ">組み合わせ<a class="anchor" href="#組み合わせ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>検索: <a href="../components/search-field.html">検索フィールド</a>（打つたびに絞り込む）</li><li>絞り込み: <a href="../components/chip-and-tag.html">チップ</a>の選択中（「すべて」を先頭に置く）</li><li>一覧: <a href="../components/list-rows.html">リスト行</a>などの中身の部品</li><li>0件: <a href="../components/empty-state.html">空の状態</a>の「見つからない」＋「条件を外す」</li></ul>
+<h2 id="状態の移り方">状態の移り方<a class="anchor" href="#状態の移り方" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">状態</th><th scope="col">見た目</th><th scope="col">次へ</th></tr></thead><tbody><tr><td>条件なし</td><td>一覧のすべて。チップは「すべて」が選択中</td><td>打つ・チップを選ぶ</td></tr><tr><td>絞り込み中</td><td>条件に合う項目だけ。件数を読み上げで伝える</td><td>条件を変える・外す</td></tr><tr><td>0件</td><td>一覧の場所に「見つかりませんでした」と「条件を外す」</td><td>外したら条件なしへ</td></tr></tbody></table></div>
+<ul><li>確定のボタンを置かない。打つ・選ぶたびに結果を変える（端末の中で済む件数のとき）。</li><li>検索と絞り込みを両方置くときは、両方の条件を重ねて効かせ、「条件を外す」で両方を戻す。</li><li>条件は一覧を閉じたら消す。</li></ul>
+<h2 id="使うとき">使うとき<a class="anchor" href="#使うとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>10件を超える一覧から目当てを探す（検索）、分類のはっきりした一覧を分けて見る（絞り込み）</li></ul>
+<h2 id="使わないとき">使わないとき<a class="anchor" href="#使わないとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>数件しかない一覧（全部見えるので要らない）</li><li>サーバーに問い合わせて時間がかかる検索 → 確定してから探し、<a href="loading-states.html">読み込み・空・失敗の状態</a>を出す</li></ul>
+<h2 id="アクセシビリティ">アクセシビリティ<a class="anchor" href="#アクセシビリティ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>検索は <code>&lt;search&gt;</code>（または <code>role=&quot;search&quot;</code>）で包み、欄に <code>aria-label</code> を付ける。</li><li>絞り込みのチップは <code>role=&quot;group&quot;</code> と <code>aria-label</code>（「分類で絞り込む」）で包み、各チップに <code>aria-pressed</code> を付ける。</li><li>件数は <code>role=&quot;status&quot;</code> の領域で、少し待ってから伝える。</li></ul>
+<h2 id="関連">関連<a class="anchor" href="#関連" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li><a href="../components/search-field.html">検索フィールド</a></li><li><a href="../components/chip-and-tag.html">チップとタグ</a></li><li><a href="../components/empty-state.html">空の状態</a></li></ul><nav class="pager" aria-label="前後の部品"><a class="pager-prev" href="error-recovery.html"><span>前の部品</span>失敗からのやり直し</a><a class="pager-next" href="list-to-detail.html"><span>次の部品</span>一覧から詳細へ</a></nav></article>
+    
+    <footer class="page-foot">
+      <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/patterns/search-and-filter.md" rel="noopener">GitHub で元の文書を見る（docs/patterns/search-and-filter.md）</a></p>
+      <p>Muse DS v0.12.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+    </footer>
+  </main>
+</div>
+<div class="m-toast-region" role="status" aria-live="polite"></div>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/demos.js" defer></script>
+</body>
+</html>

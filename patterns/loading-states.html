@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>読み込み・空・失敗の状態（Loading, Empty, Error） | Muse Design System</title>
+<meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Noto+Sans+JP:wght@400..900&display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/demos.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('muse-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
+    <span class="brand-ver">v0.12.0</span>
+    <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="../components/index.html">コンポーネント</a></li><li><a href="../patterns.html" aria-current="true">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
+    <div class="header-tools">
+      <button class="tool-btn theme-btn" type="button" data-theme-toggle aria-label="表示モード: 自動（押すとライトにする）" title="表示モード: 自動（押すとライトにする）"><span data-theme-icon="auto"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><span data-theme-icon="light" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span><span data-theme-icon="dark" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span></button>
+      <button class="tool-btn menu-btn" type="button" aria-expanded="false" aria-controls="side" aria-label="目次を開く" title="目次を開く" data-menu-toggle><span data-menu-icon="open"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></span><span data-menu-icon="close" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span></button>
+    </div>
+  </div>
+</header>
+<div class="site-body">
+  <nav class="side" id="side" aria-label="目次"><p class="side-head">目次</p><details class="side-group"><summary class="side-summary"><span class="side-title">はじめに</span><span class="side-desc">このサイトの見方と使い方</span></summary><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></details><details class="side-group"><summary class="side-summary"><span class="side-title">ファウンデーション</span><span class="side-desc">色・文字・余白・角丸などの値</span></summary><ul><li><a href="../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../foundations/color.html">色</a></li><li><a href="../foundations/typography.html">タイポグラフィ</a></li><li><a href="../foundations/spacing-radius-elevation.html">余白・角丸・重なり</a></li><li><a href="../foundations/icons.html">アイコン</a></li><li><a href="../foundations/accessibility.html">アクセシビリティ</a></li></ul></details><details class="side-group"><summary class="side-summary"><span class="side-title">コンポーネント</span><span class="side-desc">中身に依存しない部品（25件）</span></summary><ul><li><a href="../components/index.html">コンポーネント一覧</a></li><li class="side-sub">操作と入力</li><li><a href="../components/button.html">ボタン（Button）</a></li><li><a href="../components/icon-button.html">アイコンボタン（Icon Button）</a></li><li><a href="../components/chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="../components/choice-button.html">選択肢ボタン（Choice Button）</a></li><li><a href="../components/input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="../components/search-field.html">検索フィールド（Search Field）</a></li><li><a href="../components/memo-input-bar.html">入力バー（Input Bar）</a></li><li><a href="../components/done-toggle.html">完了トグル・完了バッジ（Done Toggle / Done Badge）</a></li><li><a href="../components/navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li class="side-sub">内容を並べる</li><li><a href="../components/section-card.html">セクションカード（Section Card）</a></li><li><a href="../components/list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="../components/status-list-item.html">状態付きリスト項目（Status List Item）</a></li><li><a href="../components/media-card.html">メディアカード（Media Card）</a></li><li><a href="../components/progress-path.html">進捗パス（Progress Path）</a></li><li><a href="../components/flashcard.html">フラッシュカード（Flashcard）</a></li><li><a href="../components/message-bubble.html">吹き出し（Message Bubble）</a></li><li><a href="../components/empty-state.html">空の状態（Empty State）</a></li><li class="side-sub">重ねて出す・知らせる</li><li><a href="../components/approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="../components/bottom-sheet.html">ボトムシート（Bottom Sheet）</a></li><li><a href="../components/confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="../components/long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="../components/speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="../components/toast.html">トースト（Toast）</a></li><li><a href="../components/typing-indicator.html">作業中インジケータ（Typing Indicator）</a></li><li><a href="../components/skeleton.html">スケルトン（Skeleton）</a></li></ul></details><details class="side-group is-current" open><summary class="side-summary"><span class="side-title">パターン</span><span class="side-desc">よくあるタスクと状態の型（5件）</span></summary><ul><li><a href="../patterns.html">パターン一覧</a></li><li><a href="loading-states.html" aria-current="page">読み込み・空・失敗の状態（Loading, Empty, Error）</a></li><li><a href="error-recovery.html">失敗からのやり直し（Error Recovery）</a></li><li><a href="search-and-filter.html">検索と絞り込み（Search and Filter）</a></li><li><a href="list-to-detail.html">一覧から詳細へ（List to Detail）</a></li><li><a href="approval-flow.html">確認をはさむ操作（Confirm Before Acting）</a></li></ul></details><details class="side-group"><summary class="side-summary"><span class="side-title">記録</span><span class="side-desc">決定の記録・版の付け方・変更履歴</span></summary><ul><li><a href="../decisions/index.html">決定記録</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></details></nav>
+  <main id="main" class="main">
+    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="../patterns.html">パターン</a></li><li aria-current="page">読み込み・空・失敗の状態（Loading, Empty, Error）</li></ol>
+    <article class="doc"><h1 id="読み込み空失敗の状態loading-empty-error">読み込み・空・失敗の状態（Loading, Empty, Error）</h1>
+<p class="comp-lead">データを読み込む場所ごとに、読み込み中・0件・読み込めなかったを出し分ける</p>
+<section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="demo-stage" data-demo="loading-states">
+  <div class="m-btn-row" role="group" aria-label="見本の状態を切り替える">
+    <button type="button" class="m-chip" aria-pressed="true" data-state="loading">読み込み中</button>
+    <button type="button" class="m-chip" aria-pressed="false" data-state="content">中身あり</button>
+    <button type="button" class="m-chip" aria-pressed="false" data-state="empty">空</button>
+    <button type="button" class="m-chip" aria-pressed="false" data-state="error">失敗</button>
+  </div>
+  <section class="m-card" style="margin-top:12px;max-width:480px" aria-labelledby="ls-h">
+    <div class="m-card-head"><h3 class="m-card-title" id="ls-h">メモ</h3></div>
+    <div data-area aria-busy="true"></div>
+  </section>
+  <p class="demo-note">見出しは残したまま、中身の場所だけを切り替えます。「もう一度読み込む」を押すと読み込み中に戻り、少しして中身が出ます。中身は架空です。</p>
+</div>
+</section>
+<p><strong>よくある型である理由:</strong> データを読み込んで見せる画面は、どの製品でも「読み込み中」「中身がない」「読み込めなかった」の3つの状態を持ちます。中身の画面だけを作ると、この3つが抜けがちです（<a href="https://carbondesignsystem.com/patterns/loading-pattern/" rel="noopener">Carbon の Loading pattern</a>、<a href="https://carbondesignsystem.com/patterns/empty-states-pattern/" rel="noopener">Carbon の Empty states</a>、<a href="https://primer.style/ui-patterns/loading" rel="noopener">Primer の Loading</a>）。</p>
+<p><strong>使っているところ:</strong> 筋トレ記録（記録の一覧・日ごとの記録・種目の一覧）、学習ノート（コース・本棚・ノート）、スライドエディタ（デッキの一覧）、日々のレポートのスペース。どのアプリも一覧を開くたびにこの3つを出し分けています。</p>
+<h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
+<p>データを読み込んで見せる場所ごとに、中身が届くまで・届いた中身が0件・届かなかった、の3つを決めておく型です。どの状態でも、中身が出る場所と同じ位置・同じ大きさで見せ、画面の形を崩しません。</p>
+<h2 id="組み合わせ">組み合わせ<a class="anchor" href="#組み合わせ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>読み込み中: <a href="../components/skeleton.html">スケルトン</a>（中身の形だけを先に出す）</li><li>中身あり: <a href="../components/list-rows.html">リスト行</a>・<a href="../components/media-card.html">メディアカード</a>・<a href="../components/section-card.html">セクションカード</a>など</li><li>空: <a href="../components/empty-state.html">空の状態</a>の「まだない」（作る操作の<a href="../components/button.html">ボタン</a>を添える）</li><li>失敗: <a href="../components/empty-state.html">空の状態</a>の「読み込めなかった」＋「もう一度読み込む」</li></ul>
+<h2 id="状態の移り方">状態の移り方<a class="anchor" href="#状態の移り方" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">状態</th><th scope="col">見せ方</th><th scope="col">次へ</th></tr></thead><tbody><tr><td>読み込み中</td><td>中身と同じ形のスケルトン（一覧なら 3〜5件）</td><td>届いたら中身ありか空へ。10 秒を超えたら失敗へ</td></tr><tr><td>中身あり</td><td>中身の部品</td><td></td></tr><tr><td>空</td><td>「まだない」の理由と、次にできること1つ</td><td>作ったら中身ありへ</td></tr><tr><td>失敗</td><td>「読み込めなかった」と、もう一度読み込む操作</td><td>押したら読み込み中へ戻る</td></tr></tbody></table></div>
+<ul><li>3つの状態は、中身の場所の中で切り替える。画面全体を差し替えない（見出しや戻る操作は残す）。</li><li>空と失敗を同じ文にしない。「まだない」と「読み込めなかった」では、本人がすることが違う。</li><li>読み込み中に「読み込み中…」の文だけを出さない。中身の形が分かるスケルトンにする。</li></ul>
+<h2 id="使うとき">使うとき<a class="anchor" href="#使うとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>サーバーや端末からデータを読み込んで見せる一覧・詳細のすべて</li></ul>
+<h2 id="使わないとき">使わないとき<a class="anchor" href="#使わないとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>操作の結果を待つ間（送信中など）→ <a href="../components/button.html">ボタン</a>の無効と文の切り替え。失敗したら<a href="error-recovery.html">失敗からのやり直し</a></li><li>一覧の一部だけが空 → 一覧の中で行として見せる</li></ul>
+<h2 id="アクセシビリティ">アクセシビリティ<a class="anchor" href="#アクセシビリティ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>読み込む範囲に <code>aria-busy=&quot;true&quot;</code> を付け、届いたら外す。スケルトンは <code>aria-hidden=&quot;true&quot;</code>。</li><li>空と失敗の文は、中身の場所に普通の文として置く。失敗は <code>role=&quot;alert&quot;</code> にしない（読み込みのたびに割り込まない）。</li></ul>
+<h2 id="関連">関連<a class="anchor" href="#関連" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li><a href="../components/skeleton.html">スケルトン</a></li><li><a href="../components/empty-state.html">空の状態</a></li><li><a href="error-recovery.html">失敗からのやり直し</a></li></ul><nav class="pager" aria-label="前後の部品"><span></span><a class="pager-next" href="error-recovery.html"><span>次の部品</span>失敗からのやり直し</a></nav></article>
+    
+    <footer class="page-foot">
+      <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/patterns/loading-states.md" rel="noopener">GitHub で元の文書を見る（docs/patterns/loading-states.md）</a></p>
+      <p>Muse DS v0.12.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+    </footer>
+  </main>
+</div>
+<div class="m-toast-region" role="status" aria-live="polite"></div>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/demos.js" defer></script>
+</body>
+</html>
