@@ -4,7 +4,7 @@
 
 このリポジトリはドキュメントとトークンだけを持ちます。部品の実装ライブラリは含みません。
 
-- 現在の版: **v0.3.0**（[CHANGELOG](CHANGELOG.md)）
+- 現在の版: **v0.4.0**（[CHANGELOG](CHANGELOG.md)）
 - トークンの値は、Muse DS を適用済みのアプリ（jin-toreji-lu の `client/src/theme.css`）の実値と一致させています。
 
 ## 構成
@@ -66,7 +66,7 @@ CSS 変数として使うときは `tokens/tokens.css` を読み込みます。�
 ほかのリポジトリから取り込むときは、git の依存として入れられます（private のため、取り込む側にこのリポジトリの読み取り権限が要ります）。
 
 ```sh
-npm install git+https://github.com/aki-kii/muse-design-system.git#v0.3.0
+npm install git+https://github.com/aki-kii/muse-design-system.git#v0.4.0
 ```
 
 ```css
