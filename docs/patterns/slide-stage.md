@@ -17,7 +17,7 @@
 
 ## 使わないとき
 
-- 一覧の中の縮小表示 → [デッキカード](deck-card.md)のサムネイル、[ページプレビューカード](page-preview-card.md)
+- 一覧の中の縮小表示 → [メディアカード](../components/media-card.md)のデッキのサムネイル、[ページプレビューカード](page-preview-card.md)
 - 読み物の本文 → [セクションカード](../components/section-card.md)。ステージは「そのまま見せる」場所で、DS の文字の段は使わない
 
 ## バリアント

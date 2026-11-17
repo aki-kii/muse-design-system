@@ -54,4 +54,4 @@
 
 - [状態付きリスト項目](status-list-item.md)
 - [リスト行](list-rows.md)のタスク行
-- 適用例（スライドエディタ）: [スレッドカード](../patterns/thread-card.md)、[依頼行](../patterns/request-row.md)、[確認待ちバッジ](../patterns/awaiting-badge.md)
+- 適用例（スライドエディタ）: [スレッドカード](../patterns/thread-card.md)、[依頼行](../patterns/request-row.md)

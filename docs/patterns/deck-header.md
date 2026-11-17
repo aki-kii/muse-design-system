@@ -63,6 +63,6 @@
 
 ## 関連
 
-- [デッキカード](deck-card.md)
+- [メディアカード](../components/media-card.md)
 - [スライドステージ](slide-stage.md)
 - [確認ダイアログ](../components/confirm-dialog.md)（スレッドの削除）

@@ -9,7 +9,7 @@
 ## 組み合わせ
 
 - [状態付きリスト項目](../components/status-list-item.md)のカード型（題・件数・最後の発言・時刻＋状態）
-- 先頭の印: [確認待ちバッジ](awaiting-badge.md)、[完了バッジ](../components/done-toggle.md)
+- 先頭の印: 状態付きリスト項目の確認待ちの印、[完了バッジ](../components/done-toggle.md)
 - 修正中の印: [作業中インジケータ](../components/typing-indicator.md)（色付き）
 
 ## 使うとき
@@ -35,7 +35,7 @@
 | 状態 | 見た目 | 条件 |
 | --- | --- | --- |
 | 通常 | 標準のバリアント | 本人の発言で終わっている |
-| 確認待ち | 左に[確認待ちバッジ](awaiting-badge.md) | 最後の発言がエージェント |
+| 確認待ち | 左に確認待ちの印（[状態付きリスト項目](../components/status-list-item.md)） | 最後の発言がエージェント |
 | 修正中 | 枠が `--accent` になり、外側に 1px の `--accent` の輪。時刻の横に[修正中インジケータ](../components/typing-indicator.md)（色付き） | エージェントが修正している |
 | 下書きあり | 時刻の横に「下書きn件」（`--accent-strong`、600） | まだ修正依頼に出していないメモがある |
 | 解決済み | 細いバリアント | |
@@ -48,7 +48,7 @@
 
 標準の構成は次のとおりです。
 
-1. （確認待ちのとき）確認待ちバッジ
+1. （確認待ちのとき）確認待ちの印
 2. 題と件数の行
 3. 最後の発言（1行で切る）
 4. 更新時刻＋下書き件数＋修正中インジケータ
@@ -74,7 +74,6 @@
 
 ## 関連
 
-- [確認待ちバッジ](awaiting-badge.md)
 - [完了トグル・解決済みバッジ](../components/done-toggle.md)
 - [修正中インジケータ](../components/typing-indicator.md)
 - [依頼行](request-row.md)

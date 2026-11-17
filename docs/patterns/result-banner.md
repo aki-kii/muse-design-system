@@ -61,6 +61,6 @@
 
 ## 関連
 
-- [クイズ選択肢](quiz-option.md)
+- [選択肢ボタン](../components/choice-button.md)
 - [模範解答ボックス](model-answer-box.md)
 - [章完了パネル](chapter-complete-panel.md)

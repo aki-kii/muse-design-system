@@ -68,5 +68,5 @@
 ## 関連
 
 - [プレイヤートップバー](player-top-bar.md)
-- [コースパス](course-path.md)
+- [進捗パス](../components/progress-path.md)
 - [結果バナー](result-banner.md)

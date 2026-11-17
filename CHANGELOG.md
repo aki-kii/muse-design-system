@@ -4,6 +4,20 @@
 
 ## [Unreleased]
 
+## [0.9.1] - 2026-11-17
+
+### Changed
+
+- 1つの部品のバリアントにすぎないパターン 8件を、パターンの一覧から外して部品のバリアントにした。形式（寸法・状態・文・アクセシビリティ）はコンポーネントの文書に移した。パターンは 16件になった。
+  - 読み上げボタン → [アイコンボタン](docs/components/icon-button.md)の「読み上げ」
+  - クイズ選択肢 → [選択肢ボタン](docs/components/choice-button.md)の「クイズ」、位置ラジオ → 同じく「位置」
+  - 確認待ちバッジ → [状態付きリスト項目](docs/components/status-list-item.md)の確認待ちの印
+  - 送信完了メッセージ → [トースト](docs/components/toast.md)の「件数」
+  - デッキカード → [メディアカード](docs/components/media-card.md)の「デッキ」、本棚カバーカード → 同じく「本棚」
+  - コースパス → [進捗パス](docs/components/progress-path.md)の「コース」
+- 「1つの部品のバリアントにすぎないものはパターンにしない」を [ADR 0002](docs/decisions/0002-component-admission.md) と[収載の基準](docs/components/README.md#収載の基準)に足した。
+- サイトのデモも部品のページに移した。外したパターンの URL（`patterns/<名前>.html`）はなくなる。転送のページは作らない。
+
 ## [0.9.0] - 2026-11-17
 
 ### Changed

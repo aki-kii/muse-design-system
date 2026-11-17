@@ -18,7 +18,7 @@
 
 ## 使わないとき
 
-- 単発ノートの一覧 → 本棚タブと[本棚カバーカード](shelf-cover-card.md)
+- 単発ノートの一覧 → 本棚タブと[メディアカード](../components/media-card.md)の本棚
 - 主要な画面の行き来 → [ナビゲーション](../components/navigation.md)のタブバー
 - コースが1つしかないとき（切り替えのボタンごと出さない）
 
@@ -62,6 +62,6 @@
 
 ## 関連
 
-- [コースパス](course-path.md)
-- [本棚カバーカード](shelf-cover-card.md)
+- [進捗パス](../components/progress-path.md)
+- [メディアカード](../components/media-card.md)
 - [ナビゲーション](../components/navigation.md)

@@ -12,13 +12,13 @@
 
 ## 使うとき
 
-- [シートモーダル](../components/sheet-modal.md)の「ページを追加」で、[位置ラジオ](position-radio.md)の上に置く
+- [シートモーダル](../components/sheet-modal.md)の「ページを追加」で、[選択肢ボタン](../components/choice-button.md)の位置の上に置く
 - 前後関係を見ながら差し込む位置を選ばせるとき
 
 ## 使わないとき
 
-- スライドの中身を見せる → [スライドステージ](slide-stage.md)、[デッキカード](deck-card.md)のサムネイル
-- 押して選ぶ → 位置ラジオ（プレビューは押せない）
+- スライドの中身を見せる → [スライドステージ](slide-stage.md)、[メディアカード](../components/media-card.md)のデッキのサムネイル
+- 押して選ぶ → 選択肢ボタンの位置（プレビューは押せない）
 
 ## バリアント
 
@@ -48,5 +48,5 @@
 
 ## 関連
 
-- [位置ラジオ](position-radio.md)
+- [選択肢ボタン](../components/choice-button.md)
 - [シートモーダル](../components/sheet-modal.md)
