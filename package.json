@@ -13,6 +13,8 @@
   },
   "scripts": {
     "tokens": "node scripts/build-tokens.mjs",
-    "tokens:check": "node scripts/build-tokens.mjs --check"
+    "tokens:check": "node scripts/build-tokens.mjs --check",
+    "site": "node scripts/build-site.mjs",
+    "site:publish": "bash scripts/publish-site.sh"
   }
 }

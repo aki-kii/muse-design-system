@@ -1,0 +1,21 @@
+<div class="demo-stage" data-demo="confirm-dialog">
+  <div class="m-modal-area" style="min-height:300px">
+    <div style="padding:16px;display:grid;gap:10px;justify-items:start">
+      <div class="m-deck-header" style="width:100%;border-radius:var(--radius-row)">
+        <button type="button" class="m-round" aria-label="スレッド一覧に戻る">{{i:back}}</button>
+        <span class="m-thread-head-text"><span class="m-thread-head-title">タイトルをもう少し短くしたい</span><span class="m-thread-head-page">1ページ</span></span>
+        <button type="button" class="m-round" aria-label="スレッドを削除" data-open>{{i:trash}}</button>
+      </div>
+      <div data-list hidden><p class="demo-note">スレッドを削除して一覧に戻りました。<button type="button" class="demo-reset" data-reset>はじめに戻す</button></p></div>
+    </div>
+    <div data-layer hidden>
+      <div class="m-backdrop is-heavy"></div>
+      <div class="m-dialog" role="alertdialog" aria-modal="true" aria-labelledby="cd-t" aria-describedby="cd-d">
+        <p class="m-dialog-title" id="cd-t">スレッドを削除しますか？</p>
+        <p class="m-dialog-sub" id="cd-d">中のコメントもすべて削除されます</p>
+        <div class="m-dialog-btns"><button type="button" class="m-dialog-cancel">やめる</button><button type="button" class="m-dialog-ok">削除する</button></div>
+      </div>
+    </div>
+  </div>
+  <p class="demo-note">ゴミ箱を押すとダイアログが開きます。フォーカスは「やめる」に置き、Esc でも閉じます。幕の濃さと赤い面のボタンは判断待ちの点 19・20・26 のとおりモックの値です。</p>
+</div>

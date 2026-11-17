@@ -1,0 +1,33 @@
+<div class="demo-stage" data-demo="long-press-menu">
+  <div class="demo-phone" style="max-width:420px">
+    <div class="m-lp-area">
+      <ol class="m-chat" role="log" aria-label="スレッド（見本）">
+        <li><div class="m-bubble m-bubble--agent" tabindex="0" aria-label="まめだいふくの発言（Shift+F10 でメニュー）"><span data-text>タイトルを「AWS で始める家族の自動化」にしました。</span><span class="m-bubble-meta">まめだいふく ・ 10:05</span></div></li>
+        <li><div class="m-bubble m-bubble--user" tabindex="0" aria-label="あなたの発言（Shift+F10 でメニュー）"><span data-text>いいね。サブタイトルも短くしたい</span><span class="m-bubble-meta">10:07 ・ 下書き</span></div></li>
+      </ol>
+      <ul class="m-menu" role="menu" aria-label="コメントのメニュー" hidden>
+        <li role="none"><button type="button" role="menuitem" data-act="reply">{{i:reply}}返信</button></li>
+        <li role="none"><button type="button" role="menuitem" data-act="copy">{{i:copy}}コピー</button></li>
+        <li role="none"><button type="button" role="menuitem" data-act="select">{{i:select}}選択</button></li>
+        <li role="none"><button type="button" role="menuitem" class="is-danger" data-act="delete">{{i:trash}}削除</button></li>
+      </ul>
+    </div>
+    <div class="m-composer">
+      <div class="m-strip" data-strip role="status"></div>
+      <div class="m-memo" data-memo>
+        <p class="m-memo-error" role="alert" hidden>マイクが許可されていません</p>
+        <label class="vh" for="memo-long-press-menu-1">メモを入力</label><div class="m-memo-box"><textarea class="m-memo-input" rows="1" placeholder="メモを書く" id="memo-long-press-menu-1"></textarea><span class="m-memo-btns"><button type="button" class="m-send" aria-label="送信" hidden>{{i:up}}</button><button type="button" class="m-mic" aria-pressed="false" aria-label="音声入力">{{i:mic}}</button></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-item">
+    <p class="demo-cap">開いたときの見た目（本人の発言）</p>
+    <ul class="m-menu is-static" role="presentation">
+      <li><button type="button" tabindex="-1">{{i:reply}}返信</button></li>
+      <li><button type="button" tabindex="-1">{{i:copy}}コピー</button></li>
+      <li><button type="button" tabindex="-1">{{i:select}}選択</button></li>
+      <li><button type="button" tabindex="-1" class="is-danger">{{i:trash}}削除</button></li>
+    </ul>
+  </div>
+  <p class="demo-note">吹き出しを動かさずに長押し（450ms）するとメニューが開きます。キーボードでは吹き出しにフォーカスして Shift+F10（またはコンテキストメニューのキー）。削除は本人の発言だけに出ます。<button type="button" class="demo-reset" data-reset>はじめに戻す</button></p>
+</div>

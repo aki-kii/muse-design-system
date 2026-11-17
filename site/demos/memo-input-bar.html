@@ -1,0 +1,20 @@
+<div class="demo-stage" data-demo="memo-input-bar">
+  <div class="demo-item">
+    <p class="demo-cap">下に固定（書くと送信ボタンが出る。行が増えると 152px まで伸びる）</p>
+    <div class="demo-phone">
+      <div class="m-composer m-memo" data-memo>
+        <p class="m-memo-error" role="alert" hidden>マイクが許可されていません</p>
+        <label class="vh" for="memo-memo-input-bar-1">メモを入力</label><div class="m-memo-box"><textarea class="m-memo-input" rows="1" placeholder="メモを書く" id="memo-memo-input-bar-1"></textarea><span class="m-memo-btns"><button type="button" class="m-send" aria-label="送信" hidden>{{i:up}}</button><button type="button" class="m-mic" aria-pressed="false" aria-label="音声入力">{{i:mic}}</button></span></div>
+      </div>
+      <p style="margin:8px 16px 12px"><button type="button" class="demo-reset" data-show-error>音声入力のエラーを出す／消す</button></p>
+    </div>
+  </div>
+  <div class="demo-item">
+    <p class="demo-cap">シートの中（最初から3行）</p>
+    <div class="m-memo" data-memo style="background:var(--surface);padding:16px;border-radius:var(--radius-card);max-width:390px">
+      <p class="m-memo-error" role="alert" hidden>マイクが許可されていません</p>
+      <div class="m-memo-box"><textarea class="m-memo-input" rows="3" placeholder="どんなページを足すか" aria-label="メモを入力" style="min-height:84px"></textarea><span class="m-memo-btns"><button type="button" class="m-send" aria-label="送信" hidden>{{i:up}}</button><button type="button" class="m-mic" aria-pressed="false" aria-label="音声入力">{{i:mic}}</button></span></div>
+    </div>
+  </div>
+  <p class="demo-note">マイクを押すと音声入力中の見た目になります（このデモでは録音はしません）。音声入力中の赤は判断待ちの点 19・27 のとおりモックの値です。</p>
+</div>

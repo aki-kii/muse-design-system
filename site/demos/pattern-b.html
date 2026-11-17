@@ -1,0 +1,22 @@
+<div class="sample demo" data-demo="pattern-b">
+  <p class="sample-label">見本: 提案の本文 → 承認カード → 結果の行＋トースト</p>
+  <div class="m-flow">
+    <p class="m-flow-step">1. 提案の本文</p>
+    <section class="m-card"><p class="m-card-body">会場の担当の方に、12/6 の利用時間を 18:30 からに変えたいと返信します。下の内容で送ってよければ許可してください。</p></section>
+    <p class="m-flow-step">2. 承認カード（範囲を選ぶ）</p>
+    <section class="m-approval" aria-labelledby="pb-1" role="region">
+      <p class="m-approval-title" id="pb-1">まめだいふく が Gmail でメールを送ろうとしています</p>
+      <p class="m-approval-sub">宛先: 会場担当の方 ・ 件名「12/6 の会場の件」 ・ 本文 4 行</p>
+      <div class="m-btn-row">
+        <button type="button" class="m-btn m-btn--primary" data-approve="1回だけ">1回だけ許可</button>
+        <button type="button" class="m-btn m-btn--secondary" data-approve="このタスク中">このタスク中は許可</button>
+        <button type="button" class="m-btn m-btn--danger" data-approve="deny">拒否</button>
+      </div>
+    </section>
+    <div data-results hidden>
+      <p class="m-flow-step">3. 結果の行</p>
+      <div class="m-result-row"><span class="ok" aria-hidden="true">✓</span><span data-result-text></span></div>
+    </div>
+    <p class="demo-note">途中で画面を移らず、その場に結果を残します。<button type="button" class="demo-reset" data-reset>はじめに戻す</button></p>
+  </div>
+</div>

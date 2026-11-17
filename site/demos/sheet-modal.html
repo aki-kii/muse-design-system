@@ -1,0 +1,46 @@
+<div class="demo-stage" data-demo="sheet-modal">
+  <div class="m-modal-area">
+    <div style="padding:16px;display:grid;gap:10px;justify-items:start">
+      <p class="demo-note">押すと、この枠の下からシートがせり上がります。</p>
+      <button type="button" class="m-btn m-btn--secondary" data-open-sheet="add">ページを追加</button>
+      <button type="button" class="m-btn m-btn--secondary" data-open-sheet="del">ページを削除</button>
+      <button type="button" class="m-btn m-btn--secondary" data-open-sheet="orphan">行き場のないメモ</button>
+    </div>
+    <div data-layer hidden>
+      <div class="m-backdrop"></div>
+      <div class="m-sheet" role="dialog" aria-modal="true" aria-labelledby="sh-add" data-sheet="add" hidden>
+        <div class="m-sheet-head"><p class="m-sheet-title" id="sh-add">ページを追加</p><button type="button" class="m-round" aria-label="閉じる" data-close>{{i:x}}</button></div>
+        <div class="m-previews">
+          <div><span class="m-preview-label">前のページ</span><div class="m-preview-frame">4 ページ</div></div>
+          <div><span class="m-preview-label">次のページ</span><div class="m-preview-frame">5 ページ</div></div>
+        </div>
+        <div class="m-position" role="radiogroup" aria-label="追加する位置">
+          <button type="button" role="radio" aria-checked="false" tabindex="-1">前に追加</button>
+          <button type="button" role="radio" aria-checked="true" tabindex="0">後に追加</button>
+        </div>
+        <div class="m-memo" data-memo style="margin-top:16px">
+          <p class="m-memo-error" role="alert" hidden>マイクが許可されていません</p>
+          <div class="m-memo-box"><textarea class="m-memo-input" rows="3" placeholder="どんなページを足すか" aria-label="メモを入力"></textarea><span class="m-memo-btns"><button type="button" class="m-send" aria-label="送信" hidden>{{i:up}}</button><button type="button" class="m-mic" aria-pressed="false" aria-label="音声入力">{{i:mic}}</button></span></div>
+        </div>
+        <button type="button" class="m-block-btn is-blue" data-submit-sheet="追加リクエストを下書きに積みました" data-needs-text>追加リクエストとして下書きに積む</button>
+      </div>
+      <div class="m-sheet" role="dialog" aria-modal="true" aria-labelledby="sh-del" data-sheet="del" hidden>
+        <div class="m-sheet-head"><p class="m-sheet-title" id="sh-del">ページを削除</p><button type="button" class="m-round" aria-label="閉じる" data-close>{{i:x}}</button></div>
+        <p class="m-sheet-sub">4ページ</p>
+        <div class="m-memo" data-memo>
+          <p class="m-memo-error" role="alert" hidden>マイクが許可されていません</p>
+          <div class="m-memo-box"><textarea class="m-memo-input" rows="3" placeholder="削除する理由" aria-label="メモを入力（削除する理由）"></textarea><span class="m-memo-btns"><button type="button" class="m-send" aria-label="送信" hidden>{{i:up}}</button><button type="button" class="m-mic" aria-pressed="false" aria-label="音声入力">{{i:mic}}</button></span></div>
+        </div>
+        <button type="button" class="m-block-btn is-red" data-submit-sheet="削除予定にしました">削除予定にする</button>
+      </div>
+      <div class="m-sheet" role="dialog" aria-modal="true" aria-labelledby="sh-orphan" data-sheet="orphan" hidden>
+        <div class="m-sheet-head"><p class="m-sheet-title" id="sh-orphan">行き場のないメモ</p><button type="button" class="m-round" aria-label="閉じる" data-close>{{i:x}}</button></div>
+        <ul class="m-sheet-list">
+          <li class="m-orphan"><span class="m-orphan-title">この図の矢印を太く</span><span class="m-orphan-sub">もとは12ページ ・ 2件</span></li>
+          <li class="m-request is-in-sheet"><span class="m-request-text"><span class="m-request-main">ページを追加（もとは12ページの後）</span><span class="m-request-state">提出済み</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="demo-note">幕・×・Esc で閉じます。「ページを追加」は文を書くまで全幅ボタンが押せません。幕の色・全幅ボタンの形と赤い面は判断待ちの点 19・20・26 のとおりモックの値です。</p>
+</div>
