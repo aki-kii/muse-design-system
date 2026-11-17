@@ -53,7 +53,7 @@
 | --- | --- | --- |
 | 面 | [セクションカード](../../components/section-card.md)と同じ | `--surface` `--border` `--shadow-card` `--radius-card` |
 | 内側の余白 | 24px、中央揃え | |
-| ★ | 64px / 800、金色 | 色は未定義（[判断待ちの点](../../open-questions.md#学習ノート由来の部品) 11）、サイズは段にない（同 16） |
+| ★ | 64px / 800、金色。文字ではなく飾りの記号として扱う（64px はこのパターンだけの値） | `--gold` |
 | 見出し | 24px / 800 | `--text-2xl` |
 | 補足 | Small 段 | `--dim` |
 | ボタン | 間隔 10px、見出しとの間隔 20px | [ボタン](../../components/button.md) |

@@ -230,7 +230,7 @@ page({ out: 'index.html', title: 'Muse Design System', nav: '概要', section: '
 page({ out: 'getting-started.html', src: 'README.md', title: '使い方', section: 'start', kind: 'readme' });
 page({ out: 'principles.html', src: 'docs/principles.md', section: 'start' });
 page({ out: 'foundations/index.html', src: 'docs/foundations/README.md', section: 'foundations', nav: 'ファウンデーションの考え方' });
-for (const f of ['color', 'typography', 'spacing-radius-elevation', 'accessibility'])
+for (const f of ['color', 'typography', 'spacing-radius-elevation', 'icons', 'accessibility'])
   page({ out: `foundations/${f}.html`, src: `docs/foundations/${f}.md`, section: 'foundations' });
 page({ out: 'components/index.html', src: 'docs/components/README.md', section: 'components', nav: 'コンポーネント一覧', kind: 'catalog' });
 for (const c of components)
@@ -361,10 +361,11 @@ function typeSpecimen() {
 <div class="sample">
   <p class="sample-label">見本: 段</p>
   <div class="type-tiers">
-    <div class="type-tier"><span class="type-meta">Display 800 / 28–38px</span><p class="t-display">今日のブリーフ</p></div>
-    <div class="type-tier"><span class="type-meta">Heading 700 / 17–22px</span><p class="t-heading">今日の予定</p></div>
-    <div class="type-tier"><span class="type-meta">Body 400 / 16px・行間 1.55</span><p class="t-body">色・書体・角丸・余白は Muse アプリの文法に揃える。画面の形は中身の性質で決める。</p></div>
-    <div class="type-tier"><span class="type-meta">Small 400–600 / 12–13px</span><p class="t-small">更新 7:02 ・ 家族カレンダー</p></div>
+    <div class="type-tier"><span class="type-meta">Display 800 / 30・36px</span><p class="t-display">今日のブリーフ</p></div>
+    <div class="type-tier"><span class="type-meta">Heading 700 / 18・20・24px</span><p class="t-heading">今日の予定</p></div>
+    <div class="type-tier"><span class="type-meta">Body 400 / 16px・行の高さ 24px</span><p class="t-body">色・書体・角丸・余白は Muse アプリの文法に揃える。画面の形は中身の性質で決める。</p></div>
+    <div class="type-tier"><span class="type-meta">Small 400–600 / 12・14px</span><p class="t-small">更新 7:02 ・ 家族カレンダー</p></div>
+    <div class="type-tier"><span class="type-meta">Micro 600–800 / 11px</span><p class="t-micro">今ここ</p></div>
   </div>
   <p class="sample-label">見本: 文字サイズのスケール</p>
   <ul class="type-scale">${keys
@@ -488,7 +489,7 @@ function buildPage(p) {
     const principleItems = [...read('docs/principles.md').matchAll(/^## (\d+)\. (.*)\n\n(.*)/gm)];
     const layers = [
       { n: '1', t: '原則', d: '判断に迷ったときに戻る4つの決め事', href: 'principles.html' },
-      { n: '2', t: 'ファウンデーション', d: '色・文字・余白・角丸・影のトークンと、アクセシビリティの基準', href: 'foundations/index.html' },
+      { n: '2', t: 'ファウンデーション', d: '色・文字・余白・角丸・影のトークンと、アイコンの組、アクセシビリティの基準', href: 'foundations/index.html' },
       { n: '3', t: 'コンポーネント', d: `再利用する部品。部品ごとに1ファイル（${components.length}件）`, href: 'components/index.html' },
       { n: '4', t: 'パターン', d: `部品の組み合わせの型と、アプリ固有の複合体（${composites.length}件）`, href: 'patterns.html' },
     ];

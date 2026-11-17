@@ -45,7 +45,7 @@
 | 丸ボタン | 見た目 32×32px の円、右下 4px 8px に置き、間 8px。押せる範囲は外側に 6px 広げて 44px | `--radius-pill` `--size-tap-target` |
 | 送信 | ブルーの面、上向きの矢印 18px（線 2.4px） | `--accent` `--accent-ink` |
 | マイク | 白い面、1px の枠、マイクのアイコン 18px | `--surface` `--text` `--border` |
-| マイク（音声入力中） | 赤い面、白いアイコン | `--danger`（同 19・27） |
+| マイク（音声入力中） | 赤い面、白いアイコン | `--danger` `--danger-ink`（「録音中」は `--danger` を使ってよい。[色](../foundations/color.md#赤の使い方)） |
 | エラーの文 | 12px、欄との間 8px | `--danger` `--text-xs` |
 
 欄の角丸 20px は、[入力欄](input-and-switch.md)の 12px と違います。会話の入力は吹き出しに合わせて丸く、フォームの入力は 12px、と分けています。

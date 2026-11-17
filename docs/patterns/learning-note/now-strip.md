@@ -45,7 +45,7 @@
 | 角丸 | 20px | `--radius-card` |
 | 内側の余白 | 上下 12px、左右 16px | |
 | 固定の位置 | `position: sticky; top: 8px` | |
-| ラベル「今ここ」 | 11px / 800、字間 0.05em | `--accent-strong`（11px は段にない。[判断待ちの点](../../open-questions.md#学習ノート由来の部品) 16） |
+| ラベル「今ここ」 | 11px / 800、字間 0.05em | `--accent-strong` `--text-2xs` |
 | 題 | 14px / 700 | `--text` |
 | 数 | 13px | `--dim` |
 

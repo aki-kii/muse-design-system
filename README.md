@@ -4,7 +4,7 @@
 
 このリポジトリはドキュメントとトークンだけを持ちます。部品の実装ライブラリは含みません。
 
-- 現在の版: **v0.6.0**（[CHANGELOG](CHANGELOG.md)）
+- 現在の版: **v0.7.0**（[CHANGELOG](CHANGELOG.md)）
 - サンプルサイト（ドキュメントと部品のデモ）: https://aki-kii.github.io/muse-design-system/
 - トークンの値は、Muse DS を適用済みのアプリ（jin-toreji-lu の `client/src/theme.css`）の実値と一致させています。
 
@@ -22,7 +22,7 @@
 そのほか:
 
 - 決めたことの記録: [docs/decisions/](docs/decisions/README.md)（部品とパターンの分け方は [0002](docs/decisions/0002-component-admission.md)）
-- 判断待ちの点: [docs/open-questions.md](docs/open-questions.md)
+- 判断待ちの点: [docs/open-questions.md](docs/open-questions.md)（v0.7.0 で28件すべて解消済み。色の決定は [0003](docs/decisions/0003-color-and-contrast.md)〜アイコンは [0006](docs/decisions/0006-icon-set.md)）
 - 版の付け方: [docs/versioning.md](docs/versioning.md)
 
 ```
@@ -40,7 +40,7 @@
 ├── site/                     サンプルサイトのデモ・見本の HTML と CSS・JS
 └── docs/
     ├── principles.md
-    ├── foundations/          トークンの考え方・色・書体・余白と角丸・アクセシビリティ
+    ├── foundations/          トークンの考え方・色・書体・余白と角丸・アイコン・アクセシビリティ
     ├── components/           汎用の部品ごとの文書（テンプレート統一）
     ├── patterns.md           組み合わせの型
     ├── patterns/             アプリ固有の複合体（learning-note/、slide-editor/）
@@ -69,7 +69,7 @@ CSS 変数として使うときは `tokens/tokens.css` を読み込みます。�
 ほかのリポジトリから取り込むときは、git の依存として入れられます（リポジトリは public なので、権限の設定なしで取り込めます）。
 
 ```sh
-npm install git+https://github.com/aki-kii/muse-design-system.git#v0.6.0
+npm install git+https://github.com/aki-kii/muse-design-system.git#v0.7.0
 ```
 
 ```css

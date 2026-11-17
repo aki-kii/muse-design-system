@@ -21,13 +21,13 @@
   }
   window.museToast = toast;
 
-  // 紙吹雪（色は判断待ちの点 14 のモックの値）
+  // 紙吹雪（飾りの色。学習ノートの現行の4色で、DS のトークンにしない）
   function confetti(host) {
     if (reduce) return;
     var box = document.createElement('div');
     box.className = 'm-confetti';
     box.setAttribute('aria-hidden', 'true');
-    var colors = ['#EC4561', '#0082FB', '#F5B400', '#12805C'];
+    var colors = ['#EC4561', '#2F7CF6', '#F5B301', '#2E9E5B'];
     for (var i = 0; i < 18; i++) {
       var p = document.createElement('i');
       p.style.left = (5 + Math.random() * 90) + '%';

@@ -46,14 +46,14 @@
 
 | 項目 | 値 | トークン |
 | --- | --- | --- |
-| 幅 | 176px | |
+| 幅 | 176px（この部品だけの値） | |
 | 面 | 白、1px の枠、浮く影、上下 4px | `--surface` `--border` `--shadow-float` |
 | 角丸 | 12px | `--radius-row` |
-| 項目 | 高さ 40px、左右 16px、アイコン 16px とラベルの間 8px、14px | `--text` `--text-sm` |
+| 項目 | 高さ 44px、左右 16px、アイコン 16px とラベルの間 8px、14px | `--size-tap-target` `--text` `--text-sm` |
 | 削除の項目 | アイコンと文字を赤 | `--danger` |
 | 長押しの時間 | 450ms（元のアプリ。モックは 550ms） | |
 
-項目の高さ 40px は `--size-tap-target`（44px）に届いていません（[判断待ちの点](../open-questions.md#スライドエディタ由来の部品) 23）。
+項目の高さは、元のアプリの 40px から `--size-tap-target` の 44px に上げました（[決定記録 0004](../decisions/0004-scale-and-local-values.md)）。
 
 ## アクセシビリティ
 

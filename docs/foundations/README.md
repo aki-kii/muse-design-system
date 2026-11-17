@@ -1,10 +1,11 @@
 # ファウンデーション
 
-色・文字・余白・角丸・影のトークンと、アクセシビリティの基準です。すべての部品はここの値だけを使います。
+色・文字・余白・角丸・影のトークンと、アイコンの組、アクセシビリティの基準です。すべての部品はここの値だけを使います。
 
 - [色](color.md)
 - [タイポグラフィ](typography.md)
 - [余白・角丸・影](spacing-radius-elevation.md)
+- [アイコン](icons.md)
 - [アクセシビリティ](accessibility.md)
 
 ## トークンの階層
@@ -46,13 +47,13 @@ radius.20       20px    ─▶ radius.card       ─▶ セクションカード
 
 | グループ | 変数 |
 | --- | --- |
-| 色 | `--bg` `--surface` `--fill` `--text` `--dim` `--faint` `--border` `--accent` `--accent-ink` `--accent-strong` `--accent-soft` `--danger` `--ok` `--bubble-user` `--bubble-user-ink` `--cal-common` `--cal-self` `--cal-partner` |
+| 色 | `--bg` `--surface` `--fill` `--text` `--dim` `--faint` `--border` `--accent` `--accent-ink` `--accent-strong` `--accent-soft` `--danger` `--danger-ink` `--danger-soft` `--ok` `--ok-ink` `--ok-soft` `--bubble-user` `--bubble-user-ink` `--gold` `--gold-ink` `--scrim` `--scrim-strong` `--cal-common` `--cal-self` `--cal-partner` |
 | 影 | `--shadow-card` `--shadow-float` |
 | 角丸 | `--radius-small` `--radius-row` `--radius-card` `--radius-pill` |
 | 余白 | `--space-inner` `--space-row` `--space-card-gap` `--space-card-padding` `--space-section` |
 | 大きさ | `--size-tap-target` |
 | 書体 | `--font-sans` `--font-mono` |
-| 文字サイズ | `--text-xs` 〜 `--text-5xl` と、それぞれの `--line-height` |
+| 文字サイズ | `--text-2xs` 〜 `--text-5xl` と、それぞれの `--line-height` |
 
 ## Tailwind CSS との対応
 
@@ -65,6 +66,9 @@ radius.20       20px    ─▶ radius.card       ─▶ セクションカード
 | `rounded-2xl` | 20px | `--radius-card` |
 | `rounded-full` | 9999px | `--radius-pill`（999px） |
 | `text-xs` 〜 `text-5xl` | 12px 〜 48px | `--text-xs` 〜 `--text-5xl`（同じ値） |
+| `text-[11px]` | 11px | `--text-2xs` |
+| `bg-black/40`・`bg-black/70` | 黒の 40%・70% | `--scrim`・`--scrim-strong` |
+| `disabled:opacity-40` | 0.4 | 無効の不透明度（トークンなし。[アクセシビリティ](accessibility.md#状態の見せ方)） |
 | `font-sans` | Figtree, Noto Sans JP | `--font-sans` |
 
 Muse DS の角丸の変数名（`small`／`row`／`card`／`pill`）は、Tailwind の `--radius-sm` などと重ならないように付けています。同じアプリで両方を読み込んでも上書きし合いません。

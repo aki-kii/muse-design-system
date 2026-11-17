@@ -40,8 +40,8 @@
 | --- | --- | --- |
 | 面 | 白 | `--surface` |
 | 角丸 | 20px | `--radius-card` |
-| 内側の余白 | 18px | `--space-card-padding` |
-| カード同士の間隔 | 14px | `--space-card-gap` |
+| 内側の余白 | 16px | `--space-card-padding` |
+| カード同士の間隔 | 12px | `--space-card-gap` |
 | 影 | カードの影 | `--shadow-card` |
 | フッターの罫線 | 1px | `--border` |
 
