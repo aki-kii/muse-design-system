@@ -4,6 +4,17 @@
 
 ## [Unreleased]
 
+## [0.10.0] - 2026-11-17
+
+### Changed
+
+- **壊れる変更:** パターンの一覧から A〜E の型の分類と「アプリ固有の複合体」の節を外し、全パターンを1つの平らな一覧にした（コンポーネント一覧と同じ体裁）。型の4件は1件ずつの文書（[読み物ページの型](docs/patterns/reading-page.md)・[承認をはさむ型](docs/patterns/approval-flow.md)・[状態を見せる型](docs/patterns/status-layers.md)・[時間で区切るセッションの型](docs/patterns/timed-session.md)）にした。`patterns.html#a-…` などの節へのリンクはなくなる。
+- パターンの定義（基本コンポーネントを組み合わせて、よくあるパターンにしたもの）を[原則](docs/principles.md)に置いた。パターンの一覧には一覧だけを置く。一覧にあった「横断の約束」は[ファウンデーション](docs/foundations/accessibility.md)の繰り返しなので外した。
+
+### Removed
+
+- **壊れる変更:** スライドエディタのパターンを Muse DS から外した。スライド用は別の独立したデザインシステムで扱う。外したのはスライドの型（E）と、デッキヘッダー・スライドステージ・ページカウンタ行・スレッドカード・タイピングストリップ・依頼行・ページプレビューカード・スレッドの会話の 8件。コンポーネントの文書からの参照とサイトのデモも外した。URL（`patterns/<名前>.html`）はなくなる。転送のページは作らない。パターンは 12件になった。
+
 ## [0.9.1] - 2026-11-17
 
 ### Changed
@@ -22,7 +33,7 @@
 
 ### Changed
 
-- **壊れる変更:** パターンの複合体 24件をアプリ別のフォルダ（`docs/patterns/learning-note/`・`docs/patterns/slide-editor/`）から `docs/patterns/` 直下に移し、1つの一覧にした。索引は [パターン](docs/patterns.md#アプリ固有の複合体) の表1つにまとめ、アプリ別の一覧（各フォルダの README）は外した。サイトの URL も `patterns/<アプリ>/<名前>.html` から `patterns/<名前>.html` に変わる。転送のページは作らない。
+- **壊れる変更:** パターンの複合体 24件をアプリ別のフォルダ（`docs/patterns/learning-note/`・`docs/patterns/slide-editor/`）から `docs/patterns/` 直下に移し、1つの一覧にした。索引は [パターン](docs/patterns.md) の表1つにまとめ、アプリ別の一覧（各フォルダの README）は外した。サイトの URL も `patterns/<アプリ>/<名前>.html` から `patterns/<名前>.html` に変わる。転送のページは作らない。
 - 各複合体の冒頭の1行を「出自: どのアプリで使っているか」にした。
 - コンポーネント・ファウンデーション・README・[ADR 0002](docs/decisions/0002-component-admission.md) から複合体へのリンクと置き場所の説明を新しい場所に合わせた。
 

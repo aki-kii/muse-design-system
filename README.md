@@ -4,7 +4,7 @@
 
 このリポジトリはドキュメントとトークンだけを持ちます。部品の実装ライブラリは含みません。
 
-- 現在の版: **v0.9.1**（[CHANGELOG](CHANGELOG.md)）
+- 現在の版: **v0.10.0**（[CHANGELOG](CHANGELOG.md)）
 - サンプルサイト（ドキュメントと部品のデモ）: https://aki-kii.github.io/muse-design-system/
 - トークンの値は Muse DS を適用済みのアプリ（jin-toreji-lu の `client/src/theme.css`）の実値と一致させています。
 
@@ -17,7 +17,7 @@
 | 1. 原則 | 判断に迷ったときに戻る4つの決め事 | [docs/principles.md](docs/principles.md) |
 | 2. ファウンデーション | 色・文字・余白・角丸・影のトークンと、アクセシビリティの基準 | [docs/foundations/](docs/foundations/README.md) |
 | 3. コンポーネント | 中身に依存しない汎用の部品。部品ごとに1ファイル | [docs/components/](docs/components/README.md) |
-| 4. パターン | 部品の組み合わせの型と、アプリ固有の複合体 | [docs/patterns.md](docs/patterns.md)、[docs/patterns/](docs/patterns.md#アプリ固有の複合体) |
+| 4. パターン | 基本コンポーネントを組み合わせた、よくあるパターン | [docs/patterns.md](docs/patterns.md)、[docs/patterns/](docs/patterns.md) |
 
 そのほかの文書は次のとおりです。
 
@@ -42,7 +42,7 @@
     ├── foundations/          トークンの考え方・色・書体・余白と角丸・アイコン・アクセシビリティ
     ├── components/           汎用の部品ごとの文書（テンプレート統一）
     ├── patterns.md           組み合わせの型
-    ├── patterns/             アプリ固有の複合体（1つの一覧。出自は各文書に書く）
+    ├── patterns/             パターン（1つの平らな一覧）
     ├── decisions/            決定記録（ADR）
     └── versioning.md
 ```

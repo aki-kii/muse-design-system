@@ -210,10 +210,9 @@ function parseCatalog(src, section) {
 const compGroups = parseCatalog(read('docs/components/README.md'), '一覧');
 const components = compGroups.flatMap((g) => g.items);
 for (const c of components) c.dir = 'components';
-// アプリ固有の複合体（docs/patterns.md の「アプリ固有の複合体」の表。文書は docs/patterns/ 直下）
-const COMPOSITES_H = 'アプリ固有の複合体';
-const composites = parseCatalog(read('docs/patterns.md'), COMPOSITES_H).flatMap((g) => g.items);
-for (const c of composites) c.dir = 'patterns';
+// パターン（docs/patterns.md の平らな一覧。文書は docs/patterns/ 直下）
+const patterns = parseCatalog(read('docs/patterns.md')).flatMap((g) => g.items);
+for (const c of patterns) c.dir = 'patterns';
 
 const pages = [];
 const page = (o) => (pages.push(o), o);
@@ -228,8 +227,8 @@ for (const c of components)
   page({ out: `components/${c.slug}.html`, src: `docs/components/${c.slug}.md`, section: 'components', comp: c, list: components });
 page({ out: 'components/_template.html', src: 'docs/components/_template.md', section: 'components', hidden: true });
 page({ out: 'patterns.html', src: 'docs/patterns.md', section: 'patterns', nav: 'パターン一覧' });
-for (const c of composites)
-  page({ out: `patterns/${c.slug}.html`, src: `docs/patterns/${c.slug}.md`, section: 'patterns', comp: c, list: composites });
+for (const c of patterns)
+  page({ out: `patterns/${c.slug}.html`, src: `docs/patterns/${c.slug}.md`, section: 'patterns', comp: c, list: patterns });
 page({ out: 'decisions/index.html', src: 'docs/decisions/README.md', section: 'records' });
 for (const f of readdirSync(join(root, 'docs/decisions')).filter((f) => /^\d{4}-.*\.md$/.test(f)).sort())
   page({ out: `decisions/${f.replace(/\.md$/, '.html')}`, src: `docs/decisions/${f}`, section: 'records', hidden: true });
@@ -401,8 +400,7 @@ function layout(p, body, { toc = '' } = {}) {
           .map((g) => `${g.title ? `<li class="side-sub">${esc(g.title)}</li>` : ''}${qs.filter((q) => q.comp && g.items.includes(q.comp)).map(navItem).join('')}`)
           .join('');
       } else if (s.id === 'patterns') {
-        inner = qs.filter((q) => !q.comp).map(navItem).join('') +
-          `<li class="side-sub">${esc(COMPOSITES_H)}</li>${qs.filter((q) => q.comp).map(navItem).join('')}`;
+        inner = qs.map(navItem).join('');
       } else inner = qs.map(navItem).join('');
       return `<div class="side-group${s.id === p.section ? ' is-current' : ''}"><p class="side-title">${esc(s.title)}</p><ul>${inner}</ul></div>`;
     })
@@ -481,7 +479,7 @@ function buildPage(p) {
       { n: '1', t: '原則', d: '判断に迷ったときに戻る4つの決め事', href: 'principles.html' },
       { n: '2', t: 'ファウンデーション', d: '色・文字・余白・角丸・影のトークンと、アイコンの組、アクセシビリティの基準', href: 'foundations/index.html' },
       { n: '3', t: 'コンポーネント', d: `再利用する部品。部品ごとに1ファイル（${components.length}件）`, href: 'components/index.html' },
-      { n: '4', t: 'パターン', d: `部品の組み合わせの型と、アプリ固有の複合体（${composites.length}件）`, href: 'patterns.html' },
+      { n: '4', t: 'パターン', d: `基本コンポーネントを組み合わせた、よくあるパターン（${patterns.length}件）`, href: 'patterns.html' },
     ];
     void principles;
     const body = `
@@ -555,14 +553,10 @@ function buildPage(p) {
     html = insertAtSectionEnd(html, '大きさ', spacingSample('tap'));
   }
   if (p.out === 'patterns.html') {
-    // 複合体の表だけをカードの並びにする（型の節の表はそのまま）
-    const at = html.indexOf(`id="${slugify(COMPOSITES_H)}"`);
-    const table = html.slice(at).match(/<div class="table-wrap"><table>[\s\S]*?<\/table><\/div>/);
-    if (at < 0 || !table) throw new Error('複合体の表が見つからない');
-    const ti = at + table.index;
-    html = html.slice(0, ti) + catalogCards(composites, 'patterns/') + html.slice(ti + table[0].length);
-    html = insertAtSectionEnd(html, 'b-承認をはさむ型', demo('pattern-b'));
-    html = insertAtSectionEnd(html, 'e-スライドの型', demo('pattern-e'));
+    // パターンの表をカードの並びにする（コンポーネント一覧と同じ体裁）
+    const table = html.match(/<div class="table-wrap"><table>[\s\S]*?<\/table><\/div>/);
+    if (!table) throw new Error('パターンの表が見つからない');
+    html = html.replace(table[0], catalogCards(patterns, 'patterns/'));
   }
 
   return layout(p, `<article class="doc">${html}</article>`);
@@ -617,5 +611,5 @@ for (const p of pages) {
     if (!th.includes(`id="${decodeURIComponent(hash)}"`)) { console.error(`アンカー切れ: ${p.out} → ${href || ''}#${hash}`); broken++; }
   }
 }
-console.log(`書き出した: ${out}（${pages.length} ページ、部品 ${components.length} 件、複合体 ${composites.length} 件）`);
+console.log(`書き出した: ${out}（${pages.length} ページ、部品 ${components.length} 件、パターン ${patterns.length} 件）`);
 if (broken) { console.error(`リンク切れ ${broken} 件`); process.exit(1); }

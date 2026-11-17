@@ -53,4 +53,4 @@
 ## 関連
 
 - [リスト行](list-rows.md)
-- [読み物ページの型](../patterns.md#a-読み物ページの型)
+- [読み物ページの型](../patterns/reading-page.md)

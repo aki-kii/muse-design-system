@@ -354,15 +354,9 @@ button.m-node:hover:not(.is-current) { background: var(--fill); }
 .m-slide.is-diagram .m-slide-in { inset: 4cqw 6cqw; }
 
 /* ---------- スライドステージ ---------- */
-.m-stage { background: var(--bg); aspect-ratio: 980 / 552; max-height: 58vh; width: 100%; display: grid; place-items: center; position: relative; cursor: pointer; border-radius: var(--radius-small); overflow: hidden; }
-.m-stage:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.m-stage .m-slide { width: 92%; box-shadow: 0 1px 4px rgba(0,0,0,.12); animation: m-fade .28s ease-out; }
 @keyframes m-fade { from { opacity: .25; } }
 
 /* ---------- ページカウンタ行 ---------- */
-.m-counter { display: flex; align-items: baseline; justify-content: space-between; padding: 16px 16px 0; }
-.m-counter-page { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
-.m-counter-link { font-size: 12px; color: var(--accent-strong); text-decoration: underline; text-underline-offset: 3px; background: none; border: 0; padding: 8px 0; min-height: var(--size-tap-target); cursor: pointer; font-family: inherit; }
 
 /* ---------- スレッドカード・バッジ ---------- */
 .m-threads { display: grid; gap: 16px; padding: 16px; max-width: 420px; list-style: none; margin: 0; }
@@ -505,10 +499,6 @@ button.m-node:hover:not(.is-current) { background: var(--fill); }
 .m-flow-step { margin: 0; font-size: 12px; font-weight: 700; color: var(--faint); }
 .m-result-row { display: flex; align-items: center; gap: 10px; background: var(--surface); border-radius: var(--radius-row); padding: 12px 16px; font-size: 14px; border: 1px solid var(--border); }
 .m-result-row .ok { color: var(--ok); font-weight: 700; }
-.m-slide-types { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
-.m-slide-types figure { margin: 0; display: grid; gap: 6px; }
-.m-slide-types .m-slide { border: 1px solid var(--border); border-radius: var(--radius-small); }
-.m-slide-types figcaption { font-size: 12px; font-weight: 600; color: var(--dim); }
 
 /* ---------- スケルトン ---------- */
 .m-skel { display: block; background: var(--fill); animation: m-skel-pulse 1.6s ease-in-out infinite alternate; }

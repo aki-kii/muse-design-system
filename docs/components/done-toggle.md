@@ -6,8 +6,8 @@
 
 ## 使うとき
 
-- トグル: 依頼ややり取りのように、相手がいる項目の完了を本人が付け外しするとき。[状態付きリスト項目](status-list-item.md)の右端や、項目を開いた先の上端に置く（例: スライドエディタの[依頼行](../patterns/request-row.md)、[デッキヘッダー](../patterns/deck-header.md)のスレッドの上端）
-- バッジ: 完了した[状態付きリスト項目](status-list-item.md)の先頭の印（例: 解決済みの[スレッドカード](../patterns/thread-card.md)）
+- トグル: 依頼ややり取りのように、相手がいる項目の完了を本人が付け外しするとき。[状態付きリスト項目](status-list-item.md)の右端や、項目を開いた先の上端に置く
+- バッジ: 完了した[状態付きリスト項目](status-list-item.md)の先頭の印
 
 ## 使わないとき
 
@@ -54,4 +54,3 @@
 
 - [状態付きリスト項目](status-list-item.md)
 - [リスト行](list-rows.md)のタスク行
-- 適用例（スライドエディタ）: [スレッドカード](../patterns/thread-card.md)、[依頼行](../patterns/request-row.md)

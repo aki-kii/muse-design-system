@@ -61,4 +61,3 @@
 
 - [完了トグル・完了バッジ](done-toggle.md)
 - [作業中インジケータ](typing-indicator.md)
-- 適用例（スライドエディタ）: [スレッドカード](../patterns/thread-card.md)、[依頼行](../patterns/request-row.md)

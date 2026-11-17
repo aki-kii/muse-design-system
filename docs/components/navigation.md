@@ -47,4 +47,4 @@
 
 ## 関連
 
-- [読み物ページの型](../patterns.md#a-読み物ページの型)
+- [読み物ページの型](../patterns/reading-page.md)

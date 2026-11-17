@@ -76,4 +76,4 @@
 
 - [ボタン](button.md)
 - [入力バー](memo-input-bar.md)
-- 適用例: [デッキヘッダー](../patterns/deck-header.md)（スライドエディタ）、[プレイヤートップバー](../patterns/player-top-bar.md)・[単語カード](../patterns/word-card.md)・[模範解答ボックス](../patterns/model-answer-box.md)（学習ノート）
+- 適用例: [プレイヤートップバー](../patterns/player-top-bar.md)・[単語カード](../patterns/word-card.md)・[模範解答ボックス](../patterns/model-answer-box.md)（学習ノート）

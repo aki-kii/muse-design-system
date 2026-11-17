@@ -6,8 +6,8 @@
 
 ## 使うとき
 
-- 色付き: 一覧の中で、作業中のものを見つけやすくしたいとき（例: スライドエディタの[スレッドカード](../patterns/thread-card.md)、[依頼行](../patterns/request-row.md)、行き場のないメモ、[シートモーダル](sheet-modal.md)の削除予定の文）
-- ニュートラル: 会話の中で、[入力バー](memo-input-bar.md)の上に控えめに出すとき（例: スライドエディタの[タイピングストリップ](../patterns/typing-strip.md)）
+- 色付き: 一覧の中で、作業中のものを見つけやすくしたいとき（例: [シートモーダル](sheet-modal.md)の削除予定の文）
+- ニュートラル: 会話の中で、[入力バー](memo-input-bar.md)の上に控えめに出すとき
 
 ## 使わないとき
 
@@ -49,4 +49,3 @@
 
 - [状態付きリスト項目](status-list-item.md)
 - [入力バー](memo-input-bar.md)
-- 適用例（スライドエディタ）: [タイピングストリップ](../patterns/typing-strip.md)、[スレッドカード](../patterns/thread-card.md)、[依頼行](../patterns/request-row.md)

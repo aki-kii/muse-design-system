@@ -57,4 +57,4 @@ Muse がアカウントや外部に触る操作をする前に、必ず止まっ
 ## 関連
 
 - [ボタン](button.md)
-- [承認をはさむ型](../patterns.md#b-承認をはさむ型)
+- [承認をはさむ型](../patterns/approval-flow.md)

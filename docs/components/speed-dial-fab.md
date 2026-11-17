@@ -55,4 +55,3 @@
 
 - [シートモーダル](sheet-modal.md)（項目から開く先）
 - [トースト](toast.md)
-- 適用例（スライドエディタ）: [スレッドカード](../patterns/thread-card.md)（下書きn件）

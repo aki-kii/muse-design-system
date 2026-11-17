@@ -59,5 +59,4 @@
 ## 関連
 
 - [承認カード](approval-card.md)
-- 適用例（スライドエディタ）: [デッキヘッダー](../patterns/deck-header.md)のスレッドの上端の削除
 - [シートモーダル](sheet-modal.md)
