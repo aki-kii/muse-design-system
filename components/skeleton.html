@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>スケルトン（Skeleton） | Muse Design System</title>
+<meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Noto+Sans+JP:wght@400..900&display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/demos.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('muse-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
+    <span class="brand-ver">v0.8.0</span>
+    <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="index.html" aria-current="true">コンポーネント</a></li><li><a href="../patterns.html">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
+    <div class="header-tools">
+      <button class="tool-btn theme-btn" type="button" data-theme-toggle aria-label="表示モード: 自動（押すとライトにする）" title="表示モード: 自動（押すとライトにする）"><span data-theme-icon="auto"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><span data-theme-icon="light" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span><span data-theme-icon="dark" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span></button>
+      <button class="tool-btn menu-btn" type="button" aria-expanded="false" aria-controls="side" aria-label="目次を開く" title="目次を開く" data-menu-toggle><span data-menu-icon="open"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></span><span data-menu-icon="close" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span></button>
+    </div>
+  </div>
+</header>
+<div class="site-body">
+  <nav class="side" id="side" aria-label="目次"><div class="side-group"><p class="side-title">はじめに</p><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></div><div class="side-group"><p class="side-title">ファウンデーション</p><ul><li><a href="../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../foundations/color.html">色</a></li><li><a href="../foundations/typography.html">タイポグラフィ</a></li><li><a href="../foundations/spacing-radius-elevation.html">余白・角丸・影</a></li><li><a href="../foundations/icons.html">アイコン</a></li><li><a href="../foundations/accessibility.html">アクセシビリティ</a></li></ul></div><div class="side-group is-current"><p class="side-title">コンポーネント</p><ul><li><a href="index.html">コンポーネント一覧</a></li><li class="side-sub">操作と入力</li><li><a href="button.html">ボタン（Button）</a></li><li><a href="icon-button.html">アイコンボタン（Icon Button）</a></li><li><a href="chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="choice-button.html">選択肢ボタン（Choice Button）</a></li><li><a href="input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="search-field.html">検索フィールド（Search Field）</a></li><li><a href="memo-input-bar.html">入力バー（Input Bar）</a></li><li><a href="done-toggle.html">完了トグル・完了バッジ（Done Toggle / Done Badge）</a></li><li><a href="navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li class="side-sub">内容を並べる</li><li><a href="section-card.html">セクションカード（Section Card）</a></li><li><a href="list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="status-list-item.html">状態付きリスト項目（Status List Item）</a></li><li><a href="media-card.html">メディアカード（Media Card）</a></li><li><a href="progress-path.html">進捗パス（Progress Path）</a></li><li><a href="flashcard.html">フラッシュカード（Flashcard）</a></li><li><a href="message-bubble.html">吹き出し（Message Bubble）</a></li><li><a href="empty-state.html">空の状態（Empty State）</a></li><li class="side-sub">重ねて出す・知らせる</li><li><a href="approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="sheet-modal.html">シートモーダル（Sheet Modal）</a></li><li><a href="confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="toast.html">トースト（Toast）</a></li><li><a href="typing-indicator.html">作業中インジケータ（Typing Indicator）</a></li><li><a href="skeleton.html" aria-current="page">スケルトン（Skeleton）</a></li></ul></div><div class="side-group"><p class="side-title">パターン</p><ul><li><a href="../patterns.html">パターン一覧</a></li><li class="side-sub">学習ノートの複合体</li><li><a href="../patterns/learning-note/index.html">一覧</a></li><li><a href="../patterns/learning-note/course-path.html">コースパス（Course Path / Path Node）</a></li><li><a href="../patterns/learning-note/now-strip.html">今ここストリップ（Now Strip）</a></li><li><a href="../patterns/learning-note/player-top-bar.html">プレイヤートップバー（Player Top Bar）</a></li><li><a href="../patterns/learning-note/word-card.html">単語カード（Word Card）</a></li><li><a href="../patterns/learning-note/quiz-option.html">クイズ選択肢（Quiz Option）</a></li><li><a href="../patterns/learning-note/result-banner.html">結果バナー（Result Banner）</a></li><li><a href="../patterns/learning-note/model-answer-box.html">模範解答ボックス（Model Answer Box）</a></li><li><a href="../patterns/learning-note/ask-box.html">質問ボックス（Ask Box）</a></li><li><a href="../patterns/learning-note/speak-button.html">読み上げボタン（Speak Button）</a></li><li><a href="../patterns/learning-note/chapter-complete-panel.html">章完了パネル（Chapter Complete Panel）</a></li><li><a href="../patterns/learning-note/shelf-cover-card.html">本棚カバーカード（Shelf Cover Card）</a></li><li><a href="../patterns/learning-note/course-switcher.html">コース切替パネル（Course Switcher）</a></li><li class="side-sub">スライドエディタの複合体</li><li><a href="../patterns/slide-editor/index.html">一覧</a></li><li><a href="../patterns/slide-editor/deck-card.html">デッキカード（Deck Card）</a></li><li><a href="../patterns/slide-editor/deck-header.html">デッキヘッダー（Deck Header）</a></li><li><a href="../patterns/slide-editor/slide-stage.html">スライドステージ（Slide Stage）</a></li><li><a href="../patterns/slide-editor/page-counter-row.html">ページカウンタ行（Page Counter Row）</a></li><li><a href="../patterns/slide-editor/thread-card.html">スレッドカード（Thread Card）</a></li><li><a href="../patterns/slide-editor/awaiting-badge.html">確認待ちバッジ（Awaiting Badge）</a></li><li><a href="../patterns/slide-editor/typing-strip.html">タイピングストリップ（Typing Strip）</a></li><li><a href="../patterns/slide-editor/request-row.html">依頼行（Request Row）</a></li><li><a href="../patterns/slide-editor/page-preview-card.html">ページプレビューカード（Page Preview Card）</a></li><li><a href="../patterns/slide-editor/position-radio.html">位置ラジオ（Position Radio）</a></li><li><a href="../patterns/slide-editor/submit-message.html">送信完了メッセージ（Submit Message）</a></li><li><a href="../patterns/slide-editor/thread-conversation.html">スレッドの会話（Thread Conversation）</a></li></ul></div><div class="side-group"><p class="side-title">記録</p><ul><li><a href="../decisions/index.html">決定記録</a></li><li><a href="../open-questions.html">判断待ちの点</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></div></nav>
+  <main id="main" class="main">
+    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="index.html">コンポーネント</a></li><li aria-current="page">スケルトン（Skeleton）</li></ol>
+    <article class="doc"><h1 id="スケルトンskeleton">スケルトン（Skeleton）</h1>
+<p class="comp-lead">読み込み中に、中身の形だけを先に灰色の面で見せる</p>
+<section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="demo-stage" data-demo="skeleton">
+  <div class="demo-grid2">
+    <div class="demo-item">
+      <p class="demo-cap">リスト行の読み込み中</p>
+      <div class="m-card" aria-busy="true" data-skel-area>
+        <span class="vh">読み込み中</span>
+        <div class="m-skel-rows" aria-hidden="true">
+          <div class="m-skel-row"><span class="m-skel m-skel--circle"></span><span class="m-skel-lines"><span class="m-skel m-skel--line"></span><span class="m-skel m-skel--line is-short"></span></span></div>
+          <div class="m-skel-row"><span class="m-skel m-skel--circle"></span><span class="m-skel-lines"><span class="m-skel m-skel--line"></span><span class="m-skel m-skel--line is-short"></span></span></div>
+          <div class="m-skel-row"><span class="m-skel m-skel--circle"></span><span class="m-skel-lines"><span class="m-skel m-skel--line"></span><span class="m-skel m-skel--line is-short"></span></span></div>
+        </div>
+      </div>
+      <p><button type="button" class="demo-reset" data-skel-load>読み込みを終える</button></p>
+    </div>
+    <div class="demo-item">
+      <p class="demo-cap">メディアカードの読み込み中（面＋文）</p>
+      <div class="m-skel-media" aria-hidden="true">
+        <span class="m-skel m-skel--box"></span>
+        <span class="m-skel-lines"><span class="m-skel m-skel--line"></span><span class="m-skel m-skel--line is-short"></span></span>
+      </div>
+    </div>
+  </div>
+  <p class="demo-note">動きを減らす設定（<code>prefers-reduced-motion: reduce</code>）のときは明滅を止めます。</p>
+</div>
+</section>
+<h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
+<p>読み込み中に、これから出る中身の形だけを灰色の面で先に見せる部品です。中身が届いたら同じ場所でそのまま置き換わるので、画面が跳ねません。</p>
+<p>参考元: <a href="https://carbondesignsystem.com/patterns/loading-pattern/#skeleton-states" rel="noopener">Carbon の Skeleton states</a>、<a href="https://polaris-react.shopify.com/components/feedback-indicators/skeleton-page" rel="noopener">Polaris の Skeleton</a>、<a href="https://primer.style/components/skeleton-box" rel="noopener">Primer の SkeletonBox</a>。もらったのは「中身の形を先に見せる」という考え方と構成だけで、見た目は Muse DS のトークンで作っています。</p>
+<h2 id="使うとき">使うとき<a class="anchor" href="#使うとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>画面を開いてから中身が届くまでの待ち（Muse の各アプリで「読み込み中…」の文だけを出している場所）</li><li>形が決まっている一覧やカード（リスト行・セクションカード・メディアカード）の読み込み</li><li>待ちが 0.3 秒ほどを超えそうなとき</li></ul>
+<h2 id="使わないとき">使わないとき<a class="anchor" href="#使わないとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>ボタンを押したあとの処理の待ち → <a href="icon-button.html">アイコンボタン</a>・<a href="button.html">ボタン</a>の処理中の状態</li><li>相手（エージェント）が書いている途中 → <a href="typing-indicator.html">作業中インジケータ</a></li><li>時間がかかる処理で、何をしているかを伝えたいとき → 「今日の発表を集めて並べ替えています」のような文と<a href="typing-indicator.html">作業中インジケータ</a>。形だけでは待つ理由が伝わらない</li><li>読み込みに失敗したとき → <a href="empty-state.html">空の状態</a>のエラー</li><li>中身の形が決まっていない画面に、それらしい形を作って出さない</li></ul>
+<h2 id="バリアント">バリアント<a class="anchor" href="#バリアント" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">バリアント</th><th scope="col">見た目</th><th scope="col">用途</th></tr></thead><tbody><tr><td>文</td><td>高さ 12px のピルの線を 2〜3本。最後の1本は 60% の長さ</td><td>見出し・本文・メタ情報</td></tr><tr><td>丸</td><td>部品と同じ大きさの円</td><td>アイコン・チェックの丸・アバターの位置</td></tr><tr><td>面</td><td>部品と同じ大きさと角丸の四角</td><td>サムネイル・数値タイル・カード全体</td></tr></tbody></table></div>
+<p>バリアントは単独では使わず、置き換わる部品の形（<a href="list-rows.html">リスト行</a>や<a href="media-card.html">メディアカード</a>）に合わせて組みます。</p>
+<h2 id="状態">状態<a class="anchor" href="#状態" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">状態</th><th scope="col">見た目</th><th scope="col">条件</th></tr></thead><tbody><tr><td>読み込み中</td><td><code>--fill</code> の面がゆっくり明滅する（不透明度 1 → 0.55、1.6 秒で往復）</td><td>中身を待っている</td></tr><tr><td>動きを減らす</td><td>明滅を止め、<code>--fill</code> の面のまま</td><td><code>prefers-reduced-motion: reduce</code></td></tr><tr><td>読み込み済み</td><td>スケルトンを消し、同じ場所に中身を出す</td><td>中身が届いた</td></tr></tbody></table></div>
+<h2 id="仕様">仕様<a class="anchor" href="#仕様" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">項目</th><th scope="col">値</th><th scope="col">トークン</th></tr></thead><tbody><tr><td>面の色</td><td><code>--fill</code>（カードの上）、<code>--border</code>（<code>--bg</code> の上）</td><td><code>--fill</code>・<code>--border</code></td></tr><tr><td>文の線</td><td>高さ 12px、角丸 999px、行の間隔 8px</td><td><code>--radius-pill</code>、<code>--space-row</code></td></tr><tr><td>面の角丸</td><td>置き換わる部品と同じ（カード 20px、行 12px）</td><td><code>--radius-card</code>・<code>--radius-row</code></td></tr><tr><td>並べる数</td><td>画面に収まる数まで（一覧なら 3〜5件）</td><td></td></tr><tr><td>明滅</td><td>1.6 秒で往復、<code>ease-in-out</code></td><td></td></tr></tbody></table></div>
+<p>構成は次のとおりです。</p>
+<ol><li>置き換わる部品の外枠（カードの面・行の面）は本物と同じに描く</li><li>中の文字・アイコン・画像の位置にだけ、スケルトンの線・丸・面を置く</li></ol>
+<h2 id="アクセシビリティ">アクセシビリティ<a class="anchor" href="#アクセシビリティ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>スケルトンの要素は <code>aria-hidden=&quot;true&quot;</code> にし、読み上げない。</li><li>読み込む範囲（一覧の親など）に <code>aria-busy=&quot;true&quot;</code> を付け、別に「読み込み中」を <code>.vh</code>（見えない文）で1つだけ置く。届いたら <code>aria-busy</code> を外す。</li><li>明滅は <code>prefers-reduced-motion: reduce</code> のとき止める。</li><li>10 秒を超えても届かないときは、スケルトンを出し続けず<a href="empty-state.html">空の状態</a>のエラーに切り替える。</li></ul>
+<h2 id="関連">関連<a class="anchor" href="#関連" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li><a href="empty-state.html">空の状態</a>（中身がない・読み込めなかったとき）</li><li><a href="typing-indicator.html">作業中インジケータ</a></li><li><a href="list-rows.html">リスト行</a>・<a href="media-card.html">メディアカード</a>・<a href="section-card.html">セクションカード</a>（置き換わる部品）</li></ul><nav class="pager" aria-label="前後の部品"><a class="pager-prev" href="typing-indicator.html"><span>前の部品</span>作業中インジケータ</a></nav></article>
+    
+    <footer class="page-foot">
+      <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/components/skeleton.md" rel="noopener">GitHub で元の文書を見る（docs/components/skeleton.md）</a></p>
+      <p>Muse DS v0.8.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+    </footer>
+  </main>
+</div>
+<div class="m-toast-region" role="status" aria-live="polite"></div>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/demos.js" defer></script>
+</body>
+</html>

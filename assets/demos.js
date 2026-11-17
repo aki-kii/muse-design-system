@@ -141,6 +141,60 @@
     $(root, '[data-reset]').addEventListener('click', function () { reset(); results.hidden = true; });
   };
 
+  // ---------------------------------------------------------- スケルトン
+  init['skeleton'] = function (root) {
+    var area = $(root, '[data-skel-area]');
+    var btn = $(root, '[data-skel-load]');
+    var skel = area.innerHTML;
+    var loaded = '<div class="m-skel-rows">' + ['朝のストレッチ', '買い物リストを見直す', '本を30分読む'].map(function (t, i) {
+      return '<div class="m-skel-row"><span class="th-dot" style="width:24px;height:24px"></span><span class="m-skel-lines"><span style="font-weight:600">' + t + '</span><span style="font-size:13px;color:var(--dim)">' + (7 + i * 3) + ':00</span></span></div>';
+    }).join('') + '</div>';
+    var done = false;
+    btn.addEventListener('click', function () {
+      done = !done;
+      area.innerHTML = done ? loaded : skel;
+      area.setAttribute('aria-busy', String(!done));
+      btn.textContent = done ? 'もう一度読み込む' : '読み込みを終える';
+    });
+  };
+
+  // ---------------------------------------------------------- 空の状態
+  init['empty-state'] = function (root) {
+    $$(root, '[data-show-toast]').forEach(function (b) {
+      b.addEventListener('click', function () { toast(b.getAttribute('data-show-toast')); });
+    });
+  };
+
+  // ---------------------------------------------------------- 検索フィールド
+  init['search-field'] = function (root) {
+    var kata = function (s) { return s.replace(/[ァ-ヶ]/g, function (c) { return String.fromCharCode(c.charCodeAt(0) - 0x60); }).toLowerCase(); };
+    var list = $(root, '[data-search-list]');
+    var empty = $(root, '[data-search-empty]');
+    var count = $(root, '[data-search-count]');
+    var timer;
+    $$(root, '.m-search').forEach(function (box) {
+      var input = $(box, '.m-search-input');
+      var clear = $(box, '.m-search-clear');
+      var update = function () {
+        clear.hidden = !input.value;
+        if (!list || !box.parentNode.contains(list)) return;
+        var q = kata(input.value.trim());
+        var n = 0;
+        $$(list, 'li').forEach(function (li) {
+          var hit = !q || kata(li.textContent).indexOf(q) !== -1;
+          li.hidden = !hit;
+          if (hit) n++;
+        });
+        list.hidden = n === 0;
+        empty.hidden = n !== 0;
+        clearTimeout(timer);
+        timer = setTimeout(function () { count.textContent = n + '件'; }, 500);
+      };
+      input.addEventListener('input', update);
+      clear.addEventListener('click', function () { input.value = ''; update(); input.focus(); });
+    });
+  };
+
   // ---------------------------------------------------------- トースト
   init['toast'] = function (root) {
     $$(root, '[data-show-toast]').forEach(function (b) {

@@ -40,12 +40,18 @@ img, svg { max-width: 100%; }
 .global-nav a:hover { background: var(--fill); color: var(--text); }
 .global-nav a[aria-current] { background: var(--accent-soft); color: var(--accent-strong); font-weight: 700; }
 .header-tools { margin-left: auto; display: flex; gap: 8px; }
-.theme-btn, .menu-btn {
-  font: inherit; font-size: var(--text-sm); font-weight: 600; color: var(--text);
+.tool-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; padding: 0; color: var(--dim);
   background: var(--fill); border: 1px solid var(--border); border-radius: var(--radius-pill);
-  min-height: 36px; padding: 0 14px; cursor: pointer; position: relative;
+  cursor: pointer; position: relative;
 }
-.theme-btn::after, .menu-btn::after { content: ""; position: absolute; inset: -4px; }
+.tool-btn:hover { color: var(--text); }
+.tool-btn:active { transform: scale(.9); }
+.tool-btn::after { content: ""; position: absolute; inset: -4px; }
+.tool-btn > span { display: inline-flex; }
+.tool-btn > span[hidden] { display: none; }
+.tool-btn .m-icon { width: 18px; height: 18px; stroke-width: 2; }
 .menu-btn { display: none; }
 
 /* ---------- 本体 ---------- */
@@ -211,7 +217,7 @@ pre.code code { background: none; padding: 0; font-size: inherit; overflow-wrap:
   .global-nav { display: none; }
 }
 @media (max-width: 900px) {
-  .menu-btn { display: inline-block; }
+  .menu-btn { display: inline-flex; }
   .side {
     display: none; position: fixed; z-index: 40; top: 61px; left: 0; right: 0; bottom: 0;
     width: auto; max-height: none; background: var(--surface); padding: 16px 16px 48px;
@@ -230,7 +236,6 @@ pre.code code { background: none; padding: 0; font-size: inherit; overflow-wrap:
 }
 @media (max-width: 420px) {
   .brand-name { font-size: var(--text-base); }
-  .theme-btn { padding: 0 10px; }
   .pager { grid-template-columns: 1fr; }
   .pager-next { grid-column: 1; }
 }
