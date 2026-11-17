@@ -1,11 +1,11 @@
 <div class="sample demo" data-demo="approval-flow">
-  <p class="sample-label">見本: 提案の本文 → 承認カード → 結果の行＋トースト</p>
+  <p class="sample-label">見本: 外部に触る操作（提案 → 承認カード → 結果）</p>
   <div class="m-flow">
     <p class="m-flow-step">1. 提案の本文</p>
     <section class="m-card"><p class="m-card-body">会場の担当の方に、12/6 の利用時間を 18:30 からに変えたいと返信します。下の内容で送ってよければ許可してください。</p></section>
     <p class="m-flow-step">2. 承認カード（範囲を選ぶ）</p>
     <section class="m-approval" aria-labelledby="pb-1" role="region">
-      <p class="m-approval-title" id="pb-1">アシスタント が Gmail でメールを送ろうとしています</p>
+      <p class="m-approval-title" id="pb-1">アシスタント が メールを送ろうとしています</p>
       <p class="m-approval-sub">宛先: 会場担当の方 ・ 件名「12/6 の会場の件」 ・ 本文 4 行</p>
       <div class="m-btn-row">
         <button type="button" class="m-btn m-btn--primary" data-approve="1回だけ">1回だけ許可</button>
@@ -18,5 +18,26 @@
       <div class="m-result-row"><span class="ok" aria-hidden="true">✓</span><span data-result-text></span></div>
     </div>
     <p class="demo-note">途中で画面を移らず、その場に結果を残します。<button type="button" class="demo-reset" data-reset>はじめに戻す</button></p>
+  </div>
+</div>
+<div class="sample demo" data-demo="confirm-dialog" style="margin-top:16px">
+  <p class="sample-label">見本: アプリの中の取り消せない削除（入口 → 確認ダイアログ → 結果）</p>
+  <div class="m-modal-area" style="min-height:300px">
+    <div style="padding:16px;display:grid;gap:10px;justify-items:start">
+      <div class="m-card" style="width:100%;display:flex;align-items:center;gap:12px;padding:8px 12px">
+        <button type="button" class="m-round" aria-label="一覧に戻る">{{i:back}}</button>
+        <span style="flex:1;font-weight:700">旅行の写真</span>
+        <button type="button" class="m-round" style="color:var(--danger)" aria-label="フォルダを削除" data-open>{{i:trash}}</button>
+      </div>
+      <div data-list hidden><p class="demo-note">フォルダを削除して一覧に戻りました。<button type="button" class="demo-reset" data-reset>はじめに戻す</button></p></div>
+    </div>
+    <div data-layer hidden>
+      <div class="m-backdrop is-heavy"></div>
+      <div class="m-dialog" role="alertdialog" aria-modal="true" aria-labelledby="af-cd-t" aria-describedby="af-cd-d">
+        <p class="m-dialog-title" id="af-cd-t">フォルダを削除しますか？</p>
+        <p class="m-dialog-sub" id="af-cd-d">中の項目もすべて削除されます</p>
+        <div class="m-dialog-btns"><button type="button" class="m-dialog-cancel">やめる</button><button type="button" class="m-dialog-ok">削除する</button></div>
+      </div>
+    </div>
   </div>
 </div>

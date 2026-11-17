@@ -1,15 +1,15 @@
 <div class="demo-stage" data-demo="speed-dial-fab">
   <div class="m-fab-area">
     <div class="m-fab" data-fab data-drafts="2">
-      <div data-msg></div>
+      <div data-msg style="display:flex;justify-content:flex-end"></div>
       <ul class="m-fab-items" hidden>
-        <li><button type="button" class="m-fab-item"><span class="m-fab-label">スレッドを追加</span><span class="m-fab-icon">{{i:msgPlus}}</span></button></li>
-        <li><button type="button" class="m-fab-item"><span class="m-fab-label">ページを追加</span><span class="m-fab-icon">{{i:filePlus}}</span></button></li>
-        <li><button type="button" class="m-fab-item"><span class="m-fab-label">ページを削除</span><span class="m-fab-icon">{{i:fileMinus}}</span></button></li>
-        <li><button type="button" class="m-fab-item" data-submit><span class="m-fab-label">修正依頼</span><span class="m-fab-icon">{{i:sendAll}}<span class="m-count-badge" aria-hidden="true">2</span></span></button></li>
+        <li><button type="button" class="m-fab-item"><span class="m-fab-label">メモを追加</span><span class="m-fab-icon">{{i:msgPlus}}</span></button></li>
+        <li><button type="button" class="m-fab-item"><span class="m-fab-label">項目を追加</span><span class="m-fab-icon">{{i:filePlus}}</span></button></li>
+        <li><button type="button" class="m-fab-item"><span class="m-fab-label">項目を削除</span><span class="m-fab-icon">{{i:fileMinus}}</span></button></li>
+        <li><button type="button" class="m-fab-item" data-submit><span class="m-fab-label">まとめて送る</span><span class="m-fab-icon">{{i:sendAll}}<span class="m-count-badge" aria-hidden="true">2</span></span></button></li>
       </ul>
       <button type="button" class="m-fab-main" aria-expanded="false" aria-label="メニューを開く">＋</button>
     </div>
   </div>
-  <p class="demo-note">＋ で開き、項目を押すと閉じます。追加・削除を押すと下書きが増え、「修正依頼」で出すと件数が0になって項目が無効になります。件数バッジは「未送信の件数」として <code>--danger</code> の面に <code>--danger-ink</code> の数字です。</p>
+  <p class="demo-note">＋ で開き、項目を押すと閉じます。追加・削除を押すと下書きが増え、「まとめて送る」で送ると件数が0になって項目が無効になり、FAB の上に件数のトーストが約 4 秒出ます。件数バッジは「未送信の件数」として <code>--danger</code> の面に <code>--danger-ink</code> の数字です。</p>
 </div>

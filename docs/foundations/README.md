@@ -1,10 +1,10 @@
 # ファウンデーション
 
-色・文字・余白・角丸・影のトークンと、アイコンの組、アクセシビリティの基準です。すべての部品はここの値だけを使います。
+色・文字・余白・角丸のトークンと、アイコンの組、アクセシビリティの基準です。すべての部品はここの値だけを使います。
 
 - [色](color.md)
 - [タイポグラフィ](typography.md)
-- [余白・角丸・影](spacing-radius-elevation.md)
+- [余白・角丸・重なり](spacing-radius-elevation.md)
 - [アイコン](icons.md)
 - [アクセシビリティ](accessibility.md)
 
@@ -48,7 +48,7 @@ radius.20       20px    ─▶ radius.card       ─▶ セクションカード
 | グループ | 変数 |
 | --- | --- |
 | 色 | `--bg` `--surface` `--fill` `--text` `--dim` `--faint` `--border` `--accent` `--accent-ink` `--accent-strong` `--accent-soft` `--danger` `--danger-ink` `--danger-soft` `--ok` `--ok-ink` `--ok-soft` `--bubble-user` `--bubble-user-ink` `--gold` `--gold-ink` `--scrim` `--scrim-strong` `--cal-common` `--cal-self` `--cal-partner` |
-| 影 | `--shadow-card` `--shadow-float` |
+| 影（廃止。値は `none`） | `--shadow-card` `--shadow-float` |
 | 角丸 | `--radius-small` `--radius-row` `--radius-card` `--radius-pill` |
 | 余白 | `--space-inner` `--space-row` `--space-card-gap` `--space-card-padding` `--space-section` |
 | 大きさ | `--size-tap-target` |

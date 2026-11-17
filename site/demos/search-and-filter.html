@@ -1,0 +1,35 @@
+<div class="demo-stage" data-demo="search-and-filter">
+  <div style="max-width:480px">
+    <search class="m-search">
+      <span class="m-search-icon">{{i:search}}</span>
+      <input class="m-search-input" type="search" placeholder="食べものを検索" aria-label="食べものを検索" autocomplete="off" data-q>
+      <button type="button" class="m-search-clear m-hit" aria-label="検索の文字を消す" hidden data-clear>{{i:x}}</button>
+    </search>
+    <div class="m-chips" role="group" aria-label="分類で絞り込む" style="margin-top:12px">
+      <button type="button" class="m-chip" aria-pressed="true" data-cat="">すべて</button>
+      <button type="button" class="m-chip" aria-pressed="false" data-cat="果物">果物</button>
+      <button type="button" class="m-chip" aria-pressed="false" data-cat="野菜">野菜</button>
+      <button type="button" class="m-chip" aria-pressed="false" data-cat="穀物">穀物</button>
+    </div>
+    <p class="vh" role="status" data-count></p>
+    <div class="m-card" style="margin-top:12px">
+      <ul class="m-rows" data-list>
+        <li data-cat="果物"><span class="m-row-main"><span class="m-row-title">りんご</span><span class="m-row-sub">果物</span></span></li>
+        <li data-cat="果物"><span class="m-row-main"><span class="m-row-title">みかん</span><span class="m-row-sub">果物</span></span></li>
+        <li data-cat="果物"><span class="m-row-main"><span class="m-row-title">ぶどう</span><span class="m-row-sub">果物</span></span></li>
+        <li data-cat="野菜"><span class="m-row-main"><span class="m-row-title">にんじん</span><span class="m-row-sub">野菜</span></span></li>
+        <li data-cat="野菜"><span class="m-row-main"><span class="m-row-title">たまねぎ</span><span class="m-row-sub">野菜</span></span></li>
+        <li data-cat="野菜"><span class="m-row-main"><span class="m-row-title">かぼちゃ</span><span class="m-row-sub">野菜</span></span></li>
+        <li data-cat="穀物"><span class="m-row-main"><span class="m-row-title">こめ</span><span class="m-row-sub">穀物</span></span></li>
+        <li data-cat="穀物"><span class="m-row-main"><span class="m-row-title">こむぎ</span><span class="m-row-sub">穀物</span></span></li>
+      </ul>
+      <div class="m-empty" data-empty hidden>
+        <span class="m-empty-icon">{{i:search}}</span>
+        <p class="m-empty-title">見つかりませんでした</p>
+        <p class="m-empty-text">別のことばで探すか、条件を外してください。</p>
+        <button type="button" class="m-btn m-btn--ghost" data-reset>条件を外す</button>
+      </div>
+    </div>
+  </div>
+  <p class="demo-note">打つ・選ぶたびに一覧が変わります。検索と分類は重ねて効き、「条件を外す」で両方戻ります。中身は架空です。</p>
+</div>

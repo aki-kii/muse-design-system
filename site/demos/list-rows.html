@@ -3,9 +3,9 @@
     <p class="demo-cap">予定行</p>
     <div class="m-card">
       <ul class="m-rows">
-        <li><span class="m-time">09:30–10:00</span><span class="m-bar" style="background:var(--cal-self)" aria-hidden="true"></span><span class="m-row-main"><span class="m-row-title">朝のミーティング</span><span class="m-row-sub">自分 ・ オンライン</span></span></li>
-        <li><span class="m-time">13:00–14:30</span><span class="m-bar" style="background:var(--cal-common)" aria-hidden="true"></span><span class="m-row-main"><span class="m-row-title">勉強会</span><span class="m-row-sub">共通 ・ オンライン</span></span></li>
-        <li><span class="m-time">19:00–</span><span class="m-bar" style="background:var(--cal-partner)" aria-hidden="true"></span><span class="m-row-main"><span class="m-row-title">夕食の買い出し</span><span class="m-row-sub">パートナー</span></span></li>
+        <li><span class="m-time">09:30–10:00</span><span class="m-bar" style="background:var(--accent)" aria-hidden="true"></span><span class="m-row-main"><span class="m-row-title">朝のミーティング</span><span class="m-row-sub">オンライン</span></span></li>
+        <li><span class="m-time">13:00–14:30</span><span class="m-bar" style="background:var(--dim)" aria-hidden="true"></span><span class="m-row-main"><span class="m-row-title">勉強会</span><span class="m-row-sub">会議室 B</span></span></li>
+        <li><span class="m-time">19:00–</span><span class="m-bar" style="background:var(--faint)" aria-hidden="true"></span><span class="m-row-main"><span class="m-row-title">買い出し</span><span class="m-row-sub">駅前のスーパー</span></span></li>
       </ul>
     </div>
   </div>
@@ -13,8 +13,8 @@
     <p class="demo-cap">タスク行（押すと完了）</p>
     <div class="m-card">
       <ul class="m-rows">
-        <li><label class="m-task" style="display:contents"><input type="checkbox" class="m-check"><span class="m-row-main"><span class="m-row-title">しながわシティランの入金確認</span><span class="m-row-sub">申込のメールに口座あり</span></span></label><span class="m-due">今週中</span></li>
-        <li><label class="m-task" style="display:contents"><input type="checkbox" class="m-check" checked><span class="m-row-main"><span class="m-row-title">LT のスライドを送る</span><span class="m-row-sub">運営の Slack へ</span></span></label><span class="m-due">今日</span></li>
+        <li><label class="m-task" style="display:contents"><input type="checkbox" class="m-check"><span class="m-row-main"><span class="m-row-title">会費の振り込み</span><span class="m-row-sub">案内のメールに口座あり</span></span></label><span class="m-due">今週中</span></li>
+        <li><label class="m-task" style="display:contents"><input type="checkbox" class="m-check" checked><span class="m-row-main"><span class="m-row-title">資料を送る</span><span class="m-row-sub">担当の方へ</span></span></label><span class="m-due">今日</span></li>
       </ul>
     </div>
   </div>
@@ -22,30 +22,12 @@
     <p class="demo-cap">数値タイル＋メーター</p>
     <div class="m-card">
       <div class="m-tiles">
-        <div class="m-tile"><div class="m-tile-num">79.4<small>kg</small></div><div class="m-tile-label">体重</div></div>
-        <div class="m-tile"><div class="m-tile-num">22.1<small>%</small></div><div class="m-tile-label">体脂肪率</div></div>
-        <div class="m-tile"><div class="m-tile-num">8,214<small>歩</small></div><div class="m-tile-label">歩数</div></div>
+        <div class="m-tile"><div class="m-tile-num">8,200<small>歩</small></div><div class="m-tile-label">今日の歩数</div></div>
+        <div class="m-tile"><div class="m-tile-num">1.2<small>L</small></div><div class="m-tile-label">飲んだ水</div></div>
+        <div class="m-tile"><div class="m-tile-num">7<small>時間</small></div><div class="m-tile-label">睡眠</div></div>
       </div>
-      <div class="m-meter" role="progressbar" aria-label="目標体重までの進み具合" aria-valuemin="0" aria-valuemax="100" aria-valuenow="56"><span style="width:56%"></span></div>
-      <p class="m-row-sub" style="margin:0">目標 75kg まであと 4.4kg</p>
+      <div class="m-meter" role="progressbar" aria-label="目標の歩数までの進み具合" aria-valuemin="0" aria-valuemax="100" aria-valuenow="82"><span style="width:82%"></span></div>
+      <p class="m-row-sub" style="margin:0">目標 10,000 歩まであと 1,800 歩</p>
     </div>
   </div>
-</div>
-<div class="demo-stage" data-demo="player-top-bar" style="margin-top:16px">
-  <p class="demo-cap">使用例: プレイヤーの上端の進捗（学習ノート）</p>
-  <div class="m-player-bar m-card">
-    <div class="m-player-row">
-      <button type="button" class="m-x" aria-label="ホームに戻る" data-toast="ホームに戻ります">✕</button>
-      <div class="m-track" role="progressbar" aria-label="今の章の進み具合" aria-valuemin="0" aria-valuemax="7" aria-valuenow="3"><span style="width:43%"></span></div>
-      <span class="m-combo">×1</span>
-      <span class="m-xp"><span style="color:var(--gold)" aria-hidden="true">★</span> XP 120</span>
-    </div>
-    <p class="m-player-pos">英文法の基礎 · 疑問文と否定文 · 3/7</p>
-  </div>
-  <div class="m-btn-row">
-    <button type="button" class="m-btn m-btn--secondary" data-right>正解して進む</button>
-    <button type="button" class="m-btn m-btn--secondary" data-wrong>間違えて進む</button>
-    <button type="button" class="demo-reset" data-reset>はじめに戻す</button>
-  </div>
-  <p class="demo-note">コンボが2以上になると「×n」がブルーになります。XP の数字は <code>--text</code> で、前の ★ だけを <code>--gold</code> の飾りにしています。</p>
 </div>

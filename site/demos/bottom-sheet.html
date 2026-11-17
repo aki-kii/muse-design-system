@@ -1,0 +1,43 @@
+<div class="demo-stage" data-demo="bottom-sheet">
+  <div class="m-modal-area">
+    <div style="padding:16px;display:grid;gap:10px;justify-items:start">
+      <p class="demo-note">押すと、この枠の下からシートがせり上がります（中身は架空です）。</p>
+      <button type="button" class="m-btn m-btn--secondary" data-open-sheet="add">入力: メモを追加</button>
+      <button type="button" class="m-btn m-btn--secondary" data-open-sheet="del">削除: 項目を削除</button>
+      <button type="button" class="m-btn m-btn--secondary" data-open-sheet="list">一覧: 保留中の項目</button>
+    </div>
+    <div data-layer hidden>
+      <div class="m-backdrop"></div>
+      <div class="m-sheet" role="dialog" aria-modal="true" aria-labelledby="sh-add" data-sheet="add" hidden>
+        <div class="m-sheet-head"><p class="m-sheet-title" id="sh-add">メモを追加</p><button type="button" class="m-round" aria-label="閉じる" data-close>{{i:x}}</button></div>
+        <div class="m-position" role="radiogroup" aria-label="期限">
+          <button type="button" role="radio" aria-checked="true" tabindex="0">今日</button>
+          <button type="button" role="radio" aria-checked="false" tabindex="-1">明日</button>
+          <button type="button" role="radio" aria-checked="false" tabindex="-1">今週</button>
+        </div>
+        <div class="m-memo" data-memo style="margin-top:16px">
+          <p class="m-memo-error" role="alert" hidden>マイクが許可されていません</p>
+          <div class="m-memo-box"><textarea class="m-memo-input" rows="3" placeholder="メモの内容" aria-label="メモを入力"></textarea><span class="m-memo-btns"><button type="button" class="m-send" aria-label="送信" hidden>{{i:up}}</button><button type="button" class="m-mic" aria-pressed="false" aria-label="音声入力">{{i:mic}}</button></span></div>
+        </div>
+        <button type="button" class="m-block-btn is-blue" data-submit-sheet="メモを追加しました" data-needs-text>追加する</button>
+      </div>
+      <div class="m-sheet" role="dialog" aria-modal="true" aria-labelledby="sh-del" data-sheet="del" hidden>
+        <div class="m-sheet-head"><p class="m-sheet-title" id="sh-del">項目を削除</p><button type="button" class="m-round" aria-label="閉じる" data-close>{{i:x}}</button></div>
+        <p class="m-sheet-sub">「買い物リスト」</p>
+        <div class="m-memo" data-memo>
+          <p class="m-memo-error" role="alert" hidden>マイクが許可されていません</p>
+          <div class="m-memo-box"><textarea class="m-memo-input" rows="3" placeholder="削除する理由（任意）" aria-label="削除する理由（任意）"></textarea><span class="m-memo-btns"><button type="button" class="m-send" aria-label="送信" hidden>{{i:up}}</button><button type="button" class="m-mic" aria-pressed="false" aria-label="音声入力">{{i:mic}}</button></span></div>
+        </div>
+        <button type="button" class="m-block-btn is-red" data-submit-sheet="項目を削除しました">削除する</button>
+      </div>
+      <div class="m-sheet" role="dialog" aria-modal="true" aria-labelledby="sh-list" data-sheet="list" hidden>
+        <div class="m-sheet-head"><p class="m-sheet-title" id="sh-list">保留中の項目</p><button type="button" class="m-round" aria-label="閉じる" data-close>{{i:x}}</button></div>
+        <ul class="m-sheet-list">
+          <li class="m-orphan"><span class="m-orphan-title">電球を買い替える</span><span class="m-orphan-sub">3日前 ・ メモ 1件</span></li>
+          <li class="m-request is-in-sheet"><span class="m-request-text"><span class="m-request-main">棚の位置を決める</span><span class="m-request-state">保留</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="demo-note">幕・×・Esc で閉じます。「メモを追加」は文を書くまで全幅ボタンが押せません。入力のシートなので幕は <code>--scrim-strong</code>。全幅ボタンはフォームの一部として角丸 12px で、削除の確定は赤い面です。影は付けず、幕との明るさの差で板を浮かせます。</p>
+</div>

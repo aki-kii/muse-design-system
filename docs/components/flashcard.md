@@ -43,12 +43,12 @@
 | 項目 | 値 | トークン |
 | --- | --- | --- |
 | キッカー | 13px / 700、字間 0.05em | `--accent-strong` |
-| 表の面 | `--surface` の面、1px の枠、カードの影、内側の余白 28px 16px | `--surface` `--border` `--shadow-card` `--radius-card` |
+| 表の面 | `--surface` の面、1px の枠、内側の余白 28px 16px | `--surface` `--border` `--radius-card` |
 | 隠す部分 | 破線 2px の枠、内側の余白 28px 16px、高さ 56px 以上、700 | `--border` `--dim` `--radius-card` |
 | 裏の面 | 破線 2px の枠、内側の余白 16px、20px / 700 | `--accent` `--radius-card` |
 | 判定ボタン | 2列、間 10px。弱い方をセカンダリ、強い方をプライマリ | [ボタン](button.md) |
 
-表の文字の大きさは中身で決めます（単語なら大きく、文なら本文の段）。単語の大きさ（学習ノートの 36〜52px など）は、使う側のパターンの文書に値を書きます（[決定記録 0004](../decisions/0004-scale-and-local-values.md)）。
+表の文字の大きさは中身で決めます（短い語なら大きく、文なら本文の段）。段より大きくするときの値は、使う側のアプリで決めます（[決定記録 0004](../decisions/0004-scale-and-local-values.md)）。
 
 ## アクセシビリティ
 
@@ -61,4 +61,3 @@
 
 - [選択肢ボタン](choice-button.md)
 - [ボタン](button.md)
-- 適用例（学習ノート）: [単語カード](../patterns/word-card.md)

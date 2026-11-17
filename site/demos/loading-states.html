@@ -1,0 +1,13 @@
+<div class="demo-stage" data-demo="loading-states">
+  <div class="m-btn-row" role="group" aria-label="見本の状態を切り替える">
+    <button type="button" class="m-chip" aria-pressed="true" data-state="loading">読み込み中</button>
+    <button type="button" class="m-chip" aria-pressed="false" data-state="content">中身あり</button>
+    <button type="button" class="m-chip" aria-pressed="false" data-state="empty">空</button>
+    <button type="button" class="m-chip" aria-pressed="false" data-state="error">失敗</button>
+  </div>
+  <section class="m-card" style="margin-top:12px;max-width:480px" aria-labelledby="ls-h">
+    <div class="m-card-head"><h3 class="m-card-title" id="ls-h">メモ</h3></div>
+    <div data-area aria-busy="true"></div>
+  </section>
+  <p class="demo-note">見出しは残したまま、中身の場所だけを切り替えます。「もう一度読み込む」を押すと読み込み中に戻り、少しして中身が出ます。中身は架空です。</p>
+</div>

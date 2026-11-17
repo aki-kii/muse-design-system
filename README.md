@@ -4,7 +4,7 @@
 
 このリポジトリはドキュメントとトークンだけを持ちます。部品の実装ライブラリは含みません。
 
-- 現在の版: **v0.11.0**（[CHANGELOG](CHANGELOG.md)）
+- 現在の版: **v0.12.0**（[CHANGELOG](CHANGELOG.md)）
 - サンプルサイト（ドキュメントと部品のデモ）: https://aki-kii.github.io/muse-design-system/
 - トークンの値は Muse DS を適用済みのアプリ（jin-toreji-lu の `client/src/theme.css`）の実値と一致させています。
 
@@ -15,9 +15,9 @@
 | 層 | 中身 | 場所 |
 | --- | --- | --- |
 | 1. 原則 | 判断に迷ったときに戻る4つの決め事 | [docs/principles.md](docs/principles.md) |
-| 2. ファウンデーション | 色・文字・余白・角丸・影のトークンと、アクセシビリティの基準 | [docs/foundations/](docs/foundations/README.md) |
+| 2. ファウンデーション | 色・文字・余白・角丸のトークンと、アクセシビリティの基準 | [docs/foundations/](docs/foundations/README.md) |
 | 3. コンポーネント | 中身に依存しない汎用の部品。部品ごとに1ファイル | [docs/components/](docs/components/README.md) |
-| 4. パターン | 基本コンポーネントを組み合わせた、よくあるパターン | [docs/patterns.md](docs/patterns.md)、[docs/patterns/](docs/patterns.md) |
+| 4. パターン | 世の中でよくあるタスクや状態の型を、部品でどう組むか | [docs/patterns.md](docs/patterns.md)、[docs/patterns/](docs/patterns.md) |
 
 そのほかの文書は次のとおりです。
 
@@ -60,7 +60,7 @@ CSS 変数として使うときは `tokens/tokens.css` を読み込みます。�
   background: var(--surface);
   border-radius: var(--radius-card);
   padding: var(--space-card-padding);
-  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
 }
 ```
 
@@ -86,7 +86,7 @@ Tailwind CSS v4 のアプリで使うときの対応は [foundations/README.md](
 
 1. トークンから選ぶ。色・余白・文字サイズはファウンデーションの値からだけ選ぶ。新しい値が要るときは、先に `tokens/tokens.json` に登録する。
 2. 部品で組む。画面はコンポーネントの組み合わせで作る。似た部品があるときは、各部品の「使うとき／使わないとき」で選び分ける。ほかのアプリの複合体（`docs/patterns/`）は持ち出さず、その「組み合わせ」に書かれた部品で組む。
-3. 型に当てはめる。ページ全体の形はパターンから選ぶ。読み物には「読み物ページの型」、確認が要る操作には「承認をはさむ型」を当てる。
+3. 型に当てはめる。読み込み・検索・一覧から詳細・確認のような、よくあるタスクや状態はパターンの型に合わせる（例: データを読み込む場所には「読み込み・空・失敗の状態」、取り消せない操作には「確認をはさむ操作」）。
 
 ### 3. トークンを変えるとき
 

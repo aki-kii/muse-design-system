@@ -1,24 +1,24 @@
 <div class="demo-stage" data-demo="input-and-switch">
   <div class="demo-item">
     <p class="demo-cap">入力欄（空のまま欄を離れるとエラーの状態）</p>
-    <div class="m-field" data-validate="指示を入れてください。例: 技術系のニュースを3本">
-      <label class="m-label" for="ip-1">フィードの指示</label>
-      <input class="m-input" id="ip-1" type="text" placeholder="例: 技術系のニュースを3本" aria-describedby="ip-1-h">
-      <p class="m-hint" id="ip-1-h">何を集めてほしいかを短く書きます</p>
+    <div class="m-field" data-validate="表示名を入れてください。例: さくら">
+      <label class="m-label" for="ip-1">表示名</label>
+      <input class="m-input" id="ip-1" type="text" placeholder="例: さくら" aria-describedby="ip-1-h">
+      <p class="m-hint" id="ip-1-h">ほかの人に見える名前です</p>
     </div>
   </div>
   <div class="demo-item">
     <p class="demo-cap">エラー</p>
     <div class="m-field is-error">
       <label class="m-label" for="ip-2">メールアドレス</label>
-      <input class="m-input" id="ip-2" type="email" value="mame@" aria-invalid="true" aria-describedby="ip-2-h">
+      <input class="m-input" id="ip-2" type="email" value="user@" aria-invalid="true" aria-describedby="ip-2-h">
       <p class="m-hint" id="ip-2-h">@ の後ろまで入れてください</p>
     </div>
   </div>
   <div class="demo-item">
     <p class="demo-cap">スイッチの行（行全体が押せる）</p>
-    <div class="m-switch-row" data-name="朝のブリーフ">
-      <span class="m-switch-text"><span class="m-switch-title" id="sw-1">朝のブリーフ</span><span class="m-switch-sub">毎朝 7:00 に Daily Brief を更新する</span></span>
+    <div class="m-switch-row" data-name="朝のお知らせ">
+      <span class="m-switch-text"><span class="m-switch-title" id="sw-1">朝のお知らせ</span><span class="m-switch-sub">毎朝 7:00 に通知する</span></span>
       <button type="button" class="m-switch" role="switch" aria-checked="true" aria-labelledby="sw-1"></button>
     </div>
     <div class="m-switch-row" data-name="通知">

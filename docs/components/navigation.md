@@ -35,7 +35,7 @@
 | --- | --- | --- |
 | タブの大きさ | 52×44px | `--size-tap-target` |
 | タブバーの角丸 | 999px | `--radius-pill` |
-| タブバーの影 | 浮く部品の影 | `--shadow-float` |
+| タブバーの枠 | 1px の枠（影は付けない） | `--border` |
 | サイドバーの幅 | 252px | |
 | サイドバーの節の見出し | 12px / 700 | `--faint` |
 
@@ -47,4 +47,4 @@
 
 ## 関連
 
-- [読み物ページの型](../patterns/reading-page.md)
+- [一覧から詳細へ](../patterns/list-to-detail.md)（戻る導線）

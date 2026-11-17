@@ -285,6 +285,8 @@ const ICONS = {
   search: '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
   inbox: '<path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11Z"/>',
   alert: '<circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/>',
+  volume: '<path d="M11 5 6 9H2v6h4l5 4Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/>',
+  chevron: '<path d="m9 18 6-6-6-6"/>',
 };
 const icon = (name) => `<svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true">${ICONS[name] ?? ''}</svg>`;
 const slideTypes = () => site('slides.html');
@@ -317,10 +319,10 @@ function swatches() {
   const ui = semColors.filter((c) => !c.name.startsWith('--cal-'));
   const cal = semColors.filter((c) => c.name.startsWith('--cal-'));
   const modeVars = (mode) =>
-    ['color', 'shadow']
+    ['color']
       .flatMap((g) => Object.entries(tokens.semantic[g]).filter(([k]) => !k.startsWith('$')).map(([k, t]) => {
         const v = resolve(mode === 'dark' ? t.$extensions?.['com.muse.modes']?.dark ?? t.$value : t.$value);
-        return `--${g === 'shadow' ? 'shadow-' : ''}${k}:${v}`;
+        return `--${k}:${v}`;
       }))
       .join(';');
   const pane = (mode, label) => `
@@ -378,9 +380,6 @@ function spacingSample(kind) {
       .map((r) => `<li><span class="radius-box${r === 'pill' ? ' is-pill' : ''}" style="border-radius:var(--radius-${r})"></span><code>--radius-${r}</code><span class="scale-val">${resolve(tokens.semantic.radius[r].$value)}</span></li>`)
       .join('')}</ul></div>`;
   }
-  if (kind === 'shadow') {
-    return `<div class="sample"><p class="sample-label">見本: 影</p><div class="shadows"><div class="shadow-box" style="box-shadow:var(--shadow-card)"><code>--shadow-card</code></div><div class="shadow-box is-pill" style="box-shadow:var(--shadow-float)"><code>--shadow-float</code></div></div></div>`;
-  }
   return `<div class="sample"><p class="sample-label">見本: タップ範囲</p><div class="tap-demo"><span class="tap-target"><span class="tap-visual">36px の見た目</span></span><span class="scale-val">押せる範囲は 44px 四方（破線）</span></div></div>`;
 }
 
@@ -390,6 +389,13 @@ function layout(p, body, { toc = '' } = {}) {
   const rel = (target) => posix.relative(posix.dirname(p.out), target) || posix.basename(target);
   const sec = sections.find((s) => s.id === p.section);
   const navItem = (q) => `<li><a href="${rel(q.out)}"${q === p ? ' aria-current="page"' : ''}>${esc(q.nav || q.title)}</a></li>`;
+  const sideDesc = {
+    start: 'このサイトの見方と使い方',
+    foundations: '色・文字・余白・角丸などの値',
+    components: `中身に依存しない部品（${components.length}件）`,
+    patterns: `よくあるタスクと状態の型（${patterns.length}件）`,
+    records: '決定の記録・版の付け方・変更履歴',
+  };
   const side = sections
     .map((s) => {
       const qs = pages.filter((q) => q.section === s.id && !q.hidden);
@@ -399,10 +405,9 @@ function layout(p, body, { toc = '' } = {}) {
         inner = top.map(navItem).join('') + compGroups
           .map((g) => `${g.title ? `<li class="side-sub">${esc(g.title)}</li>` : ''}${qs.filter((q) => q.comp && g.items.includes(q.comp)).map(navItem).join('')}`)
           .join('');
-      } else if (s.id === 'patterns') {
-        inner = qs.map(navItem).join('');
       } else inner = qs.map(navItem).join('');
-      return `<div class="side-group${s.id === p.section ? ' is-current' : ''}"><p class="side-title">${esc(s.title)}</p><ul>${inner}</ul></div>`;
+      const cur = s.id === p.section;
+      return `<details class="side-group${cur ? ' is-current' : ''}"${cur ? ' open' : ''}><summary class="side-summary"><span class="side-title">${esc(s.title)}</span><span class="side-desc">${esc(sideDesc[s.id] ?? '')}</span></summary><ul>${inner}</ul></details>`;
     })
     .join('');
   const global = sections
@@ -444,7 +449,7 @@ function layout(p, body, { toc = '' } = {}) {
   </div>
 </header>
 <div class="site-body">
-  <nav class="side" id="side" aria-label="目次">${side}</nav>
+  <nav class="side" id="side" aria-label="目次"><p class="side-head">目次</p>${side}</nav>
   <main id="main" class="main${p.kind === 'home' ? ' is-home' : ''}">
     ${p.kind === 'home' ? '' : `<ol class="crumbs" aria-label="現在地">${crumbs.join('')}</ol>`}
     ${body}
@@ -477,9 +482,9 @@ function buildPage(p) {
     const principleItems = [...read('docs/principles.md').matchAll(/^## (\d+)\. (.*)\n\n(.*)/gm)];
     const layers = [
       { n: '1', t: '原則', d: '判断に迷ったときに戻る4つの決め事', href: 'principles.html' },
-      { n: '2', t: 'ファウンデーション', d: '色・文字・余白・角丸・影のトークンと、アイコンの組、アクセシビリティの基準', href: 'foundations/index.html' },
+      { n: '2', t: 'ファウンデーション', d: '色・文字・余白・角丸のトークンと、アイコンの組、アクセシビリティの基準', href: 'foundations/index.html' },
       { n: '3', t: 'コンポーネント', d: `再利用する部品。部品ごとに1ファイル（${components.length}件）`, href: 'components/index.html' },
-      { n: '4', t: 'パターン', d: `基本コンポーネントを組み合わせた、よくあるパターン（${patterns.length}件）`, href: 'patterns.html' },
+      { n: '4', t: 'パターン', d: `世の中でよくあるタスクや状態の型（${patterns.length}件）`, href: 'patterns.html' },
     ];
     void principles;
     const body = `
@@ -549,7 +554,6 @@ function buildPage(p) {
   if (p.out === 'foundations/spacing-radius-elevation.html') {
     html = insertAtSectionEnd(html, '余白', spacingSample('space'));
     html = insertAtSectionEnd(html, '角丸', spacingSample('radius'));
-    html = insertAtSectionEnd(html, '影', spacingSample('shadow'));
     html = insertAtSectionEnd(html, '大きさ', spacingSample('tap'));
   }
   if (p.out === 'patterns.html') {

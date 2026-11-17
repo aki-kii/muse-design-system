@@ -1,0 +1,21 @@
+<div class="demo-stage" data-demo="list-to-detail">
+  <div class="m-card" style="max-width:480px;min-height:280px">
+    <div data-list-view>
+      <div class="m-card-head"><h3 class="m-card-title">記録の一覧</h3></div>
+      <ul class="m-rows">
+        <li><button type="button" class="m-row-link" data-open="0" aria-label="11月15日の散歩を開く"><span class="m-row-main"><span class="m-row-title">11月15日 散歩</span><span class="m-row-sub">32分 ・ 2.4km</span></span>{{i:chevron}}</button></li>
+        <li><button type="button" class="m-row-link" data-open="1" aria-label="11月13日のストレッチを開く"><span class="m-row-main"><span class="m-row-title">11月13日 ストレッチ</span><span class="m-row-sub">15分</span></span>{{i:chevron}}</button></li>
+        <li><button type="button" class="m-row-link" data-open="2" aria-label="11月10日の散歩を開く"><span class="m-row-main"><span class="m-row-title">11月10日 散歩</span><span class="m-row-sub">45分 ・ 3.1km</span></span>{{i:chevron}}</button></li>
+      </ul>
+    </div>
+    <div data-detail-view hidden>
+      <div style="display:flex;align-items:center;gap:8px">
+        <button type="button" class="m-round" aria-label="一覧に戻る" data-back>{{i:back}}</button>
+        <h3 class="m-card-title" tabindex="-1" data-title></h3>
+      </div>
+      <p class="m-row-sub" data-meta style="margin:8px 0 12px"></p>
+      <div data-body></div>
+    </div>
+  </div>
+  <p class="demo-note">行を押すと詳細を開き、← で一覧に戻ると開いた行にフォーカスが戻ります。詳細の中身は読み込み中のスケルトンを経て出ます。中身は架空です。</p>
+</div>

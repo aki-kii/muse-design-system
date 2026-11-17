@@ -23,18 +23,11 @@
         <button type="button" class="m-speak" aria-label="設定" data-toast="設定を開きます">{{i:settings}}</button>
       </div>
     </div>
+    <div class="demo-item">
+      <p class="demo-cap">読み上げ（単独型・インライン型）</p>
+      <div class="demo-row" style="gap:8px"><span style="font-weight:700">こんにちは</span><button type="button" class="m-speak" aria-label="読み上げる" data-speak="こんにちは" data-lang="ja-JP">{{i:volume}}</button></div>
+      <p style="margin:8px 0 0;line-height:1.75">あいさつは「<span lang="en">Good morning.</span><span class="m-speak-inline" role="button" tabindex="0" aria-label="読み上げる" data-speak="Good morning." data-lang="en-US">{{i:volume}}</span>」から始めます。</p>
+    </div>
   </div>
   <p class="demo-note">見た目は 32px・36px ですが、押せる範囲はどれも 44px 四方です。</p>
-</div>
-<div class="demo-stage" data-demo="speak-button" style="margin-top:16px">
-  <p class="demo-cap">読み上げ（学習ノート）</p>
-  <div class="demo-item">
-    <p class="demo-cap">インライン型</p>
-    <p style="margin:0;line-height:1.75;max-width:520px">「<span lang="en">I have been to Kyoto twice.</span><span class="m-speak-inline" role="button" tabindex="0" aria-label="読み上げる" data-speak="I have been to Kyoto twice.">🔊</span>」は、経験を表す現在完了の文です。</p>
-  </div>
-  <div class="demo-item">
-    <p class="demo-cap">単独型</p>
-    <div class="m-word-card" style="max-width:360px"><span class="m-word-term" lang="en" style="font-size:40px">journey</span><button type="button" class="m-speak" aria-label="読み上げる" data-speak="journey">🔊</button></div>
-  </div>
-  <p class="demo-note">押すと en-US・速さ 0.95 で読み上げます。端末が音声合成に対応していないときは何も起きません。</p>
 </div>
