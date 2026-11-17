@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0005: 完了・無効・正誤の見せ方と、ボタンの例外を決める | Muse Design System</title>
+<meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Noto+Sans+JP:wght@400..900&display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/demos.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('muse-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
+    <span class="brand-ver">v0.7.0</span>
+    <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="../components/index.html">コンポーネント</a></li><li><a href="../patterns.html">パターン</a></li><li><a href="index.html" aria-current="true">記録</a></li></ul></nav>
+    <div class="header-tools">
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="表示モードを切り替える"><span data-theme-label>自動</span></button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="side" data-menu-toggle>目次</button>
+    </div>
+  </div>
+</header>
+<div class="site-body">
+  <nav class="side" id="side" aria-label="目次"><div class="side-group"><p class="side-title">はじめに</p><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></div><div class="side-group"><p class="side-title">ファウンデーション</p><ul><li><a href="../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../foundations/color.html">色</a></li><li><a href="../foundations/typography.html">タイポグラフィ</a></li><li><a href="../foundations/spacing-radius-elevation.html">余白・角丸・影</a></li><li><a href="../foundations/icons.html">アイコン</a></li><li><a href="../foundations/accessibility.html">アクセシビリティ</a></li></ul></div><div class="side-group"><p class="side-title">コンポーネント</p><ul><li><a href="../components/index.html">コンポーネント一覧</a></li><li class="side-sub">操作と入力</li><li><a href="../components/button.html">ボタン（Button）</a></li><li><a href="../components/icon-button.html">アイコンボタン（Icon Button）</a></li><li><a href="../components/chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="../components/choice-button.html">選択肢ボタン（Choice Button）</a></li><li><a href="../components/input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="../components/memo-input-bar.html">入力バー（Input Bar）</a></li><li><a href="../components/done-toggle.html">完了トグル・完了バッジ（Done Toggle / Done Badge）</a></li><li><a href="../components/navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li class="side-sub">内容を並べる</li><li><a href="../components/section-card.html">セクションカード（Section Card）</a></li><li><a href="../components/list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="../components/status-list-item.html">状態付きリスト項目（Status List Item）</a></li><li><a href="../components/media-card.html">メディアカード（Media Card）</a></li><li><a href="../components/progress-path.html">進捗パス（Progress Path）</a></li><li><a href="../components/flashcard.html">フラッシュカード（Flashcard）</a></li><li><a href="../components/message-bubble.html">吹き出し（Message Bubble）</a></li><li class="side-sub">重ねて出す・知らせる</li><li><a href="../components/approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="../components/sheet-modal.html">シートモーダル（Sheet Modal）</a></li><li><a href="../components/confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="../components/long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="../components/speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="../components/toast.html">トースト（Toast）</a></li><li><a href="../components/typing-indicator.html">作業中インジケータ（Typing Indicator）</a></li></ul></div><div class="side-group"><p class="side-title">パターン</p><ul><li><a href="../patterns.html">パターン一覧</a></li><li class="side-sub">学習ノートの複合体</li><li><a href="../patterns/learning-note/index.html">一覧</a></li><li><a href="../patterns/learning-note/course-path.html">コースパス（Course Path / Path Node）</a></li><li><a href="../patterns/learning-note/now-strip.html">今ここストリップ（Now Strip）</a></li><li><a href="../patterns/learning-note/player-top-bar.html">プレイヤートップバー（Player Top Bar）</a></li><li><a href="../patterns/learning-note/word-card.html">単語カード（Word Card）</a></li><li><a href="../patterns/learning-note/quiz-option.html">クイズ選択肢（Quiz Option）</a></li><li><a href="../patterns/learning-note/result-banner.html">結果バナー（Result Banner）</a></li><li><a href="../patterns/learning-note/model-answer-box.html">模範解答ボックス（Model Answer Box）</a></li><li><a href="../patterns/learning-note/ask-box.html">質問ボックス（Ask Box）</a></li><li><a href="../patterns/learning-note/speak-button.html">読み上げボタン（Speak Button）</a></li><li><a href="../patterns/learning-note/chapter-complete-panel.html">章完了パネル（Chapter Complete Panel）</a></li><li><a href="../patterns/learning-note/shelf-cover-card.html">本棚カバーカード（Shelf Cover Card）</a></li><li><a href="../patterns/learning-note/course-switcher.html">コース切替パネル（Course Switcher）</a></li><li class="side-sub">スライドエディタの複合体</li><li><a href="../patterns/slide-editor/index.html">一覧</a></li><li><a href="../patterns/slide-editor/deck-card.html">デッキカード（Deck Card）</a></li><li><a href="../patterns/slide-editor/deck-header.html">デッキヘッダー（Deck Header）</a></li><li><a href="../patterns/slide-editor/slide-stage.html">スライドステージ（Slide Stage）</a></li><li><a href="../patterns/slide-editor/page-counter-row.html">ページカウンタ行（Page Counter Row）</a></li><li><a href="../patterns/slide-editor/thread-card.html">スレッドカード（Thread Card）</a></li><li><a href="../patterns/slide-editor/awaiting-badge.html">確認待ちバッジ（Awaiting Badge）</a></li><li><a href="../patterns/slide-editor/typing-strip.html">タイピングストリップ（Typing Strip）</a></li><li><a href="../patterns/slide-editor/request-row.html">依頼行（Request Row）</a></li><li><a href="../patterns/slide-editor/page-preview-card.html">ページプレビューカード（Page Preview Card）</a></li><li><a href="../patterns/slide-editor/position-radio.html">位置ラジオ（Position Radio）</a></li><li><a href="../patterns/slide-editor/submit-message.html">送信完了メッセージ（Submit Message）</a></li><li><a href="../patterns/slide-editor/thread-conversation.html">スレッドの会話（Thread Conversation）</a></li></ul></div><div class="side-group is-current"><p class="side-title">記録</p><ul><li><a href="index.html">決定記録</a></li><li><a href="../open-questions.html">判断待ちの点</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></div></nav>
+  <main id="main" class="main">
+    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="index.html">記録</a></li><li aria-current="page">0005: 完了・無効・正誤の見せ方と、ボタンの例外を決める</li></ol>
+    <article class="doc"><h1 id="0005-完了無効正誤の見せ方とボタンの例外を決める">0005: 完了・無効・正誤の見せ方と、ボタンの例外を決める</h1>
+<ul><li>状態: 決定</li><li>日付: 2026-11-17</li></ul>
+<h2 id="背景">背景<a class="anchor" href="#背景" aria-label="この見出しへのリンク">#</a></h2>
+<p><a href="../open-questions.html">判断待ちの点</a>の 15、24、26 は、状態の見せ方と部品の形の例外だった。</p>
+<ul><li>クイズの選択肢の正誤が色だけだった（15）。ただし学習ノートの実装は、すでに文の後ろに ✓ ✗ を付けている。</li><li>完了の薄さが部品ごとに違い（行全体の不透明度 0.7、<code>--dim</code>、<code>--faint</code>）、無効の不透明度も 0.4・0.45・0.5 とばらついていた（24）。実アプリの無効は <code>disabled:opacity-40</code> が一番多い。行全体を 0.7 にすると、<code>--dim</code> の題が 4.0:1 になり 4.5:1 に届かない。</li><li>シートの全幅ボタンと確認ダイアログのボタンが角丸 12px で、確認ダイアログの「削除する」は赤い面だった（26）。スライドエディタの現行の作り。</li></ul>
+<p>決め方の基準は <a href="0003-color-and-contrast.html">0003</a> と同じ。</p>
+<h2 id="決定">決定<a class="anchor" href="#決定" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li><strong>正誤の印（15）:</strong> 選択肢の正解は文の後ろに「 ✓」、不正解は「 ✗」を付ける。学習ノートの現行どおり（基準1・2）。</li><li><strong>完了（24）:</strong> 題を <code>--faint</code> にし、打ち消し線とチェック（またはバッジ）を付ける。行全体の不透明度は変えない（基準2）。<code>--faint</code> は v0.7.0 で 4.5:1 以上になった。</li><li><strong>無効（24）:</strong> 不透明度 0.4 にそろえる。実アプリで一番多い値（基準1）。押せない部品は WCAG のコントラストの対象外だが、押せない理由は文で添える。</li><li><strong>完了の色（25、<a href="0003-color-and-contrast.html">0003</a>）:</strong> 本人が自分で付ける完了は <code>--accent</code>、やりとりが片付いた・正解は <code>--ok</code>。</li><li><strong>ボタンの例外（26）:</strong> シートやダイアログの下に並ぶ確定ボタンは、フォームの一部として角丸 12px（<code>--radius-row</code>）の全幅ボタンにしてよい。確認ダイアログの最後の一押しと、シートの削除の確定は、<code>--danger</code> の面に <code>--danger-ink</code> の文字にしてよい。どちらもスライドエディタの現行で、この2か所だけの例外とする（基準1）。ふつうの画面のボタンは今までどおりピルで、危険操作はゴースト。</li><li><strong>答え合わせのボタン（12、<a href="0003-color-and-contrast.html">0003</a>）:</strong> <a href="../components/button.html">ボタン</a>に「確認」のバリアント（<code>--ok</code> の面）を足した。</li></ul>
+<h2 id="結果">結果<a class="anchor" href="#結果" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>スライドエディタの完了した依頼行・解決済みのスレッドカードは、DS では不透明度を使わない見せ方になる。アプリ側は当面現行どおりで、次に手を入れるときに合わせる。</li><li>ボタンの例外の場所が決まったので、ほかの場所で 12px のボタンや赤い面のボタンを作らない。</li></ul></article>
+    
+    <footer class="page-foot">
+      <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/decisions/0005-states-and-exceptions.md" rel="noopener">GitHub で元の文書を見る（docs/decisions/0005-states-and-exceptions.md）</a></p>
+      <p>Muse DS v0.7.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+    </footer>
+  </main>
+</div>
+<div class="m-toast-region" role="status" aria-live="polite"></div>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/demos.js" defer></script>
+</body>
+</html>
