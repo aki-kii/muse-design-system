@@ -1,0 +1,30 @@
+<div class="demo-stage" data-demo="status-list-item">
+  <div class="demo-grid2">
+    <div class="demo-item">
+      <p class="demo-cap">カード型・細いカード型</p>
+      <ul class="m-threads" style="padding:0" aria-label="やり取りの一覧（見本）">
+        <li><button type="button" class="m-thread is-working" aria-label="表の見出しをそろえる（エージェントが作業中）">
+          <span class="m-thread-body"><span class="m-thread-title-row"><span class="m-thread-title">表の見出しをそろえる</span><span class="m-thread-count">3件</span></span><span class="m-thread-last">エージェント: 見出しを太字にそろえます</span><span class="m-thread-foot">10:21<span class="m-typing" role="status"><i></i><i></i><i></i><span class="vh">エージェントが作業中</span></span></span></span>
+        </button></li>
+        <li><button type="button" class="m-thread" aria-label="書き出しを短くしたい（確認待ち）">
+          <span class="m-badge-awaiting" aria-hidden="true">{{i:chat}}</span>
+          <span class="m-thread-body"><span class="m-thread-title-row"><span class="m-thread-title">書き出しを短くしたい</span><span class="m-thread-count">2件</span></span><span class="m-thread-last">エージェント: 2文にまとめました</span><span class="m-thread-foot">10:05</span></span>
+        </button></li>
+        <li><button type="button" class="m-thread" aria-label="図に説明を足す（下書き1件）">
+          <span class="m-thread-body"><span class="m-thread-title-row"><span class="m-thread-title">図に説明を足す</span><span class="m-thread-count">1件</span></span><span class="m-thread-last">矢印の意味を書きたい</span><span class="m-thread-foot">9:48<span class="m-thread-draft">下書き1件</span></span></span>
+        </button></li>
+        <li><button type="button" class="m-thread is-thin" aria-label="完了: 誤字を直す">
+          <span class="m-done is-badge" aria-hidden="true">{{i:check}}</span><span class="m-thread-title">誤字を直す</span>
+        </button></li>
+      </ul>
+    </div>
+    <div class="demo-item">
+      <p class="demo-cap">1行型（右端に完了トグル）</p>
+      <ul class="m-requests" style="padding:0">
+        <li class="m-request"><span class="m-request-text"><span class="m-request-main">表を1つ足す</span><span class="m-request-state">下書き</span></span><button type="button" class="m-done" aria-pressed="false" aria-label="完了にする" data-toggle-pressed data-labels="完了にする|未完了に戻す">{{i:check}}</button></li>
+        <li class="m-request"><span class="m-request-text"><span class="m-request-main">最後の段落を消す</span><span class="m-typing" role="status" style="margin-left:8px"><i></i><i></i><i></i><span class="vh">エージェントが作業中</span></span></span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="demo-note">上から 作業中・本人の番・下書きあり・完了。中身は架空です。</p>
+</div>

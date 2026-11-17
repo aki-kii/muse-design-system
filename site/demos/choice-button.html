@@ -1,0 +1,29 @@
+<div class="demo-stage" data-demo="choice-button">
+  <div class="demo-grid2">
+    <div class="demo-item">
+      <p class="demo-cap">縦並び（選んでから確定する）</p>
+      <div class="m-options" role="radiogroup" aria-label="受け取り方法（見本）" style="max-width:420px">
+        <button type="button" class="m-option" role="radio" aria-checked="false" tabindex="0">店頭で受け取る</button>
+        <button type="button" class="m-option" role="radio" aria-checked="false" tabindex="-1">自宅に届ける</button>
+        <button type="button" class="m-option" role="radio" aria-checked="false" tabindex="-1">宅配ボックスに届ける</button>
+      </div>
+    </div>
+    <div class="demo-item">
+      <p class="demo-cap">横並び（2択）</p>
+      <div class="m-position" role="radiogroup" aria-label="追加する位置（見本）" style="max-width:420px;margin:0">
+        <button type="button" role="radio" aria-checked="false" tabindex="-1">前に追加</button>
+        <button type="button" role="radio" aria-checked="true" tabindex="0">後に追加</button>
+      </div>
+    </div>
+    <div class="demo-item">
+      <p class="demo-cap">状態の一覧（判定のあるとき）</p>
+      <div class="m-options" style="max-width:420px">
+        <button type="button" class="m-option" tabindex="-1">通常</button>
+        <button type="button" class="m-option" aria-pressed="true" tabindex="-1">選択中</button>
+        <button type="button" class="m-option is-correct" disabled>正解</button>
+        <button type="button" class="m-option is-wrong" disabled>不正解</button>
+      </div>
+    </div>
+  </div>
+  <p class="demo-note">押すか ← → で選び直せます。正解・不正解の薄い面はトークンが未定義のため（判断待ちの点 12）、モックの値で表示しています。</p>
+</div>

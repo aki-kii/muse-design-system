@@ -693,8 +693,50 @@
     $(root, '[data-reset]').addEventListener('click', function () { list.hidden = true; opener.hidden = false; opener.focus(); });
   };
 
-  // ---------------------------------------------------------- 適用例: Daily Brief
-  init['daily-brief'] = function () {};
+  // ---------------------------------------------------------- 汎用部品（v0.6.0）
+  init['progress-path'] = init['course-path'];
+  init['choice-button'] = radios;
+  init['icon-button'] = function (root) {
+    var r = $(root, '[data-refresh]');
+    r.addEventListener('click', function () {
+      r.disabled = true;
+      r.classList.add('is-spinning');
+      r.setAttribute('aria-busy', 'true');
+      setTimeout(function () { r.disabled = false; r.classList.remove('is-spinning'); r.removeAttribute('aria-busy'); r.focus(); toast('再読み込みしました'); }, 1600);
+    });
+  };
+  init['flashcard'] = function (root) {
+    var cards = [
+      { q: 'API', a: 'ソフトウェア同士がやり取りするための決まり' },
+      { q: 'キャッシュ', a: 'よく使うデータを、速く取り出せる場所に一時的に置いておくこと' },
+      { q: 'ログ', a: '起きたことを時刻とともに書き残した記録' }
+    ];
+    var host = $(root, '[data-cards]');
+    var i = 0;
+    function draw() {
+      if (i >= cards.length) {
+        host.innerHTML = '<p class="m-kicker">用語</p><div class="m-complete" style="max-width:none"><div class="m-complete-star" aria-hidden="true">★</div><h3>今日の分はおしまい</h3></div><button type="button" class="demo-reset" data-again>最初から</button>';
+        $(host, '[data-again]').addEventListener('click', function () { i = 0; draw(); });
+        return;
+      }
+      var c = cards[i];
+      host.innerHTML =
+        '<article class="m-word">' +
+        '<p class="m-kicker">用語 ' + (i + 1) + ' / ' + cards.length + '</p>' +
+        '<div class="m-word-card"><span style="font-size:28px;font-weight:800">' + c.q + '</span></div>' +
+        '<div data-reveal-area><button type="button" class="m-reveal" aria-label="答えを見せる">タップして答えを見る</button><p class="m-reveal-hint" style="margin-top:8px">答えを思い浮かべてから、タップして確かめよう</p></div>' +
+        '</article>';
+      $(host, '.m-reveal').addEventListener('click', function () {
+        var area = $(host, '[data-reveal-area]');
+        area.innerHTML = '<div class="m-meaning">' + c.a + '</div><div class="m-judge" style="margin-top:12px"><button type="button" class="m-btn m-btn--secondary">もう知ってた</button><button type="button" class="m-btn m-btn--primary">覚える</button></div>';
+        $$(area, '.m-judge button').forEach(function (b) { b.addEventListener('click', function () { i++; draw(); }); });
+        $(area, '.m-meaning').setAttribute('tabindex', '-1');
+        $(area, '.m-meaning').focus();
+      });
+    }
+    draw();
+  };
+
 
   $$(document, '[data-demo]').forEach(function (root) {
     var f = init[root.getAttribute('data-demo')];

@@ -189,20 +189,40 @@ const semColors = Object.entries(tokens.semantic.color)
 
 // ---------------------------------------------------------------- ページの一覧
 
-const compReadme = read('docs/components/README.md');
-const compGroups = [];
-{
+// 一覧の表（| [名前](slug.md) | 一言 | … |）を読む。### の見出しごとにまとまりを分ける。
+// section を渡すと、その ## の節の中だけを読む（components/README.md の「一覧」）。
+function parseCatalog(src, section) {
+  const groups = [];
   let group = { title: '', items: [] };
-  compGroups.push(group);
-  for (const line of compReadme.split('\n')) {
+  groups.push(group);
+  let inSection = !section;
+  for (const line of src.split('\n')) {
+    const h2 = line.match(/^##\s+(.*)/);
+    if (h2) { if (inSection && section) break; inSection = h2[1].trim() === section; continue; }
+    if (!inSection) continue;
     const h = line.match(/^###\s+(.*)/);
-    if (h) { group = { title: h[1].trim(), items: [] }; compGroups.push(group); continue; }
-    if (/^## /.test(line) && compGroups.length > 1) break;
-    const r = line.match(/^\|\s*\[([^\]]+)\]\(([\w-]+)\.md\)\s*\|\s*(.*?)\s*\|$/);
+    if (h) { group = { title: h[1].trim(), items: [] }; groups.push(group); continue; }
+    const r = line.match(/^\|\s*\[([^\]]+)\]\(([\w-]+)\.md\)\s*\|\s*(.*?)\s*\|/);
     if (r) group.items.push({ name: r[1], slug: r[2], summary: r[3] });
   }
+  return groups.filter((g) => g.items.length);
 }
+const compGroups = parseCatalog(read('docs/components/README.md'), '一覧');
 const components = compGroups.flatMap((g) => g.items);
+for (const c of components) c.dir = 'components';
+// アプリ固有の複合体（docs/patterns/<アプリ>/README.md の表）
+const APPS = [
+  { id: 'learning-note', title: '学習ノートの複合体' },
+  { id: 'slide-editor', title: 'スライドエディタの複合体' },
+];
+for (const a of APPS) {
+  a.items = parseCatalog(read(`docs/patterns/${a.id}/README.md`)).flatMap((g) => g.items);
+  for (const c of a.items) c.dir = `patterns/${a.id}`;
+}
+const composites = APPS.flatMap((a) => a.items);
+// コンポーネントから移した部品（元の URL に転送のページを残す）
+const moved = [...read('docs/components/README.md').matchAll(/^\|\s*\[([^\]]+)\]\(\.\.\/patterns\/([\w-]+)\/([\w-]+)\.md\)/gm)]
+  .map(([, name, app, slug]) => ({ name, app, slug }));
 
 const pages = [];
 const page = (o) => (pages.push(o), o);
@@ -214,10 +234,16 @@ for (const f of ['color', 'typography', 'spacing-radius-elevation', 'accessibili
   page({ out: `foundations/${f}.html`, src: `docs/foundations/${f}.md`, section: 'foundations' });
 page({ out: 'components/index.html', src: 'docs/components/README.md', section: 'components', nav: 'コンポーネント一覧', kind: 'catalog' });
 for (const c of components)
-  page({ out: `components/${c.slug}.html`, src: `docs/components/${c.slug}.md`, section: 'components', group: compGroups.find((g) => g.items.includes(c)).title, comp: c });
+  page({ out: `components/${c.slug}.html`, src: `docs/components/${c.slug}.md`, section: 'components', comp: c, list: components });
 page({ out: 'components/_template.html', src: 'docs/components/_template.md', section: 'components', hidden: true });
-page({ out: 'patterns.html', src: 'docs/patterns.md', section: 'patterns' });
-page({ out: 'examples/daily-brief.html', src: 'docs/examples/daily-brief.md', section: 'patterns', nav: '適用例: Daily Brief' });
+for (const m of moved)
+  page({ out: `components/${m.slug}.html`, src: `docs/components/${m.slug}.md`, section: 'components', hidden: true, kind: 'moved', to: `patterns/${m.app}/${m.slug}.html` });
+page({ out: 'patterns.html', src: 'docs/patterns.md', section: 'patterns', nav: 'パターン一覧' });
+for (const a of APPS) {
+  a.page = page({ out: `patterns/${a.id}/index.html`, src: `docs/patterns/${a.id}/README.md`, section: 'patterns', nav: '一覧', kind: 'catalog', app: a });
+  for (const c of a.items)
+    page({ out: `patterns/${a.id}/${c.slug}.html`, src: `docs/patterns/${a.id}/${c.slug}.md`, section: 'patterns', comp: c, list: a.items, app: a });
+}
 page({ out: 'decisions/index.html', src: 'docs/decisions/README.md', section: 'records' });
 for (const f of readdirSync(join(root, 'docs/decisions')).filter((f) => /^\d{4}-.*\.md$/.test(f)).sort())
   page({ out: `decisions/${f.replace(/\.md$/, '.html')}`, src: `docs/decisions/${f}`, section: 'records', hidden: true });
@@ -381,6 +407,10 @@ function layout(p, body, { toc = '' } = {}) {
         inner = top.map(navItem).join('') + compGroups
           .map((g) => `${g.title ? `<li class="side-sub">${esc(g.title)}</li>` : ''}${qs.filter((q) => q.comp && g.items.includes(q.comp)).map(navItem).join('')}`)
           .join('');
+      } else if (s.id === 'patterns') {
+        inner = qs.filter((q) => !q.app).map(navItem).join('') + APPS
+          .map((a) => `<li class="side-sub">${esc(a.title)}</li>${qs.filter((q) => q.app === a).map(navItem).join('')}`)
+          .join('');
       } else inner = qs.map(navItem).join('');
       return `<div class="side-group${s.id === p.section ? ' is-current' : ''}"><p class="side-title">${esc(s.title)}</p><ul>${inner}</ul></div>`;
     })
@@ -391,6 +421,7 @@ function layout(p, body, { toc = '' } = {}) {
   const crumbs = [`<li><a href="${rel('index.html')}">トップ</a></li>`];
   if (p.out !== 'index.html') {
     if (sec && sec.top !== p.out && sec.top !== 'index.html') crumbs.push(`<li><a href="${rel(sec.top)}">${esc(sec.title)}</a></li>`);
+    if (p.app && p.app.page !== p) crumbs.push(`<li><a href="${rel(p.app.page.out)}">${esc(p.app.title)}</a></li>`);
     crumbs.push(`<li aria-current="page">${esc(p.nav && p.kind !== 'home' ? p.nav : p.title)}</li>`);
   }
   const editSrc = p.src ? `<a href="${REPO}/blob/main/${p.src}" rel="noopener">GitHub で元の文書を見る（${esc(p.src)}）</a>` : '';
@@ -399,7 +430,7 @@ function layout(p, body, { toc = '' } = {}) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${p.kind === 'home' ? 'Muse Design System' : `${esc(p.title)} | Muse Design System`}</title>
+<title>${p.kind === 'home' ? 'Muse Design System' : `${esc(p.title)} | Muse Design System`}</title>${p.kind === 'moved' ? `\n<meta http-equiv="refresh" content="0; url=${rel(p.to)}">\n<link rel="canonical" href="${rel(p.to)}">` : ''}
 <meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -459,7 +490,7 @@ function buildPage(p) {
       { n: '1', t: '原則', d: '判断に迷ったときに戻る4つの決め事', href: 'principles.html' },
       { n: '2', t: 'ファウンデーション', d: '色・文字・余白・角丸・影のトークンと、アクセシビリティの基準', href: 'foundations/index.html' },
       { n: '3', t: 'コンポーネント', d: `再利用する部品。部品ごとに1ファイル（${components.length}件）`, href: 'components/index.html' },
-      { n: '4', t: 'パターン', d: '部品の組み合わせの型', href: 'patterns.html' },
+      { n: '4', t: 'パターン', d: `部品の組み合わせの型と、アプリ固有の複合体（${composites.length}件）`, href: 'patterns.html' },
     ];
     void principles;
     const body = `
@@ -486,7 +517,6 @@ function buildPage(p) {
 <section class="home-section" aria-labelledby="h-more">
   <h2 id="h-more">そのほか</h2>
   <ul class="link-list">
-    <li><a href="examples/daily-brief.html">適用例: Daily Brief</a></li>
     <li><a href="decisions/index.html">決めたことの記録</a></li>
     <li><a href="open-questions.html">判断待ちの点</a></li>
     <li><a href="versioning.html">版の付け方</a></li>
@@ -505,9 +535,13 @@ function buildPage(p) {
 
   let { html } = renderDoc(p);
 
+  if (p.kind === 'moved') {
+    html += `<p><a class="m-btn m-btn--primary" href="${posix.relative(posix.dirname(p.out), p.to)}">移行先を開く</a></p>`;
+  }
+
   if (p.kind === 'catalog') {
     // 部品の表をカードの並びにする（文面は表のまま）
-    const groupsHtml = compGroups.map((g) => g.items);
+    const groupsHtml = p.app ? [p.app.items] : compGroups.map((g) => g.items);
     let gi = 0;
     html = html.replace(/<div class="table-wrap"><table>[\s\S]*?<\/table><\/div>/g, (table) => {
       const items = groupsHtml[gi++];
@@ -523,9 +557,9 @@ function buildPage(p) {
     if (d) {
       html = html.replace(/(<\/h1>)/, `$1\n<p class="comp-lead">${inline(p.comp.summary, () => ({ href: '#' }))}</p>\n<section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2>${d}</section>`);
     }
-    const idx = components.indexOf(p.comp);
-    const prev = components[idx - 1];
-    const next = components[idx + 1];
+    const idx = p.list.indexOf(p.comp);
+    const prev = p.list[idx - 1];
+    const next = p.list[idx + 1];
     html += `<nav class="pager" aria-label="前後の部品">${prev ? `<a class="pager-prev" href="${prev.slug}.html"><span>前の部品</span>${esc(prev.name)}</a>` : '<span></span>'}${next ? `<a class="pager-next" href="${next.slug}.html"><span>次の部品</span>${esc(next.name)}</a>` : ''}</nav>`;
   }
 
@@ -538,11 +572,9 @@ function buildPage(p) {
     html = insertAtSectionEnd(html, '大きさ', spacingSample('tap'));
   }
   if (p.out === 'patterns.html') {
-    html = insertAtSectionEnd(html, 'a-読み物ページの型', `<div class="sample"><p class="sample-label">見本</p><p>この型の適用例は <a href="examples/daily-brief.html">Daily Brief</a> で、実際に組んだ画面を見られます。</p></div>`);
     html = insertAtSectionEnd(html, 'b-承認をはさむ型', demo('pattern-b'));
     html = insertAtSectionEnd(html, 'e-スライドの型', demo('pattern-e'));
   }
-  if (p.out === 'examples/daily-brief.html') html = insertAtSectionEnd(html, '組み立て', demo('daily-brief'));
 
   return layout(p, `<article class="doc">${html}</article>`);
 }
@@ -590,5 +622,5 @@ for (const p of pages) {
     if (!th.includes(`id="${decodeURIComponent(hash)}"`)) { console.error(`アンカー切れ: ${p.out} → ${href || ''}#${hash}`); broken++; }
   }
 }
-console.log(`書き出した: ${out}（${pages.length} ページ、部品 ${components.length} 件）`);
+console.log(`書き出した: ${out}（${pages.length} ページ、部品 ${components.length} 件、複合体 ${composites.length} 件、転送 ${moved.length} 件）`);
 if (broken) { console.error(`リンク切れ ${broken} 件`); process.exit(1); }

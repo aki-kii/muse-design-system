@@ -1,0 +1,31 @@
+<div class="demo-stage" data-demo="media-card">
+  <div class="demo-grid2">
+    <div class="demo-item">
+      <p class="demo-cap">大（サムネイル＋タイトル＋件数・日付）</p>
+      <ul class="m-decks" style="list-style:none;margin:0;padding:0" aria-label="資料の一覧（見本）">
+        <li><button type="button" class="m-deck" aria-label="週末の読書会のふりかえり・12枚・11月8日" data-toast="開きます">
+          <div class="m-deck-thumb" aria-hidden="true">{{slide:cover}}</div>
+          <div class="m-deck-meta"><span class="m-deck-title">週末の読書会のふりかえり</span><span class="m-deck-info"><span>12枚</span><span>11月8日</span></span></div>
+        </button></li>
+        <li><button type="button" class="m-deck" aria-label="新しい資料・サムネイルなし・3枚・11月14日" data-toast="開きます">
+          <div class="m-deck-thumb is-empty" aria-hidden="true">新しい資料</div>
+          <div class="m-deck-meta"><span class="m-deck-title">新しい資料</span><span class="m-deck-info"><span>3枚</span><span>11月14日</span></span></div>
+        </button></li>
+      </ul>
+    </div>
+    <div class="demo-item">
+      <p class="demo-cap">小（表紙＋タイトル＋進捗バー）</p>
+      <div class="m-shelf">
+        <button type="button" class="m-cover" aria-label="はじめての写真整理・60%" data-toast="開きます">
+          <span class="m-cover-face" style="background:var(--demo-course-1)" aria-hidden="true">{{i:book}}</span>
+          <span class="m-cover-body"><span class="m-cover-title">はじめての写真整理</span><span class="m-cover-bar"><span style="width:60%"></span></span></span>
+        </button>
+        <button type="button" class="m-cover" aria-label="作り置きのレシピ・25%" data-toast="開きます">
+          <span class="m-cover-face" style="background:var(--demo-course-2)" aria-hidden="true">{{i:box}}</span>
+          <span class="m-cover-body"><span class="m-cover-title">作り置きのレシピ</span><span class="m-cover-bar"><span style="width:25%"></span></span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <p class="demo-note">中身は架空です。サムネイルや表紙の色は中身側の色で、DS のトークンでは塗りません（判断待ちの点 13・18）。</p>
+</div>

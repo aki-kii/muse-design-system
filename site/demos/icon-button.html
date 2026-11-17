@@ -1,0 +1,28 @@
+<div class="demo-stage" data-demo="icon-button">
+  <div class="demo-grid2">
+    <div class="demo-item">
+      <p class="demo-cap">丸（再読み込みを押すと回る）・危険</p>
+      <div class="demo-row" style="gap:16px">
+        <button type="button" class="m-round" aria-label="一覧に戻る" data-toast="一覧へ戻ります">{{i:back}}</button>
+        <button type="button" class="m-round" aria-label="再読み込み" data-refresh>{{i:refresh}}</button>
+        <button type="button" class="m-round" aria-label="閉じる" data-toast="閉じます">{{i:x}}</button>
+        <button type="button" class="m-round" style="color:var(--danger)" aria-label="削除" data-toast="確認ダイアログを開きます">{{i:trash}}</button>
+      </div>
+    </div>
+    <div class="demo-item">
+      <p class="demo-cap">丸（強調）・オンとオフ</p>
+      <div class="demo-row" style="gap:16px">
+        <button type="button" class="m-send" aria-label="送信" data-toast="送信しました">{{i:up}}</button>
+        <button type="button" class="m-mic" aria-pressed="false" aria-label="音声入力" data-toggle-pressed data-labels="音声入力|音声入力を終了">{{i:mic}}</button>
+      </div>
+    </div>
+    <div class="demo-item">
+      <p class="demo-cap">四角（地の上に軽く置く）</p>
+      <div class="demo-row" style="gap:16px">
+        <button type="button" class="m-speak" aria-label="閉じる" data-toast="閉じます">✕</button>
+        <button type="button" class="m-speak" aria-label="設定" data-toast="設定を開きます">{{i:settings}}</button>
+      </div>
+    </div>
+  </div>
+  <p class="demo-note">見た目は 32px・36px ですが、押せる範囲はどれも 44px 四方です。</p>
+</div>
