@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>結果バナー（Result Banner） | Muse Design System</title>
+<meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Noto+Sans+JP:wght@400..900&display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/demos.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('muse-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
+    <span class="brand-ver">v0.9.0</span>
+    <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="../components/index.html">コンポーネント</a></li><li><a href="../patterns.html" aria-current="true">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
+    <div class="header-tools">
+      <button class="tool-btn theme-btn" type="button" data-theme-toggle aria-label="表示モード: 自動（押すとライトにする）" title="表示モード: 自動（押すとライトにする）"><span data-theme-icon="auto"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><span data-theme-icon="light" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span><span data-theme-icon="dark" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span></button>
+      <button class="tool-btn menu-btn" type="button" aria-expanded="false" aria-controls="side" aria-label="目次を開く" title="目次を開く" data-menu-toggle><span data-menu-icon="open"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></span><span data-menu-icon="close" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span></button>
+    </div>
+  </div>
+</header>
+<div class="site-body">
+  <nav class="side" id="side" aria-label="目次"><div class="side-group"><p class="side-title">はじめに</p><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></div><div class="side-group"><p class="side-title">ファウンデーション</p><ul><li><a href="../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../foundations/color.html">色</a></li><li><a href="../foundations/typography.html">タイポグラフィ</a></li><li><a href="../foundations/spacing-radius-elevation.html">余白・角丸・影</a></li><li><a href="../foundations/icons.html">アイコン</a></li><li><a href="../foundations/accessibility.html">アクセシビリティ</a></li></ul></div><div class="side-group"><p class="side-title">コンポーネント</p><ul><li><a href="../components/index.html">コンポーネント一覧</a></li><li class="side-sub">操作と入力</li><li><a href="../components/button.html">ボタン（Button）</a></li><li><a href="../components/icon-button.html">アイコンボタン（Icon Button）</a></li><li><a href="../components/chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="../components/choice-button.html">選択肢ボタン（Choice Button）</a></li><li><a href="../components/input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="../components/search-field.html">検索フィールド（Search Field）</a></li><li><a href="../components/memo-input-bar.html">入力バー（Input Bar）</a></li><li><a href="../components/done-toggle.html">完了トグル・完了バッジ（Done Toggle / Done Badge）</a></li><li><a href="../components/navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li class="side-sub">内容を並べる</li><li><a href="../components/section-card.html">セクションカード（Section Card）</a></li><li><a href="../components/list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="../components/status-list-item.html">状態付きリスト項目（Status List Item）</a></li><li><a href="../components/media-card.html">メディアカード（Media Card）</a></li><li><a href="../components/progress-path.html">進捗パス（Progress Path）</a></li><li><a href="../components/flashcard.html">フラッシュカード（Flashcard）</a></li><li><a href="../components/message-bubble.html">吹き出し（Message Bubble）</a></li><li><a href="../components/empty-state.html">空の状態（Empty State）</a></li><li class="side-sub">重ねて出す・知らせる</li><li><a href="../components/approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="../components/sheet-modal.html">シートモーダル（Sheet Modal）</a></li><li><a href="../components/confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="../components/long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="../components/speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="../components/toast.html">トースト（Toast）</a></li><li><a href="../components/typing-indicator.html">作業中インジケータ（Typing Indicator）</a></li><li><a href="../components/skeleton.html">スケルトン（Skeleton）</a></li></ul></div><div class="side-group is-current"><p class="side-title">パターン</p><ul><li><a href="../patterns.html">パターン一覧</a></li><li class="side-sub">アプリ固有の複合体</li><li><a href="course-path.html">コースパス（Course Path / Path Node）</a></li><li><a href="now-strip.html">今ここストリップ（Now Strip）</a></li><li><a href="player-top-bar.html">プレイヤートップバー（Player Top Bar）</a></li><li><a href="word-card.html">単語カード（Word Card）</a></li><li><a href="quiz-option.html">クイズ選択肢（Quiz Option）</a></li><li><a href="result-banner.html" aria-current="page">結果バナー（Result Banner）</a></li><li><a href="model-answer-box.html">模範解答ボックス（Model Answer Box）</a></li><li><a href="ask-box.html">質問ボックス（Ask Box）</a></li><li><a href="speak-button.html">読み上げボタン（Speak Button）</a></li><li><a href="chapter-complete-panel.html">章完了パネル（Chapter Complete Panel）</a></li><li><a href="shelf-cover-card.html">本棚カバーカード（Shelf Cover Card）</a></li><li><a href="course-switcher.html">コース切替パネル（Course Switcher）</a></li><li><a href="deck-card.html">デッキカード（Deck Card）</a></li><li><a href="deck-header.html">デッキヘッダー（Deck Header）</a></li><li><a href="slide-stage.html">スライドステージ（Slide Stage）</a></li><li><a href="page-counter-row.html">ページカウンタ行（Page Counter Row）</a></li><li><a href="thread-card.html">スレッドカード（Thread Card）</a></li><li><a href="awaiting-badge.html">確認待ちバッジ（Awaiting Badge）</a></li><li><a href="typing-strip.html">タイピングストリップ（Typing Strip）</a></li><li><a href="request-row.html">依頼行（Request Row）</a></li><li><a href="page-preview-card.html">ページプレビューカード（Page Preview Card）</a></li><li><a href="position-radio.html">位置ラジオ（Position Radio）</a></li><li><a href="submit-message.html">送信完了メッセージ（Submit Message）</a></li><li><a href="thread-conversation.html">スレッドの会話（Thread Conversation）</a></li></ul></div><div class="side-group"><p class="side-title">記録</p><ul><li><a href="../decisions/index.html">決定記録</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></div></nav>
+  <main id="main" class="main">
+    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="../patterns.html">パターン</a></li><li aria-current="page">結果バナー（Result Banner）</li></ol>
+    <article class="doc"><h1 id="結果バナーresult-banner">結果バナー（Result Banner）</h1>
+<p class="comp-lead">答え合わせの判定と解説。正解なら紙吹雪</p>
+<section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="demo-stage" data-demo="result-banner">
+  <div class="demo-item" style="max-width:480px">
+    <p class="demo-cap">正解</p>
+    <div class="m-result m-result--ok is-static" role="status" id="rb-ok"><p class="m-result-title">正解！その調子だよ</p><p class="m-result-body">主語が三人称単数の現在の否定文は does not を使います。</p></div>
+    <p><button type="button" class="demo-reset" data-replay="#rb-ok">出たときの動きを見る</button></p>
+  </div>
+  <div class="demo-item" style="max-width:480px">
+    <p class="demo-cap">惜しい（解説のボタン付き）</p>
+    <div class="m-result m-result--ng is-static" role="status" id="rb-ng"><p class="m-result-title">惜しい！ここがポイントだよ</p><p class="m-result-body">don't は I・you・複数の主語で使います。He のときは doesn't です。</p></div>
+    <div class="m-btn-row"><button type="button" class="m-btn m-btn--secondary" data-toast="解説ページを開きます">解説を見返す</button><button type="button" class="m-btn m-btn--ghost" data-toast="章の解説全体を開きます">章の解説全体</button></div>
+    <p><button type="button" class="demo-reset" data-replay="#rb-ng">出たときの動きを見る</button></p>
+  </div>
+  <p class="demo-note">面は <code>--ok-soft</code>・<code>--danger-soft</code>。紙吹雪は学習ノートの現行の4色で、DS のトークンではありません。</p>
+</div>
+</section>
+<p><strong>出自:</strong> 学習ノート。別のアプリで要るときは、まず下の「組み合わせ」の汎用部品で組みます（<a href="../decisions/0002-component-admission.html">昇格のルール</a>）。</p>
+<h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
+<p>答え合わせの結果を、問題のすぐ下に出す帯です。「正解」か「惜しい」かの判定、解説の文、正解のときの紙吹雪を1つにまとめます。消えずに残る点が<a href="../components/toast.html">トースト</a>と違います。</p>
+<h2 id="組み合わせ">組み合わせ<a class="anchor" href="#組み合わせ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>正解・不正解の薄い面の帯（汎用の部品にはしていない。保留の理由は<a href="../patterns.html#アプリ固有の複合体">パターンの一覧</a>を参照）</li><li>「解説を見返す」などは<a href="../components/button.html">ボタン</a>のセカンダリ</li><li>紙吹雪（学習ノート固有の飾り）</li></ul>
+<h2 id="使うとき">使うとき<a class="anchor" href="#使うとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>選択式・記述式の問題の答え合わせの後</li><li>復習画面の問題の答え合わせの後</li></ul>
+<h2 id="使わないとき">使わないとき<a class="anchor" href="#使わないとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>操作の結果を短く知らせるだけ → <a href="../components/toast.html">トースト</a></li><li>エラー（採点できなかったなど）→ 本文の中に <code>--danger</code> の文で出す</li><li>単語カードの判定（カードの中の1行の文で足りる）→ <a href="word-card.html">単語カード</a></li></ul>
+<h2 id="バリアント">バリアント<a class="anchor" href="#バリアント" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">バリアント</th><th scope="col">見た目</th><th scope="col">文</th></tr></thead><tbody><tr><td>正解</td><td>薄い緑の面、判定の文は <code>--ok</code>、紙吹雪あり</td><td>「正解！その調子だよ」＋解説</td></tr><tr><td>惜しい</td><td>薄い赤の面、判定の文は <code>--danger</code>、紙吹雪なし</td><td>「惜しい！ここがポイントだよ」＋解説</td></tr></tbody></table></div>
+<p>惜しいときに、関係する解説ページがあれば、バナーの下に「解説を見返す」「章の解説全体」のボタンを置き、その場で解説を開けるようにします。</p>
+<h2 id="状態">状態<a class="anchor" href="#状態" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">状態</th><th scope="col">見た目</th></tr></thead><tbody><tr><td>出たとき</td><td>0.35 秒で拡大しながら出る。正解なら紙吹雪が 1.1 秒で落ちる</td></tr><tr><td>表示中</td><td>次のページへ進むまで残る</td></tr><tr><td>保存済みの答え</td><td>前に答えた問題を開き直したときも、動きなしで同じ判定を出す</td></tr></tbody></table></div>
+<h2 id="仕様">仕様<a class="anchor" href="#仕様" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">項目</th><th scope="col">値</th><th scope="col">トークン</th></tr></thead><tbody><tr><td>面</td><td>正解は薄い緑、惜しいは薄い赤</td><td><code>--ok-soft</code> <code>--danger-soft</code></td></tr><tr><td>角丸</td><td>12px</td><td><code>--radius-row</code></td></tr><tr><td>内側の余白</td><td>16px</td><td></td></tr><tr><td>問題との間隔</td><td>20px</td><td></td></tr><tr><td>判定の文</td><td>22px / 800（大きい文字なので 3:1 で足りる。薄い面の上で 4.2:1）</td><td><code>--ok</code> または <code>--danger</code></td></tr><tr><td>解説</td><td>本文、行間 1.65</td><td><code>--text</code></td></tr><tr><td>紙吹雪</td><td>8×12px の小片 18個、角丸 2px。色は <code>#EC4561</code>・<code>#2F7CF6</code>・<code>#F5B301</code>・<code>#2E9E5B</code> の4色を順に</td><td>飾りの色で、DS のトークンにしない（学習ノートの現行の値）</td></tr></tbody></table></div>
+<h2 id="アクセシビリティ">アクセシビリティ<a class="anchor" href="#アクセシビリティ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>バナーに <code>role=&quot;status&quot;</code> を付け、判定と解説が読み上げで伝わるようにする。フォーカスは移さない。</li><li>紙吹雪は <code>aria-hidden=&quot;true&quot;</code> の飾りにし、押す操作を邪魔しない（<code>pointer-events: none</code>）。</li><li>拡大の動きと紙吹雪は <code>prefers-reduced-motion: reduce</code> のとき止める。</li><li>判定は色だけでなく文で示す（上の文を省かない）。</li></ul>
+<h2 id="関連">関連<a class="anchor" href="#関連" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li><a href="quiz-option.html">クイズ選択肢</a></li><li><a href="model-answer-box.html">模範解答ボックス</a></li><li><a href="chapter-complete-panel.html">章完了パネル</a></li></ul><nav class="pager" aria-label="前後の部品"><a class="pager-prev" href="quiz-option.html"><span>前の部品</span>クイズ選択肢</a><a class="pager-next" href="model-answer-box.html"><span>次の部品</span>模範解答ボックス</a></nav></article>
+    
+    <footer class="page-foot">
+      <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/patterns/result-banner.md" rel="noopener">GitHub で元の文書を見る（docs/patterns/result-banner.md）</a></p>
+      <p>Muse DS v0.9.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+    </footer>
+  </main>
+</div>
+<div class="m-toast-region" role="status" aria-live="polite"></div>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/demos.js" defer></script>
+</body>
+</html>
