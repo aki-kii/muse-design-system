@@ -423,13 +423,18 @@ button.m-node:hover:not(.is-current) { background: var(--fill); }
 .m-memo { max-width: 460px; }
 .m-memo-error { margin: 0 0 8px; font-size: 12px; color: var(--danger); }
 .m-memo-box { position: relative; background: var(--fill); border: 1px solid var(--border); border-radius: var(--radius-card); padding: 4px 8px; display: flex; align-items: flex-end; gap: 8px; }
+/* 1行の間はボタンが同じ行の右端。行が増えると欄の中の下段に退き、文字は欄の全幅で折り返す */
+.m-memo-box.is-stacked { flex-wrap: wrap; row-gap: 0; }
+.m-memo-box.is-stacked .m-memo-input { flex-basis: 100%; max-height: 106px; }
+.m-memo-box.is-stacked .m-memo-btns { margin-left: auto; }
 .m-memo-box:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
-.m-memo-input { flex: 1; min-width: 0; font: inherit; font-size: var(--text-base); line-height: 24px; color: var(--text); background: none; border: 0; resize: none; padding: 6px 4px; max-height: 152px; overflow-y: auto; }
+.m-memo-input { flex: 1; min-width: 0; font: inherit; font-size: var(--text-base); line-height: 24px; color: var(--text); background: none; border: 0; resize: none; padding: 6px 4px; box-sizing: border-box; max-height: 142px; overflow-y: auto; }
 .m-memo-input:focus { outline: 0; }
 .m-memo-input::placeholder { color: var(--faint); }
 .m-memo-btns { display: flex; gap: 8px; padding: 0 0 4px; }
 .m-send, .m-mic { width: 32px; height: 32px; border-radius: var(--radius-pill); display: grid; place-items: center; cursor: pointer; padding: 0; position: relative; flex: none; }
 .m-send::after, .m-mic::after { content: ""; position: absolute; inset: -6px; }
+.m-send[hidden] { display: none; }
 .m-send { background: var(--accent); color: var(--accent-ink); border: 0; }
 .m-send .m-icon, .m-mic .m-icon { width: 18px; height: 18px; stroke-width: 2.4; }
 .m-mic { background: var(--surface); color: var(--text); border: 1px solid var(--border); }

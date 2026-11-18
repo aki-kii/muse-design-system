@@ -19,7 +19,7 @@
 <header class="site-header">
   <div class="site-header-inner">
     <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
-    <span class="brand-ver">v0.12.0</span>
+    <span class="brand-ver">v0.13.0</span>
     <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="index.html" aria-current="true">コンポーネント</a></li><li><a href="../patterns.html">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
     <div class="header-tools">
       <button class="tool-btn theme-btn" type="button" data-theme-toggle aria-label="表示モード: 自動（押すとライトにする）" title="表示モード: 自動（押すとライトにする）"><span data-theme-icon="auto"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><span data-theme-icon="light" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span><span data-theme-icon="dark" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span></button>
@@ -35,7 +35,7 @@
 <p class="comp-lead">丸い欄にマイクと送信の丸ボタン。会話の入力</p>
 <section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="demo-stage" data-demo="memo-input-bar">
   <div class="demo-item">
-    <p class="demo-cap">下に固定（書くと送信ボタンが出る。行が増えると 152px まで伸びる）</p>
+    <p class="demo-cap">下に固定（空白以外の文字があると送信ボタンが出る。1行に収まらなくなるとボタンが下段に移り、文は欄の全幅で折り返す。欄は 152px まで伸びる）</p>
     <div class="demo-phone">
       <div class="m-composer m-memo" data-memo>
         <p class="m-memo-error" role="alert" hidden>マイクが許可されていません</p>
@@ -45,7 +45,7 @@
     </div>
   </div>
   <div class="demo-item">
-    <p class="demo-cap">シートの中（最初から3行）</p>
+    <p class="demo-cap">シートの中（最初から3行。ボタンは下段で、文は欄の全幅）</p>
     <div class="m-memo" data-memo style="background:var(--surface);padding:16px;border-radius:var(--radius-card);max-width:390px">
       <p class="m-memo-error" role="alert" hidden>マイクが許可されていません</p>
       <div class="m-memo-box"><textarea class="m-memo-input" rows="3" placeholder="メモの内容" aria-label="メモを入力" style="min-height:84px"></textarea><span class="m-memo-btns"><button type="button" class="m-send" aria-label="送信" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></button><button type="button" class="m-mic" aria-pressed="false" aria-label="音声入力"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/></svg></button></span></div>
@@ -55,26 +55,26 @@
 </div>
 </section>
 <h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
-<p>会話やメモで、短い文を書いて送るための入力欄です。角丸の欄の中、右下にマイク（音声入力）の丸ボタンを置き、文字が入ると左に送信の丸ボタンが現れます。書いている途中の文は画面を移っても残ります。</p>
+<p>会話やメモで、短い文を書いて送るための入力欄です。角丸の欄の中にマイク（音声入力）の丸ボタンを置き、文字が入るとその左に送信の丸ボタンが現れます。文は常に欄の全幅で折り返し、ボタンと重なりません。1行の間はボタンが文と同じ行の右端にあり、文が1行に収まらなくなると欄が広がってボタンが欄の中の下段に移ります。書いている途中の文は画面を移っても残ります。</p>
 <h2 id="使うとき">使うとき<a class="anchor" href="#使うとき" aria-label="この見出しへのリンク">#</a></h2>
 <ul><li>会話の返信や、新しいやり取りの最初の文（画面の下に固定する）。例: 項目に付けたコメントのやり取り</li><li><a href="bottom-sheet.html">ボトムシート</a>の中の短い自由記述（3行の高さで置く）。例: 「メモを追加」の本文、削除する理由</li><li>声でも文字でも書けるようにしたい、短い自由記述</li></ul>
 <h2 id="使わないとき">使わないとき<a class="anchor" href="#使わないとき" aria-label="この見出しへのリンク">#</a></h2>
 <ul><li>ラベルとヒントが要る項目 → <a href="input-and-switch.html">入力欄</a></li><li>ページの中に埋め込む自由記述の欄 → <a href="input-and-switch.html">入力欄</a>の複数行と<a href="button.html">ボタン</a>で組む</li><li>1行で決まった値を入れるもの（日付・数値など）</li></ul>
 <h2 id="バリアント">バリアント<a class="anchor" href="#バリアント" aria-label="この見出しへのリンク">#</a></h2>
-<div class="table-wrap"><table><thead><tr><th scope="col">バリアント</th><th scope="col">見た目</th><th scope="col">用途</th></tr></thead><tbody><tr><td>下に固定</td><td>白い面の領域（上に 1px の罫線、内側 12px 16px）の中に置く。最初は1行</td><td>会話の画面</td></tr><tr><td>シートの中</td><td>最初から3行の高さ</td><td>ボトムシートの中の自由記述</td></tr></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th scope="col">バリアント</th><th scope="col">見た目</th><th scope="col">用途</th></tr></thead><tbody><tr><td>下に固定</td><td>白い面の領域（上に 1px の罫線、内側 12px 16px）の中に置く。最初は1行で、ボタンは同じ行の右端</td><td>会話の画面</td></tr><tr><td>シートの中</td><td>文の欄は最初から3行の高さで欄の全幅。ボタンは常に欄の中の下段</td><td>ボトムシートの中の自由記述</td></tr></tbody></table></div>
 <h2 id="状態">状態<a class="anchor" href="#状態" aria-label="この見出しへのリンク">#</a></h2>
-<div class="table-wrap"><table><thead><tr><th scope="col">状態</th><th scope="col">見た目</th><th scope="col">条件</th></tr></thead><tbody><tr><td>空</td><td>プレースホルダ（<code>--faint</code>）とマイクだけ</td><td></td></tr><tr><td>入力あり</td><td>マイクの左に送信ボタン</td><td>空白以外の文字がある</td></tr><tr><td>音声入力中</td><td>マイクが赤い面に白いアイコンになる</td><td>マイクを押した</td></tr><tr><td>音声入力のエラー</td><td>欄の上に 12px の赤い文（「マイクが許可されていません」など）</td><td>許可がない・つながらない・使えない</td></tr><tr><td>伸びる</td><td>文に合わせて高さが伸び、152px で止まって中をスクロール</td><td>行が増えた</td></tr><tr><td>フォーカス</td><td>フォーカスの輪</td><td></td></tr></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th scope="col">状態</th><th scope="col">見た目</th><th scope="col">条件</th></tr></thead><tbody><tr><td>空</td><td>プレースホルダ（<code>--faint</code>）とマイクだけ</td><td></td></tr><tr><td>入力あり</td><td>マイクの左に送信ボタン</td><td>空白以外の文字がある</td></tr><tr><td>音声入力中</td><td>マイクが赤い面に白いアイコンになる</td><td>マイクを押した</td></tr><tr><td>音声入力のエラー</td><td>欄の上に 12px の赤い文（「マイクが許可されていません」など）</td><td>許可がない・つながらない・使えない</td></tr><tr><td>1行</td><td>文の欄とボタンが同じ行に並ぶ。ボタンは右端</td><td>文が、ボタンの左の幅に1行で収まる</td></tr><tr><td>複数行</td><td>ボタンが欄の中の下段（右寄せ）に移り、文の欄は欄の全幅になる。文の行が増えると欄の高さが伸び、欄全体で 152px に達したら文の欄の中をスクロール</td><td>文がボタンの左の幅に1行で収まらない、または改行がある</td></tr><tr><td>フォーカス</td><td>フォーカスの輪</td><td></td></tr></tbody></table></div>
 <h2 id="仕様">仕様<a class="anchor" href="#仕様" aria-label="この見出しへのリンク">#</a></h2>
-<div class="table-wrap"><table><thead><tr><th scope="col">項目</th><th scope="col">値</th><th scope="col">トークン</th></tr></thead><tbody><tr><td>欄の面</td><td>控えめな面、1px の枠、内側 4px 8px</td><td><code>--fill</code> <code>--border</code></td></tr><tr><td>欄の角丸</td><td>20px</td><td><code>--radius-card</code></td></tr><tr><td>文字</td><td>16px、行の高さ 24px（iOS の拡大表示を防ぐ）</td><td><code>--text</code> <code>--text-base</code></td></tr><tr><td>最大の高さ</td><td>152px</td><td></td></tr><tr><td>丸ボタン</td><td>見た目 32×32px の円、右下 4px 8px に置き、間 8px。押せる範囲は外側に 6px 広げて 44px</td><td><code>--radius-pill</code> <code>--size-tap-target</code></td></tr><tr><td>送信</td><td>ブルーの面、上向きの矢印 18px（線 2.4px）</td><td><code>--accent</code> <code>--accent-ink</code></td></tr><tr><td>マイク</td><td>白い面、1px の枠、マイクのアイコン 18px</td><td><code>--surface</code> <code>--text</code> <code>--border</code></td></tr><tr><td>マイク（音声入力中）</td><td>赤い面、白いアイコン</td><td><code>--danger</code> <code>--danger-ink</code>（「録音中」は <code>--danger</code> を使ってよい。<a href="../foundations/color.html#赤の使い方">色</a>）</td></tr><tr><td>エラーの文</td><td>12px、欄との間 8px</td><td><code>--danger</code> <code>--text-xs</code></td></tr></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th scope="col">項目</th><th scope="col">値</th><th scope="col">トークン</th></tr></thead><tbody><tr><td>欄の面</td><td>控えめな面、1px の枠、内側 4px 8px</td><td><code>--fill</code> <code>--border</code></td></tr><tr><td>欄の角丸</td><td>20px</td><td><code>--radius-card</code></td></tr><tr><td>文字</td><td>16px、行の高さ 24px（iOS の拡大表示を防ぐ）</td><td><code>--text</code> <code>--text-base</code></td></tr><tr><td>文の折り返し幅</td><td>常に欄の全幅（欄の内側の左右 8px＋文の欄の 4px を除いた幅）。ボタンの分だけ狭めて折り返さない</td><td></td></tr><tr><td>ボタンの位置</td><td>1行の間は文と同じ行の右端、下揃え。複数行では文の欄の下に別の段として置き、右寄せ。文がボタンの横や下に回り込むことはない</td><td></td></tr><tr><td>最大の高さ</td><td>欄全体で 152px（複数行のときはボタンの段 36px を含む）</td><td></td></tr><tr><td>丸ボタン</td><td>見た目 32×32px の円、欄の内側の右下（下 4px）に置き、間 8px。押せる範囲は外側に 6px 広げて 44px</td><td><code>--radius-pill</code> <code>--size-tap-target</code></td></tr><tr><td>送信</td><td>ブルーの面、上向きの矢印 18px（線 2.4px）</td><td><code>--accent</code> <code>--accent-ink</code></td></tr><tr><td>マイク</td><td>白い面、1px の枠、マイクのアイコン 18px</td><td><code>--surface</code> <code>--text</code> <code>--border</code></td></tr><tr><td>マイク（音声入力中）</td><td>赤い面、白いアイコン</td><td><code>--danger</code> <code>--danger-ink</code>（「録音中」は <code>--danger</code> を使ってよい。<a href="../foundations/color.html#赤の使い方">色</a>）</td></tr><tr><td>エラーの文</td><td>12px、欄との間 8px</td><td><code>--danger</code> <code>--text-xs</code></td></tr></tbody></table></div>
 <p>欄の角丸 20px は<a href="input-and-switch.html">入力欄</a>の 12px と違います。会話の入力は吹き出しに合わせて丸く、フォームの入力は 12px、と分けています。</p>
 <h2 id="アクセシビリティ">アクセシビリティ<a class="anchor" href="#アクセシビリティ" aria-label="この見出しへのリンク">#</a></h2>
-<ul><li>欄には視覚的に隠した <code>&lt;label&gt;</code>（例:「メモを入力」）を付ける。プレースホルダをラベルの代わりにしない。</li><li>送信は <code>aria-label=&quot;送信&quot;</code>、マイクは <code>aria-label</code>（「音声入力」／「音声入力を終了」）と <code>aria-pressed</code> を付ける。</li><li>音声入力のエラーは <code>role=&quot;alert&quot;</code> で伝える。</li><li>音声入力中であることは、色だけでなく <code>aria-pressed</code> とラベルの文で伝える。</li></ul>
+<ul><li>欄には視覚的に隠した <code>&lt;label&gt;</code>（例:「メモを入力」）を付ける。プレースホルダをラベルの代わりにしない。</li><li>送信は <code>aria-label=&quot;送信&quot;</code>、マイクは <code>aria-label</code>（「音声入力」／「音声入力を終了」）と <code>aria-pressed</code> を付ける。</li><li>音声入力のエラーは <code>role=&quot;alert&quot;</code> で伝える。</li><li>音声入力中であることは、色だけでなく <code>aria-pressed</code> とラベルの文で伝える。</li><li>送信ボタンは空白以外の文字がないあいだは <code>hidden</code> にして、見た目からも読み上げとフォーカスの順からも外す。</li><li>1行と複数行でボタンの位置が変わっても、フォーカスの順（文の欄 → 送信 → マイク）は変えない。</li></ul>
 <h2 id="関連">関連<a class="anchor" href="#関連" aria-label="この見出しへのリンク">#</a></h2>
 <ul><li><a href="icon-button.html">アイコンボタン</a>（送信・マイクの丸ボタン）</li><li><a href="typing-indicator.html">作業中インジケータ</a></li><li><a href="message-bubble.html">吹き出し</a></li><li><a href="input-and-switch.html">入力欄とスイッチ</a></li></ul><nav class="pager" aria-label="前後の部品"><a class="pager-prev" href="search-field.html"><span>前の部品</span>検索フィールド</a><a class="pager-next" href="done-toggle.html"><span>次の部品</span>完了トグル・完了バッジ</a></nav></article>
     
     <footer class="page-foot">
       <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/components/memo-input-bar.md" rel="noopener">GitHub で元の文書を見る（docs/components/memo-input-bar.md）</a></p>
-      <p>Muse DS v0.12.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+      <p>Muse DS v0.13.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
     </footer>
   </main>
 </div>
