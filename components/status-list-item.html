@@ -19,7 +19,7 @@
 <header class="site-header">
   <div class="site-header-inner">
     <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
-    <span class="brand-ver">v0.13.0</span>
+    <span class="brand-ver">v0.13.1</span>
     <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="index.html" aria-current="true">コンポーネント</a></li><li><a href="../patterns.html">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
     <div class="header-tools">
       <button class="tool-btn theme-btn" type="button" data-theme-toggle aria-label="表示モード: 自動（押すとライトにする）" title="表示モード: 自動（押すとライトにする）"><span data-theme-icon="auto"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><span data-theme-icon="light" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span><span data-theme-icon="dark" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span></button>
@@ -36,7 +36,8 @@
 <section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="demo-stage" data-demo="status-list-item">
   <div class="demo-grid2">
     <div class="demo-item">
-      <p class="demo-cap">カード型・細いカード型</p>
+      <p class="demo-cap">カード型・細いカード型（押すと項目を開く）</p>
+      <div data-thread-list>
       <ul class="m-threads" style="padding:0" aria-label="やり取りの一覧（見本）">
         <li><button type="button" class="m-thread is-working" aria-label="表の見出しをそろえる（エージェントが作業中）">
           <span class="m-thread-body"><span class="m-thread-title-row"><span class="m-thread-title">表の見出しをそろえる</span><span class="m-thread-count">3件</span></span><span class="m-thread-last">エージェント: 見出しを太字にそろえます</span><span class="m-thread-foot">10:21<span class="m-typing" role="status"><i></i><i></i><i></i><span class="vh">エージェントが作業中</span></span></span></span>
@@ -52,6 +53,15 @@
           <span class="m-done is-badge" aria-hidden="true"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span class="m-thread-title">誤字を直す</span>
         </button></li>
       </ul>
+      </div>
+      <div class="m-card" data-thread-detail hidden>
+        <div style="display:flex;align-items:center;gap:8px">
+          <button type="button" class="m-round" aria-label="一覧に戻る" data-thread-back><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
+          <h3 class="m-card-title" tabindex="-1" data-thread-title></h3>
+        </div>
+        <p class="m-row-sub" data-thread-state style="margin:8px 0 0"></p>
+        <p class="m-card-body" style="margin:12px 0 0">開いた先には、この項目のやり取り（吹き出し）が並びます。</p>
+      </div>
     </div>
     <div class="demo-item">
       <p class="demo-cap">1行型（右端に完了トグル）</p>
@@ -61,7 +71,7 @@
       </ul>
     </div>
   </div>
-  <p class="demo-note">上から 作業中・本人の番・下書きあり・完了。中身は架空です。</p>
+  <p class="demo-note">上から 作業中・本人の番・下書きあり・完了。カードを押すとその項目を開き、← で一覧に戻ると押したカードにフォーカスが戻ります。中身は架空です。</p>
 </div>
 </section>
 <h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
@@ -85,7 +95,7 @@
     
     <footer class="page-foot">
       <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/components/status-list-item.md" rel="noopener">GitHub で元の文書を見る（docs/components/status-list-item.md）</a></p>
-      <p>Muse DS v0.13.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+      <p>Muse DS v0.13.1 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
     </footer>
   </main>
 </div>

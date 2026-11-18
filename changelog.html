@@ -19,7 +19,7 @@
 <header class="site-header">
   <div class="site-header-inner">
     <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
-    <span class="brand-ver">v0.13.0</span>
+    <span class="brand-ver">v0.13.1</span>
     <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="index.html">はじめに</a></li><li><a href="foundations/index.html">ファウンデーション</a></li><li><a href="components/index.html">コンポーネント</a></li><li><a href="patterns.html">パターン</a></li><li><a href="decisions/index.html" aria-current="true">記録</a></li></ul></nav>
     <div class="header-tools">
       <button class="tool-btn theme-btn" type="button" data-theme-toggle aria-label="表示モード: 自動（押すとライトにする）" title="表示モード: 自動（押すとライトにする）"><span data-theme-icon="auto"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><span data-theme-icon="light" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span><span data-theme-icon="dark" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span></button>
@@ -34,11 +34,15 @@
     <article class="doc"><h1 id="changelog">Changelog</h1>
 <p>この文書には Muse DS の変更を版ごとに記録します。書き方は <a href="https://keepachangelog.com/ja/1.1.0/" rel="noopener">Keep a Changelog</a>、版の付け方は <a href="https://semver.org/lang/ja/" rel="noopener">Semantic Versioning</a> に従います。詳しくは <a href="versioning.html">docs/versioning.md</a>。</p>
 <h2 id="unreleased">[Unreleased]<a class="anchor" href="#unreleased" aria-label="この見出しへのリンク">#</a></h2>
+<h2 id="0131---2026-11-18">[0.13.1] - 2026-11-18<a class="anchor" href="#0131---2026-11-18" aria-label="この見出しへのリンク">#</a></h2>
+<p>サイトの見本を仕様どおりに動くように直した版。仕様の文書は変えていない。</p>
+<h3 id="fixed">Fixed<a class="anchor" href="#fixed" aria-label="この見出しへのリンク">#</a></h3>
+<ul><li>見本全体: 部品の <code>display</code> の指定が <code>hidden</code> 属性を上書きしていたため、隠すはずの要素が出ていた。見本の中では <code>hidden</code> を優先するようにした。</li><li><a href="components/search-field.html">検索フィールド</a>: 「見つかりませんでした」を絞り込みの結果が0件のときだけ出すようにした。面のバリアント（絵文字の検索）にも絞り込む一覧を付けた。</li><li><a href="patterns/search-and-filter.html">検索と絞り込み</a>: 検索とチップの条件で一覧が実際に絞り込まれるようにし、件数を表に出して、件数・一覧・空の状態を連動させた。</li><li><a href="components/flashcard.html">フラッシュカード</a>: 判定で次のカードへ進み、「n / 全体」と今の状態の表示が実際の状態に合うようにした。押しても進まない固定の見本は外した。</li><li><a href="components/speed-dial-fab.html">スピードダイヤルFAB</a>: 閉じているときは「＋」の円だけになり、項目の開閉と <code>aria-expanded</code> がそろうようにした。</li><li><a href="components/status-list-item.html">状態付きリスト項目</a>: カードを押すと項目を開き、戻ると押したカードにフォーカスを戻すようにした。</li><li><a href="components/input-and-switch.html">入力欄とスイッチ</a>: メール欄を空で始め、形が合わないまま欄を離れたときだけエラーの状態にした。</li><li><a href="components/choice-button.html">選択肢ボタン</a>: 判定のあとに「確かめる」ボタンが残っていたのを、仕様どおり隠すようにした。</li><li><a href="patterns/error-recovery.html">失敗からのやり直し</a>: 失敗のあとに見本が切り替えを自動で外していたため、続けて外そうと押すと逆に入り、次の送信がまた失敗していた。押した時点の切り替えの値で結果を決め、自動で切り替えないようにした。</li><li><a href="patterns/list-to-detail.html">一覧から詳細へ</a>: マウスで一覧に戻ったときも、開いた行のフォーカスの輪が見えるようにした。</li></ul>
 <h2 id="0130---2026-11-18">[0.13.0] - 2026-11-18<a class="anchor" href="#0130---2026-11-18" aria-label="この見出しへのリンク">#</a></h2>
 <p>入力バーの文の折り返しとボタンの位置を決め直した版。</p>
 <h3 id="changed">Changed<a class="anchor" href="#changed" aria-label="この見出しへのリンク">#</a></h3>
 <ul><li><a href="components/memo-input-bar.html">入力バー</a>: 文は常に欄の全幅で折り返し、ボタンの分だけ狭めない。1行の間はマイクと送信のボタンを文と同じ行の右端に置き、1行に収まらなくなったら欄を広げてボタンを欄の中の下段に移す。シートの中のバリアントは最初からボタンを下段に置く。状態に「1行」「複数行」を足し、最大の高さ 152px はボタンの段を含む欄全体の高さにした。サイトの見本（固定バーとシートの中）も同じ組み方にした。</li></ul>
-<h3 id="fixed">Fixed<a class="anchor" href="#fixed" aria-label="この見出しへのリンク">#</a></h3>
+<h3 id="fixed-1">Fixed<a class="anchor" href="#fixed-1" aria-label="この見出しへのリンク">#</a></h3>
 <ul><li>入力バーの見本で、空のときにも送信ボタンが出ていたのを直した。空白以外の文字があるときだけ出る。</li></ul>
 <h2 id="0120---2026-11-17">[0.12.0] - 2026-11-17<a class="anchor" href="#0120---2026-11-17" aria-label="この見出しへのリンク">#</a></h2>
 <p>コンポーネントを汎用のままに保ち、パターンを「世の中でよくあるタスクや状態の型」に入れ替え、影をやめた版。部品とパターンのすべてのページに見本を載せ、サイトの目次を直した。</p>
@@ -116,7 +120,7 @@
     
     <footer class="page-foot">
       <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/CHANGELOG.md" rel="noopener">GitHub で元の文書を見る（CHANGELOG.md）</a></p>
-      <p>Muse DS v0.13.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+      <p>Muse DS v0.13.1 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
     </footer>
   </main>
 </div>

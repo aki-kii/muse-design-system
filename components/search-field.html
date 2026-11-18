@@ -19,7 +19,7 @@
 <header class="site-header">
   <div class="site-header-inner">
     <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
-    <span class="brand-ver">v0.13.0</span>
+    <span class="brand-ver">v0.13.1</span>
     <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="index.html" aria-current="true">コンポーネント</a></li><li><a href="../patterns.html">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
     <div class="header-tools">
       <button class="tool-btn theme-btn" type="button" data-theme-toggle aria-label="表示モード: 自動（押すとライトにする）" title="表示モード: 自動（押すとライトにする）"><span data-theme-icon="auto"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><span data-theme-icon="light" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span><span data-theme-icon="dark" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span></button>
@@ -52,13 +52,22 @@
     </div>
   </div>
   <div class="demo-item">
-    <p class="demo-cap">面（シート・カードの中）</p>
+    <p class="demo-cap">面（シート・カードの中。打つたびに下の絵文字を絞り込む）</p>
     <div class="m-card">
       <search class="m-search m-search--filled">
         <span class="m-search-icon"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
         <input class="m-search-input" type="search" placeholder="絵文字を検索" aria-label="絵文字を検索" autocomplete="off">
         <button type="button" class="m-search-clear m-hit" aria-label="検索の文字を消す" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
       </search>
+      <p class="vh" role="status" data-search-count></p>
+      <ul class="m-search-list" data-search-list style="margin-top:12px">
+        <li>😀 えがお</li><li>😢 なみだ</li><li>👍 いいね</li><li>🎉 おいわい</li><li>❤️ ハート</li><li>⭐ ほし</li><li>🔥 ほのお</li><li>🍎 りんご</li><li>☕ コーヒー</li><li>🌙 つき</li><li>☀️ たいよう</li><li>🐱 ねこ</li>
+      </ul>
+      <div class="m-empty is-small-pad" data-search-empty hidden>
+        <span class="m-empty-icon"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+        <p class="m-empty-title">見つかりませんでした</p>
+        <p class="m-empty-text">別のことばで探してください。</p>
+      </div>
     </div>
   </div>
 </div>
@@ -87,7 +96,7 @@
     
     <footer class="page-foot">
       <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/components/search-field.md" rel="noopener">GitHub で元の文書を見る（docs/components/search-field.md）</a></p>
-      <p>Muse DS v0.13.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+      <p>Muse DS v0.13.1 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
     </footer>
   </main>
 </div>

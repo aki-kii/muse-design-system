@@ -83,6 +83,22 @@
         hint.textContent = bad ? field.getAttribute('data-validate') : normal;
       });
     });
+    // メールの形: 空のうちはエラーにせず、形が合わないまま欄を離れたらエラー。直したら戻す
+    $$(root, '[data-validate-email]').forEach(function (field) {
+      var input = $(field, 'input');
+      var hint = $(field, '.m-hint');
+      var normal = hint.textContent;
+      function check(onlyClear) {
+        var v = input.value.trim();
+        var bad = !!v && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
+        if (onlyClear && bad) return;
+        field.classList.toggle('is-error', bad);
+        input.setAttribute('aria-invalid', String(bad));
+        hint.textContent = bad ? field.getAttribute('data-validate-email') : normal;
+      }
+      input.addEventListener('blur', function () { check(false); });
+      input.addEventListener('input', function () { if (field.classList.contains('is-error')) check(true); });
+    });
     $$(root, '.m-switch-row').forEach(function (row) {
       var sw = $(row, '.m-switch');
       row.addEventListener('click', function (e) {
@@ -168,16 +184,19 @@
   // ---------------------------------------------------------- 検索フィールド
   init['search-field'] = function (root) {
     var kata = function (s) { return s.replace(/[ァ-ヶ]/g, function (c) { return String.fromCharCode(c.charCodeAt(0) - 0x60); }).toLowerCase(); };
-    var list = $(root, '[data-search-list]');
-    var empty = $(root, '[data-search-empty]');
-    var count = $(root, '[data-search-count]');
-    var timer;
-    $$(root, '.m-search').forEach(function (box) {
+    // 見本ごとに、その検索フィールドの下の一覧・空の状態・件数を連動させる
+    $$(root, '.demo-item').forEach(function (item) {
+      var box = $(item, '.m-search');
+      if (!box) return;
       var input = $(box, '.m-search-input');
       var clear = $(box, '.m-search-clear');
-      var update = function () {
+      var list = $(item, '[data-search-list]');
+      var empty = $(item, '[data-search-empty]');
+      var count = $(item, '[data-search-count]');
+      var timer;
+      var update = function (quiet) {
         clear.hidden = !input.value;
-        if (!list || !box.parentNode.contains(list)) return;
+        if (!list) return;
         var q = kata(input.value.trim());
         var n = 0;
         $$(list, 'li').forEach(function (li) {
@@ -185,13 +204,15 @@
           li.hidden = !hit;
           if (hit) n++;
         });
+        // 空の状態は絞り込みの結果が0件のときだけ
         list.hidden = n === 0;
-        empty.hidden = n !== 0;
+        if (empty) empty.hidden = n !== 0;
         clearTimeout(timer);
-        timer = setTimeout(function () { count.textContent = n + '件'; }, 500);
+        if (count && quiet !== true) timer = setTimeout(function () { count.textContent = n + '件'; }, 500);
       };
       input.addEventListener('input', update);
       clear.addEventListener('click', function () { input.value = ''; update(); input.focus(); });
+      update(true);
     });
   };
 
@@ -704,24 +725,31 @@
       { q: 'ログ', a: '起きたことを時刻とともに書き残した記録' }
     ];
     var host = $(root, '[data-cards]');
+    var stateCap = $(root, '[data-state]');
     var i = 0;
-    function draw() {
+    function state(t) { if (stateCap) stateCap.textContent = '状態: ' + t; }
+    function draw(moved) {
       if (i >= cards.length) {
+        state('おしまい');
         host.innerHTML = '<p class="m-kicker">用語</p><div class="m-complete" style="max-width:none"><div class="m-complete-star" aria-hidden="true">★</div><h3>今日の分はおしまい</h3></div><button type="button" class="demo-reset" data-again>最初から</button>';
-        $(host, '[data-again]').addEventListener('click', function () { i = 0; draw(); });
+        $(host, '[data-again]').addEventListener('click', function () { i = 0; draw(true); });
+        if (moved) { var done = $(host, 'h3'); done.setAttribute('tabindex', '-1'); done.focus(); }
         return;
       }
       var c = cards[i];
+      state('裏を隠している');
       host.innerHTML =
-        '<article class="m-word">' +
+        '<article class="m-word" aria-label="フラッシュカード">' +
         '<p class="m-kicker">用語 ' + (i + 1) + ' / ' + cards.length + '</p>' +
         '<div class="m-word-card"><span style="font-size:28px;font-weight:800">' + c.q + '</span></div>' +
         '<div data-reveal-area><button type="button" class="m-reveal" aria-label="答えを見せる">タップして答えを見る</button><p class="m-reveal-hint" style="margin-top:8px">答えを思い浮かべてから、タップして確かめよう</p></div>' +
         '</article>';
+      if (moved) $(host, '.m-reveal').focus();
       $(host, '.m-reveal').addEventListener('click', function () {
         var area = $(host, '[data-reveal-area]');
+        state('裏を開いた');
         area.innerHTML = '<div class="m-meaning">' + c.a + '</div><div class="m-judge" style="margin-top:12px"><button type="button" class="m-btn m-btn--secondary">もう知ってた</button><button type="button" class="m-btn m-btn--primary">覚える</button></div>';
-        $$(area, '.m-judge button').forEach(function (b) { b.addEventListener('click', function () { i++; draw(); }); });
+        $$(area, '.m-judge button').forEach(function (b) { b.addEventListener('click', function () { i++; draw(true); }); });
         $(area, '.m-meaning').setAttribute('tabindex', '-1');
         $(area, '.m-meaning').focus();
       });
@@ -781,21 +809,21 @@
       msg.removeAttribute('role');
       send.disabled = true;
       send.textContent = '送信中…';
+      // 押した時点の切り替えで結果を決める（送信中に切り替えても、その送信の結果は変わらない）
+      var willFail = fail.checked;
       setTimeout(function () {
         send.disabled = false;
-        if (fail.checked) {
+        if (willFail) {
           send.textContent = 'もう一度送る';
           msg.setAttribute('role', 'alert');
           msg.style.color = 'var(--danger)';
           msg.textContent = '送れませんでした。通信を確かめて、もう一度送ってください。';
-          fail.checked = false;
         } else {
           send.textContent = '送信する';
           msg.style.color = '';
           msg.textContent = '';
           input.value = '';
           toast('送信しました');
-          fail.checked = true;
         }
       }, 1200);
     });
@@ -810,10 +838,11 @@
     var empty = $(root, '[data-empty]');
     var list = $(root, '[data-list]');
     var count = $(root, '[data-count]');
+    var shown = $(root, '[data-count-visible]');
     var cat = '';
     var timer;
     function norm(t) { return t.toLowerCase().replace(/[ァ-ヶ]/g, function (ch) { return String.fromCharCode(ch.charCodeAt(0) - 0x60); }); }
-    function apply() {
+    function apply(quiet) {
       var t = norm(q.value.trim());
       var n = 0;
       items.forEach(function (li) {
@@ -825,14 +854,50 @@
       empty.hidden = n !== 0;
       clear.hidden = !q.value;
       chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.getAttribute('data-cat') === cat)); });
+      // 件数の表示・一覧・空の状態を同じ結果から出す（読み上げは打ち終わるのを待って1回）
+      if (shown) shown.textContent = n + '件';
       clearTimeout(timer);
-      timer = setTimeout(function () { count.textContent = n + '件'; }, 500);
+      if (quiet !== true) timer = setTimeout(function () { count.textContent = n + '件'; }, 500);
     }
     q.addEventListener('input', apply);
     clear.addEventListener('click', function () { q.value = ''; apply(); q.focus(); });
     chips.forEach(function (c) { c.addEventListener('click', function () { cat = c.getAttribute('data-cat'); apply(); }); });
     $(root, '[data-reset]').addEventListener('click', function () { q.value = ''; cat = ''; apply(); q.focus(); });
-    apply();
+    apply(true);
+  };
+
+  // 一覧に戻ったとき、開いた項目にフォーカスを戻し、輪を見せる（マウスで操作したときも）
+  function returnFocus(el) {
+    if (!el) return;
+    el.focus();
+    el.classList.add('is-focus-return');
+    el.addEventListener('blur', function off() { el.classList.remove('is-focus-return'); el.removeEventListener('blur', off); });
+  }
+
+  // ---------------------------------------------------------- 状態付きリスト項目
+  init['status-list-item'] = function (root) {
+    var listView = $(root, '[data-thread-list]');
+    var detail = $(root, '[data-thread-detail]');
+    var title = $(root, '[data-thread-title]');
+    var stateText = $(root, '[data-thread-state]');
+    var opener = null;
+    $$(root, '.m-thread').forEach(function (b) {
+      b.addEventListener('click', function () {
+        opener = b;
+        var label = b.getAttribute('aria-label') || '';
+        var m = label.match(/（(.+)）$/);
+        title.textContent = $(b, '.m-thread-title').textContent;
+        stateText.textContent = label.indexOf('完了: ') === 0 ? '完了' : (m ? m[1] : '');
+        listView.hidden = true;
+        detail.hidden = false;
+        title.focus();
+      });
+    });
+    $(root, '[data-thread-back]').addEventListener('click', function () {
+      detail.hidden = true;
+      listView.hidden = false;
+      returnFocus(opener);
+    });
   };
 
   // ---------------------------------------------------------- パターン: 一覧から詳細へ
@@ -871,7 +936,7 @@
       clearTimeout(timer);
       detail.hidden = true;
       listView.hidden = false;
-      if (opener) opener.focus();
+      returnFocus(opener);
     });
   };
 
