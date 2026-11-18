@@ -809,21 +809,21 @@
       msg.removeAttribute('role');
       send.disabled = true;
       send.textContent = '送信中…';
+      // 押した時点の切り替えで結果を決める（送信中に切り替えても、その送信の結果は変わらない）
+      var willFail = fail.checked;
       setTimeout(function () {
         send.disabled = false;
-        if (fail.checked) {
+        if (willFail) {
           send.textContent = 'もう一度送る';
           msg.setAttribute('role', 'alert');
           msg.style.color = 'var(--danger)';
           msg.textContent = '送れませんでした。通信を確かめて、もう一度送ってください。';
-          fail.checked = false;
         } else {
           send.textContent = '送信する';
           msg.style.color = '';
           msg.textContent = '';
           input.value = '';
           toast('送信しました');
-          fail.checked = true;
         }
       }, 1200);
     });
