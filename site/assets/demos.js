@@ -815,10 +815,11 @@
     var empty = $(root, '[data-empty]');
     var list = $(root, '[data-list]');
     var count = $(root, '[data-count]');
+    var shown = $(root, '[data-count-visible]');
     var cat = '';
     var timer;
     function norm(t) { return t.toLowerCase().replace(/[ァ-ヶ]/g, function (ch) { return String.fromCharCode(ch.charCodeAt(0) - 0x60); }); }
-    function apply() {
+    function apply(quiet) {
       var t = norm(q.value.trim());
       var n = 0;
       items.forEach(function (li) {
@@ -830,14 +831,16 @@
       empty.hidden = n !== 0;
       clear.hidden = !q.value;
       chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.getAttribute('data-cat') === cat)); });
+      // 件数の表示・一覧・空の状態を同じ結果から出す（読み上げは打ち終わるのを待って1回）
+      if (shown) shown.textContent = n + '件';
       clearTimeout(timer);
-      timer = setTimeout(function () { count.textContent = n + '件'; }, 500);
+      if (quiet !== true) timer = setTimeout(function () { count.textContent = n + '件'; }, 500);
     }
     q.addEventListener('input', apply);
     clear.addEventListener('click', function () { q.value = ''; apply(); q.focus(); });
     chips.forEach(function (c) { c.addEventListener('click', function () { cat = c.getAttribute('data-cat'); apply(); }); });
     $(root, '[data-reset]').addEventListener('click', function () { q.value = ''; cat = ''; apply(); q.focus(); });
-    apply();
+    apply(true);
   };
 
   // ---------------------------------------------------------- パターン: 一覧から詳細へ
