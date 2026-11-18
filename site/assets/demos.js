@@ -489,10 +489,19 @@
     var send = $(bar, '.m-send');
     var mic = $(bar, '.m-mic');
     var err = $(bar, '.m-memo-error');
+    var box = input.parentNode;
+    var tall = Number(input.getAttribute('rows')) > 1; // シートの中は最初から下段にボタン
     function fit() {
-      input.style.height = 'auto';
-      input.style.height = Math.min(input.scrollHeight, 152 - 10) + 'px';
       send.hidden = !input.value.trim();
+      // 1行に収まるかを、ボタンと同じ行に置いた幅で測る（収まらなければボタンを下段へ）
+      box.classList.remove('is-stacked');
+      input.style.height = 'auto';
+      var cs = getComputedStyle(input);
+      var pad = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
+      var oneLine = !tall && input.value.indexOf('\n') < 0 && input.scrollHeight <= (parseFloat(cs.lineHeight) || 24) * 1.5 + pad;
+      box.classList.toggle('is-stacked', !oneLine);
+      input.style.height = 'auto';
+      input.style.height = input.scrollHeight + 'px';
     }
     input.addEventListener('input', fit);
     mic.addEventListener('click', function () {

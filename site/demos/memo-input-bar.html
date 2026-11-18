@@ -1,6 +1,6 @@
 <div class="demo-stage" data-demo="memo-input-bar">
   <div class="demo-item">
-    <p class="demo-cap">下に固定（書くと送信ボタンが出る。行が増えると 152px まで伸びる）</p>
+    <p class="demo-cap">下に固定（空白以外の文字があると送信ボタンが出る。1行に収まらなくなるとボタンが下段に移り、文は欄の全幅で折り返す。欄は 152px まで伸びる）</p>
     <div class="demo-phone">
       <div class="m-composer m-memo" data-memo>
         <p class="m-memo-error" role="alert" hidden>マイクが許可されていません</p>
@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="demo-item">
-    <p class="demo-cap">シートの中（最初から3行）</p>
+    <p class="demo-cap">シートの中（最初から3行。ボタンは下段で、文は欄の全幅）</p>
     <div class="m-memo" data-memo style="background:var(--surface);padding:16px;border-radius:var(--radius-card);max-width:390px">
       <p class="m-memo-error" role="alert" hidden>マイクが許可されていません</p>
       <div class="m-memo-box"><textarea class="m-memo-input" rows="3" placeholder="メモの内容" aria-label="メモを入力" style="min-height:84px"></textarea><span class="m-memo-btns"><button type="button" class="m-send" aria-label="送信" hidden>{{i:up}}</button><button type="button" class="m-mic" aria-pressed="false" aria-label="音声入力">{{i:mic}}</button></span></div>
