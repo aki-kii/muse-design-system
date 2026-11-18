@@ -17,13 +17,22 @@
     </div>
   </div>
   <div class="demo-item">
-    <p class="demo-cap">面（シート・カードの中）</p>
+    <p class="demo-cap">面（シート・カードの中。打つたびに下の絵文字を絞り込む）</p>
     <div class="m-card">
       <search class="m-search m-search--filled">
         <span class="m-search-icon">{{i:search}}</span>
         <input class="m-search-input" type="search" placeholder="絵文字を検索" aria-label="絵文字を検索" autocomplete="off">
         <button type="button" class="m-search-clear m-hit" aria-label="検索の文字を消す" hidden>{{i:x}}</button>
       </search>
+      <p class="vh" role="status" data-search-count></p>
+      <ul class="m-search-list" data-search-list style="margin-top:12px">
+        <li>😀 えがお</li><li>😢 なみだ</li><li>👍 いいね</li><li>🎉 おいわい</li><li>❤️ ハート</li><li>⭐ ほし</li><li>🔥 ほのお</li><li>🍎 りんご</li><li>☕ コーヒー</li><li>🌙 つき</li><li>☀️ たいよう</li><li>🐱 ねこ</li>
+      </ul>
+      <div class="m-empty is-small-pad" data-search-empty hidden>
+        <span class="m-empty-icon">{{i:search}}</span>
+        <p class="m-empty-title">見つかりませんでした</p>
+        <p class="m-empty-text">別のことばで探してください。</p>
+      </div>
     </div>
   </div>
 </div>

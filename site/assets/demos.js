@@ -168,16 +168,19 @@
   // ---------------------------------------------------------- 検索フィールド
   init['search-field'] = function (root) {
     var kata = function (s) { return s.replace(/[ァ-ヶ]/g, function (c) { return String.fromCharCode(c.charCodeAt(0) - 0x60); }).toLowerCase(); };
-    var list = $(root, '[data-search-list]');
-    var empty = $(root, '[data-search-empty]');
-    var count = $(root, '[data-search-count]');
-    var timer;
-    $$(root, '.m-search').forEach(function (box) {
+    // 見本ごとに、その検索フィールドの下の一覧・空の状態・件数を連動させる
+    $$(root, '.demo-item').forEach(function (item) {
+      var box = $(item, '.m-search');
+      if (!box) return;
       var input = $(box, '.m-search-input');
       var clear = $(box, '.m-search-clear');
-      var update = function () {
+      var list = $(item, '[data-search-list]');
+      var empty = $(item, '[data-search-empty]');
+      var count = $(item, '[data-search-count]');
+      var timer;
+      var update = function (quiet) {
         clear.hidden = !input.value;
-        if (!list || !box.parentNode.contains(list)) return;
+        if (!list) return;
         var q = kata(input.value.trim());
         var n = 0;
         $$(list, 'li').forEach(function (li) {
@@ -185,13 +188,15 @@
           li.hidden = !hit;
           if (hit) n++;
         });
+        // 空の状態は絞り込みの結果が0件のときだけ
         list.hidden = n === 0;
-        empty.hidden = n !== 0;
+        if (empty) empty.hidden = n !== 0;
         clearTimeout(timer);
-        timer = setTimeout(function () { count.textContent = n + '件'; }, 500);
+        if (count && quiet !== true) timer = setTimeout(function () { count.textContent = n + '件'; }, 500);
       };
       input.addEventListener('input', update);
       clear.addEventListener('click', function () { input.value = ''; update(); input.focus(); });
+      update(true);
     });
   };
 
