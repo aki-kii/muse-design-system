@@ -1,7 +1,8 @@
 <div class="demo-stage" data-demo="status-list-item">
   <div class="demo-grid2">
     <div class="demo-item">
-      <p class="demo-cap">カード型・細いカード型</p>
+      <p class="demo-cap">カード型・細いカード型（押すと項目を開く）</p>
+      <div data-thread-list>
       <ul class="m-threads" style="padding:0" aria-label="やり取りの一覧（見本）">
         <li><button type="button" class="m-thread is-working" aria-label="表の見出しをそろえる（エージェントが作業中）">
           <span class="m-thread-body"><span class="m-thread-title-row"><span class="m-thread-title">表の見出しをそろえる</span><span class="m-thread-count">3件</span></span><span class="m-thread-last">エージェント: 見出しを太字にそろえます</span><span class="m-thread-foot">10:21<span class="m-typing" role="status"><i></i><i></i><i></i><span class="vh">エージェントが作業中</span></span></span></span>
@@ -17,6 +18,15 @@
           <span class="m-done is-badge" aria-hidden="true">{{i:check}}</span><span class="m-thread-title">誤字を直す</span>
         </button></li>
       </ul>
+      </div>
+      <div class="m-card" data-thread-detail hidden>
+        <div style="display:flex;align-items:center;gap:8px">
+          <button type="button" class="m-round" aria-label="一覧に戻る" data-thread-back>{{i:back}}</button>
+          <h3 class="m-card-title" tabindex="-1" data-thread-title></h3>
+        </div>
+        <p class="m-row-sub" data-thread-state style="margin:8px 0 0"></p>
+        <p class="m-card-body" style="margin:12px 0 0">開いた先には、この項目のやり取り（吹き出し）が並びます。</p>
+      </div>
     </div>
     <div class="demo-item">
       <p class="demo-cap">1行型（右端に完了トグル）</p>
@@ -26,5 +36,5 @@
       </ul>
     </div>
   </div>
-  <p class="demo-note">上から 作業中・本人の番・下書きあり・完了。中身は架空です。</p>
+  <p class="demo-note">上から 作業中・本人の番・下書きあり・完了。カードを押すとその項目を開き、← で一覧に戻ると押したカードにフォーカスが戻ります。中身は架空です。</p>
 </div>

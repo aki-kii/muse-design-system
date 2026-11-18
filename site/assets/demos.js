@@ -850,6 +850,40 @@
     apply(true);
   };
 
+  // 一覧に戻ったとき、開いた項目にフォーカスを戻し、輪を見せる（マウスで操作したときも）
+  function returnFocus(el) {
+    if (!el) return;
+    el.focus();
+    el.classList.add('is-focus-return');
+    el.addEventListener('blur', function off() { el.classList.remove('is-focus-return'); el.removeEventListener('blur', off); });
+  }
+
+  // ---------------------------------------------------------- 状態付きリスト項目
+  init['status-list-item'] = function (root) {
+    var listView = $(root, '[data-thread-list]');
+    var detail = $(root, '[data-thread-detail]');
+    var title = $(root, '[data-thread-title]');
+    var stateText = $(root, '[data-thread-state]');
+    var opener = null;
+    $$(root, '.m-thread').forEach(function (b) {
+      b.addEventListener('click', function () {
+        opener = b;
+        var label = b.getAttribute('aria-label') || '';
+        var m = label.match(/（(.+)）$/);
+        title.textContent = $(b, '.m-thread-title').textContent;
+        stateText.textContent = label.indexOf('完了: ') === 0 ? '完了' : (m ? m[1] : '');
+        listView.hidden = true;
+        detail.hidden = false;
+        title.focus();
+      });
+    });
+    $(root, '[data-thread-back]').addEventListener('click', function () {
+      detail.hidden = true;
+      listView.hidden = false;
+      returnFocus(opener);
+    });
+  };
+
   // ---------------------------------------------------------- パターン: 一覧から詳細へ
   init['list-to-detail'] = function (root) {
     var listView = $(root, '[data-list-view]');

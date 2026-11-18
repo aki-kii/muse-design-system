@@ -580,4 +580,4 @@ button.m-node:hover:not(.is-current) { background: var(--fill); }
 .m-row-link:hover { background: var(--fill); }
 .m-row-link .m-icon { width: 18px; height: 18px; color: var(--faint); flex: none; }
 .m-rows > li:has(> .m-row-link) { padding: 0; }
-[data-detail-view] .m-card-title:focus { outline: none; }
+[data-detail-view] .m-card-title:focus, [data-thread-detail] .m-card-title:focus { outline: none; }
