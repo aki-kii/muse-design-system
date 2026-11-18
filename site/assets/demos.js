@@ -920,7 +920,7 @@
       clearTimeout(timer);
       detail.hidden = true;
       listView.hidden = false;
-      if (opener) opener.focus();
+      returnFocus(opener);
     });
   };
 
