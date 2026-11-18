@@ -8,11 +8,11 @@
     </div>
   </div>
   <div class="demo-item">
-    <p class="demo-cap">エラー</p>
-    <div class="m-field is-error">
+    <p class="demo-cap">形の確認（@ の後ろまで入れずに欄を離れるとエラーの状態）</p>
+    <div class="m-field" data-validate-email="@ の後ろまで入れてください。例: name@example.com">
       <label class="m-label" for="ip-2">メールアドレス</label>
-      <input class="m-input" id="ip-2" type="email" value="user@" aria-invalid="true" aria-describedby="ip-2-h">
-      <p class="m-hint" id="ip-2-h">@ の後ろまで入れてください</p>
+      <input class="m-input" id="ip-2" type="email" placeholder="例: name@example.com" autocomplete="off" aria-describedby="ip-2-h">
+      <p class="m-hint" id="ip-2-h">お知らせを受け取るアドレスです</p>
     </div>
   </div>
   <div class="demo-item">

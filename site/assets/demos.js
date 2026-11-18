@@ -83,6 +83,22 @@
         hint.textContent = bad ? field.getAttribute('data-validate') : normal;
       });
     });
+    // メールの形: 空のうちはエラーにせず、形が合わないまま欄を離れたらエラー。直したら戻す
+    $$(root, '[data-validate-email]').forEach(function (field) {
+      var input = $(field, 'input');
+      var hint = $(field, '.m-hint');
+      var normal = hint.textContent;
+      function check(onlyClear) {
+        var v = input.value.trim();
+        var bad = !!v && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);
+        if (onlyClear && bad) return;
+        field.classList.toggle('is-error', bad);
+        input.setAttribute('aria-invalid', String(bad));
+        hint.textContent = bad ? field.getAttribute('data-validate-email') : normal;
+      }
+      input.addEventListener('blur', function () { check(false); });
+      input.addEventListener('input', function () { if (field.classList.contains('is-error')) check(true); });
+    });
     $$(root, '.m-switch-row').forEach(function (row) {
       var sw = $(row, '.m-switch');
       row.addEventListener('click', function (e) {
