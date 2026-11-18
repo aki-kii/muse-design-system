@@ -430,6 +430,7 @@ button.m-node:hover:not(.is-current) { background: var(--fill); }
 .m-memo-btns { display: flex; gap: 8px; padding: 0 0 4px; }
 .m-send, .m-mic { width: 32px; height: 32px; border-radius: var(--radius-pill); display: grid; place-items: center; cursor: pointer; padding: 0; position: relative; flex: none; }
 .m-send::after, .m-mic::after { content: ""; position: absolute; inset: -6px; }
+.m-send[hidden] { display: none; }
 .m-send { background: var(--accent); color: var(--accent-ink); border: 0; }
 .m-send .m-icon, .m-mic .m-icon { width: 18px; height: 18px; stroke-width: 2.4; }
 .m-mic { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
