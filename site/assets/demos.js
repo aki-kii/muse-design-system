@@ -709,24 +709,31 @@
       { q: 'ログ', a: '起きたことを時刻とともに書き残した記録' }
     ];
     var host = $(root, '[data-cards]');
+    var stateCap = $(root, '[data-state]');
     var i = 0;
-    function draw() {
+    function state(t) { if (stateCap) stateCap.textContent = '状態: ' + t; }
+    function draw(moved) {
       if (i >= cards.length) {
+        state('おしまい');
         host.innerHTML = '<p class="m-kicker">用語</p><div class="m-complete" style="max-width:none"><div class="m-complete-star" aria-hidden="true">★</div><h3>今日の分はおしまい</h3></div><button type="button" class="demo-reset" data-again>最初から</button>';
-        $(host, '[data-again]').addEventListener('click', function () { i = 0; draw(); });
+        $(host, '[data-again]').addEventListener('click', function () { i = 0; draw(true); });
+        if (moved) { var done = $(host, 'h3'); done.setAttribute('tabindex', '-1'); done.focus(); }
         return;
       }
       var c = cards[i];
+      state('裏を隠している');
       host.innerHTML =
-        '<article class="m-word">' +
+        '<article class="m-word" aria-label="フラッシュカード">' +
         '<p class="m-kicker">用語 ' + (i + 1) + ' / ' + cards.length + '</p>' +
         '<div class="m-word-card"><span style="font-size:28px;font-weight:800">' + c.q + '</span></div>' +
         '<div data-reveal-area><button type="button" class="m-reveal" aria-label="答えを見せる">タップして答えを見る</button><p class="m-reveal-hint" style="margin-top:8px">答えを思い浮かべてから、タップして確かめよう</p></div>' +
         '</article>';
+      if (moved) $(host, '.m-reveal').focus();
       $(host, '.m-reveal').addEventListener('click', function () {
         var area = $(host, '[data-reveal-area]');
+        state('裏を開いた');
         area.innerHTML = '<div class="m-meaning">' + c.a + '</div><div class="m-judge" style="margin-top:12px"><button type="button" class="m-btn m-btn--secondary">もう知ってた</button><button type="button" class="m-btn m-btn--primary">覚える</button></div>';
-        $$(area, '.m-judge button').forEach(function (b) { b.addEventListener('click', function () { i++; draw(); }); });
+        $$(area, '.m-judge button').forEach(function (b) { b.addEventListener('click', function () { i++; draw(true); }); });
         $(area, '.m-meaning').setAttribute('tabindex', '-1');
         $(area, '.m-meaning').focus();
       });

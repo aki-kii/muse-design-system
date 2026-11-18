@@ -1,18 +1,8 @@
 <div class="demo-stage" data-demo="flashcard">
-  <div class="demo-grid2">
-    <div class="demo-item">
-      <p class="demo-cap">自己判定（答えを開いて判定する）</p>
-      <div data-cards></div>
-    </div>
-    <div class="demo-item">
-      <p class="demo-cap">状態: 答えを開いた</p>
-      <article class="m-word" aria-label="フラッシュカード（見本）">
-        <p class="m-kicker">用語 2 / 3</p>
-        <div class="m-word-card"><span style="font-size:28px;font-weight:800">キャッシュ</span></div>
-        <div class="m-meaning">よく使うデータを、速く取り出せる場所に一時的に置いておくこと</div>
-        <div class="m-judge"><button type="button" class="m-btn m-btn--secondary" tabindex="-1">もう知ってた</button><button type="button" class="m-btn m-btn--primary" tabindex="-1">覚える</button></div>
-      </article>
-    </div>
+  <div class="demo-item" style="max-width:420px">
+    <p class="demo-cap">自己判定（答えを開いて判定すると次のカードへ進む）</p>
+    <p class="demo-cap" data-state aria-hidden="true"></p>
+    <div data-cards></div>
   </div>
   <p class="demo-note">中身は架空の用語集です。表の文字の大きさは中身に合わせて決めます。</p>
 </div>
