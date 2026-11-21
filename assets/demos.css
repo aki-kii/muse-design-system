@@ -485,8 +485,9 @@ button.m-node:hover:not(.is-current) { background: var(--fill); }
 .m-preview-frame { aspect-ratio: 980 / 552; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-small); padding: 8px; display: grid; place-items: center; font-size: var(--text-2xs); color: var(--dim); }
 .m-preview-frame.is-none { color: var(--faint); }
 .m-position { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
-.m-position button { min-height: var(--size-tap-target); border-radius: var(--radius-row); background: var(--fill); border: 1px solid var(--border); color: var(--text); font: inherit; font-size: 14px; padding: 0 8px; cursor: pointer; }
-.m-position button[aria-checked="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
+.m-position > span { display: grid; place-items: center; }
+.m-position button, .m-position > span { min-height: var(--size-tap-target); border-radius: var(--radius-row); background: var(--fill); border: 1px solid var(--border); color: var(--text); font: inherit; font-size: 14px; padding: 0 8px; cursor: pointer; }
+.m-position button[aria-checked="true"], .m-position > span[aria-checked="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
 
 /* ---------- 一覧のサムネイル ---------- */
 .catalog-thumb .m-btn { min-height: 36px; padding: 0 14px; font-size: 13px; }
@@ -551,6 +552,29 @@ button.m-node:hover:not(.is-current) { background: var(--fill); }
 .m-search-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-row); max-width: 420px; }
 .m-search-list li { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-pill); padding: 6px 14px; font-size: var(--text-sm); }
 .m-search-list li[hidden], .m-search-list[hidden] { display: none; }
+
+/* ---------- パターン: 関係グラフ（静的な見本） ---------- */
+.m-graph-view { display: grid; gap: var(--space-card-gap); }
+.m-graph-view .m-search { max-width: none; }
+.m-chip.is-on { background: var(--accent-soft); color: var(--accent-strong); }
+.m-chip .m-icon { width: 14px; height: 14px; }
+.m-graph-bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-row); }
+.m-graph-range { min-height: 36px; font-size: 13px; padding: 0 14px; gap: 6px; }
+.m-graph-view .m-btn { cursor: default; }
+.m-graph-card { padding: var(--space-row); }
+.m-graph { display: block; width: 100%; height: auto; }
+.m-graph-edge { stroke: var(--border); stroke-linecap: round; }
+.m-graph-edge.is-on { stroke: var(--accent); }
+.m-graph-node { fill: var(--surface); stroke: var(--border); stroke-width: 1.5; }
+.m-graph-node.is-on { fill: var(--accent); stroke: var(--accent-strong); stroke-width: 3; }
+.m-graph-label { fill: var(--text); font-size: 11px; font-weight: 600; text-anchor: middle; }
+.m-graph-label.is-on { fill: var(--accent-ink); }
+.m-graph-sheets { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-card-gap); }
+.m-graph-sheet { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-card); padding: var(--space-card-padding); }
+.m-graph-sheet .m-position { margin-top: var(--space-card-gap); }
+.m-graph-dates { display: flex; align-items: center; gap: var(--space-row); margin-top: var(--space-card-gap); }
+.m-graph-date { display: inline-flex; align-items: center; height: var(--size-tap-target); flex: 1; min-width: 0; }
+.m-graph-tilde { color: var(--dim); }
 
 @media (max-width: 520px) {
   .demo-stage { padding: 14px; }

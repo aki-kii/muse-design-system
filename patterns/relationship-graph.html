@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>関係グラフ（Relationship Graph） | Muse Design System</title>
+<meta name="description" content="Muse アプリの見た目を再現するためのデザインシステム。トークン・部品・使い分けのドキュメントとデモ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Noto+Sans+JP:wght@400..900&display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/demos.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('muse-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
+    <span class="brand-ver">v0.14.0</span>
+    <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="../components/index.html">コンポーネント</a></li><li><a href="../patterns.html" aria-current="true">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
+    <div class="header-tools">
+      <button class="tool-btn theme-btn" type="button" data-theme-toggle aria-label="表示モード: 自動（押すとライトにする）" title="表示モード: 自動（押すとライトにする）"><span data-theme-icon="auto"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><span data-theme-icon="light" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span><span data-theme-icon="dark" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span></button>
+      <button class="tool-btn menu-btn" type="button" aria-expanded="false" aria-controls="side" aria-label="目次を開く" title="目次を開く" data-menu-toggle><span data-menu-icon="open"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></span><span data-menu-icon="close" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span></button>
+    </div>
+  </div>
+</header>
+<div class="site-body">
+  <nav class="side" id="side" aria-label="目次"><p class="side-head">目次</p><details class="side-group"><summary class="side-summary"><span class="side-title">はじめに</span><span class="side-desc">このサイトの見方と使い方</span></summary><ul><li><a href="../index.html">概要</a></li><li><a href="../getting-started.html">使い方</a></li><li><a href="../principles.html">原則</a></li></ul></details><details class="side-group"><summary class="side-summary"><span class="side-title">ファウンデーション</span><span class="side-desc">色・文字・余白・角丸などの値</span></summary><ul><li><a href="../foundations/index.html">ファウンデーションの考え方</a></li><li><a href="../foundations/color.html">色</a></li><li><a href="../foundations/typography.html">タイポグラフィ</a></li><li><a href="../foundations/spacing-radius-elevation.html">余白・角丸・重なり</a></li><li><a href="../foundations/icons.html">アイコン</a></li><li><a href="../foundations/accessibility.html">アクセシビリティ</a></li></ul></details><details class="side-group"><summary class="side-summary"><span class="side-title">コンポーネント</span><span class="side-desc">中身に依存しない部品（25件）</span></summary><ul><li><a href="../components/index.html">コンポーネント一覧</a></li><li class="side-sub">操作と入力</li><li><a href="../components/button.html">ボタン（Button）</a></li><li><a href="../components/icon-button.html">アイコンボタン（Icon Button）</a></li><li><a href="../components/chip-and-tag.html">チップとタグ（Chip / Tag）</a></li><li><a href="../components/choice-button.html">選択肢ボタン（Choice Button）</a></li><li><a href="../components/input-and-switch.html">入力欄とスイッチ（Input / Switch）</a></li><li><a href="../components/search-field.html">検索フィールド（Search Field）</a></li><li><a href="../components/memo-input-bar.html">入力バー（Input Bar）</a></li><li><a href="../components/done-toggle.html">完了トグル・完了バッジ（Done Toggle / Done Badge）</a></li><li><a href="../components/navigation.html">ナビゲーション（Navigation: Sidebar / Tab Bar）</a></li><li class="side-sub">内容を並べる</li><li><a href="../components/section-card.html">セクションカード（Section Card）</a></li><li><a href="../components/list-rows.html">リスト行（List Rows: Schedule / Task / Stat）</a></li><li><a href="../components/status-list-item.html">状態付きリスト項目（Status List Item）</a></li><li><a href="../components/media-card.html">メディアカード（Media Card）</a></li><li><a href="../components/progress-path.html">進捗パス（Progress Path）</a></li><li><a href="../components/flashcard.html">フラッシュカード（Flashcard）</a></li><li><a href="../components/message-bubble.html">吹き出し（Message Bubble）</a></li><li><a href="../components/empty-state.html">空の状態（Empty State）</a></li><li class="side-sub">重ねて出す・知らせる</li><li><a href="../components/approval-card.html">承認カード（Approval: Needs Review）</a></li><li><a href="../components/bottom-sheet.html">ボトムシート（Bottom Sheet）</a></li><li><a href="../components/confirm-dialog.html">確認ダイアログ（Confirm Dialog）</a></li><li><a href="../components/long-press-menu.html">長押しメニュー（Long-press Menu）</a></li><li><a href="../components/speed-dial-fab.html">スピードダイヤルFAB（Speed Dial FAB）</a></li><li><a href="../components/toast.html">トースト（Toast）</a></li><li><a href="../components/typing-indicator.html">作業中インジケータ（Typing Indicator）</a></li><li><a href="../components/skeleton.html">スケルトン（Skeleton）</a></li></ul></details><details class="side-group is-current" open><summary class="side-summary"><span class="side-title">パターン</span><span class="side-desc">よくあるタスクと状態の型（6件）</span></summary><ul><li><a href="../patterns.html">パターン一覧</a></li><li><a href="loading-states.html">読み込み・空・失敗の状態（Loading, Empty, Error）</a></li><li><a href="error-recovery.html">失敗からのやり直し（Error Recovery）</a></li><li><a href="search-and-filter.html">検索と絞り込み（Search and Filter）</a></li><li><a href="list-to-detail.html">一覧から詳細へ（List to Detail）</a></li><li><a href="approval-flow.html">確認をはさむ操作（Confirm Before Acting）</a></li><li><a href="relationship-graph.html" aria-current="page">関係グラフ（Relationship Graph）</a></li></ul></details><details class="side-group"><summary class="side-summary"><span class="side-title">記録</span><span class="side-desc">決定の記録・版の付け方・変更履歴</span></summary><ul><li><a href="../decisions/index.html">決定記録</a></li><li><a href="../versioning.html">版の付け方</a></li><li><a href="../changelog.html">変更履歴</a></li></ul></details></nav>
+  <main id="main" class="main">
+    <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="../patterns.html">パターン</a></li><li aria-current="page">関係グラフ（Relationship Graph）</li></ol>
+    <article class="doc"><h1 id="関係グラフrelationship-graph">関係グラフ（Relationship Graph）</h1>
+<p class="comp-lead">項目同士の関係を眺めて辿り、グラフでの選択がそのまま絞り込みになる</p>
+<section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="demo-stage" data-demo="relationship-graph">
+  <div class="demo-item" style="max-width:480px">
+    <p class="demo-cap">検索・選択中のチップ・期間の入口・グラフ</p>
+    <div class="m-graph-view" aria-hidden="true">
+      <span class="m-search" style="pointer-events:none"><span class="m-search-icon"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span><span style="font-size:var(--text-sm);color:var(--faint)">項目を検索</span></span>
+      <div class="m-chips">
+        <span class="m-chip is-on">仕様書<svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>
+        <span class="m-chip is-on">議事録<svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>
+      </div>
+      <div class="m-graph-bar">
+        <span class="m-btn m-btn--secondary m-graph-range"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>過去7日</span>
+        <span class="m-btn m-btn--ghost">一覧で見る<svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
+      </div>
+      <div class="m-card m-graph-card">
+        <svg class="m-graph" viewBox="0 0 320 210">
+          <line class="m-graph-edge is-on" x1="120" y1="92" x2="212" y2="66" stroke-width="6"/>
+          <line class="m-graph-edge" x1="120" y1="92" x2="66" y2="152" stroke-width="4"/>
+          <line class="m-graph-edge" x1="120" y1="92" x2="168" y2="164" stroke-width="3"/>
+          <line class="m-graph-edge" x1="120" y1="92" x2="42" y2="54" stroke-width="1.5"/>
+          <line class="m-graph-edge" x1="212" y1="66" x2="168" y2="164" stroke-width="2"/>
+          <line class="m-graph-edge" x1="212" y1="66" x2="262" y2="146" stroke-width="2"/>
+          <line class="m-graph-edge" x1="212" y1="66" x2="286" y2="34" stroke-width="1.5"/>
+          <line class="m-graph-edge" x1="66" y1="152" x2="168" y2="164" stroke-width="1"/>
+          <circle class="m-graph-node is-on" cx="120" cy="92" r="26"/>
+          <circle class="m-graph-node is-on" cx="212" cy="66" r="20"/>
+          <circle class="m-graph-node" cx="168" cy="164" r="17"/>
+          <circle class="m-graph-node" cx="66" cy="152" r="15"/>
+          <circle class="m-graph-node" cx="262" cy="146" r="13"/>
+          <circle class="m-graph-node" cx="42" cy="54" r="11"/>
+          <circle class="m-graph-node" cx="286" cy="34" r="10"/>
+          <text class="m-graph-label is-on" x="120" y="96">仕様書</text>
+          <text class="m-graph-label is-on" x="212" y="70">議事録</text>
+          <text class="m-graph-label" x="168" y="198">報告書</text>
+          <text class="m-graph-label" x="66" y="184">設計図</text>
+          <text class="m-graph-label" x="262" y="176">見積書</text>
+          <text class="m-graph-label" x="42" y="82">手順書</text>
+          <text class="m-graph-label" x="286" y="60">契約書</text>
+        </svg>
+      </div>
+    </div>
+    <p class="vh">見本の図: 検索フィールドの下に選択中のチップ「仕様書」「議事録」、期間の入口「過去7日」と「一覧で見る」、その下に7つの項目の関係グラフ。仕様書と議事録が選択中で、2つをつなぐ太いエッジが強調されている。</p>
+  </div>
+  <div class="demo-item" style="max-width:480px">
+    <p class="demo-cap">期間の入口を押すと開くシートの中身（相対・絶対）</p>
+    <div class="m-graph-sheets" aria-hidden="true">
+      <div class="m-graph-sheet">
+        <p class="m-sheet-title">期間</p>
+        <div class="m-position"><span aria-checked="true">相対</span><span>絶対</span></div>
+        <div class="m-chips" style="margin-top:12px">
+          <span class="m-chip">過去24時間</span>
+          <span class="m-chip is-on">過去7日</span>
+          <span class="m-chip">過去30日</span>
+        </div>
+      </div>
+      <div class="m-graph-sheet">
+        <p class="m-sheet-title">期間</p>
+        <div class="m-position"><span>相対</span><span aria-checked="true">絶対</span></div>
+        <div class="m-graph-dates">
+          <span class="m-input m-graph-date">11/1</span><span class="m-graph-tilde">〜</span><span class="m-input m-graph-date">11/7</span>
+        </div>
+      </div>
+    </div>
+    <p class="vh">見本の図: 期間のシート。相対では「過去24時間」「過去7日」「過去30日」から選び、絶対では開始日と終了日を入れる。</p>
+  </div>
+  <p class="demo-note">形を見せる静的な見本で、押しても動きません。ノードの大きさは件数、エッジの太さは一緒に出てきた回数です。選択中のノードとチップは同じ選択を映し、期間はどちらの方式でも範囲に直して使います。中身は架空です。</p>
+</div>
+</section>
+<p><strong>よくある型である理由:</strong> 項目同士のつながりをノードとエッジの図で眺め、気になる項目を選んで周りを辿る型は、ノートや知識を扱う製品に広くあります（<a href="https://help.obsidian.md/plugins/graph" rel="noopener">Obsidian の Graph view</a>）。選んだ条件を取り消せるチップとして並べる形（<a href="https://m3.material.io/components/chips/guidelines" rel="noopener">Material 3 の Chips</a> の input chip）と、相対・絶対の両方で期間を選ぶ形（<a href="https://polaris-react.shopify.com/patterns/date-picking" rel="noopener">Polaris の Date picking</a>）も、絞り込みを持つ製品でよく組み合わされます。</p>
+<p><strong>使っているところ:</strong> AWSアップデートのスペース（サービス同士の関係を眺めて、記事の一覧を絞り込む）。</p>
+<h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
+<p>項目同士の関係をグラフで眺めて探索し、選んだ項目がそのまま絞り込みの条件になる型です。グラフで選んでも、検索で選んでも、同じ1つの選択状態に入ります。期間は小さな入口から開くシートで変え、絞った条件のまま一覧へ移れます。</p>
+<h2 id="組み合わせ">組み合わせ<a class="anchor" href="#組み合わせ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>関係グラフ: ノード（項目。大きさは件数）とエッジ（同じ文脈に一緒に出てきた項目同士。太さは一緒に出てきた回数）。ノードを押すと選択になる</li><li>検索: <a href="../components/search-field.html">検索フィールド</a>。打つと候補（アイコン付き）を出し、候補を押すと選択に加える</li><li>選択中の条件: <a href="../components/chip-and-tag.html">チップ</a>の選択中を検索フィールドの下に並べる。チップを押すと取り消す</li><li>期間の入口: 今の指定を書いた小さな<a href="../components/button.html">ボタン</a>（第2ボタン）。押すと<a href="../components/bottom-sheet.html">ボトムシート</a>を開く</li><li>期間のシート: 相対（過去24時間・過去7日など）と絶対（開始日〜終了日の<a href="../components/input-and-switch.html">入力欄</a>）を切り替えて選ぶ</li><li>一覧への導線: 「一覧で見る」の<a href="../components/button.html">ボタン</a>。今の選択と期間のまま一覧のビューへ移る</li></ul>
+<h2 id="配置">配置<a class="anchor" href="#配置" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>上から、検索フィールド → 選択中のチップ → 期間の入口と一覧への導線 → グラフの順に置く。条件をまとめて上に置き、グラフは残りの広さを使う。</li><li>選択中のチップの段は、選択がないときは出さない。</li><li>期間の指定は常に開いておかない。入口のボタンに今の指定（「過去7日」「11/1〜11/7」）を書き、変えるときだけシートを開く。</li></ul>
+<h2 id="状態の連動">状態の連動<a class="anchor" href="#状態の連動" aria-label="この見出しへのリンク">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">操作</th><th scope="col">選択</th><th scope="col">グラフ</th><th scope="col">チップ</th></tr></thead><tbody><tr><td>検索の候補を押す</td><td>項目を加える</td><td>そのノードを選択中の色にする</td><td>末尾に加える</td></tr><tr><td>ノードを押す（選択していない）</td><td>項目を加える</td><td>そのノードを選択中の色にする</td><td>末尾に加える</td></tr><tr><td>ノードを押す（選択中）</td><td>項目を外す</td><td>選択中の色を戻す</td><td>そのチップを消す</td></tr><tr><td>チップを押す</td><td>項目を外す</td><td>選択中の色を戻す</td><td>そのチップを消す</td></tr><tr><td>期間を変える</td><td>変えない</td><td>期間に入る件数でノードの大きさ・エッジの太さを描き直す</td><td>変えない</td></tr><tr><td>一覧で見る</td><td>変えない</td><td>—</td><td>一覧のビューに同じ条件を引き継ぐ</td></tr></tbody></table></div>
+<ul><li>選択の持ち主は1つにする。グラフ・検索・チップは、どれもその選択を読み書きするだけにして、別々に持たない。</li><li>選択中のノードと、選択中のノード同士をつなぐエッジは <code>--accent</code> で描く。ほかは <code>--surface</code> の面と <code>--border</code> の線にする。</li><li>相対の期間も絶対の期間も、決めた時点で開始日時〜終了日時の範囲に直してから使う。相対の期間は、使うたびに今の時刻から範囲を出し直す。</li><li>期間に入る件数が0の項目は、ノードを薄くして残すか消すかを製品ごとに決め、同じ製品の中ではそろえる。選択中の項目は0件でも消さない。</li></ul>
+<h2 id="使うとき">使うとき<a class="anchor" href="#使うとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>項目同士のつながりそのものに意味があり、つながりを辿って関心のあるものを見つけたい（分類・タグ・登場する対象など）</li><li>選んだ項目で一覧を絞り込み、中身は一覧で読む</li></ul>
+<h2 id="使わないとき">使わないとき<a class="anchor" href="#使わないとき" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>項目のあいだにつながりがない、またはつながりを見ても判断が変わらない → <a href="search-and-filter.html">検索と絞り込み</a></li><li>ノードが多すぎて図にしても読めない（目安として数十を超える）→ 件数の多い順に絞ってから描くか、<a href="search-and-filter.html">検索と絞り込み</a>にする</li><li>1件の詳細を読むのが目的 → <a href="list-to-detail.html">一覧から詳細へ</a></li></ul>
+<h2 id="アクセシビリティ">アクセシビリティ<a class="anchor" href="#アクセシビリティ" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li>グラフだけでは選べないようにしない。同じ項目は必ず検索の候補からも選べるようにする。</li><li>ノードは押せる要素にし、<code>aria-pressed</code> で選択中かを伝え、名前に件数を含める（「仕様書、12件」）。図全体は <code>role=&quot;group&quot;</code> と <code>aria-label</code>（「項目の関係」）で包む。</li><li>選択中のチップには「仕様書の選択を外す」のような名前を付ける。</li><li>選択・期間が変わったら、件数を <code>role=&quot;status&quot;</code> の領域で伝える。</li><li>選択中は色だけで伝えず、ノードの縁の太さやチップの並びでも分かるようにする。</li></ul>
+<h2 id="関連">関連<a class="anchor" href="#関連" aria-label="この見出しへのリンク">#</a></h2>
+<ul><li><a href="search-and-filter.html">検索と絞り込み</a></li><li><a href="list-to-detail.html">一覧から詳細へ</a></li><li><a href="../components/search-field.html">検索フィールド</a></li><li><a href="../components/chip-and-tag.html">チップとタグ</a></li><li><a href="../components/bottom-sheet.html">ボトムシート</a></li></ul><nav class="pager" aria-label="前後の部品"><a class="pager-prev" href="approval-flow.html"><span>前の部品</span>確認をはさむ操作</a></nav></article>
+    
+    <footer class="page-foot">
+      <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/patterns/relationship-graph.md" rel="noopener">GitHub で元の文書を見る（docs/patterns/relationship-graph.md）</a></p>
+      <p>Muse DS v0.14.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+    </footer>
+  </main>
+</div>
+<div class="m-toast-region" role="status" aria-live="polite"></div>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/demos.js" defer></script>
+</body>
+</html>
