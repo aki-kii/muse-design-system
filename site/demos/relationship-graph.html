@@ -1,0 +1,66 @@
+<div class="demo-stage" data-demo="relationship-graph">
+  <div class="demo-item" style="max-width:480px">
+    <p class="demo-cap">検索・選択中のチップ・期間の入口・グラフ</p>
+    <div class="m-graph-view" aria-hidden="true">
+      <span class="m-search" style="pointer-events:none"><span class="m-search-icon">{{i:search}}</span><span style="font-size:var(--text-sm);color:var(--faint)">項目を検索</span></span>
+      <div class="m-chips">
+        <span class="m-chip is-on">仕様書{{i:x}}</span>
+        <span class="m-chip is-on">議事録{{i:x}}</span>
+      </div>
+      <div class="m-graph-bar">
+        <span class="m-btn m-btn--secondary m-graph-range">{{i:calendar}}過去7日</span>
+        <span class="m-btn m-btn--ghost">一覧で見る{{i:chevron}}</span>
+      </div>
+      <div class="m-card m-graph-card">
+        <svg class="m-graph" viewBox="0 0 320 210">
+          <line class="m-graph-edge is-on" x1="120" y1="92" x2="212" y2="66" stroke-width="6"/>
+          <line class="m-graph-edge" x1="120" y1="92" x2="66" y2="152" stroke-width="4"/>
+          <line class="m-graph-edge" x1="120" y1="92" x2="168" y2="164" stroke-width="3"/>
+          <line class="m-graph-edge" x1="120" y1="92" x2="42" y2="54" stroke-width="1.5"/>
+          <line class="m-graph-edge" x1="212" y1="66" x2="168" y2="164" stroke-width="2"/>
+          <line class="m-graph-edge" x1="212" y1="66" x2="262" y2="146" stroke-width="2"/>
+          <line class="m-graph-edge" x1="212" y1="66" x2="286" y2="34" stroke-width="1.5"/>
+          <line class="m-graph-edge" x1="66" y1="152" x2="168" y2="164" stroke-width="1"/>
+          <circle class="m-graph-node is-on" cx="120" cy="92" r="26"/>
+          <circle class="m-graph-node is-on" cx="212" cy="66" r="20"/>
+          <circle class="m-graph-node" cx="168" cy="164" r="17"/>
+          <circle class="m-graph-node" cx="66" cy="152" r="15"/>
+          <circle class="m-graph-node" cx="262" cy="146" r="13"/>
+          <circle class="m-graph-node" cx="42" cy="54" r="11"/>
+          <circle class="m-graph-node" cx="286" cy="34" r="10"/>
+          <text class="m-graph-label is-on" x="120" y="96">仕様書</text>
+          <text class="m-graph-label is-on" x="212" y="70">議事録</text>
+          <text class="m-graph-label" x="168" y="198">報告書</text>
+          <text class="m-graph-label" x="66" y="184">設計図</text>
+          <text class="m-graph-label" x="262" y="176">見積書</text>
+          <text class="m-graph-label" x="42" y="82">手順書</text>
+          <text class="m-graph-label" x="286" y="60">契約書</text>
+        </svg>
+      </div>
+    </div>
+    <p class="vh">見本の図: 検索フィールドの下に選択中のチップ「仕様書」「議事録」、期間の入口「過去7日」と「一覧で見る」、その下に7つの項目の関係グラフ。仕様書と議事録が選択中で、2つをつなぐ太いエッジが強調されている。</p>
+  </div>
+  <div class="demo-item" style="max-width:480px">
+    <p class="demo-cap">期間の入口を押すと開くシートの中身（相対・絶対）</p>
+    <div class="m-graph-sheets" aria-hidden="true">
+      <div class="m-graph-sheet">
+        <p class="m-sheet-title">期間</p>
+        <div class="m-position"><span aria-checked="true">相対</span><span>絶対</span></div>
+        <div class="m-chips" style="margin-top:12px">
+          <span class="m-chip">過去24時間</span>
+          <span class="m-chip is-on">過去7日</span>
+          <span class="m-chip">過去30日</span>
+        </div>
+      </div>
+      <div class="m-graph-sheet">
+        <p class="m-sheet-title">期間</p>
+        <div class="m-position"><span>相対</span><span aria-checked="true">絶対</span></div>
+        <div class="m-graph-dates">
+          <span class="m-input m-graph-date">11/1</span><span class="m-graph-tilde">〜</span><span class="m-input m-graph-date">11/7</span>
+        </div>
+      </div>
+    </div>
+    <p class="vh">見本の図: 期間のシート。相対では「過去24時間」「過去7日」「過去30日」から選び、絶対では開始日と終了日を入れる。</p>
+  </div>
+  <p class="demo-note">形を見せる静的な見本で、押しても動きません。ノードの大きさは件数、エッジの太さは一緒に出てきた回数です。選択中のノードとチップは同じ選択を映し、期間はどちらの方式でも範囲に直して使います。中身は架空です。</p>
+</div>

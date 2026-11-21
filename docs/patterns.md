@@ -9,3 +9,4 @@
 | [検索と絞り込み](patterns/search-and-filter.md) | 一覧の上で、ことばで探す・分類で減らす。0件なら条件を外す |
 | [一覧から詳細へ](patterns/list-to-detail.md) | 1件を押して詳細を開き、戻ると一覧の同じ場所に帰る |
 | [確認をはさむ操作](patterns/approval-flow.md) | 取り消せない操作・外部に触る操作の直前に確認をはさみ、結果をその場に残す |
+| [関係グラフ](patterns/relationship-graph.md) | 項目同士の関係を眺めて辿り、グラフでの選択がそのまま絞り込みになる |
