@@ -943,35 +943,90 @@
   // ---------------------------------------------------------- リアクションバー
   init['reaction-bar'] = function (root) {
     var EMOJIS = ['👍', '⭐', '🤔', '❤️', '😂', '😮', '😢', '🙏', '🔥', '🎉', '👀', '💡', '✅', '🤣', '🥺'];
-    var tpl = $(root, 'template[data-react-bar]');
+    var MORE = ['😀', '😊', '😍', '🥰', '😎', '🤩', '😅', '😭', '😡', '😱', '🤯', '😴', '🤗', '🙌', '👏', '💪',
+      '👌', '✌️', '🤝', '👋', '🙈', '💯', '✨', '🌟', '💖', '💔', '🎂', '🎁', '🍀', '🌸', '☕', '🍺',
+      '🍣', '🍰', '🐶', '🐱', '🌈', '☀️', '🌙', '📌'];
+    var barTpl = $(root, 'template[data-react-bar]');
+    var gridTpl = $(root, 'template[data-react-grid]');
     var smile = $(root, '[data-react-entry]').innerHTML;
+    var list = $(root, '.m-react-list');
+    var multiple = list.getAttribute('data-react-mode') === 'multiple';
     var items = $$(root, '.m-react-item');
-    var state = new Map();
+    var state = new Map(); // 項目 → 付いている絵文字の配列（付けた順）
     var openItem = null;
 
+    function picked(item) { return state.get(item) || []; }
     function emojiButton(e, current) {
       var b = document.createElement('button');
       b.type = 'button';
       b.className = 'm-react-emoji';
       b.textContent = e;
       b.setAttribute('aria-label', e);
-      b.setAttribute('aria-pressed', String(current === e));
+      b.setAttribute('aria-pressed', String(current.indexOf(e) !== -1));
       b.setAttribute('data-emoji', e);
       return b;
     }
     function paintEntry(item) {
       var entry = $(item, '[data-react-entry]');
-      var r = state.get(item);
+      var r = picked(item);
       var title = item.getAttribute('data-title');
-      entry.classList.toggle('has-reaction', !!r);
-      if (r) entry.textContent = r; else entry.innerHTML = smile;
-      entry.setAttribute('aria-label', 'リアクション（' + title + '）' + (r ? '：' + r : ''));
+      entry.classList.toggle('has-reaction', r.length > 0);
+      if (r.length && !multiple) entry.textContent = r[0]; else entry.innerHTML = smile;
+      entry.setAttribute('aria-label', 'リアクション（' + title + '）' + (r.length ? '：' + r.join(' ') : ''));
+      // 複数のときは、付いた絵文字を題の下に並べる
+      var row = $(item, '.m-react-picked');
+      if (multiple && r.length) {
+        if (!row) {
+          row = document.createElement('p');
+          row.className = 'm-react-picked';
+          $(item, '.m-react-title').after(row);
+        }
+        row.textContent = '';
+        r.forEach(function (e) {
+          var s = document.createElement('span');
+          s.className = 'm-react-pick';
+          s.textContent = e;
+          row.appendChild(s);
+        });
+      } else if (row) row.remove();
+    }
+    // 見える位置まで送る（横のバーにも縦のグリッドにも使う）
+    function scrollIntoBox(box, el) {
+      var b = box.getBoundingClientRect(), r = el.getBoundingClientRect();
+      if (r.left < b.left + 4) box.scrollLeft -= b.left + 4 - r.left;
+      else if (r.right > b.right - 4) box.scrollLeft += r.right - b.right + 4;
+      if (r.top < b.top + 4) box.scrollTop -= b.top + 4 - r.top;
+      else if (r.bottom > b.bottom - 4) box.scrollTop += r.bottom - b.bottom + 4;
+    }
+    function followFocus(box) {
+      box.addEventListener('focusin', function (e) {
+        if (e.target.matches('[data-emoji]')) scrollIntoBox(box, e.target);
+      });
+    }
+    function gridOf(item) { return $(item, '.m-react-grid'); }
+    function closeGrid(item, refocus) {
+      var grid = gridOf(item);
+      if (!grid) return;
+      grid.remove();
+      var more = $(item, '[data-react-more]');
+      more.setAttribute('aria-expanded', 'false');
+      if (refocus) more.focus();
+    }
+    function openGrid(item) {
+      var grid = gridTpl.content.firstElementChild.cloneNode(true);
+      var current = picked(item);
+      MORE.forEach(function (e) { grid.appendChild(emojiButton(e, current)); });
+      item.appendChild(grid);
+      $(item, '[data-react-more]').setAttribute('aria-expanded', 'true');
+      followFocus(grid);
+      var sel = $(grid, '[aria-pressed="true"]');
+      if (sel) scrollIntoBox(grid, sel);
     }
     function close(refocus) {
       if (!openItem) return;
       var item = openItem;
       openItem = null;
-      $$(item, '.m-react-bar').forEach(function (n) { n.remove(); });
+      $$(item, '.m-react-bar, .m-react-grid').forEach(function (n) { n.remove(); });
       var entry = $(item, '[data-react-entry]');
       entry.setAttribute('aria-expanded', 'false');
       if (refocus) entry.focus();
@@ -979,28 +1034,23 @@
     function open(item) {
       close(false);
       openItem = item;
-      var bar = tpl.content.firstElementChild.cloneNode(true);
-      var current = state.get(item) || null;
-      EMOJIS.forEach(function (e) { bar.appendChild(emojiButton(e, current)); });
+      var bar = barTpl.content.firstElementChild.cloneNode(true);
+      var scroller = $(bar, '[data-react-scroll]');
+      var current = picked(item);
+      EMOJIS.forEach(function (e) { scroller.appendChild(emojiButton(e, current)); });
       item.appendChild(bar);
       $(item, '[data-react-entry]').setAttribute('aria-expanded', 'true');
-      var sel = $(bar, '[aria-pressed="true"]');
-      if (sel) scrollIntoBar(bar, sel);
+      var sel = $(scroller, '[aria-pressed="true"]');
+      if (sel) scrollIntoBox(scroller, sel);
+      // グリッドの絵文字が付いているときは、グリッドも開いて見せる
+      if (current.some(function (e) { return MORE.indexOf(e) !== -1; })) openGrid(item);
       // マウスのホイールの縦の回転でも横に送る
-      bar.addEventListener('wheel', function (e) {
-        if (Math.abs(e.deltaY) <= Math.abs(e.deltaX) || bar.scrollWidth <= bar.clientWidth) return;
+      scroller.addEventListener('wheel', function (e) {
+        if (Math.abs(e.deltaY) <= Math.abs(e.deltaX) || scroller.scrollWidth <= scroller.clientWidth) return;
         e.preventDefault();
-        bar.scrollLeft += e.deltaY;
+        scroller.scrollLeft += e.deltaY;
       }, { passive: false });
-      // フォーカスが移った絵文字を見える位置に送る
-      bar.addEventListener('focusin', function (e) {
-        if (e.target.matches('[data-emoji]')) scrollIntoBar(bar, e.target);
-      });
-    }
-    function scrollIntoBar(bar, el) {
-      var l = el.offsetLeft - bar.offsetLeft, r = l + el.offsetWidth;
-      if (l < bar.scrollLeft + 6) bar.scrollLeft = l - 6;
-      else if (r > bar.scrollLeft + bar.clientWidth - 6) bar.scrollLeft = r - bar.clientWidth + 6;
+      followFocus(scroller);
     }
     root.addEventListener('click', function (e) {
       var entry = e.target.closest('[data-react-entry]');
@@ -1009,24 +1059,41 @@
         if (openItem === item) close(false); else open(item);
         return;
       }
+      if (e.target.closest('[data-react-more]') && openItem) {
+        if (gridOf(openItem)) closeGrid(openItem, false); else openGrid(openItem);
+        return;
+      }
       var em = e.target.closest('[data-emoji]');
       if (em && openItem) {
         var it = openItem;
         var v = em.getAttribute('data-emoji');
-        if (state.get(it) === v) state.delete(it); else state.set(it, v);
-        paintEntry(it);
-        close(true);
+        var r = picked(it);
+        var on = r.indexOf(v) !== -1;
+        if (multiple) {
+          // 複数: 押した絵文字だけを付け外しし、バーは開いたままにする
+          r = on ? r.filter(function (x) { return x !== v; }) : r.concat(v);
+          state.set(it, r);
+          $$(it, '[data-emoji="' + v + '"]').forEach(function (b) { b.setAttribute('aria-pressed', String(!on)); });
+          paintEntry(it);
+        } else {
+          // 1つだけ: 付け替え・取り消しをして閉じる
+          state.set(it, on ? [] : [v]);
+          paintEntry(it);
+          close(true);
+        }
       }
     });
     root.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && openItem) { e.preventDefault(); close(true); }
+      if (e.key !== 'Escape' || !openItem) return;
+      e.preventDefault();
+      if (gridOf(openItem)) closeGrid(openItem, true); else close(true);
     });
     function reset() {
       close(false);
       state.clear();
       items.forEach(function (item) {
         var init0 = item.getAttribute('data-initial');
-        if (init0) state.set(item, init0);
+        state.set(item, init0 ? init0.split(' ') : []);
         paintEntry(item);
       });
     }

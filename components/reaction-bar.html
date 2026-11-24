@@ -19,7 +19,7 @@
 <header class="site-header">
   <div class="site-header-inner">
     <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Muse Design System</span></a>
-    <span class="brand-ver">v0.15.0</span>
+    <span class="brand-ver">v0.16.0</span>
     <nav class="global-nav" aria-label="サイト全体"><ul><li><a href="../index.html">はじめに</a></li><li><a href="../foundations/index.html">ファウンデーション</a></li><li><a href="index.html" aria-current="true">コンポーネント</a></li><li><a href="../patterns.html">パターン</a></li><li><a href="../decisions/index.html">記録</a></li></ul></nav>
     <div class="header-tools">
       <button class="tool-btn theme-btn" type="button" data-theme-toggle aria-label="表示モード: 自動（押すとライトにする）" title="表示モード: 自動（押すとライトにする）"><span data-theme-icon="auto"><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><span data-theme-icon="light" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span><span data-theme-icon="dark" hidden><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span></button>
@@ -32,59 +32,67 @@
   <main id="main" class="main">
     <ol class="crumbs" aria-label="現在地"><li><a href="../index.html">トップ</a></li><li><a href="index.html">コンポーネント</a></li><li aria-current="page">リアクションバー（Reaction Bar）</li></ol>
     <article class="doc"><h1 id="リアクションバーreaction-bar">リアクションバー（Reaction Bar）</h1>
-<p class="comp-lead">項目に絵文字を1つ付ける。入口から開くバーを横にスクロールして選ぶ</p>
+<p class="comp-lead">項目に絵文字を付ける（1つだけ／複数）。入口から開くバーを横にスクロールして選び、右端の「＋」でほかの絵文字のグリッドを開く</p>
 <section class="demo" aria-labelledby="demo-h"><h2 id="demo-h" class="demo-h">デモ</h2><div class="demo-stage" data-demo="reaction-bar">
   <div class="demo-phone" style="max-width:420px">
     <div class="m-card">
-      <ul class="m-react-list" aria-label="項目（見本）">
+      <ul class="m-react-list" data-react-mode="multiple" aria-label="項目（見本）">
         <li class="m-react-item" data-title="駅前に新しい図書館が開館">
-          <div class="m-react-head"><p class="m-react-title">駅前に新しい図書館が開館</p><button type="button" class="m-react-entry m-hit" aria-expanded="false" data-react-entry><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg></button></div>
+          <div class="m-react-head"><div class="m-react-body"><p class="m-react-title">駅前に新しい図書館が開館</p></div><button type="button" class="m-react-entry m-hit" aria-expanded="false" data-react-entry><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg></button></div>
         </li>
-        <li class="m-react-item" data-title="週末は晴れて気温が上がる見込み" data-initial="⭐">
-          <div class="m-react-head"><p class="m-react-title">週末は晴れて気温が上がる見込み</p><button type="button" class="m-react-entry m-hit" aria-expanded="false" data-react-entry><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg></button></div>
+        <li class="m-react-item" data-title="週末は晴れて気温が上がる見込み" data-initial="⭐ 🌈">
+          <div class="m-react-head"><div class="m-react-body"><p class="m-react-title">週末は晴れて気温が上がる見込み</p></div><button type="button" class="m-react-entry m-hit" aria-expanded="false" data-react-entry><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg></button></div>
         </li>
         <li class="m-react-item" data-title="秋の写真展が来月から始まる">
-          <div class="m-react-head"><p class="m-react-title">秋の写真展が来月から始まる</p><button type="button" class="m-react-entry m-hit" aria-expanded="false" data-react-entry><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg></button></div>
+          <div class="m-react-head"><div class="m-react-body"><p class="m-react-title">秋の写真展が来月から始まる</p></div><button type="button" class="m-react-entry m-hit" aria-expanded="false" data-react-entry><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg></button></div>
         </li>
       </ul>
     </div>
   </div>
   <template data-react-bar>
-    <div class="m-react-bar" role="group" aria-label="リアクション"></div>
+    <div class="m-react-bar" role="group" aria-label="リアクション"><div class="m-react-scroll" data-react-scroll></div><span class="m-react-sep" aria-hidden="true"></span><button type="button" class="m-react-more" aria-expanded="false" aria-label="ほかの絵文字" data-react-more><svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></button></div>
+  </template>
+  <template data-react-grid>
+    <div class="m-react-grid" role="group" aria-label="ほかの絵文字"></div>
   </template>
   <p class="demo-note"><button type="button" class="demo-reset" data-reset>はじめに戻す</button></p>
 </div>
 </section>
 <h2 id="概要">概要<a class="anchor" href="#概要" aria-label="この見出しへのリンク">#</a></h2>
-<p>一覧の項目1つに、絵文字のリアクションを1つ付ける部品です。項目ごとに入口の丸ボタンがあります。入口を押すと、丸いピル型のバーが横にスライドして開きます。バーには15個の絵文字が一列に並びます。幅に入りきらない分は、バーを横にスクロールして選びます。</p>
-<p>付けられる絵文字は1項目に1つです。付けた絵文字は入口のボタンに出ます。</p>
+<p>一覧の項目に、絵文字のリアクションを付ける部品です。項目ごとに入口の丸ボタンがあります。入口を押すと、丸いピル型のバーが横にスライドして開きます。</p>
+<p>バーには、よく使う15個の絵文字が一列に並びます。幅に入りきらない分は、バーを横にスクロールして選びます。バーの右端には「＋」ボタンがあります。「＋」を押すと絵文字の一覧（グリッド）が開き、15個以外の絵文字も選べます。</p>
+<p>1項目に付けられる絵文字の数は、「1つだけ」と「複数」のどちらかに決めて使います。</p>
 <h2 id="使うとき">使うとき<a class="anchor" href="#使うとき" aria-label="この見出しへのリンク">#</a></h2>
-<ul><li>一覧の項目それぞれに、軽い反応を1つずつ残したいとき</li><li>反応を文にするほどではなく、あとで見返したり数えたりしたいとき</li></ul>
+<ul><li>一覧の項目それぞれに、軽い反応を残したいとき</li><li>反応を文にするほどではなく、あとで見返したり数えたりしたいとき</li></ul>
 <h2 id="使わないとき">使わないとき<a class="anchor" href="#使わないとき" aria-label="この見出しへのリンク">#</a></h2>
-<ul><li>項目に複数の反応を重ねたいとき。この部品は1項目に1つだけ</li><li>「済み」「未」のように意味が決まった印 → <a href="done-toggle.html">完了トグル・完了バッジ</a></li><li>評価や回答のように、選択肢が決まっている選択 → <a href="choice-button.html">選択肢ボタン</a></li><li>項目への操作（コピー・削除など） → <a href="long-press-menu.html">長押しメニュー</a></li></ul>
+<ul><li>「済み」「未」のように意味が決まった印 → <a href="done-toggle.html">完了トグル・完了バッジ</a></li><li>評価や回答のように、選択肢が決まっている選択 → <a href="choice-button.html">選択肢ボタン</a></li><li>項目への操作（コピー・削除など） → <a href="long-press-menu.html">長押しメニュー</a></li></ul>
 <h2 id="バリアント">バリアント<a class="anchor" href="#バリアント" aria-label="この見出しへのリンク">#</a></h2>
-<p>なし（1種類だけ）。バーに並べる絵文字は、次の15個をこの順に置きます。</p>
+<p>付けられる数で2種類あります。1つの画面の中では、どちらかにそろえます。</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">バリアント</th><th scope="col">付けられる数</th><th scope="col">付いた絵文字の見せ方</th><th scope="col">押したあと</th></tr></thead><tbody><tr><td>1つだけ</td><td>1項目に1つ</td><td>入口のボタンに出す</td><td>バーを閉じる</td></tr><tr><td>複数</td><td>1項目にいくつでも</td><td>項目の題の下に、付けた順に並べる。入口は笑顔のアイコンのまま</td><td>バーを開いたままにする</td></tr></tbody></table></div>
+<p>バーに並べる絵文字は、次の15個をこの順に置きます。</p>
 <p>👍 ⭐ 🤔 ❤️ 😂 😮 😢 🙏 🔥 🎉 👀 💡 ✅ 🤣 🥺</p>
-<p>ほかの絵文字を選ぶ一覧（グリッド）は持ちません。</p>
+<p>グリッドには、バーにない絵文字を並べます。バーの15個はグリッドに重ねて置きません。</p>
 <h2 id="状態">状態<a class="anchor" href="#状態" aria-label="この見出しへのリンク">#</a></h2>
-<div class="table-wrap"><table><thead><tr><th scope="col">状態</th><th scope="col">見た目</th><th scope="col">条件</th></tr></thead><tbody><tr><td>付いていない</td><td>入口に笑顔の線のアイコン（<code>--faint</code>）</td><td></td></tr><tr><td>付いている</td><td>入口に付けた絵文字。面を <code>--fill</code> にする</td><td>絵文字を1つ選んだ</td></tr><tr><td>バーが開いている</td><td>入口の下にバーが出る。右から 28px スライドしながら 220ms で現れる</td><td>入口を押した</td></tr><tr><td>選択中の絵文字</td><td>バーの中で、付けている絵文字を <code>--surface</code> の面と罫線で囲む。開いたとき、見える位置までバーをスクロールする</td><td></td></tr><tr><td>押下</td><td>不透明度を下げる</td><td></td></tr><tr><td>フォーカス</td><td>フォーカスの輪</td><td></td></tr></tbody></table></div>
-<p>押したときの動きは次のとおりです。</p>
-<ul><li>付いていない項目で絵文字を押すと、その絵文字が付く。</li><li>別の絵文字を押すと、付け替わる。</li><li>付けている絵文字をもう一度押すと、取り消す。</li><li>絵文字を押したら、バーを閉じる。</li><li>開いているときに入口を押すと、バーを閉じる。</li></ul>
-<p>バーの右端では、入りきらない絵文字を途中で切って見せます。続きがあることは、この切れ目で伝えます。スクロールバーは出しません。マウスのホイールの縦の回転でも、バーを横に送れるようにします。</p>
-<p>UI の中に説明文は置きません。使い方は入口のアイコンと並んだ絵文字で伝えます。</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">状態</th><th scope="col">見た目</th><th scope="col">条件</th></tr></thead><tbody><tr><td>付いていない</td><td>入口に笑顔の線のアイコン（<code>--faint</code>）</td><td></td></tr><tr><td>付いている</td><td>入口の面を <code>--fill</code> にする。1つだけのときは、入口に付けた絵文字を出す</td><td>絵文字を1つ以上付けた</td></tr><tr><td>バーが開いている</td><td>入口の下にバーが出る。右から 28px スライドしながら 220ms で現れる</td><td>入口を押した</td></tr><tr><td>グリッドが開いている</td><td>バーの下にグリッドが出る。220ms でフェードして現れる。「＋」に <code>--accent-soft</code> の丸い背景が付く</td><td>「＋」を押した</td></tr><tr><td>選択中の絵文字</td><td>バーとグリッドの中で、付けている絵文字に <code>--accent-soft</code> の丸い背景を付ける</td><td></td></tr><tr><td>押下</td><td>不透明度を下げる</td><td></td></tr><tr><td>フォーカス</td><td>フォーカスの輪</td><td></td></tr></tbody></table></div>
+<p>押したときの動きは、バーとグリッドで同じです。</p>
+<ul><li>付けていない絵文字を押すと、その絵文字が付く。1つだけのときは、付いていた絵文字と付け替わる。</li><li>付けている絵文字をもう一度押すと、取り消す。</li><li>1つだけのときは、絵文字を押したらバーとグリッドを閉じる。複数のときは開いたままにし、続けて付け外しできる。</li><li>「＋」を押すとグリッドが開き、開いているときに押すとグリッドを閉じる。</li><li>開いているときに入口を押すと、バーとグリッドをまとめて閉じる。</li></ul>
+<p>バーを開いたときは、付けている絵文字が見える位置までバーをスクロールします。付けている絵文字にグリッドのものがあるときは、グリッドも開いた状態で出し、その絵文字が見える位置までグリッドをスクロールします。</p>
+<p>バーの絵文字の列は、右端の「＋」の手前で、入りきらない絵文字を途中で切って見せます。続きがあることは、この切れ目で伝えます。列だけが横にスクロールし、「＋」はいつも右端に残ります。スクロールバーは出しません。マウスのホイールの縦の回転でも、列を横に送れるようにします。</p>
+<p>グリッドは4行半の高さで切り、続きは縦にスクロールして選びます。こちらもスクロールバーは出しません。</p>
+<p>UI の中に説明文は置きません。使い方は入口のアイコン、並んだ絵文字、「＋」で伝えます。</p>
 <h2 id="仕様">仕様<a class="anchor" href="#仕様" aria-label="この見出しへのリンク">#</a></h2>
-<div class="table-wrap"><table><thead><tr><th scope="col">項目</th><th scope="col">値</th><th scope="col">トークン</th></tr></thead><tbody><tr><td>入口</td><td>36px の丸。1px の枠、面は白。押せる範囲は外側に広げて 44px</td><td><code>--surface</code> <code>--border</code> <code>--size-tap-target</code></td></tr><tr><td>入口のアイコン</td><td>笑顔の線のアイコン 20px</td><td><code>--faint</code></td></tr><tr><td>入口の絵文字</td><td>19px。面は控えめな面</td><td><code>--fill</code></td></tr><tr><td>バー</td><td>項目の下 12px。項目の幅いっぱい。ピル型、1px の枠、面は控えめな面。内側は上下 4px・左右 6px、間隔 2px。横にスクロールする</td><td><code>--radius-pill</code> <code>--border</code> <code>--fill</code></td></tr><tr><td>バーの絵文字</td><td>44px 四方。絵文字 21px</td><td><code>--size-tap-target</code></td></tr><tr><td>選択中の絵文字</td><td>丸。白の面と 1px の枠</td><td><code>--surface</code> <code>--border</code></td></tr></tbody></table></div>
-<p>浮き上がりは影で表さず、罫線と面の色の差で表します（<a href="../decisions/0009-no-shadows.html">決定記録 0009</a>）。バーは <code>--fill</code>、選択中の絵文字は <code>--surface</code> にします。どちらもライトとダークで同じトークンを使います。</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">項目</th><th scope="col">値</th><th scope="col">トークン</th></tr></thead><tbody><tr><td>入口</td><td>36px の丸。1px の枠、面は白。押せる範囲は外側に広げて 44px</td><td><code>--surface</code> <code>--border</code> <code>--size-tap-target</code></td></tr><tr><td>入口のアイコン</td><td>笑顔の線のアイコン 20px</td><td><code>--faint</code></td></tr><tr><td>入口の絵文字（1つだけ）</td><td>19px。面は控えめな面</td><td><code>--fill</code></td></tr><tr><td>付いた絵文字の列（複数）</td><td>題の下 8px。高さ 28px・最小幅 32px のピル型を間隔 4px で折り返して並べる。1px の枠、面は控えめな面、絵文字 16px</td><td><code>--space-row</code> <code>--space-inner</code> <code>--radius-pill</code> <code>--border</code> <code>--fill</code></td></tr><tr><td>バー</td><td>項目の下 12px。項目の幅いっぱい。ピル型、1px の枠、面は控えめな面。内側は上下・右 4px、左 6px</td><td><code>--radius-pill</code> <code>--border</code> <code>--fill</code></td></tr><tr><td>バーの絵文字の列</td><td>残りの幅いっぱい。間隔 2px。横にスクロールする</td><td></td></tr><tr><td>区切り線</td><td>列と「＋」の間。幅 1px・高さ 24px、左右 2px</td><td><code>--border</code></td></tr><tr><td>「＋」</td><td>44px 四方の丸。プラスの線のアイコン 20px</td><td><code>--size-tap-target</code> <code>--dim</code></td></tr><tr><td>「＋」（グリッドが開いている）</td><td>丸い背景、アイコンはブルーの文字色</td><td><code>--accent-soft</code> <code>--accent-strong</code></td></tr><tr><td>グリッド</td><td>バーの下 8px。項目の幅いっぱい。1px の枠、面は控えめな面、角丸はカード。内側 6px、間隔 2px。列は幅に合わせて 44px 以上で並べる。高さは4行半まで</td><td><code>--radius-card</code> <code>--border</code> <code>--fill</code> <code>--size-tap-target</code></td></tr><tr><td>絵文字（バー・グリッド）</td><td>44px 四方。絵文字 21px</td><td><code>--size-tap-target</code></td></tr><tr><td>選択中の絵文字</td><td>丸い背景</td><td><code>--accent-soft</code></td></tr></tbody></table></div>
+<p>浮き上がりは影で表さず、罫線と面の色の差で表します（<a href="../decisions/0009-no-shadows.html">決定記録 0009</a>）。バーとグリッドは <code>--fill</code>、選択中は <code>--accent-soft</code> にします。どれもライトとダークで同じトークンを使います。</p>
 <p>構成は次のとおりです。</p>
-<ol><li>入口のボタン（項目の右端）</li><li>バー（横にスクロールする15個の絵文字）</li></ol>
+<ol><li>入口のボタン（項目の右端）</li><li>付いた絵文字の列（複数のときだけ。項目の題の下）</li><li>バー（横にスクロールする15個の絵文字の列と、右端に残る「＋」）</li><li>グリッド（「＋」で開く、ほかの絵文字の一覧）</li></ol>
 <h2 id="アクセシビリティ">アクセシビリティ<a class="anchor" href="#アクセシビリティ" aria-label="この見出しへのリンク">#</a></h2>
-<ul><li>入口は <code>&lt;button&gt;</code> にし、<code>aria-expanded</code> でバーの開閉を示す。<code>aria-label</code> には項目の名前を入れる（例:「リアクション（項目の名前）」）。付いている絵文字があれば、それも名前に含める。</li><li>バーは <code>role=&quot;group&quot;</code> と <code>aria-label</code>（「リアクション」）を付ける。絵文字は <code>&lt;button&gt;</code> にし、付けているものを <code>aria-pressed=&quot;true&quot;</code> にする。</li><li>キーボードでは Tab で絵文字を順に移る。フォーカスが移った絵文字は、見える位置までバーをスクロールする。</li><li>Esc でバーを閉じ、入口にフォーカスを戻す。絵文字を押して閉じたときも、入口にフォーカスを戻す。</li><li><code>prefers-reduced-motion: reduce</code> のときは、バーのスライドを止める。</li></ul>
+<ul><li>入口は <code>&lt;button&gt;</code> にし、<code>aria-expanded</code> でバーの開閉を示す。<code>aria-label</code> には項目の名前を入れる（例:「リアクション（項目の名前）」）。付いている絵文字があれば、それも名前に含める。</li><li>バーは <code>role=&quot;group&quot;</code> と <code>aria-label</code>（「リアクション」）を付ける。絵文字は <code>&lt;button&gt;</code> にし、付けているものを <code>aria-pressed=&quot;true&quot;</code> にする。</li><li>「＋」は <code>&lt;button&gt;</code> にし、<code>aria-label</code>（「ほかの絵文字」）と、グリッドの開閉を示す <code>aria-expanded</code> を付ける。</li><li>グリッドは <code>role=&quot;group&quot;</code> と <code>aria-label</code>（「ほかの絵文字」）を付ける。絵文字はバーと同じく <code>&lt;button&gt;</code> と <code>aria-pressed</code> にする。</li><li>付いた絵文字の列は表示だけにする。付け外しはバーとグリッドで行う。</li><li>キーボードでは Tab で、バーの絵文字、「＋」、グリッドの絵文字の順に移る。フォーカスが移った絵文字は、見える位置までバーやグリッドをスクロールする。</li><li>Esc は、グリッドが開いていればグリッドを閉じて「＋」にフォーカスを戻す。グリッドが閉じていればバーを閉じて入口にフォーカスを戻す。1つだけのときに絵文字を押して閉じたときも、入口にフォーカスを戻す。</li><li><code>prefers-reduced-motion: reduce</code> のときは、バーのスライドとグリッドのフェードを止める。</li></ul>
 <h2 id="関連">関連<a class="anchor" href="#関連" aria-label="この見出しへのリンク">#</a></h2>
 <ul><li><a href="chip-and-tag.html">チップとタグ</a></li><li><a href="icon-button.html">アイコンボタン</a></li><li><a href="long-press-menu.html">長押しメニュー</a></li></ul><nav class="pager" aria-label="前後の部品"><a class="pager-prev" href="chip-and-tag.html"><span>前の部品</span>チップとタグ</a><a class="pager-next" href="choice-button.html"><span>次の部品</span>選択肢ボタン</a></nav></article>
     
     <footer class="page-foot">
       <p><a href="https://github.com/aki-kii/muse-design-system/blob/main/docs/components/reaction-bar.md" rel="noopener">GitHub で元の文書を見る（docs/components/reaction-bar.md）</a></p>
-      <p>Muse DS v0.15.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
+      <p>Muse DS v0.16.0 ・ 文面はリポジトリの docs/ と tokens/ をそのまま表示しています。</p>
     </footer>
   </main>
 </div>
