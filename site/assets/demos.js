@@ -940,6 +940,100 @@
     });
   };
 
+  // ---------------------------------------------------------- リアクションバー
+  init['reaction-bar'] = function (root) {
+    var EMOJIS = ['👍', '⭐', '🤔', '❤️', '😂', '😮', '😢', '🙏', '🔥', '🎉', '👀', '💡', '✅', '🤣', '🥺'];
+    var tpl = $(root, 'template[data-react-bar]');
+    var smile = $(root, '[data-react-entry]').innerHTML;
+    var items = $$(root, '.m-react-item');
+    var state = new Map();
+    var openItem = null;
+
+    function emojiButton(e, current) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'm-react-emoji';
+      b.textContent = e;
+      b.setAttribute('aria-label', e);
+      b.setAttribute('aria-pressed', String(current === e));
+      b.setAttribute('data-emoji', e);
+      return b;
+    }
+    function paintEntry(item) {
+      var entry = $(item, '[data-react-entry]');
+      var r = state.get(item);
+      var title = item.getAttribute('data-title');
+      entry.classList.toggle('has-reaction', !!r);
+      if (r) entry.textContent = r; else entry.innerHTML = smile;
+      entry.setAttribute('aria-label', 'リアクション（' + title + '）' + (r ? '：' + r : ''));
+    }
+    function close(refocus) {
+      if (!openItem) return;
+      var item = openItem;
+      openItem = null;
+      $$(item, '.m-react-bar').forEach(function (n) { n.remove(); });
+      var entry = $(item, '[data-react-entry]');
+      entry.setAttribute('aria-expanded', 'false');
+      if (refocus) entry.focus();
+    }
+    function open(item) {
+      close(false);
+      openItem = item;
+      var bar = tpl.content.firstElementChild.cloneNode(true);
+      var current = state.get(item) || null;
+      EMOJIS.forEach(function (e) { bar.appendChild(emojiButton(e, current)); });
+      item.appendChild(bar);
+      $(item, '[data-react-entry]').setAttribute('aria-expanded', 'true');
+      var sel = $(bar, '[aria-pressed="true"]');
+      if (sel) scrollIntoBar(bar, sel);
+      // マウスのホイールの縦の回転でも横に送る
+      bar.addEventListener('wheel', function (e) {
+        if (Math.abs(e.deltaY) <= Math.abs(e.deltaX) || bar.scrollWidth <= bar.clientWidth) return;
+        e.preventDefault();
+        bar.scrollLeft += e.deltaY;
+      }, { passive: false });
+      // フォーカスが移った絵文字を見える位置に送る
+      bar.addEventListener('focusin', function (e) {
+        if (e.target.matches('[data-emoji]')) scrollIntoBar(bar, e.target);
+      });
+    }
+    function scrollIntoBar(bar, el) {
+      var l = el.offsetLeft - bar.offsetLeft, r = l + el.offsetWidth;
+      if (l < bar.scrollLeft + 6) bar.scrollLeft = l - 6;
+      else if (r > bar.scrollLeft + bar.clientWidth - 6) bar.scrollLeft = r - bar.clientWidth + 6;
+    }
+    root.addEventListener('click', function (e) {
+      var entry = e.target.closest('[data-react-entry]');
+      if (entry) {
+        var item = entry.closest('.m-react-item');
+        if (openItem === item) close(false); else open(item);
+        return;
+      }
+      var em = e.target.closest('[data-emoji]');
+      if (em && openItem) {
+        var it = openItem;
+        var v = em.getAttribute('data-emoji');
+        if (state.get(it) === v) state.delete(it); else state.set(it, v);
+        paintEntry(it);
+        close(true);
+      }
+    });
+    root.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && openItem) { e.preventDefault(); close(true); }
+    });
+    function reset() {
+      close(false);
+      state.clear();
+      items.forEach(function (item) {
+        var init0 = item.getAttribute('data-initial');
+        if (init0) state.set(item, init0);
+        paintEntry(item);
+      });
+    }
+    $(root, '[data-reset]').addEventListener('click', reset);
+    reset();
+  };
+
   $$(document, '[data-demo]').forEach(function (root) {
     var f = init[root.getAttribute('data-demo')];
     if (f) f(root);
