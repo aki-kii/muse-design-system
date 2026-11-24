@@ -1,6 +1,6 @@
 {
   "name": "muse-design-system",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "private": true,
   "description": "Muse アプリの見た目に合わせたデザインシステム（ドキュメントとトークン）",
   "type": "module",

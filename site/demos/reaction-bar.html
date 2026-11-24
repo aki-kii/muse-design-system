@@ -1,21 +1,24 @@
 <div class="demo-stage" data-demo="reaction-bar">
   <div class="demo-phone" style="max-width:420px">
     <div class="m-card">
-      <ul class="m-react-list" aria-label="項目（見本）">
+      <ul class="m-react-list" data-react-mode="multiple" aria-label="項目（見本）">
         <li class="m-react-item" data-title="駅前に新しい図書館が開館">
-          <div class="m-react-head"><p class="m-react-title">駅前に新しい図書館が開館</p><button type="button" class="m-react-entry m-hit" aria-expanded="false" data-react-entry>{{i:smile}}</button></div>
+          <div class="m-react-head"><div class="m-react-body"><p class="m-react-title">駅前に新しい図書館が開館</p></div><button type="button" class="m-react-entry m-hit" aria-expanded="false" data-react-entry>{{i:smile}}</button></div>
         </li>
-        <li class="m-react-item" data-title="週末は晴れて気温が上がる見込み" data-initial="⭐">
-          <div class="m-react-head"><p class="m-react-title">週末は晴れて気温が上がる見込み</p><button type="button" class="m-react-entry m-hit" aria-expanded="false" data-react-entry>{{i:smile}}</button></div>
+        <li class="m-react-item" data-title="週末は晴れて気温が上がる見込み" data-initial="⭐ 🌈">
+          <div class="m-react-head"><div class="m-react-body"><p class="m-react-title">週末は晴れて気温が上がる見込み</p></div><button type="button" class="m-react-entry m-hit" aria-expanded="false" data-react-entry>{{i:smile}}</button></div>
         </li>
         <li class="m-react-item" data-title="秋の写真展が来月から始まる">
-          <div class="m-react-head"><p class="m-react-title">秋の写真展が来月から始まる</p><button type="button" class="m-react-entry m-hit" aria-expanded="false" data-react-entry>{{i:smile}}</button></div>
+          <div class="m-react-head"><div class="m-react-body"><p class="m-react-title">秋の写真展が来月から始まる</p></div><button type="button" class="m-react-entry m-hit" aria-expanded="false" data-react-entry>{{i:smile}}</button></div>
         </li>
       </ul>
     </div>
   </div>
   <template data-react-bar>
-    <div class="m-react-bar" role="group" aria-label="リアクション"></div>
+    <div class="m-react-bar" role="group" aria-label="リアクション"><div class="m-react-scroll" data-react-scroll></div><span class="m-react-sep" aria-hidden="true"></span><button type="button" class="m-react-more" aria-expanded="false" aria-label="ほかの絵文字" data-react-more>{{i:plus}}</button></div>
+  </template>
+  <template data-react-grid>
+    <div class="m-react-grid" role="group" aria-label="ほかの絵文字"></div>
   </template>
   <p class="demo-note"><button type="button" class="demo-reset" data-reset>はじめに戻す</button></p>
 </div>

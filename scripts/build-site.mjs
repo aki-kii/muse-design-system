@@ -288,6 +288,7 @@ const ICONS = {
   volume: '<path d="M11 5 6 9H2v6h4l5 4Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/>',
   chevron: '<path d="m9 18 6-6-6-6"/>',
   smile: '<circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/>',
+  plus: '<path d="M12 5v14"/><path d="M5 12h14"/>',
 };
 const icon = (name) => `<svg class="m-icon" viewBox="0 0 24 24" aria-hidden="true">${ICONS[name] ?? ''}</svg>`;
 const slideTypes = () => site('slides.html');
